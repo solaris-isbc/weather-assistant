@@ -1,9 +1,17 @@
+##################################################################################
+"""
+TODOs:
+- Make sure every matching rule is sorted by matching length, e.g. day: DAY_AFTER_TOMORROW | TOMORROW
+  otherwise wrong matching might happen, e.g. übermorgen matches über(optional_s) morgen(TOMORROW)
+- written digits: drei -> 3, sechzehn -> 16
+- specially named days: Weihnachten, Ostermontag, Muttertag
+"""
+##################################################################################
 datetime_grammar = u"""
 
     //starting point
     root: SOS (only_date | only_time | date_time | time_date) EOS
 
-    //only cover cases with either one date, one time or one date and one time
     //only cover cases with either one date, one time or one date and one time
     //only_date.2: optional_s? date_wrapper optional_s?
     //do this to make sure, the date takes precedence over any optional characters, that could be part of the date
@@ -15,15 +23,19 @@ datetime_grammar = u"""
     date_time.1: date_wrapper time_wrapper | date_wrapper time_wrapper optional_s | date_wrapper optional_s time_wrapper | date_wrapper optional_s time_wrapper optional_s | optional_s date_wrapper time_wrapper | optional_s date_wrapper time_wrapper optional_s | optional_s date_wrapper optional_s time_wrapper | optional_s date_wrapper optional_s time_wrapper optional_s
     //time_date.1: optional_s? time_wrapper optional_s? date_wrapper optional_s?
     time_date.1: time_wrapper date_wrapper | time_wrapper date_wrapper optional_s | time_wrapper optional_s date_wrapper | time_wrapper optional_s date_wrapper optional_s | optional_s time_wrapper date_wrapper | optional_s time_wrapper date_wrapper optional_s | optional_s time_wrapper optional_s date_wrapper | optional_s time_wrapper optional_s date_wrapper optional_s
+
     
 
     //wrappers for all possible time and date subtrees
-    date_wrapper.2: date | date_formatted | date_relative
+    date_wrapper.2: date_formatted | date | date_relative
     time_wrapper.1: (time | time_relative) WS+
     
     //formatted date, e.g. 20.5.2020
+    //digit date spoken
+    //date_formatted.2: digit_date_day DATE_SEPARATOR? (MONTH | MONTH_ABBR | DIGIT_MONTH | DIGIT_MONTH_SPOKEN) year?
+    //digit_date_day.1: (DIGIT_LIMITED_DAY? DIGIT) | DIGIT_DAY_SPOKEN  
     date_formatted.2: digit_date_day DATE_SEPARATOR? (MONTH | MONTH_ABBR | DIGIT_MONTH) year?
-    digit_date_day.1: DIGIT_LIMITED_DAY? DIGIT  
+    digit_date_day.1: (DIGIT_LIMITED_DAY? DIGIT) 
     year: (DATE_SEPARATOR YEAR) | YEAR
     
     //relative date, e.g. in 5 tagen
@@ -31,10 +43,10 @@ datetime_grammar = u"""
     
     
     //date with time of day, including weekend
-    date.1:  (weekday time_of_day) | weekday | weekend | week | date_interval
+    date.1:  week | (weekday time_of_day) | weekend | weekday |date_interval
     
     weekday.1: (NEXT day) | day | DAY_ABBR | (NEXT DAY_ABBR) | TODAY
-    day.1: TOMORROW | DAY_AFTER_TOMORROW | DAYS
+    day.1: DAY_AFTER_TOMORROW | TOMORROW | DAYS
 
     time_of_day.1: (TIME_OF_DAYS S_OPT?) | ON NEXT? TOMORROW | TOMORROW S_OPT
 
@@ -84,6 +96,9 @@ datetime_grammar = u"""
     DIGIT_MONTH: (("0".."1" "0".."9") | ("0".."9"))WS*
     YEAR: ((DIGIT DIGIT DIGIT DIGIT) | (DIGIT DIGIT))WS+
     DIGIT_LIMITED_DAY: ("0".."3")WS*
+    //spoken numbers
+    //DIGIT_DAY_SPOKEN: ("erste"("r"|"n")?)  |( "zweite"("r"|"n")?)  |( "dritte"("r"|"n")?)  |( "vierte"("r"|"n")?)  |( "fünfte"("r"|"n")?)  |( "sechste"("r"|"n")?)  |( "siebte"("r"|"n")?)  |( "achte"("r"|"n")?)  |( "neunte"("r"|"n")?)  |( "zehnte"("r"|"n")?)  |( "elfte"("r"|"n")?)  |( "zwölfte"("r"|"n")?)  |( "dreizehnte"("r"|"n")?)  |( "vierzehnte"("r"|"n")?)  |( "fünfzehnte"("r"|"n")?)  |( "sechzehnte"("r"|"n")?)  |( "siebzehnte"("r"|"n")?)  |( "achtzehnte"("r"|"n")?)  |( "neunzehnte"("r"|"n")?)  |( "zwanzigste"("r"|"n")?)  |( "einundzwanzigste"("r"|"n")?)  |( "zweiundzwanzigste"("r"|"n")?)  |( "dreiundzwanzigste"("r"|"n")?)  |( "vierundzwanzigste"("r"|"n")?)  |( "fünfundzwanzigste"("r"|"n")?)  |( "sechsundzwanzigste"("r"|"n")?)  |( "siebenundzwanzigste"("r"|"n")?)  |( "achtundzwanzigste"("r"|"n")?)  |( "neunundzwanzigste"("r"|"n")?)  |( "dreißigste"("r"|"n")?)  |( "einundreißigste"("r"|"n")?) WS+
+    //DIGIT_MONTH_SPOKEN: ("erste"("r"|"n")?)  |( "zweite"("r"|"n")?)  |( "dritte"("r"|"n")?)  |( "vierte"("r"|"n")?)  |( "fünfte"("r"|"n")?)  |( "sechste"("r"|"n")?)  |( "siebte"("r"|"n")?)  |( "achte"("r"|"n")?)  |( "neunte"("r"|"n")?)  |( "zehnte"("r"|"n")?)  |( "elfte"("r"|"n")?)  |( "zwölfte"("r"|"n")?) WS+
     THE: ("den")WS+
     IN: ("in")WS+
     DAYS_CHAR: ("tagen")WS+
@@ -136,32 +151,4 @@ datetime_grammar = u"""
     WS: /[ \\t\\f\\r\\n]/+
     DIGIT: "0".."9"
     
-"""
-
-test_grammar = u"""
-    root: SOS only_date EOS
-    only_date.2: optional_s? date_wrapper optional?
-    date_wrapper.2: date 
-    date.1:  weekday
-    weekday.1: day
-    day.1: TOMORROW 
-    
-    TOMORROW: WS*("morgen")WS+
-
-    optional.0: (WS+ term WS*) | WS+ (term optional) WS*
-    optional_s:(term WS*) | (term optional) WS*
-    term.0: word
-    word.0: char+
-    char.0: LETTER | special_char
-    seq.0: char char+ //at least 2 characters
-    SOS: "<--start-->"
-    EOS: "<--end-->"
-    LETTER: UCASE_LETTER | LCASE_LETTER
-    LCASE_LETTER: "a".."z" | "ä" | "ü" | "ö" | "ß"
-    UCASE_LETTER: "A".."Z" | "Ä" | "Ü" | "Ö"
-    special_char.0: SPECIAL_CHARS | COLON 
-    SPECIAL_CHARS: "-" | "." | "," | "+" | "#" | "*" | "~" | "#" | "'" | "<" | "|" | ">" | ";" | "_" | "!" | "$" | "%" | "?" | "´" | "`" 
-    COLON: ":"
-    WS: /[ \\t\\f\\r\\n]/+
-    DIGIT: "0".."9"
 """

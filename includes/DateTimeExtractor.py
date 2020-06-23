@@ -97,9 +97,11 @@ class DateTimeExtractor:
         self.parser = Lark(grammar, parser="earley", start="root")
 
     def parse(self, input_sentence):
-        self.query_with_removals = input_sentence
+        query_with_removals = input_sentence
 
         input_sentence = self.prepare_input_sentence(input_sentence)
+
+        print(input_sentence)
         #if self.debug:
             #debug("TODO replace all spoken numbers with written numbers")
         try:
@@ -282,9 +284,11 @@ class DateTimeExtractor:
                 #no need to do anything here
                 continue
             if isToken(c) and isTokenType(c, "DAYS"):
+                #case weekday specified
                 day_temp = self.day_date_mapping[c.strip()]
             if isToken(c) and isTokenType(c, "DAY_ABBR"):
-                day_temp = self.day_date_mapping[c.strip()]
+                #case weekday specified
+                day_temp = self.day_date_mapping[self.day_abbreviations[str(c).strip()]]
         if day_temp is None:
             #create day range for saturday and sunday
             #start is today
@@ -610,7 +614,7 @@ class DateTimeExtractor:
 
     def get_formatted_time(self):
         if self.date_range is not None:
-            return ["range", self.date_range[0], self.date_range[1]]
+            return ["range", self.date_range]
         if self.time is not None:
             if self.date is None:
                 self.date = datetime.date.today()
