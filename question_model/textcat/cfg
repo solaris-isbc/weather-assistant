@@ -1,0 +1,22 @@
+{
+  "labels":[
+    "WEATHER",
+    "RAIN",
+    "SUN",
+    "WIND",
+    "THUNDER",
+    "AIR PRESSURE",
+    "TEMPERATURE",
+    "COLD",
+    "WARM",
+    "AVERAGE_TEMPERATURE",
+    "WIND_DIRECTION",
+    "SNOW",
+    "CLOUDS",
+    "MAX_TEMPERATURE",
+    "FOG",
+    "MIN_TEMPERATURE"
+  ],
+  "pretrained_vectors":null,
+  "pretrained_dims":null
+}
