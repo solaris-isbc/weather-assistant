@@ -1,11 +1,13 @@
 import os
 from time_detector import time_detector as td
 from city_detector import city_detector as cd
+from irrelevance_detection import irrelevance_detector as id
 from weather_api_handler import weather_api_handler as weather_api_handler
 import spacy
 import geocoder
 from geopy.geocoders import Nominatim
 import sys
+
 
 # IMPORTANT:
 # pip install -U spacy
@@ -20,7 +22,9 @@ def get_question_type(query):
     query_doc = nlp_categorizer(query)
     docs = query_doc.cats
     categorized_label = max(docs, key=docs.get)
-    if docs[categorized_label] <= 0.9:
+    #print(max(docs, key=docs.get),docs[categorized_label])
+    #print(docs[categorized_label] <= 0.999)
+    if docs[categorized_label] <= 0.999 and id.query_has_relevant_tokens(query) is False:
         return None
     else:
         return categorized_label
