@@ -57,10 +57,10 @@ def query_processing(query):
         time_information = find_time_information_in_query(query)
         selected_time_type = time_information[0]
         selected_time = time_information[1]
+
         if selected_time_type == "range":
-            range_start = time_information[1][0]
-            range_end = time_information[1][1]
-            find_question_type(query, city, selected_time_type, [range_start, range_end])
+            range_end = time_information[2]
+            find_question_type(query, city, selected_time_type, [selected_time, range_end])
         if selected_time_type == "time_point":
             if td.check_if_time_point_can_be_looked_up(selected_time) is False:
                 print("Es tut uns leid, aber manchmal haben wir nur Daten für die nächsten 48 Stunden. Fragen Sie einfach nach dem ganzen Tag, hier kann ich Ihnen etwas über die nächsten 15 Tage sagen!")
