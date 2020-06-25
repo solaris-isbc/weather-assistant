@@ -101,7 +101,6 @@ class DateTimeExtractor:
 
         input_sentence = self.prepare_input_sentence(input_sentence)
 
-        print(input_sentence)
         #if self.debug:
             #debug("TODO replace all spoken numbers with written numbers")
         try:
