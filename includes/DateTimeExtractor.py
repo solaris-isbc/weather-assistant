@@ -91,10 +91,14 @@ class DateTimeExtractor:
     date = None
     time = None
 
-    def __init__(self, grammar, debug = False):
+    def __init__(self, grammar, debug = False, datetime_relative_to=None, mode="production"):
         self.grammar = grammar
         self.debug = debug
         self.parser = Lark(grammar, parser="earley", start="root")
+        if datetime_relative_to is None:
+            datetime_relative_to = datetime.datetime.now()
+        self.datetime_relative_to = datetime_relative_to
+        self.mode = mode
 
     def parse(self, input_sentence):
         query_with_removals = input_sentence
@@ -114,14 +118,18 @@ class DateTimeExtractor:
                     print(self.tree.pretty())
                 except Exception as ex:
                     debug(str(ex))
-            t = datetime.datetime.now()
-            self.date = t
+            #t = datetime.datetime.now()
+            t = self.datetime_relative_to
+            if self.mode == "production":
+                self.date = t
 
     def prepare_input_sentence(self, s):
         #case folding
         s = s.lower()
         #remove unneccessary stuff
         s = re.sub(r"[^\da-zA-ZÖÄÜäöüß\.:\-\s]","",s)
+        #remove unneccessary whitespaces
+        s = re.sub(r"\s+", " ", s)
         #add whitespace in the end
         if s[-1] == ".":
             s = s[:(len(s)-1)] + " "
@@ -194,7 +202,8 @@ class DateTimeExtractor:
                     self.value_weekday = temp_value_weekday
                 continue
 
-        d = datetime.date.today()
+        #d = datetime.date.today()
+        d = self.datetime_relative_to
         if temp_value_weekday > 0:
             d = getDatetimeForNext(temp_value_weekday)
             if temp_flag_weekday_next:
@@ -291,8 +300,9 @@ class DateTimeExtractor:
         if day_temp is None:
             #create day range for saturday and sunday
             #start is today
-            start = datetime.date.today()
-            end = datetime.date.today() + timedelta(days=7)
+            #start = datetime.date.today()
+            start = self.datetime_relative_to
+            end = start + timedelta(days=7)
             if self.modifier_week == 1:
                 start = start + timedelta(days=7)
                 end = end + timedelta(days=7)
@@ -316,8 +326,10 @@ class DateTimeExtractor:
         #this time need context of previous token
         previous_token = None
         #initialize with now, overwrite if date is set
-        start = datetime.date.today()
-        end = datetime.date.today()
+        #start = datetime.date.today()
+        start = self.datetime_relative_to
+        #end = datetime.date.today()
+        end = self.datetime_relative_to
         for c in tree.children:
             if isTree(c) and isTreeType(c, "weekday"):
                 if previous_token is None or (isToken(previous_token) and isTokenType(previous_token, "FROM")):
@@ -337,7 +349,8 @@ class DateTimeExtractor:
 
     def handle_date_from(self, tree, predecessors):
         #initialize with now, overwrite if date is set
-        start = datetime.date.today()
+        #start = datetime.date.today()
+        start = self.datetime_relative_to
 
         for c in tree.children:
             if isTree(c) and isTreeType(c, "weekday"):
@@ -356,7 +369,8 @@ class DateTimeExtractor:
         self.date_range = (start, end)
 
     def handle_date_formatted(self, tree, predecessors):
-        today = datetime.date.today()
+        #today = datetime.date.today()
+        today = self.datetime_relative_to
         self.date_month = today.month
         self.date_year = today.year
         self.date_day = today.day
@@ -398,8 +412,10 @@ class DateTimeExtractor:
 
     def handle_date_relative(self, tree, predecessors):
         temp_next_flag = False
-        start = datetime.date.today()
-        end = datetime.date.today()
+        #start = datetime.date.today()
+        start = self.datetime_relative_to + timedelta(days=1)
+        #end = datetime.date.today()
+        end = self.datetime_relative_to + timedelta(days=1)
         for c in tree.children:
             if isToken(c) and isTokenType(c, "NEXT"):
                 temp_next_flag = True
@@ -463,7 +479,8 @@ class DateTimeExtractor:
         self.time = time
 
     def handle_def_hour(self, tree, predecessors, return_value = False):
-        hour = datetime.datetime.now().hour
+        #hour = datetime.datetime.now().hour
+        hour = self.datetime_relative_to.hour
         minute = 0
         for c in tree.children:
             if isTree(c) and isTreeType(c, "digit_num"):
@@ -522,7 +539,8 @@ class DateTimeExtractor:
         self.full_digit_num = int(digit)
 
     def handle_hour_clock_minutes(self, tree, predecessors, return_value = False):
-        hour = datetime.datetime.now().hour
+        #hour = datetime.datetime.now().hour
+        hour = self.datetime_relative_to.hour
         minute = 0
         for c in tree.children:
             if isTree(c) and isTreeType(c, "digit_num"):
@@ -544,7 +562,8 @@ class DateTimeExtractor:
                 self.handle_qualified_clock(c, predecessors + [c], True)
 
     def handle_from_clock_till_clock(self, tree, predecessors):
-        start = datetime.datetime.now()
+        #start = datetime.datetime.now()
+        start = self.datetime_relative_to
         end = start + timedelta(hours=1)
         for c in tree.children:
             if isTree(c) and isTreeType(c, "clock_time"):
@@ -556,7 +575,8 @@ class DateTimeExtractor:
         self.time = start
 
     def handle_between_clock(self, tree, predecessors):
-        start = datetime.datetime.now()
+        #start = datetime.datetime.now()
+        start = self.datetime_relative_to
         end = start + timedelta(hours=1)
         for c in tree.children:
             if isTree(c) and isTreeType(c, "clock_time"):
@@ -568,7 +588,8 @@ class DateTimeExtractor:
         self.time = start
 
     def handle_qualified_clock(self, tree, predecessors):
-        start = datetime.datetime.now()
+        #start = datetime.datetime.now()
+        start = self.datetime_relative_to
         for c in tree.children:
             if isTree(c) and isTreeType(c, "clock_time"):
                     start = self.handle_clock_time(c, predecessors + [c], True)
@@ -578,7 +599,8 @@ class DateTimeExtractor:
 
     def handle_time_relative(self, tree, predecessors):
         self.relative_timedelta = timedelta(seconds=0)
-        now = datetime.datetime.now()
+        #now = datetime.datetime.now()
+        now = self.datetime_relative_to
         for c in tree.children:
             if isTree(c) and isTreeType(c, "time_relative_minutes"):
                 self.handle_time_relative_minutes(c, predecessors + [c])
@@ -616,22 +638,38 @@ class DateTimeExtractor:
             return ["range", self.date_range]
         if self.time is not None:
             if self.date is None:
+                #self.date = datetime.date.today()
+                #not changing to relative time here for now
                 self.date = datetime.date.today()
             return ["time_point", datetime.datetime.combine(self.date, self.time)]
         if self.date is not None:
             return ["day", self.date]
         return None
 
+    def get_evaluation_result(self):
+        result = {'extracted_date': "None", 'extracted_time': "None","extracted_duration_start": "None","extracted_duration_end": "None"}
+        if self.date_range is not None:
+            result["extracted_range_duration_start"] = self.date_range[0].strftime("%Y.%m.%d")
+            result["extracted_range_duration_end"] = self.date_range[1].strftime("%Y.%m.%d")
+        if self.time is not None:
+            result["extracted_time"] = self.time.strftime("%H:%M")
+            if self.date is None:
+                self.date = self.datetime_relative_to
+        if self.date is not None:
+            result["extracted_date"] = self.date.strftime("%Y.%m.%d")
+        return result
     def check_if_time_point_can_be_looked_up(self, selected_time):
         datetime_object_for_day_in_48_hours = self.get_current_day() + datetime.timedelta(hours=48)
-        now = datetime.datetime.now()
+        #now = datetime.datetime.now()
+        now = self.datetime_relative_to
         if datetime_object_for_day_in_48_hours > selected_time > now:
             return True
         return False
 
     def check_if_day_is_one_of_the_next_15(self, selected_time):
         datetime_object_for_day_in_15_days = self.get_current_day() + datetime.timedelta(days=15)
-        now = datetime.datetime.now()
+        #now = datetime.datetime.now()
+        now = self.datetime_relative_to
         if datetime_object_for_day_in_15_days > selected_time > now:
             return True
         return False

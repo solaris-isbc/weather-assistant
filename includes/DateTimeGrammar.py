@@ -28,7 +28,7 @@ datetime_grammar = u"""
 
     //wrappers for all possible time and date subtrees
     date_wrapper.2: date_formatted | date | date_relative
-    time_wrapper.1: (time | time_relative) WS+
+    time_wrapper.1: (time | time_relative) WS?
     
     //formatted date, e.g. 20.5.2020
     //digit date spoken
@@ -62,7 +62,7 @@ datetime_grammar = u"""
     
     
     //relative time, e.g. in 10 Minuten
-    time_relative.1: (IN time_relative_minutes MINUTES_CHAR) | (IN time_relative_hours HOURS_CHAR)
+    time_relative.1: (IN time_relative_minutes WS? MINUTES_CHAR) | (IN time_relative_hours WS? HOURS_CHAR)
     time_relative_minutes.1: DIGIT? DIGIT? DIGIT
     time_relative_hours.1: DIGIT? DIGIT
     
@@ -90,12 +90,12 @@ datetime_grammar = u"""
     //terminals
     //all surrounded with possible whitespaces
     //TODO maybe change some WS* into WS+
-    DATE_SEPARATOR: ("-"|".") WS*
+    DATE_SEPARATOR: ("-"|".") WS?
     MONTH:("januar" | "februar" | "märz" | "april" | "mai" | "juni" | "juli" | "august" | "september" | "oktober" | "november" | "dezember") WS+
     MONTH_ABBR: ("jan" | "feb" | "mar" | "apr" | "mai" | "jun" | "jul" | "aug" | "sept" | "okt" | "nov" | "dez") WS+
-    DIGIT_MONTH: (("0".."1" "0".."9") | ("0".."9"))WS*
+    DIGIT_MONTH: (("0".."1" "0".."9") | ("0".."9"))WS?
     YEAR: ((DIGIT DIGIT DIGIT DIGIT) | (DIGIT DIGIT))WS+
-    DIGIT_LIMITED_DAY: ("0".."3")WS*
+    DIGIT_LIMITED_DAY: ("0".."3")WS?
     //spoken numbers
     //DIGIT_DAY_SPOKEN: ("erste"("r"|"n")?)  |( "zweite"("r"|"n")?)  |( "dritte"("r"|"n")?)  |( "vierte"("r"|"n")?)  |( "fünfte"("r"|"n")?)  |( "sechste"("r"|"n")?)  |( "siebte"("r"|"n")?)  |( "achte"("r"|"n")?)  |( "neunte"("r"|"n")?)  |( "zehnte"("r"|"n")?)  |( "elfte"("r"|"n")?)  |( "zwölfte"("r"|"n")?)  |( "dreizehnte"("r"|"n")?)  |( "vierzehnte"("r"|"n")?)  |( "fünfzehnte"("r"|"n")?)  |( "sechzehnte"("r"|"n")?)  |( "siebzehnte"("r"|"n")?)  |( "achtzehnte"("r"|"n")?)  |( "neunzehnte"("r"|"n")?)  |( "zwanzigste"("r"|"n")?)  |( "einundzwanzigste"("r"|"n")?)  |( "zweiundzwanzigste"("r"|"n")?)  |( "dreiundzwanzigste"("r"|"n")?)  |( "vierundzwanzigste"("r"|"n")?)  |( "fünfundzwanzigste"("r"|"n")?)  |( "sechsundzwanzigste"("r"|"n")?)  |( "siebenundzwanzigste"("r"|"n")?)  |( "achtundzwanzigste"("r"|"n")?)  |( "neunundzwanzigste"("r"|"n")?)  |( "dreißigste"("r"|"n")?)  |( "einundreißigste"("r"|"n")?) WS+
     //DIGIT_MONTH_SPOKEN: ("erste"("r"|"n")?)  |( "zweite"("r"|"n")?)  |( "dritte"("r"|"n")?)  |( "vierte"("r"|"n")?)  |( "fünfte"("r"|"n")?)  |( "sechste"("r"|"n")?)  |( "siebte"("r"|"n")?)  |( "achte"("r"|"n")?)  |( "neunte"("r"|"n")?)  |( "zehnte"("r"|"n")?)  |( "elfte"("r"|"n")?)  |( "zwölfte"("r"|"n")?) WS+
@@ -119,14 +119,14 @@ datetime_grammar = u"""
     MINUTES_CHAR: ("minute"("n")?)WS+
     HOURS_CHAR: ("stunde"("n")?)WS+
     CLOCK: (("uhr" | "h"))WS+
-    ONE: ("1")WS*
-    TWO: ("2")WS*
-    DIGIT_LIMITED: ("0".."4")WS*
-    DIGIT_LIMITED_SIXTY: ("0".."6")WS*
+    ONE: ("1")WS?
+    TWO: ("2")WS?
+    DIGIT_LIMITED: ("0".."4")WS?
+    DIGIT_LIMITED_SIXTY: ("0".."6")WS?
     FROM: ("von" | "vom")WS+
     UNTIL: ("bis")WS+
     BETWEEN: ("zwischen" | "zw.")WS+
-    TILL: ("-")WS*
+    TILL: ("-")WS?
     AND: ("und")WS+
     TOWARDS: ("gegen")WS+
     AT: ("um")WS+
@@ -134,8 +134,8 @@ datetime_grammar = u"""
     CIRCA: ("ca." | "ca")WS+
 
     //further definitions
-    optional.0: (WS+ term WS*) | WS+ (term optional) WS*
-    optional_s:(term WS*) | (term optional) WS*
+    optional.0: (WS+ term WS?) | WS+ (term optional) WS?
+    optional_s:(term WS?) | (term optional) WS?
     term.0: word
     word.0: char+
     char.0: LETTER | special_char
