@@ -14,7 +14,7 @@ with open('question_model_training_data/evaluation.csv') as f:
 matrix = matrix[0]
 
 num_of_docs_predicted_correctly = 0
-for i in range(81):
+for i in range(100):
     query = matrix[i][0]
     doc2 = nlp2(query)
     docs = doc2.cats
@@ -39,6 +39,7 @@ while True:
     query = input("Query: ")
     print(query)
     doc2 = nlp2(query)
+    print(nlp2.pipeline, nlp2.vocab)
     docs = doc2.cats
     print("IS:",max(docs, key=docs.get))
     print(doc2.cats)

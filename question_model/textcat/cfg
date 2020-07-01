@@ -13,9 +13,9 @@
     "WIND_DIRECTION",
     "SNOW",
     "CLOUDS",
-    "MAX_TEMPERATURE",
     "FOG",
-    "MIN_TEMPERATURE"
+    "MIN_TEMPERATURE",
+    "MAX_TEMPERATURE"
   ],
   "pretrained_vectors":null,
   "pretrained_dims":null

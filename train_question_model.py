@@ -40,17 +40,17 @@ nlp.add_pipe(category)
 # Start the training
 nlp.begin_training()
 
-for itn in range(75):
+for itn in range(100):
     # See progress in training
     print(itn," %")
     # Shuffle the training data
     random.shuffle(training_data)
     losses = {}
     # Batch the examples and iterate over them
-    for batch in spacy.util.minibatch(training_data, size=1):
+    for batch in spacy.util.minibatch(training_data, size=3):
         texts = [nlp(text) for text, entities in batch]
         annotations = [{"cats": entities} for text, entities in batch]
-        nlp.update(texts, annotations, losses=losses, drop=0.3)
+        nlp.update(texts, annotations, losses=losses, drop=0.001)
 
 # Save model
 output_dir=os.getcwd()+"/question_model"
