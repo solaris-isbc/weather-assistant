@@ -13,7 +13,7 @@ with open('question_model_training_data/training.csv') as f:
 training_data = []
 training_data_strings = matrix[0]
 categories = training_data_strings[0]
-amount_of_training_examples = 37
+amount_of_training_examples = 39
 
 def add_document_to_training_documents(document_text, category_name):
   document = [document_text,{}]

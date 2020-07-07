@@ -5,7 +5,7 @@ class IrrelevanceDetector():
     global tokens
 
     def define_tokens(self):
-        self.tokens = ["wetter","regen","regne","sonne","schein","wind","sturm","gewitter","stürm","blitz","donner","druck","luftdruck","hurrikan","wirbelsturm","grad","celsius","temperatur","kalt","warm","t-shirt","kurze hose","heiß","schnee","schnei","wolken","bewölk","wolkig","nebel","neblig","sonnig","wölkig"]
+        self.tokens = ["wetter","regen","niederschlag","regne","sonne","schein","wind","sturm","gewitter","stürm","blitz","donner","druck","luftdruck","hurrikan","wirbelsturm","grad","celsius","temperatur","kalt","warm","t-shirt","kurze hose","heiß","schnee","schnei","wolken","bewölk","wolkig","nebel","neblig","sonnig","wölkig"]
 
 
     def query_has_relevant_tokens(self, query):

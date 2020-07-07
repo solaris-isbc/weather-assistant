@@ -80,7 +80,7 @@
 "Wird es morgen nebeln";"FOG"
 "wie viel grad wird es morgen um 16 uhr haben";"TEMPERATURE"
 "Sag mir bitte, wie viel Grad Celsius es morgen maximal geben wird";"MAX_TEMPERATURE"
-"Hallo! Wie viel Grad wird es mindestens geben um 17 Uhr am Sonntag";"MAX_TEMPERATURE"
+"Hallo! Wie viel Grad wird es mindestens geben um 17 Uhr am Sonntag";"MIN_TEMPERATURE"
 "Hallo! Wie viel Grad wird es höchstens geben in Miami gegen abend";"MIN_TEMPERATURE"
 "Brauche ich eine warme Jacke?";"COLD"
 "Brauche ich einen Regenschirm";"RAIN"
