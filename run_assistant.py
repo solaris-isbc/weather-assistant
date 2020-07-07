@@ -24,7 +24,7 @@ def get_question_type(query):
     categorized_label = max(docs, key=docs.get)
     #print(max(docs, key=docs.get),docs[categorized_label])
     #print(docs[categorized_label] <= 0.999)
-    if docs[categorized_label] <= 0.999 and id.query_has_relevant_tokens(query) is False:
+    if docs[categorized_label] <= 0.99999 and id.query_has_relevant_tokens(query) is False:
         return None
     else:
         return categorized_label
