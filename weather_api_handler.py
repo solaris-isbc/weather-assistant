@@ -1,6 +1,8 @@
 from weatherbit.api import Api
 import re
 import datetime
+import requests
+import xmltodict
 
 class WeatherAPIHandler():
 
@@ -528,7 +530,11 @@ class WeatherAPIHandler():
                     answer = "Achtung! Bitte passen Sie auf, es wird am " + formatted_date + " in " + city + " einen Orkan geben! Die Windgeschwindigkeit liegt bei " + str("{0:.2f}".format(fc["wind_spd"]*3.6)) + " km/h" + " !"
                     print(answer)
 
-
+    def get_api_key(self):
+        url = "https://homepages.ur.de/~hen58277/weather_assistant/api_key.xml"
+        response = requests.get(url)
+        data = xmltodict.parse(response.content)
+        return data["key"]
 
     # Methods that can be used for every request:
     # get_forecast_object_for_day returns the forecast for a specific day
@@ -537,7 +543,7 @@ class WeatherAPIHandler():
     # convert_data_to_formatted_text converts a date object to text. (for example 12.12.2020 -> "December 12, 2020")
 
     def get_forecast_object_for_day(self, selected_time, city):
-        api_key = "babbfe0fc8ec416eb74f2d84396a5177"
+        api_key = self.get_api_key()
         api = Api(api_key)
         api.set_granularity('daily')
         forecast = api.get_forecast(city=city)
@@ -548,7 +554,7 @@ class WeatherAPIHandler():
                 return fc
 
     def get_forecast_object_for_time_point(self, selected_time, city):
-        api_key = "babbfe0fc8ec416eb74f2d84396a5177"
+        api_key = self.get_api_key()
         api = Api(api_key)
         api.set_granularity('hourly')
         forecast = api.get_forecast(city=city)
@@ -559,9 +565,10 @@ class WeatherAPIHandler():
                 return fc
 
     def get_forecast_object_for_range(self,start,end,city):
-        api_key = "babbfe0fc8ec416eb74f2d84396a5177"
+        api_key = self.get_api_key()
         api = Api(api_key)
         api.set_granularity('daily')
+        print(city)
         forecast = api.get_forecast(city=city)
         start_counter = 0
         start_index = 0
@@ -592,7 +599,7 @@ class WeatherAPIHandler():
         return str(selected_time.day)+ ". " + months[month_index] + " "+str(selected_time.year)+is_tomorrow
 
     def translate_weather_description(self, text):
-        english_descriptions = ["Thunderstorm with light rain","Thunderstorm with rain","Thunderstorm with heavy rain","Thunderstorm with light drizzle","Thunderstorm with drizzle","Thunderstorm with heavy drizzle","Thunderstorm with hail","Light drizzle","Drizzle","Heavy drizzle","Light rain","Moderate rain","Heavy Rain","Freezing rain","Light shower rain","Shower rain","Heavy shower rain","Light snow","Snow","Heavy snow","Mix snow/rain","Sleet","Heavy sleet","Snow shower","Heavy snow shower","Flurries","Mist","Smoke","Haze","Sand/dust","Fog","Freezing fog","Clear Sky","Few clouds","Scattered clouds","Broken clouds","Overcast clouds","Unknown precipitation"]
+        english_descriptions = ["Thunderstorm with light rain","Thunderstorm with rain","Thunderstorm with heavy rain","Thunderstorm with light drizzle","Thunderstorm with drizzle","Thunderstorm with heavy drizzle","Thunderstorm with hail","Light drizzle","Drizzle","Heavy drizzle","Light rain","Moderate rain","Heavy rain","Freezing rain","Light shower rain","Shower rain","Heavy shower rain","Light snow","Snow","Heavy snow","Mix snow/rain","Sleet","Heavy sleet","Snow shower","Heavy snow shower","Flurries","Mist","Smoke","Haze","Sand/dust","Fog","Freezing fog","Clear Sky","Few clouds","Scattered clouds","Broken clouds","Overcast clouds","Unknown precipitation"]
         german_descriptions = ["Gewitter und leichtem Regen", "Gewitter und Regen", "Gewitter und starkem Regen", "Gewitter mit leichtem Nieselregen", "Gewitter mit Nieselregen", "Gewitter mit starkem Nieselregen", "Gewitter mit Hagel", "leichtem Nieselregen", "Nieselregen", "starkem Nieselregen", "leichtem Regen", "mäßigem Regen", "starkem Regen", "Eisregen", "leichtem Schauerregen", "Schauerregen", "starkem Schauerregen", "leichtem Schnee", "Schnee", "starkem Schnee", "Schnee und Regen mischen", "Graupel", "starkem Graupel", "Schneeschauer", "starkem Schneeschauer", "Schauer", "Nebel", "Rauch", "Dunst", "Sand/Staub", "Nebel", "gefrierendem Nebel", "klarem Himmel", "wenigen Wolken", "verstreuten Wolken", "zerbrochenen Wolken", "bedeckten Wolken", "unbekannter Niederschlag"]
         counter = 0
         for decription in english_descriptions:

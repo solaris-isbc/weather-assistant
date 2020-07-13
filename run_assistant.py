@@ -14,6 +14,8 @@ import sys
 # pip install geocoder
 # pip install geopy
 # pip install pyweatherbit
+# pip install xmltodict
+# pip install lark-parser
 
 # 1. load model from directory
 output_dir = os.getcwd()+"/question_model"
