@@ -1,1 +1,43 @@
-{"lang":"de","name":"model","version":"0.0.0","spacy_version":">=2.2.4","description":"","author":"","email":"","url":"","license":"","vectors":{"width":0,"vectors":0,"keys":0,"name":"spacy_pretrained_vectors"},"pipeline":["textcat"],"factories":{"textcat":"textcat"},"labels":{"textcat":["WEATHER","RAIN","SUN","WIND","THUNDER","AIR PRESSURE","TEMPERATURE","COLD","WARM","AVERAGE_TEMPERATURE","WIND_DIRECTION","SNOW","CLOUDS","MAX_TEMPERATURE","FOG","MIN_TEMPERATURE"]}}
+{
+  "lang":"de",
+  "name":"model",
+  "version":"0.0.0",
+  "spacy_version":">=2.3.0",
+  "description":"",
+  "author":"",
+  "email":"",
+  "url":"",
+  "license":"",
+  "vectors":{
+    "width":0,
+    "vectors":0,
+    "keys":0,
+    "name":"spacy_pretrained_vectors"
+  },
+  "pipeline":[
+    "textcat"
+  ],
+  "factories":{
+    "textcat":"textcat"
+  },
+  "labels":{
+    "textcat":[
+      "WEATHER",
+      "RAIN",
+      "SUN",
+      "WIND",
+      "THUNDER",
+      "AIR PRESSURE",
+      "TEMPERATURE",
+      "COLD",
+      "WARM",
+      "AVERAGE_TEMPERATURE",
+      "WIND_DIRECTION",
+      "SNOW",
+      "CLOUDS",
+      "MIN_TEMPERATURE",
+      "MAX_TEMPERATURE",
+      "FOG"
+    ]
+  }
+}

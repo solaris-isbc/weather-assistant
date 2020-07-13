@@ -31,7 +31,7 @@ class CityDetector():
 
     def found_wrong_matches(self,query,found_cities):
         matches = []+found_cities
-        citys_that_occur_in_other_city_strings = []
+        citys_that_occur_in_other_city_strings = [] # For example the String "York" can be found in "New York" and we want to find Strings like York
         for cityx in found_cities:
             citys_without_cityx = matches+[]
             citys_without_cityx = self.delete_city(cityx, citys_without_cityx)

@@ -1,11 +1,13 @@
 import os
 from time_detector import time_detector as td
 from city_detector import city_detector as cd
+from irrelevance_detection import irrelevance_detector as id
 from weather_api_handler import weather_api_handler as weather_api_handler
 import spacy
 import geocoder
 from geopy.geocoders import Nominatim
 import sys
+
 
 # IMPORTANT:
 # pip install -U spacy
@@ -20,7 +22,9 @@ def get_question_type(query):
     query_doc = nlp_categorizer(query)
     docs = query_doc.cats
     categorized_label = max(docs, key=docs.get)
-    if docs[categorized_label] <= 0.9:
+    #print(max(docs, key=docs.get),docs[categorized_label])
+    #print(docs[categorized_label] <= 0.999)
+    if docs[categorized_label] <= 0.99999 and id.query_has_relevant_tokens(query) is False:
         return None
     else:
         return categorized_label
@@ -59,8 +63,9 @@ def query_processing(query):
         selected_time = time_information[1]
 
         if selected_time_type == "range":
-            range_end = time_information[2]
-            find_question_type(query, city, selected_time_type, [selected_time, range_end])
+            range_start = time_information[1][0]
+            range_end = time_information[1][1]
+            find_question_type(query, city, selected_time_type, [range_start, range_end])
         if selected_time_type == "time_point":
             if td.check_if_time_point_can_be_looked_up(selected_time) is False:
                 print("Es tut uns leid, aber manchmal haben wir nur Daten für die nächsten 48 Stunden. Fragen Sie einfach nach dem ganzen Tag, hier kann ich Ihnen etwas über die nächsten 15 Tage sagen!")

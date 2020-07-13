@@ -254,7 +254,7 @@ class WeatherAPIHandler():
         if selected_time_type == "day":
             formatted_date = self.convert_date_to_formatted_text(selected_time[0])
             forecast_object = self.get_forecast_object_for_day(selected_time[0], city)
-            answer = "Sie können in "+city + " am "+formatted_date+" über den Tag verteilt ungefähr von"+str(forecast_object["min_temp"]) + " Grad Celsius bis zu maximal "+str(forecast_object["max_temp"]) + " Grad Celsius rechen!" + "  Durchschnittlich wird es etwa "+str(forecast_object["temp"]) + " Grad Celsius geben!"
+            answer = "Sie können in "+city + " am "+formatted_date+" über den Tag verteilt ungefähr mit "+str(forecast_object["min_temp"]) + " Grad Celsius bis zu maximal "+str(forecast_object["max_temp"]) + " Grad Celsius erwarten!" + "  Durchschnittlich wird es etwa "+str(forecast_object["temp"]) + " Grad Celsius geben!"
             print(answer)
 
         if selected_time_type == "range":
