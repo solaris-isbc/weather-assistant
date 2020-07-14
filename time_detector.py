@@ -14,7 +14,7 @@ class TimeDetector:
         return self.result
 
     def check_if_time_point_can_be_looked_up(self,selected_time):
-        datetime_object_for_day_in_48_hours = self.get_current_day() + datetime.timedelta(hours=48)
+        datetime_object_for_day_in_48_hours = self.get_current_day() + datetime.timedelta(hours=47)
         if datetime_object_for_day_in_48_hours > selected_time:
             return True
         return False
