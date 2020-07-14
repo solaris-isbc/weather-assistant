@@ -26,5 +26,5 @@ class TimeDetector:
         return False
 
     def get_current_day(self):
-        return self.result[1]
+        return datetime.datetime.now()
 time_detector = TimeDetector()
