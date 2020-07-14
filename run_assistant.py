@@ -47,7 +47,10 @@ def find_question_type(query, city, selected_time_type, selected_time):
         # The only reason for an error is the absence of weather data for the requested location.
         try:
             weather_api_handler.interpret_data_and_create_answer(question_type, city, selected_time, selected_time_type)
-        except:
+        except Exception as e:
+            print("<!--")
+            print(str(e))
+            print("-->")
             print("Leider haben wir für diesen Ort keine Wetterdaten verfügbar. Fragen Sie doch einfach nochmal, indem Sie die nächstgelegene größere Stadt!")
     else:
         print("Diese Frage kann ich dir nicht beantworten, tut mir leid.")
