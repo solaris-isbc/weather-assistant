@@ -649,14 +649,30 @@ class DateTimeExtractor:
     def get_evaluation_result(self):
         result = {'extracted_date': "None", 'extracted_time': "None","extracted_duration_start": "None","extracted_duration_end": "None"}
         if self.date_range is not None:
+            result["type"] = "range"
             result["extracted_range_duration_start"] = self.date_range[0].strftime("%Y.%m.%d")
+            result["extracted_range_duration_start_year"] = self.date_range[0].strftime("X%Y").replace('X0','X').replace('X','')
+            result["extracted_range_duration_start_month"] = self.date_range[0].strftime("X%m").replace('X0','X').replace('X','')
+            result["extracted_range_duration_start_day"] = self.date_range[0].strftime("X%d").replace('X0','X').replace('X','')
             result["extracted_range_duration_end"] = self.date_range[1].strftime("%Y.%m.%d")
+            result["extracted_range_duration_end_year"] = self.date_range[1].strftime("X%Y").replace('X0','X').replace('X','')
+            result["extracted_range_duration_end_month"] = self.date_range[1].strftime("X%m").replace('X0','X').replace('X','')
+            result["extracted_range_duration_end_day"] = self.date_range[1].strftime("X%d").replace('X0','X').replace('X','')
         if self.time is not None:
             result["extracted_time"] = self.time.strftime("%H:%M")
+            result["extracted_time_hour"] = self.time.strftime("X%H").replace('X0','X').replace('X','')
+            result["extracted_time_minute"] = self.time.strftime("X%M").replace('X0','X').replace('X','')
+            result["type"] = "time_point"
             if self.date is None:
                 self.date = self.datetime_relative_to
         if self.date is not None:
+            if result["type"] is not None:
+                result["type"] = "day"
             result["extracted_date"] = self.date.strftime("%Y.%m.%d")
+            result["extracted_date_year"] = self.date.strftime("X%Y").replace('X0','X').replace('X','')
+            result["extracted_date_month"] = self.date.strftime("X%m").replace('X0','X').replace('X','')
+            result["extracted_date_day"] = self.date.strftime("X%d").replace('X0','X').replace('X','')
+
         return result
     def check_if_time_point_can_be_looked_up(self, selected_time):
         datetime_object_for_day_in_48_hours = self.get_current_day() + datetime.timedelta(hours=48)

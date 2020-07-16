@@ -3,6 +3,8 @@ import os
 from time_detector import time_detector as td
 from city_detector import city_detector as cd
 from irrelevance_detection import irrelevance_detector as id
+import datetime
+from includes import DateTimeGrammar as dtg, DateTimeExtractor as dte
 import spacy
 
 output_dir = os.getcwd()+"/question_model"
@@ -17,10 +19,18 @@ def get_question_type(query):
     else:
         return categorized_label
 
+def get_time_info(query, datetime_relative):
+    extractor = dte.DateTimeExtractor(dtg.datetime_grammar, datetime_relative_to=datetime_relative, mode="evaluation")
+    extractor.parse(query)
+    r = extractor.get_evaluation_result()
+    return r
+
 with open('evaluation.json') as json_file:
     data = json.load(json_file)
 
+datetime_relative_to = datetime.datetime.strptime(data["timeinfo"], "%Y.%m.%d %H:%M")
 
+data = data["queries"]
 # Statistics
 data_size = len(data)
 data_with_valid_questions = 0
@@ -57,45 +67,65 @@ for query in data:
         else:
             found_question_type_bool = False
 
-        if found_time_type == query["time"]["time_type"]:
+        time_result = get_time_info(query, datetime_relative_to)
+
+        if time_result["type"] == query["time"]["time_type"]:
             found_time_type_bool = True
         else:
             found_time_type_bool = False
 
-        if found_time_type == "time_point" and query["time"]["time_type"] == "time_point":
+        if time_result["type"] == "time_point" and query["time"]["time_type"] == "time_point":
             correct_time_type += 1
-            if found_time.hour == query["time"]["time_objects"]["time_object"]["hour"] and found_time.day == \
-                    query["time"]["time_objects"]["time_object"]["day"] and found_time.month == \
-                    query["time"]["time_objects"]["time_object"]["month"] and found_time.year == \
+
+            hour = time_result["extracted_time_hour"]
+            day = time_result["extracted_time_day"]
+            month = time_result["extracted_time_month"]
+            year = time_result["extracted_time_year"]
+
+            if hour == query["time"]["time_objects"]["time_object"]["hour"] and day == \
+                    query["time"]["time_objects"]["time_object"]["day"] and month == \
+                    query["time"]["time_objects"]["time_object"]["month"] and year == \
                     query["time"]["time_objects"]["time_object"]["year"]:
                 correct_time += 1
                 time_bool = True
             else:
                 time_bool = False
 
-        if found_time_type == "day" and query["time"]["time_type"] == "day":
+        if time_result["type"] == "day" and query["time"]["time_type"] == "day":
             correct_time_type += 1
-            if found_time.day == query["time"]["time_objects"]["time_object"]["day"] and found_time.month == \
-                    query["time"]["time_objects"]["time_object"]["month"] and found_time.year == \
+            day = time_result["extracted_time_day"]
+            month = time_result["extracted_time_month"]
+            year = time_result["extracted_time_year"]
+            if day == query["time"]["time_objects"]["time_object"]["day"] and month == \
+                    query["time"]["time_objects"]["time_object"]["month"] and year == \
                     query["time"]["time_objects"]["time_object"]["year"]:
                 correct_time += 1
                 time_bool = True
             else:
                 time_bool = False
 
-        if found_time_type == "range" and query["time"]["time_type"] == "range":
+        if time_result["type"] == "range" and query["time"]["time_type"] == "range":
             correct_time_type += 1
             range_start = found_time[0]
             range_end = found_time[1]
-            if range_start.day == query["time"]["time_objects"][0]["day"] and range_start.month == \
-                    query["time"]["time_objects"][0]["month"] and range_start.year == query["time"]["time_objects"][0][
-                "year"] and range_end.day == query["time"]["time_objects"][1]["day"] and range_end.month == \
-                    query["time"]["time_objects"][1]["month"] and range_end.year == query["time"]["time_objects"][1][
+
+            range_start_year = time_result["extracted_range_duration_start_year"]
+            range_start_month = time_result["extracted_range_duration_start_month"]
+            range_start_day = time_result["extracted_range_duration_start_day"]
+            range_end_year = time_result["extracted_range_duration_end_year"]
+            range_end_month = time_result["extracted_range_duration_end_month"]
+            range_end_day = time_result["extracted_range_duration_end_day"]
+
+            if range_start_day == query["time"]["time_objects"][0]["day"] and range_start_month == \
+                    query["time"]["time_objects"][0]["month"] and range_start_year == query["time"]["time_objects"][0][
+                "year"] and range_end_day == query["time"]["time_objects"][1]["day"] and range_end_month == \
+                    query["time"]["time_objects"][1]["month"] and range_end_year == query["time"]["time_objects"][1][
                 "year"]:
                 correct_time += 1
                 time_bool = True
             else:
                 time_bool = False
+
         if found_question_type_bool is True and found_city_bool is True and found_question_type_bool is True and time_bool is True:
             main_score += 1
             correct_interpretation_of_query = True

@@ -1,57 +1,60 @@
-[
-   {
+{
+  "timeinfo": "2020.07.13 00:00",
+  "queries": [
+    {
       "text": "Wie wird das Wetter morgen in München um 7 Uhr",
       "question_type": "WEATHER",
       "time": {
-         "time_type": "time_point",
-         "time_objects": {
-            "time_object": {
-               "hour": 7,
-               "day": 13,
-               "month": 7,
-               "year": 2020
-            }
-         }
+        "time_type": "time_point",
+        "time_objects": {
+          "time_object": {
+            "hour": 7,
+            "day": 13,
+            "month": 7,
+            "year": 2020
+          }
+        }
       },
       "city": "München"
-   },
-      {
+    },
+    {
       "text": "Sag mir ob es heute Schnee gibt",
       "question_type": "SNOW",
       "time": {
-         "time_type": "day",
-         "time_objects": {
-            "time_object": {
-               "day": 12,
-               "month": 7,
-               "year": 2020
-            }
-         }
+        "time_type": "day",
+        "time_objects": {
+          "time_object": {
+            "day": 12,
+            "month": 7,
+            "year": 2020
+          }
+        }
       },
       "city": "None"
-   },
-   {
+    },
+    {
       "text": "Wird es in den nächsten 3 Tagen schneien?",
       "question_type": "SNOW",
       "time": {
-         "time_type": "range",
-         "time_objects": [
-            {
-               "day": 13,
-               "month": 7,
-               "year": 2020
-            },
-            {
-               "day": 15,
-               "month": 7,
-               "year": 2020
-            }
-         ]
+        "time_type": "range",
+        "time_objects": [
+          {
+            "day": 13,
+            "month": 7,
+            "year": 2020
+          },
+          {
+            "day": 15,
+            "month": 7,
+            "year": 2020
+          }
+        ]
       },
       "city": "None"
-   },
-   {
-     "question_type": "None",
-     "text": "Sag mir wo ich einen Apfel kaufen kann"
-   }
-]
+    },
+    {
+      "question_type": "None",
+      "text": "Sag mir wo ich einen Apfel kaufen kann"
+    }
+  ]
+}
