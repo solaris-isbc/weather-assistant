@@ -666,7 +666,7 @@ class DateTimeExtractor:
             if self.date is None:
                 self.date = self.datetime_relative_to
         if self.date is not None:
-            if "type" not in result["type"]:
+            if "type" not in result:
                 result["type"] = "day"
             result["extracted_date"] = self.date.strftime("%Y.%m.%d")
             result["extracted_date_year"] = self.date.strftime("X%Y").replace('X0','X').replace('X','')

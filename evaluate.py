@@ -95,9 +95,10 @@ for query in data:
 
         if time_result["type"] == "day" and query["time"]["time_type"] == "day":
             correct_time_type += 1
-            day = str(["extracted_date_day"])
+            day = str(time_result["extracted_date_day"])
             month = str(time_result["extracted_date_month"])
-            year = str(["extracted_date_year"])
+            year = str(time_result["extracted_date_year"])
+
             if day == str(query["time"]["time_objects"]["time_object"]["day"]) and month == \
                     str(query["time"]["time_objects"]["time_object"]["month"]) and year == \
                     str(query["time"]["time_objects"]["time_object"]["year"]):
