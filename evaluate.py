@@ -67,7 +67,7 @@ for query in data:
         else:
             found_question_type_bool = False
 
-        time_result = get_time_info(query, datetime_relative_to)
+        time_result = get_time_info(query_text, datetime_relative_to)
 
         if time_result["type"] == query["time"]["time_type"]:
             found_time_type_bool = True
