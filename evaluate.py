@@ -74,18 +74,20 @@ for query in data:
         else:
             found_time_type_bool = False
 
+        time_bool = False
+
         if time_result["type"] == "time_point" and query["time"]["time_type"] == "time_point":
             correct_time_type += 1
 
-            hour = time_result["extracted_time_hour"]
-            day = time_result["extracted_time_day"]
-            month = time_result["extracted_time_month"]
-            year = time_result["extracted_time_year"]
+            hour = str(time_result["extracted_time_hour"])
+            day = str(time_result["extracted_date_day"])
+            month = str(time_result["extracted_date_month"])
+            year = str(time_result["extracted_date_year"])
 
-            if hour == query["time"]["time_objects"]["time_object"]["hour"] and day == \
-                    query["time"]["time_objects"]["time_object"]["day"] and month == \
-                    query["time"]["time_objects"]["time_object"]["month"] and year == \
-                    query["time"]["time_objects"]["time_object"]["year"]:
+            if hour == str(query["time"]["time_objects"]["time_object"]["hour"]) and day == \
+                    str(query["time"]["time_objects"]["time_object"]["day"]) and month == \
+                    str(query["time"]["time_objects"]["time_object"]["month"]) and year == \
+                    str(query["time"]["time_objects"]["time_object"]["year"]):
                 correct_time += 1
                 time_bool = True
             else:
@@ -93,12 +95,12 @@ for query in data:
 
         if time_result["type"] == "day" and query["time"]["time_type"] == "day":
             correct_time_type += 1
-            day = time_result["extracted_time_day"]
-            month = time_result["extracted_time_month"]
-            year = time_result["extracted_time_year"]
-            if day == query["time"]["time_objects"]["time_object"]["day"] and month == \
-                    query["time"]["time_objects"]["time_object"]["month"] and year == \
-                    query["time"]["time_objects"]["time_object"]["year"]:
+            day = str(["extracted_date_day"])
+            month = str(time_result["extracted_date_month"])
+            year = str(["extracted_date_year"])
+            if day == str(query["time"]["time_objects"]["time_object"]["day"]) and month == \
+                    str(query["time"]["time_objects"]["time_object"]["month"]) and year == \
+                    str(query["time"]["time_objects"]["time_object"]["year"]):
                 correct_time += 1
                 time_bool = True
             else:
@@ -109,18 +111,18 @@ for query in data:
             range_start = found_time[0]
             range_end = found_time[1]
 
-            range_start_year = time_result["extracted_range_duration_start_year"]
-            range_start_month = time_result["extracted_range_duration_start_month"]
-            range_start_day = time_result["extracted_range_duration_start_day"]
-            range_end_year = time_result["extracted_range_duration_end_year"]
-            range_end_month = time_result["extracted_range_duration_end_month"]
-            range_end_day = time_result["extracted_range_duration_end_day"]
+            range_start_year = str(time_result["extracted_range_duration_start_year"])
+            range_start_month = str(time_result["extracted_range_duration_start_month"])
+            range_start_day = str(time_result["extracted_range_duration_start_day"])
+            range_end_year = str(time_result["extracted_range_duration_end_year"])
+            range_end_month = str(time_result["extracted_range_duration_end_month"])
+            range_end_day = str(time_result["extracted_range_duration_end_day"])
 
-            if range_start_day == query["time"]["time_objects"][0]["day"] and range_start_month == \
-                    query["time"]["time_objects"][0]["month"] and range_start_year == query["time"]["time_objects"][0][
-                "year"] and range_end_day == query["time"]["time_objects"][1]["day"] and range_end_month == \
-                    query["time"]["time_objects"][1]["month"] and range_end_year == query["time"]["time_objects"][1][
-                "year"]:
+            if range_start_day == str(query["time"]["time_objects"][0]["day"]) and range_start_month == \
+                    str(query["time"]["time_objects"][0]["month"]) and range_start_year == str(query["time"]["time_objects"][0][
+                "year"]) and range_end_day == str(query["time"]["time_objects"][1]["day"]) and range_end_month == \
+                    str(query["time"]["time_objects"][1]["month"]) and range_end_year == str(query["time"]["time_objects"][1][
+                "year"]):
                 correct_time += 1
                 time_bool = True
             else:
