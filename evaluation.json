@@ -7,12 +7,7 @@
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "time_object": {
-            "hour": 7,
-            "day": 13,
-            "month": 7,
-            "year": 2020
-          }
+          "start": "2020.07.13 07:00"
         }
       },
       "city": "München"
@@ -24,11 +19,7 @@
       "time": {
         "time_type": "day",
         "time_objects": {
-          "time_object": {
-            "day": 12,
-            "month": 7,
-            "year": 2020
-          }
+          "start": "2020.07.12 00:00"
         }
       },
       "city": "None"
@@ -39,18 +30,10 @@
       "question_type": "SNOW",
       "time": {
         "time_type": "range",
-        "time_objects": [
-          {
-            "day": 13,
-            "month": 7,
-            "year": 2020
-          },
-          {
-            "day": 15,
-            "month": 7,
-            "year": 2020
-          }
-        ]
+        "time_objects": {
+          "start": "2020.07.13 00:00",
+          "start": "2020.07.15 00:00"
+        }
       },
       "city": "None"
     },
