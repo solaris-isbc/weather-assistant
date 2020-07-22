@@ -118,10 +118,13 @@ class DateTimeExtractor:
                     print(self.tree.pretty())
                 except Exception as ex:
                     debug(str(ex))
-            #t = datetime.datetime.now()
-            t = self.datetime_relative_to
+
             if self.mode == "production":
-                self.date = t
+                self.date = datetime.datetime.now()
+            else:
+                self.date = self.datetime_relative_to
+
+
 
     def prepare_input_sentence(self, s):
         #case folding
