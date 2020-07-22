@@ -4,3 +4,4 @@ venv/*
 .idea
 .csv
 .tml
+/venv_2/

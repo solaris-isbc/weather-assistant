@@ -56,7 +56,7 @@ class CityDetector():
 
     def find_cities_in_query(self,query):
         # read file
-        with open('cities.json', 'r') as myfile:
+        with open('cities.json', 'r', encoding="UTF-8") as myfile:
             data = myfile.read()
         # parse file
         translator_to_english = Translator(to_lang="en", from_lang="de")

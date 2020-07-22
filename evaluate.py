@@ -20,15 +20,13 @@ def get_question_type(query):
         return categorized_label
 
 def get_time_info(query, datetime_relative):
-    extractor = dte.DateTimeExtractor(dtg.datetime_grammar, datetime_relative_to=datetime_relative, mode="evaluation")
+    extractor = dte.DateTimeExtractor(dtg.datetime_grammar, datetime_relative_to=datetime_relative, mode="evaluation", debug=True)
     extractor.parse(query)
     r = extractor.get_evaluation_result()
     return r
 
-with open('evaluation.json') as json_file:
+with open('evaluation.json', encoding='utf-8') as json_file:
     data = json.load(json_file)
-
-datetime_relative_to = datetime.datetime.strptime(data["timeinfo"], "%Y.%m.%d %H:%M")
 
 data = data["queries"]
 # Statistics
@@ -67,6 +65,8 @@ for query in data:
         else:
             found_question_type_bool = False
 
+        datetime_relative_to = datetime.datetime.strptime(query["timeinfo"], "%Y.%m.%d %H:%M")
+
         time_result = get_time_info(query_text, datetime_relative_to)
 
         if time_result["type"] == query["time"]["time_type"]:
@@ -79,15 +79,15 @@ for query in data:
         if time_result["type"] == "time_point" and query["time"]["time_type"] == "time_point":
             correct_time_type += 1
 
-            hour = str(time_result["extracted_time_hour"])
-            day = str(time_result["extracted_date_day"])
-            month = str(time_result["extracted_date_month"])
-            year = str(time_result["extracted_date_year"])
+            extracted_date = time_result["extracted_date_datetime"].date()
+            extracted_time = time_result["extracted_time_datetime"]
 
-            if hour == str(query["time"]["time_objects"]["time_object"]["hour"]) and day == \
-                    str(query["time"]["time_objects"]["time_object"]["day"]) and month == \
-                    str(query["time"]["time_objects"]["time_object"]["month"]) and year == \
-                    str(query["time"]["time_objects"]["time_object"]["year"]):
+            ground_truth = datetime.datetime.strptime(query["time"]["time_objects"]["start"], "%Y.%m.%d %H:%M")
+            ground_truth_date = ground_truth.date()
+            ground_truth_time = ground_truth.time()
+
+
+            if extracted_date == ground_truth_date and extracted_time == ground_truth_time:
                 correct_time += 1
                 time_bool = True
             else:
@@ -95,13 +95,12 @@ for query in data:
 
         if time_result["type"] == "day" and query["time"]["time_type"] == "day":
             correct_time_type += 1
-            day = str(time_result["extracted_date_day"])
-            month = str(time_result["extracted_date_month"])
-            year = str(time_result["extracted_date_year"])
 
-            if day == str(query["time"]["time_objects"]["time_object"]["day"]) and month == \
-                    str(query["time"]["time_objects"]["time_object"]["month"]) and year == \
-                    str(query["time"]["time_objects"]["time_object"]["year"]):
+            extracted_date = time_result["extracted_date_datetime"].date()
+
+            ground_truth_date = datetime_relative_to.date()
+
+            if extracted_date == ground_truth_date:
                 correct_time += 1
                 time_bool = True
             else:
@@ -112,18 +111,17 @@ for query in data:
             range_start = found_time[0]
             range_end = found_time[1]
 
-            range_start_year = str(time_result["extracted_range_duration_start_year"])
-            range_start_month = str(time_result["extracted_range_duration_start_month"])
-            range_start_day = str(time_result["extracted_range_duration_start_day"])
-            range_end_year = str(time_result["extracted_range_duration_end_year"])
-            range_end_month = str(time_result["extracted_range_duration_end_month"])
-            range_end_day = str(time_result["extracted_range_duration_end_day"])
+            extracted_date_start = time_result["extracted_range_duration_start_datetime"].date()
+            extracted_date_end = time_result["extracted_range_duration_end_datetime"].date()
 
-            if range_start_day == str(query["time"]["time_objects"][0]["day"]) and range_start_month == \
-                    str(query["time"]["time_objects"][0]["month"]) and range_start_year == str(query["time"]["time_objects"][0][
-                "year"]) and range_end_day == str(query["time"]["time_objects"][1]["day"]) and range_end_month == \
-                    str(query["time"]["time_objects"][1]["month"]) and range_end_year == str(query["time"]["time_objects"][1][
-                "year"]):
+            ground_truth_start = datetime.datetime.strptime(query["time"]["time_objects"]["start"], "%Y.%m.%d %H:%M")
+            ground_truth_start_date = ground_truth_start.date()
+            ground_truth_end = datetime.datetime.strptime(query["time"]["time_objects"]["end"], "%Y.%m.%d %H:%M")
+            ground_truth_end_date = ground_truth_end.date()
+
+
+
+            if ground_truth_start_date == extracted_date_start and ground_truth_end_date == extracted_date_end:
                 correct_time += 1
                 time_bool = True
             else:
