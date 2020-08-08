@@ -5,19 +5,25 @@ from city_detector import city_detector as cd
 from irrelevance_detection import irrelevance_detector as id
 import datetime
 from includes import DateTimeGrammar as dtg, DateTimeExtractor as dte
-import spacy
+import pickle
+from nltk.corpus import stopwords
 
-output_dir = os.getcwd()+"/question_model"
-nlp_categorizer = spacy.load(output_dir)
+def clean_query(text):
+    STOPWORDS = set(stopwords.words('german'))
+    text = text.lower() #lowercase the query
+    text = ' '.join(word for word in text.split() if word not in STOPWORDS)  # delete stopwors from text
+    return text
 
 def get_question_type(query):
-    query_doc = nlp_categorizer(query)
-    docs = query_doc.cats
-    categorized_label = max(docs, key=docs.get)
-    if docs[categorized_label] <= 0.99999 and id.query_has_relevant_tokens(query) is False:
-        return None
-    else:
-        return categorized_label
+    query = clean_query(query)
+    with open('question_model.pkl', 'rb') as fid:
+        question_model = pickle.load(fid)
+    label_pred = question_model.predict([query])
+    probabilities = question_model.predict_proba([query])[0]
+    for prob in probabilities:
+        if prob <= 0.2 and id.query_has_relevant_tokens(query) is False:
+            return None
+    return label_pred
 
 def get_time_info(query, datetime_relative):
     extractor = dte.DateTimeExtractor(dtg.datetime_grammar, datetime_relative_to=datetime_relative, mode="evaluation")
@@ -148,7 +154,7 @@ for query in data:
               str(found_question_type_bool),
               "| city: ", str(found_city_bool),
               "| time type: ", str(found_time_type_bool),
-              "| time: ", str(time_bool), "|",
+              "| time: ", str(time_bool),
               "| correct interpretation of query: ", str(correct_interpretation_of_query), "|")
     else:
         if found_question_type is None and query["question_type"] == "None":
@@ -166,4 +172,4 @@ print("| Correct City: ",correct_city/data_with_valid_questions)
 print("| Correct Time Type: ",correct_time_type/data_with_valid_questions)
 print("| Correct Time: ",correct_time/data_with_valid_questions)
 print("#---------------------------------------------------------------------------#")
-print("| Main Score: ",main_score/data_size)
+print("| Main Accuracy: ",main_score/data_size)

@@ -50,42 +50,47 @@ class CityDetector():
                 found_cities = set(found_cities)
                 found_cities -= {city}
                 found_cities = list(found_cities)
-
-
         return found_cities
 
     def find_cities_in_query(self,query):
-        # read file
+        # we first load thousands of cities from a JSON file
+        # Source of this collection: https://datahub.io/core/world-cities
         with open('cities.json', 'r', encoding="UTF-8") as myfile:
             data = myfile.read()
-        # parse file
+        # The names of the cities in the list can also be in English. Therefore, we also translate the query into English,
+        # so that we can possibly find a city.
         translator_to_english = Translator(to_lang="en", from_lang="de")
         query_english = translator_to_english.translate(query)
-        obj = json.loads(data)
+        # now we will store all city names in the city array
+        json_file_obj = json.loads(data)
         cities = []
-        for city in obj:
-            cities.append(city["name"])
+        for city_json_object in json_file_obj:
+            cities.append(city_json_object["name"])
         found_cities = []
+        regex = "( |^)("
+        for city in cities:
+            regex += city+"|"
+        regex = regex[:-1]+")( |[\.\!\?\,]|$)"
+        found_cities_german = re.findall(regex,query)
+        if len(found_cities_german) > 0:
+            for list_match in found_cities_german:
+                for i in range(len(list(list_match))):
+                    if len(re.findall("[a-zäöüß]+", list(list_match)[i], re.IGNORECASE)) > 0:
+                        found_cities.append(list(list_match)[i])
 
-        for i in range(0,len(cities),677):
-            section_cities = ""
-            for k in range(i,i+677,1):
-                section_cities = section_cities +"|"+cities[k]
-            section_cities = "("+section_cities[1:]+")"
-            if bool(re.search("( |^)"+section_cities+"(( |[\.\!\?\,])|$)", query_english)) or bool(re.search("( |^)"+section_cities+"(( |[\.\!\?\,])|$)", query)):
-                for n in range(i,i+677,1):
-                    if bool(re.search("( |^)" + cities[n] + "(( |[\.\!\?\,])|$)", query_english)):
-                       found_cities.append(cities[n])
-                    if bool(re.search("( |^)"+cities[n]+"(( |[\.\!\?\,])|$)", query)):
-                       found_cities.append(cities[n])
-
-        found_cities = set(found_cities)
-        found_cities = list(found_cities)
+        found_cities_english = re.findall(regex,query_english)
+        if len(found_cities_english) > 0:
+            for list_match in found_cities_english:
+                for i in range(len(list(list_match))):
+                    if len(re.findall("[a-zäöüß]+", list(list_match)[i], re.IGNORECASE)) > 0:
+                        found_cities.append(list(list_match)[i])
+        found_cities = list(set(found_cities))
         translator_to_german = Translator(to_lang="de", from_lang="en")
         for i in range(len(found_cities)):
             city = translator_to_german.translate(found_cities[i])
             found_cities[i] = city.title()
         found_cities = self.found_wrong_matches(query,found_cities)
         return found_cities
+
 
 city_detector = CityDetector()

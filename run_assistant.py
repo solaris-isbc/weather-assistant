@@ -1,35 +1,41 @@
-import os
 from time_detector import time_detector as td
 from city_detector import city_detector as cd
 from irrelevance_detection import irrelevance_detector as id
 from weather_api_handler import weather_api_handler as weather_api_handler
-import spacy
+from nltk.corpus import stopwords
 import geocoder
 from geopy.geocoders import Nominatim
 import sys
+import pickle
 
 
 # IMPORTANT:
-# pip install -U spacy
 # pip install geocoder
 # pip install geopy
 # pip install pyweatherbit
 # pip install xmltodict
 # pip install lark-parser
+# pip install translate
+# pip install nltk
+# pip install pandas
+# pip install scikit-learn
 
-# 1. load model from directory
-output_dir = os.getcwd()+"/question_model"
-nlp_categorizer = spacy.load(output_dir)
+def clean_query(text):
+    STOPWORDS = set(stopwords.words('german'))
+    text = text.lower() #lowercase the query
+    text = ' '.join(word for word in text.split() if word not in STOPWORDS)  # delete stopwors from text
+    return text
+
 def get_question_type(query):
-    query_doc = nlp_categorizer(query)
-    docs = query_doc.cats
-    categorized_label = max(docs, key=docs.get)
-    #print(max(docs, key=docs.get),docs[categorized_label])
-    #print(docs[categorized_label] <= 0.999)
-    if docs[categorized_label] <= 0.99999 and id.query_has_relevant_tokens(query) is False:
-        return None
-    else:
-        return categorized_label
+    query = clean_query(query)
+    with open('question_model.pkl', 'rb') as fid:
+        question_model = pickle.load(fid)
+    label_pred = question_model.predict([query])
+    probabilities = question_model.predict_proba([query])[0]
+    for prob in probabilities:
+        if prob <= 0.2 and id.query_has_relevant_tokens(query) is False:
+            return None
+    return label_pred
 
 def get_current_location():
     g = geocoder.ip('me')

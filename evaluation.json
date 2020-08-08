@@ -133,7 +133,7 @@
     {
       "text": "Haben wir morgen Badewetter?",
       "timeinfo": "2020.07.14 00:00",
-      "question_type": "WEATHER",
+      "question_type": "WARM",
       "time": {
         "time_type": "day",
         "time_objects": {
