@@ -10,6 +10,7 @@ import pickle
 
 
 # IMPORTANT:
+
 # pip install geocoder
 # pip install geopy
 # pip install pyweatherbit
@@ -19,6 +20,9 @@ import pickle
 # pip install nltk
 # pip install pandas
 # pip install scikit-learn
+
+# Run this command in the project folder to install all packages needed:
+# pip install -r requirements.txt
 
 def clean_query(text):
     STOPWORDS = set(stopwords.words('german'))
