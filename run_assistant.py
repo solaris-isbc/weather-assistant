@@ -70,8 +70,8 @@ def query_processing(query):
     if city is None:
        city = get_current_location()
 
-    if cd.more_than_one_city(query) is True:
-        print("Sie haben mehr als eine Stadt angegeben. Bitte fordern Sie Wetterinformationen nur für eine Stadt an!")
+    if cd.more_than_one_city() is True:
+        print("Bitte geben Sie maximal einen Ort an. Bitte fordern Sie Wetterinformationen nur für eine Stadt an!")
     else:
         time_information = find_time_information_in_query(query)
         selected_time_type = time_information[0]
