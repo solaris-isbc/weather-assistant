@@ -3,6 +3,7 @@ from city_detector import city_detector as cd
 from irrelevance_detection import irrelevance_detector as id
 from weather_api_handler import weather_api_handler as weather_api_handler
 from nltk.corpus import stopwords
+from nltk.stem.snowball import SnowballStemmer
 import geocoder
 from geopy.geocoders import Nominatim
 import sys
@@ -25,9 +26,11 @@ import pickle
 # pip install -r requirements.txt
 
 def clean_query(text):
-    STOPWORDS = set(stopwords.words('german'))
-    text = text.lower() #lowercase the query
-    text = ' '.join(word for word in text.split() if word not in STOPWORDS)  # delete stopwors from text
+    stopword_list = set(stopwords.words('german'))
+    stemmer = SnowballStemmer("german")
+    text = text.lower()  # lowercase the query
+    text = ' '.join(word for word in text.split() if word not in stopword_list)  # delete stopwors from text
+    text = ' '.join(stemmer.stem(word) for word in text.split())
     return text
 
 def get_question_type(query):

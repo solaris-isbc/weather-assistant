@@ -4,16 +4,19 @@ from nltk.corpus import stopwords
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.linear_model import LogisticRegression
+from nltk.stem.snowball import SnowballStemmer
 import pickle
 
 df = pd.read_csv('question_model_training_data/training.csv')
 
 def clean_text(text):
     text = text.lower() #lowercase the query
-    text = ' '.join(word for word in text.split() if word not in STOPWORDS)  # delete stopwors from text
+    text = ' '.join(word for word in text.split() if word not in stopword_list)  # delete stopwors from text
+    text = ' '.join(stemmer.stem(word) for word in text.split())
     return text
 
-STOPWORDS = set(stopwords.words('german'))
+stopword_list = set(stopwords.words('german'))
+stemmer = SnowballStemmer("german")
 df['post'] = df['post'].apply(clean_text)
 posts = df.post
 tags = df.tag

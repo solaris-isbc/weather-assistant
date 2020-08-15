@@ -126,7 +126,7 @@ class WeatherAPIHandler():
                 print(answer)
 
     def get_cloud_description(self, coverage):
-        # Der Himmel ist...
+        # We need to convert the percentage 0-100 of cloud coverage into a text that is unterstandable for the user of the system
         if 0 < coverage < 3:
             return "nicht bewölkt(freier Himmel)"
         if 3 <= coverage < 10:
@@ -646,7 +646,7 @@ class WeatherAPIHandler():
                         "{0:.2f}".format(fc["wind_spd"] * 3.6)) + " km/h" + " !"
                     print(answer)
                 if 39 < fc["wind_spd"] * 3.6 <= 118:
-                    answer = "Am " + formatted_date + " wird es in " + city + " staren Wind geben! Die Windgeschwindigkeit liegt bei " + str(
+                    answer = "Am " + formatted_date + " wird es in " + city + " starken Wind geben! Die Windgeschwindigkeit liegt bei " + str(
                         "{0:.2f}".format(fc["wind_spd"] * 3.6)) + " km/h" + " !"
                     print(answer)
                 if fc["wind_spd"] * 3.6 > 118:

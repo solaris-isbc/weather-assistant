@@ -7,19 +7,22 @@ import datetime
 from includes import DateTimeGrammar as dtg, DateTimeExtractor as dte
 import pickle
 from nltk.corpus import stopwords
+from nltk.stem.snowball import SnowballStemmer
 
 def clean_query(text):
-    STOPWORDS = set(stopwords.words('german'))
-    text = text.lower() #lowercase the query
-    text = ' '.join(word for word in text.split() if word not in STOPWORDS)  # delete stopwors from text
+    stopword_list = set(stopwords.words('german'))
+    stemmer = SnowballStemmer("german")
+    text = text.lower()  # lowercase the query
+    text = ' '.join(word for word in text.split() if word not in stopword_list)  # delete stopwors from text
+    text = ' '.join(stemmer.stem(word) for word in text.split())
     return text
 
 def get_question_type(query):
-    query = clean_query(query)
+    cleaned_query = clean_query(query)
     with open('question_model.pkl', 'rb') as fid:
         question_model = pickle.load(fid)
-    label_pred = question_model.predict([query])
-    probabilities = question_model.predict_proba([query])[0]
+    label_pred = question_model.predict([cleaned_query])
+    probabilities = question_model.predict_proba([cleaned_query])[0]
     for prob in probabilities:
         if prob <= 0.2 and id.query_has_relevant_tokens(query) is False:
             return None

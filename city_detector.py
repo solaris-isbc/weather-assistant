@@ -25,7 +25,6 @@ class CityDetector():
                 for token in doc:
                     if token.text == ent.text and token.tag_ != "NE":
                         found_locations.remove(token.text)
-                        print("fake: ",token.text)
         self.found_cities = list(found_locations)
         if len(self.found_cities) == 0:
             return None
