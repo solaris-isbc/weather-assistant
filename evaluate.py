@@ -23,9 +23,9 @@ def get_question_type(query):
         question_model = pickle.load(fid)
     label_pred = question_model.predict([cleaned_query])
     probabilities = question_model.predict_proba([cleaned_query])[0]
-    for prob in probabilities:
-        if prob <= 0.2 and id.query_has_relevant_tokens(query) is False:
-            return None
+    probability_of_predicted_label = max(probabilities)
+    if probability_of_predicted_label <= 0.5 and id.query_has_relevant_tokens(query) is False:
+        return None
     return label_pred
 
 def get_time_info(query, datetime_relative):

@@ -55,7 +55,7 @@ class CityDetector():
     def find_cities_in_query(self,query):
         # we first load thousands of cities from a JSON file
         # Source of this collection: https://datahub.io/core/world-cities
-        with open('cities.json', 'r', encoding="UTF-8") as myfile:
+        with open('alternative_implementations/cities.json', 'r', encoding="UTF-8") as myfile:
             data = myfile.read()
         # The names of the cities in the list can also be in English. Therefore, we also translate the query into English,
         # so that we can possibly find a city.

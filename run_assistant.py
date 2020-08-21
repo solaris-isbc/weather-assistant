@@ -34,14 +34,14 @@ def clean_query(text):
     return text
 
 def get_question_type(query):
-    query = clean_query(query)
+    cleaned_query = clean_query(query)
     with open('question_model.pkl', 'rb') as fid:
         question_model = pickle.load(fid)
-    label_pred = question_model.predict([query])
-    probabilities = question_model.predict_proba([query])[0]
-    for prob in probabilities:
-        if prob <= 0.2 and id.query_has_relevant_tokens(query) is False:
-            return None
+    label_pred = question_model.predict([cleaned_query])
+    probabilities = question_model.predict_proba([cleaned_query])[0]
+    probability_of_predicted_label = max(probabilities)
+    if probability_of_predicted_label <= 0.5 and id.query_has_relevant_tokens(query) is False:
+        return None
     return label_pred
 
 def get_current_location():
@@ -64,7 +64,7 @@ def find_question_type(query, city, selected_time_type, selected_time):
             print("<!--")
             print(str(e))
             print("-->")
-            print("Leider haben wir für diesen Ort keine Wetterdaten verfügbar. Fragen Sie doch einfach nochmal, indem Sie die nächstgelegene größere Stadt!")
+            print("Leider haben wir für diesen Ort keine Wetterdaten verfügbar. Fragen Sie doch einfach nochmal, indem Sie die nächstgelegene größere Stadt nennen!")
     else:
         print("Diese Frage kann ich dir nicht beantworten, tut mir leid.")
 

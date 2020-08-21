@@ -23,7 +23,10 @@ class CityDetector():
             if ent.label_ == "LOC":
                 found_locations.add(ent.text)
                 for token in doc:
+                    # If the name of the city consists of only one word, then it should be checked whether the word belongs
+                    # to the tag "NE", since cities always belong to this tag.
                     if token.text == ent.text and token.tag_ != "NE":
+                        # If the word cannot be assigned to the tag "NE", then it is not recognized as a city.
                         found_locations.remove(token.text)
         self.found_cities = list(found_locations)
         if len(self.found_cities) == 0:
