@@ -1,736 +1,737 @@
-post,tag
-Wie wird das Wetter morgen um 18:00 Uhr sein,WEATHER
-Wird es in 2 Tagen um 4 Uhr Regen geben?,RAIN
-Wird es in 4 Tagen Schnee geben,SNOW
-Wird es in 2 Tagen Regen geben,RAIN
-Was ist mit dem Donner in 5 Tagen in New York,THUNDER
-Was ist mit Blitzen in 6 Tagen in Oslo,THUNDER
-Was ist mit dem morgigen Regen,RAIN
-Können Sie mir sagen  wie hoch die Durchschnittstemperatur in Brooklyn heute ist,AVERAGE_TEMPERATURE
-Brauche ich eine warme Jacke,COLD
-Wissen Sie  ob es am Montag in Berlin kalt sein wird,COLD
-Assistant  bitte sagen Sie mir  ob es in Amsterdam kaltes Wetter geben wird,COLD
-Assistant  bitte sagen Sie mir  wie viel Grad Celsius es in München gibt,TEMPERATURE
-Hey Assistent  könnten Sie mir bitte sagen  ob das Wetter heiß ist,WARM
-Brauche ich heute in Berlin eine Jacke,COLD
-Wird es in Amsterdam in 3 Tagen regnen,RAIN
-Wissen Sie  ob es morgen in Manhattan hohen Luftdruck geben wird,AIR_PRESSURE
-Könnten Sie mir bitte sagen  ob die Sonne um 13:00 Uhr in New Orleans scheint,SUN
-Assistentin  gibt es morgen um 14:00 Uhr hohen Luftdruck in München,AIR_PRESSURE
-Assistentin  muss ich mir Sorgen machen wegen Regen in 3 Tagen in Atlanta,RAIN
-Assistentin  muss ich warten  bis der Regen fällt,RAIN
-Wie wird das Wetter um 18 Uhr in Regensburg sein,WEATHER
-Assistentin  bitte sagen Sie mir  ob ich heute einen Regenschirm brauche,RAIN
-Assistentin  bitte sagen Sie mir  wie hoch die Durchschnittstemperatur heute um 17 Uhr ist,AVERAGE_TEMPERATURE
-Könnten Sie mir bitte sagen  wie die Durchschnittstemperatur in 4 Tagen sein wird,AVERAGE_TEMPERATURE
-Hallo! Könnten Sie mir bitte sagen  wie hoch die Durchschnittstemperatur in Berlin ist,AVERAGE_TEMPERATURE
-Guten Morgen  könnten Sie mir bitte sagen  wie hoch die Durchschnittstemperatur ist,AVERAGE_TEMPERATURE
-Guten Morgen  bitte sagen Sie mir die Temperatur in Barcelona,TEMPERATURE
-Hallo  könnten Sie mir bitte sagen  ob das Wetter in 3 Tagen in Atlanta kalt sein wird,COLD
-Wie ist die Richtung des Windes in Berlin um 18 Uhr,WIND_DIRECTION
-In welche Richtung weht der Wind am Samstag bei 6m,WIND_DIRECTION
-Bitte sagen Sie mir  ob der Wind draußen weht,WIND
-Assistentin  bitte sagen Sie mir  ob es in New York Wind gibt,WIND
-Bitte sagen Sie mir  ob das Wetter kalt sein wird,COLD
-Sehr geehrte Assistentin  bitte sagen Sie mir  wie die Temperatur in New York um 18 Uhr ist,TEMPERATURE
-Hey Assistentin  bitte sagen Sie mir  ob der Luftdruck in Berlin an diesem Samstag niedrig ist,AIR_PRESSURE
-Wird es heute um 18.00 Uhr in New York einen Hurrikan geben,THUNDER
-Wird es nächste Woche um 12 Uhr in Los Angeles etwas regnen?,RAIN
-Wird es auf Zypern sonnig,SUN
-Wird es in Frankfurt regnen,RAIN
-Wird es in Sydney verschneit sein,SNOW
-Gibt es sonniges Wetter in Amsterdam  Assistentin?,SUN
-Hey  Assistentin  in welche Richtung weht der Wind heute um 18 Uhr,WIND_DIRECTION
-Wird es morgen um Mitternacht Sturm geben?,THUNDER
-Glauben Sie  dass es heute Abend regnen wird?,RAIN
-Muss ich mir um 18 Uhr in Massachusetts Sorgen über Blitze machen?,THUNDER
-Hey Assistent  könnten Sie mir bitte sagen  ob es Schnee geben wird,SNOW
-Hallo  wie wird das Wetter um 18 Uhr in Regensburg sein,WEATHER
-Assistentin  könnten Sie mir bitte sagen  ob es morgen regnen wird,RAIN
-Hallo  könnten Sie bitte sagen  ob der Luftdruck morgen um 18 Uhr in München niedrig sein wird,AIR_PRESSURE
-Gibt es Regen,RAIN
-Wird es morgen Abend in Los Angeles Schnee geben,SNOW
-Wie wird der Luftdruck morgen in Frankfurt sein,AIR_PRESSURE
-Könnten Sie mir bitte sagen  ob es in 3 Tagen Regen vom Himmel fallen wird,RAIN
-Wie ist das Wetter in Paris?,WEATHER
-Wie ist das Wetter in London?,WEATHER
-Wie ist die Windrichtung in Sheffield?,WIND_DIRECTION
-Wie wird das Wetter morgen in München?,WEATHER
-Wie ist das Wetter in Regensburg,WEATHER
-Regnet es gerade in Freiburg,RAIN
-Wie wird das Wetter in 5 Tagen?,WEATHER
-Wie wird das Wetter in den nächsten 5 Tagen?,WEATHER
-Wie wird das Wetter nächste Woche Samstag?,WEATHER
-Wie wird das Wetter am Samstag?,WEATHER
-Wie wird das Wetter heute Mittag?,WEATHER
-Wie wird das Wetter heute Mittag in Regensburg?,WEATHER
-Wie wird das Wetter heute um 18 Uhr in Regensburg?,WEATHER
-Wie wird das Wetter heute um 20 Uhr in Regensburg?,WEATHER
-Wird es morgen regnen,RAIN
-Wird es morgen nebeln,FOG
-wie viel grad wird es morgen um 16 uhr haben,TEMPERATURE
-Sag mir bitte  wie viel Grad Celsius es morgen maximal geben wird,MAX_TEMPERATURE
-Hallo! Wie viel Grad wird es mindestens geben um 17 Uhr am Sonntag,MIN_TEMPERATURE
-Hallo! Wie viel Grad wird es höchstens geben in Miami gegen abend,MAX_TEMPERATURE
-Brauche ich eine warme Jacke?,COLD
-Brauche ich einen Regenschirm,RAIN
-Sag mir bitte  ob in Kitzbühl mit Nebel zu rechnen ist!,FOG
-Wird es windig werden?,WIND
-Wird es sonnig sein?,SUN
-Wie wird das Wetter morgen?,WEATHER
-Hallo  ist es morgen neblig?,FOG
-Wie ist denn bitte gerade der Luftdruck hier in Aachen,AIR_PRESSURE
-In welche Richtung weht gerade der Wind?,WIND_DIRECTION
-Ist es am Montag regnerisch in Sydney?,RAIN
-Wie wird das Wetter werden hier in London?,WEATHER
-Wie warm wird es in Zypern?,WARM
-Wie viel Schneefall wird es geben?,SNOW
-Ist das Wetter gut heute?,WEATHER
-Wird es warm werden?,WARM
-Ist Schneefall zu erwarten?,SNOW
-Wie wird das Wetter sein,WEATHER
-Welches Wetter ist zu erwarten,WEATHER
-Sag mir  wie das Wetter wird,WEATHER
-Was sagt die Wettervorhersage,WEATHER
-Wie wird das Wetter morgen um 16:00 sein?,WEATHER
-Wie sieht der Wetterbericht aus für morgen,WEATHER
-Mit welchem Wetter kann ich am Dienstag rechnen,WEATHER
-Sag mir wie das Wetter nächste Woche wird!,WEATHER
-Kannst du mir bitte sagen  wie das Wetter um 6 Uhr wird?,WEATHER
-Bitte sag mir  wie das Wetter morgen Abend wird?,WEATHER
-Hey Assistant  kannst du mir bitte sagen  mit welchem Wetter ich rechnen kann um 8 uhr morgens,WEATHER
-Mit welchem Wetter ist am Dienstag zu rechnen in Kalkutta?,WEATHER
-Assistant  bitte gib mir den Wetterbericht für heute für Peking?,WEATHER
-Mit welchem Wetter kann ich in 2 Tagen rechnen in Kairo?,WEATHER
-Hey Assistant  wie wird das Wetter diese Woche in Berlin,WEATHER
-Mit welchem Wetter kann man am Samstag morgen rechnen in Delhi?,WEATHER
-Wie wird in Lahore das Wetter sein um 14:00,WEATHER
-Mit welchem Wetter ist morgen um 3 Uhr in Los Angeles zu rechnen?,WEATHER
-Wie wird das Wetter übermorgen in Lagos,WEATHER
-Wie sieht der Wetterbericht für heute aus? Ich bin in Mumbai.,WEATHER
-Wie wird das Wetter in einer Woche sein in Moskau?,WEATHER
-Könntest du mir bitte sagen wie das Wetter in 7 Tagen ist in Tokio!,WEATHER
-Wie sieht der Wetterbericht für Frankfurt aus?,WEATHER
-Welches Wetter wird vorhergesagt für New York morgen Abend?,WEATHER
-Wie wird das Wetter am Donnerstag Abend in Regensburg?,WEATHER
-Wie wird das Wetter am morgigen Tag um 16:00?,WEATHER
-Ich bin morgen in Rottenburg und frage mich  wie das Wetter sein wird.,WEATHER
-Hey  sag mir bitte wie das Wetter am Donnerstag sein wird. Ich bin in Göteborg.,WEATHER
-Wird es in Erlangen morgen gutes Wetter geben?,WEATHER
-Sag mir bitte  wie das Wetter morgen wird!,WEATHER
-Wie wird das Wetter in den nächsten 5 Tagen?,WEATHER
-Wie ist das Wetter in London?,WEATHER
-Kannst du mir sagen  wie das Wetter auf dem Wendelstein ist?,WEATHER
-Wie ist das wetter in Texas,WEATHER
-Hallo  kann ich in Pentling mit gutem Wetter rechnen?,WEATHER
-Ich bin morgen um 7 Uhr in Hamburg. Wie wird das Wetter dort?,WEATHER
-wie ist das Wetter gerade,WEATHER
-Wie ist das Wetter in Regenstauf,WEATHER
-Wird es regenen,RAIN
-Brauche ich einen Regenschirm,RAIN
-Muss ich mit Regen rechnen in Nagoya,RAIN
-Ist mit Regen zu rechnen in Wuhan um 3 Uhr?,RAIN
-Sollte ich mit Regen rechnen morgen mittag in Taipei,RAIN
-Wird Regen vom Himmel Fallen um 16:30 in Hanoi,RAIN
-Kannst du mir bitte sagen  ob es regnen wird,RAIN
-Bitte sag mir  ob übermorgen mit Regnen zu rechnen ist in Nagoya,RAIN
-Bitte sag mir ob es in 4 Tagen regnen wird in Onitsha,RAIN
-Muss ich einen Regenschirm einpacken morgen in Paris?,RAIN
-Muss in Lima morgen mit Regen gerechnet werden?,RAIN
-Ist es regnerisch,RAIN
-Benötige ich in London einen Regenschirm heute Abend,RAIN
-Kann mit regnerischen Tagen gerechnet werden in Köln?,RAIN
-Hey Assistant  bitte sag mir  ob Regen kommen wird um 14 Uhr in Chennai!,RAIN
-Kann in Madrid mit Regen gerechnet werden Heute mittag?,RAIN
-Sollte ich einen Regenschirm einpacken in 3 Tagen? Ich befinde mich in Zhengzhou!,RAIN
-Muss ich mir Sorgen machen um Regen? Ich befinde mich gerade in Frankfurt.,RAIN
-Assistant  bitte sag mir ob für morgen Abend regen gemeldet ist. Ich bin in Salzburg.,RAIN
-Bitte sage  ob morgen regen kommt,RAIN
-Ist morgen Regen zu erwarten? Ich bin in Riad!,RAIN
-Wird es in Rom regnen in dieser Woche?,RAIN
-Wird es in Minsk regnen in 4 Stunden?,RAIN
-Wird es Niederschlag geben in London  übermorgen?,RAIN
-Kannst du mir bitte sagen  ob es gerade regnet,RAIN
-Kannst du mir bitte sagen  ob es morgen um 16 Uhr regnen wird?,RAIN
-Wird es in Ulm regnerisch werden gegen 14 Uhr?,RAIN
-Wird es regnerisch werden in Hamburg gegen 3 Uhr?,RAIN
-Wird das Wetter morgen regnerisch?,RAIN
-Kommt morgen Regen?,RAIN
-Kannst du mir bitte sagen  ob mit regnerischem Wetter zu rechnen ist am Donnerstag,RAIN
-Regnet es in Frankfurt?,RAIN
-Regnet es morgen in Regensburg?,RAIN
-Regnet es nächstes Wochenende in Erlangen?,RAIN
-Wird es regnerisches Wetter in Berlin geben?,RAIN
-Sag mir bitte ob ich morgen in Bonn mit Niederschlag rechnen sollte um 7 Uhr,RAIN
-regnet es in Köln,RAIN
-Gibt es Niederschlag in Pentling,RAIN
-Scheint die Sonne?,SUN
-Ist Sonnenschein vorhergesagt?,SUN
-Bitte sag mir  ob morgen in Köln die Sonne scheint!,SUN
-Soll ich morgen um 3 Uhr mit Sonne rechnen in Amsterdam?,SUN
-Ist Sonnenschein vorhergesagt morgen Abend für Dortmund?,SUN
-Ist am 4.3.2020 mit Sonne zu rechnen in Bergen?,SUN
-Kann ich morgen Abend mit Sonnenschein rechnen  ich bin gerade in LA.,SUN
-Scheint die Sonne gerade in Gladbach?,SUN
-Kann ich eine Sonnenbrille tragen morgen in Trier?,SUN
-Ist es Sonnig draußen in Mumbai um 18:30?,SUN
-Ist die Sonne draußen in Sao Paulo?,SUN
-Ist es sonnig in Lagos in 4 Stunden?,SUN
-Sind sonnige Tage vorhergesagt laut des Wetterdienstes am 17.02.2020?,SUN
-Ich bin in 4 Tagen in Lagos und frage mich  ob es dort Sonnenschein geben wird.,SUN
-Hallo Assistent  bitte sag mir  ob es in Chengdu sonnig ist.,SUN
-Brauche ich einen Sonnenschutz in Kairo morgen Mittag?,SUN
-Assistant wird es in 12 Stunden sonniges Wetter geben in Moskau?,SUN
-Scheint gerade die Sonne in Paris?,SUN
-Hi Assistant  bitte sag mir  ob es sonnig ist in 4 Tagen.,SUN
-Könntest du mir bitte sagen  ob die Sonne seint am Sonntag?,SUN
-Bitte sag mir  ob es sonnig ist in Bangkok in der Früh.,SUN
-Hey Assistant sag mir bitte  ob die Sonne draußen scheint,SUN
-Ist es sonnig in Istanbul um 4 Uhr morgens?,SUN
-Wird es sonnig sein in Prag am Freitag?,SUN
-Könnten sie mir bitte sagen  ob in 3 Tagen die Sonne scheint in Amsterdam?,SUN
-Hey  es wäre toll  wenn du sagen könntest  ob die Sonne morgen draußen ist,SUN
-Wird die Sonne scheinen in Nürnberg morgen Abend?,SUN
-Wird die Sonne scheinen am 5. Juni 2020?,SUN
-Wird das Wetter morgen sonnig?,SUN
-Bitte sag mir  ob in Magdeburg das Wetter sonnig wird!,SUN
-Wird für Samstg um 16 Uhr sonniges Wetter vorhergesagt?,SUN
-Kommt heute noch die Sonne raus?,SUN
-Wann gibt es in Regensburg wieder Sonne?,SUN
-Scheint in Zürich um 18 Uhr die Sonne?,SUN
-Wird es sonniges Wetter in Ulm geben?,SUN
-Hallo Assistant  sollten wir hier mit sonnigem Wetter rechnen?,SUN
-scheint gerade die Sonne in Montana,SUN
-Ist es sonnig in Nürnberg?,SUN
-Ist mit Wind zu rechnen?,WIND
-Kann ich mit Wind rechnen?,WIND
-Wird es in Kiew Wind geben?,WIND
-Wird es windig sein in Turin?,WIND
-Was sagt der Wetterbericht zu Wind in Bremen in 4 Tagen?,WIND
-In welche Richtung weht der wind in Saarbrücken um 17 Uhr?,WIND
-Sollte mit Wind gerechnet werden in 3 Stunden?,WIND
-Wird Wind kommen in Neuss,WIND
-Ist es windig  Assistant?,WIND
-Kannst du mir sagen  ob es in 3 Stundne windig sein wird?,WIND
-Sollte ich vorbereitet sein für Wind?,WIND
-Muss ich mit einem heftigen Sturm rechnen?,WIND
-Sag mir ob der Wind bläst in 4 Stunden in Neapel!,WIND
-Könntest du mir bitte sagen  ob es windig ist in Shenzhen um 17:00?,WIND
-Hey Assistant  bitte sag mir ob es in Bangok windig ist.,WIND
-Sag mir ob der Wind weht in New York in 7 Tagen.,WIND
-Kommt morgen um 17:00 Wind?,WIND
-Ist in Regensburg mit Wind zu rechnen morgen Abend?,WIND
-Hi Assitant  ist es windig in Hanoi um 17:00?,WIND
-Bitte sag mir  ob mit Wind zu rechnen ist in Chennai,WIND
-Weht der Wind in Osnabrück am 17.03.2020,WIND
-Hey Assistant ist Wind vorhergesagt?,WIND
-Hey Assistant ist winiges Wetter vorhergesagt?,WIND
-Hey Assistant wird es um 6 Uhr Abends Wetter geben mit Wind?,WIND
-Ist in Lima mit Wind zu rechnen in 3 Tagen?,WIND
-Wird morgen der Wind wehen in Ludwigshafen um 16 Uhr?,WIND
-Wird in Zürich ein windiges Wetter erwartet?,WIND
- Sag mir bitte  ob es abends windig wird in Erlangen,WIND
-Kann ich in Hanover mit windigem Wetter rechnen?,WIND
-Sag mir bitte  ob das Wetter am Montag windig wird!,WIND
-Wird es windiges Wetter geben?,WIND
-Wie stark geht der Wind in Hamburg?,WIND
-Ist es windig in Allersberg?,WIND
-Wie windig ist es gerade denn in Bern?,WIND
-wie windig ist es gerade in Venedig,WIND
-Wie windig ist es übermorgen in Göttingen?,WIND
-windiges Wetter vorhergesagt?,WIND
-Ist es windig in Pettendorf?,WIND
-Wird Sturm vorhergesagt,THUNDER
-Bitte sag mir  ob Sturm kommt!,THUNDER
-Ist in Paris mit Sturm zu rechnen?,THUNDER
-Wird es Donner und Blitze geben in Neapel?,THUNDER
-Kann ich am Sonntag mit Blitz und Donner rechnen in Göteborg?,THUNDER
-Ist es heute Mittag stürmisch in Kiel?,THUNDER
-Sollte ich mit Sturm rechnen?,THUNDER
-Wird es in 4 Tagen stürmisch sein?,THUNDER
-Ist mit Sturm zu rechnen in Budapest um 17 Uhr?,THUNDER
-Wird es stürmisches Wetter geben in 4 Tagen in Hanau?,THUNDER
-Ist in Budabest mit einem Sturm zu rechnen?,THUNDER
-Bitte sag mir  ob es am 17.03.2020 einen Sturm geben wird in Chicago.,THUNDER
-Ist ein Gewitter zu erwarten in Bergen um 12:00?,THUNDER
-Hey Assistant  wird es Übermorgen gewittern in Hanoi?,THUNDER
-Hey Assistant  bitte sag mir  ob es ein Gewitter mit Blitzen geben wird.,THUNDER
-Sag mir bitte  ob abends ein Sturm zu erwarten ist in Würzburg.,THUNDER
-Assistant  wird es einen Sturm geben in 3 Tagen in Hamburg?,THUNDER
-Wird es ein Gewitter geben am Montag? ,THUNDER
-Sollte ich mit Blitzen rechnen in 4 Tagen  Assistant?,THUNDER
-Hi Assistant  sag mir doch bitte  ob es stürmisch wird in den nächsten 3 Tagen.,THUNDER
-Ist stürmisches Wetter in der Vorhersage?,THUNDER
-Hey Assistant  wird das Wetter stürmisch in Columbus?,THUNDER
-Wie sieht es aus mit Sturm?,THUNDER
-Sollte man sich auf Sturm vorbereiten in Baltimore in dieser Woche?,THUNDER
-Ist es stürmisch in Flensburg um 16:00?,THUNDER
-Wird es in Karlsruhe morgen stürmisch werden gegen 16 Uhr?,THUNDER
-Sag mir bitte  ob es stürmisch werden wird in Rottenburg,THUNDER
-Ist es in Dortmund stürmisch um 17 Uhr?,THUNDER
-Sag mir  ob das Wetter stürmisch wird in 4 Stunden?,THUNDER
-Wird das Wetter nächste Woche am Sonntag stürmisch?,THUNDER
-Kommt stürmisches Wetter in Rottenburg um 17 Uhr?,THUNDER
-Wie stürmisch ist es gerade in Ulm?,THUNDER
-Kannst du mir bitte sagen  ob es Sturm gibt in Hannover?,THUNDER
-Wie stürmisch ist es gerade?,THUNDER
-ist es gerade stürmisch in Leogang,THUNDER
-Kommt ein Gewitter in Frankfurt,THUNDER
-Muss ich mir um 18 Uhr in Massachusetts Sorgen um Blitze machen?,THUNDER
-Wie sieht es aus mit Stum in Bad Abbach?,THUNDER
-Wie ist der Luftdruck,AIR_PRESSURE
-Kannst du mir sagen  wie der Luftdruck ist,AIR_PRESSURE
-Bitte sag mir  wie der Luftdruck in Rom ist!,AIR_PRESSURE
-Wie ist der Luftdruck in Krasnodar,AIR_PRESSURE
-Wie ist der Luftdruck in Dublin diese Woche?,AIR_PRESSURE
-Welcher Luftdruck wird vorhergesagt für Lyon um 13:00?,AIR_PRESSURE
-Kannst du mir bitte sagen  welcher Luftdruck für Donnerstag vorhergesagt wird? Ich bin in Berlin!,AIR_PRESSURE
-Kannst du mir bitte sagen  ob Morgen Regen kommen wird in Wuppertal?,AIR_PRESSURE
-Wie wird am 14.03.2020 der Luftdruck in Zagreb sein?,AIR_PRESSURE
-Welcher Luftdruck ist zu erwarten?,AIR_PRESSURE
-Wie ist der Luftdruck in Prag um 17:30?,AIR_PRESSURE
-Bitte sag mir welcher Luftdruck in 5 Stunden in Hannover sein wird!,AIR_PRESSURE
-Wie ist gerade der Luftdruck in Toronto?,AIR_PRESSURE
-Welcher Luftdruck kann erwartet werden in Madrid?,AIR_PRESSURE
-Bitte sag mir  wie der Luftdruck ist in Houstan in 3 Tagen!,AIR_PRESSURE
-Kannst du mir bitte sagen  wie in 7 Stunden der Luftdruck in Riad ist?,AIR_PRESSURE
-Assistant  wie ist in Surat der Luftdruck am Donnerstag.,AIR_PRESSURE
-Wie ist am Dienstag der Luftdruck in Bern?,AIR_PRESSURE
-Hi Assistant  bitte sag mir  wie der Luftdruck in Quanzhou ist!,AIR_PRESSURE
-Welcher Luftdruck um 18 Uhr ist in Santiago.,AIR_PRESSURE
-Weißt du  wie der Luftdruck für Luanda vorhergesagt wird für morgen um 17 Uhr?,AIR_PRESSURE
-Hey Assistant  wie ist der Luftdruck morgen Mittag in Kuala Lumpur?,AIR_PRESSURE
-Welcher Luftdruck wird für den 17.08.2020 vorhergesagt für Boston?,AIR_PRESSURE
-Wie wird der Luftdruck sein?,AIR_PRESSURE
-Welcher Luftdruck ist zu erwarten in 4 Stunden?,AIR_PRESSURE
-Wie wird in Pitsburg der Luftdruck sein am nächsten Donnerstag?,AIR_PRESSURE
-Wie ist der Luftdruck hier in Bern gegen 21 Uhr?,AIR_PRESSURE
-Wie wird in 4 Stunden der Luftdruck in Amsterdam sein?,AIR_PRESSURE
-Kannst du mir bitte sagen  wie der Luftdruck in Ludwigshafen in 3 Tagen sein wird?,AIR_PRESSURE
-Bitte sag mir  wie der Luftdruck in Ulm ist morgen?,AIR_PRESSURE
-Sag mit bitte  wie der Luftdruck ist in Prag,AIR_PRESSURE
-Assistant  sag mir doch bitte  wie der Luftdruck ist in Trontheim.,AIR_PRESSURE
-Wie ist denn gerade der Luftdruck in Göteborg?,AIR_PRESSURE
-Ich bin in Saarbrücken  wie ist hier morgen der Luftdruck? ,AIR_PRESSURE
-Welcher Luftdruck ist hier zu erwarten in Trondheim?,AIR_PRESSURE
-Mit welchem Luftdruck ist in Essen am Donnerstag zu rechnen?,AIR_PRESSURE
-Sag mir mal bitte  wie der Luftdruck sein wird in Würzburg morgen,AIR_PRESSURE
-Wie wird der Luftdruck sein in Pielenhofen?,AIR_PRESSURE
-Wie wird die Temperatur sein?,TEMPERATURE
-Wie viel Grad Celsius ist es?,TEMPERATURE
-Sag mir  wie viel Grad ist es in Minsk,TEMPERATURE
-Welche Temperatur wird vorhergesagt?,TEMPERATURE
-Wie viel Grad wird es in Orenburg morgen Abend?,TEMPERATURE
-Wie wird in einer Woche die Temperatur in Lyon sein?,TEMPERATURE
-Wie viel Grad ist es gerade in Paderborn?,TEMPERATURE
-Bitte sag mir wie viel Grad es in 4 Stunden sein wird!,TEMPERATURE
-Mit welchen Temperaturen kann ich rechnen auf Gozo in 3 Tagen um 17:00?,TEMPERATURE
-Bitte sag mir  wie viel Grad es ist in Wuhan!,TEMPERATURE
-Wie viel Grad wird es in Santiago sein um 17:00?,TEMPERATURE
-Wie ist die Temperatur auf Malta in 4 Tagen?,TEMPERATURE
-Kannst du mir sagen  wie die Temperatur in Regensburg sein wird in 3 Stunden?,TEMPERATURE
-Wie viel Grad Celsius wird es in Berlin sein?,TEMPERATURE
-Hey Assistant wie ist die Temperatur in Lagos um 4 Uhr morgens am Dienstag?,TEMPERATURE
-Wie ist die Temperatur in London in 3 Tagen?,TEMPERATURE
-Welche Temperatur haben wir in Bangalore um 17 Uhr?,TEMPERATURE
-Wie viel Grad ist es gerade in Paris?,TEMPERATURE
-Hi Assistant  bitte sag mir wie viel Grad ist es in Nagoya?,TEMPERATURE
-Ich muss wissen  wie viel Grad es in Luanda ist.,TEMPERATURE
-Hey Assistant  wie viel Grad ist es in Riad?,TEMPERATURE
-Hallo  wie ist die Temperatur in sieben Tagen in Washington?,TEMPERATURE
-Wie ist die Temperatur in Wuhan am Dienstag  morgens.,TEMPERATURE
-Wie wird die Temperatur morgen um 17:00 in Paris sein?,TEMPERATURE
-Welche Temperatur ist auf dem Thermometer für Leipzig.,TEMPERATURE
-Welche Temperaturen kann ich morgen erwarten. Ich bin in Berlin.,TEMPERATURE
-Kannst du mir mal bitte sagen  mit welchen Temperaturen gerechnet werden muss  morgen?,TEMPERATURE
-Mit welcher Temperatur ist zu rechnen in Zagreb?,TEMPERATURE
-Wie viel Grad ist es gerade in Mannheim?,TEMPERATURE
-Welche Temperatur ist gerade in Zürich?,TEMPERATURE
-Welche Temperatur wird es in Prag geben am nächsten Montag?,TEMPERATURE
-Wie viel Grad ist es morgen um 17 Uhr in Budapest?,TEMPERATURE
-Wie ist denn die Temperatur hier?,TEMPERATURE
-Wie viel Grad wird es in Düsseldorf geben?,TEMPERATURE
-Wie ist die Temperatur gerade?,TEMPERATURE
-Wie viel Grad sind es gerade in New York?,TEMPERATURE
-Wie viel Grad hat es in Pilsen,TEMPERATURE
-Sag mir bitte  wie viel Grad es geben wird in Ingolstadt gegen 18 Uhr,TEMPERATURE
-Ist es kalt?,COLD
-Wird es kalt sein?,COLD
-Bitte sag mir  ob es Kalt wird in Istanbul!,COLD
-Kannst du mir bitte sagen  ob ich eine warme Jacke brauche in Wien?,COLD
-Ist es am Sonntag um 15 Uhr kalt in Pensa?,COLD
-Ist es in 4 Tagen kalt in Homel?,COLD
-Ist es kalt in Neuss?,COLD
-Ist es am 16.05.2020 kalt in Augsburg?,COLD
-Wird es sehr kalt werden morgen um 18:30,COLD
-Brauche ich eine warme Jacke?,COLD
-Ist es Eiskalt in Oslo?,COLD
-Wie sieht es aus mit niedrigen Temperaturen in Berlin?,COLD
-Ist es kalt in Bonn um 17:30?,COLD
-Wird es am Samstag kalt sein in München?,COLD
-Ist in Paris um 17:00 am Donnerstag mit kaltem Wetter zu rechnen?,COLD
-Wird das Wetter in 2 Stunden kalt sein?,COLD
-Ist das Wetter kalt in Luanda?,COLD
-Bitte sag mir ob es kalte Temperaturen geben wird in Seoul in 4 Stunden.,COLD
-Wird es sehr kalt sein in Bergen?,COLD
-Hey Assistant  muss ich mit kalten Temperaturen rechnen?,COLD
-Brauche ich eine warme Jacke in Salzburg?,COLD
-Hey Assistant  sag mir doch bitte ob ich eine warme Jacke benötige in Aachen!,COLD
-Hallo  könntest du mir bitte sagen  ob es kalt sein wird in Dortmund.,COLD
-Wird das Wetter kalt sein in Shenzhen am Dienstag?,COLD
-Gibt es kalte Temperaturen in Turin?,COLD
-Wird es in Flensburg morgen kalt sein?,COLD
-Wird es in Cottbus kalt werden?,COLD
-Wie kalt ist es in Berlin?,COLD
-Ist das Wetter übermorgen kalt in Karlsruhe?,COLD
-Hey Assistant  bitte sag mir  ob das Wetter kalt ist in Limburg heute Morgen.,COLD
-Wird es kalte Temperaturen geben in Madrid?,COLD
-Ist es am Samstag kalt in Frankfurt?,COLD
-Wird die Temperatur kalt sein übermorgen?,COLD
-Hallo  sag mir doch bitte wie kalt es in 4 Tagen sein wird!,COLD
-Ist es gerade kalt?,COLD
-hey  bitte sag mir wie kalt es ist in Buenos Aires,COLD
-wie kalt ist es gerade,COLD
-Werde ich eine Jacke benötigen in Bergamo?,COLD
-Ist es warm?,WARM
-Bitte sag mir  ob es warm sein wird!,WARM
-Wird es heiß werden in Bukarest?,WARM
-Wird es in Krakau warm sein?,WARM
-Ist es am Samstag warm in Lyon?,WARM
-Wird es warm sein in Zweibrücken am Sonntag?,WARM
-Should I expect warm and hot temperatures,WARM
-Bitte sagen Sie mir  ob in 3 Tagen warmes Wetter sein wird!,WARM
-Kann ich ein T-Shirt tragen?,WARM
-Sind warme Temperaturen vorhergesagt  Assistant?,WARM
-Ist eine hohe Temperatur zu erwarten in Kairo in 4 Stunden?,WARM
-Wie sieht es aus mit einger hohen Temperatur?,WARM
-Kann ich eine kurze Hose tragen?,WARM
-Ist es heiß in Prag um 12:00 am Dienstag?,WARM
-Hey Assistant  wird es heiß werden?,WARM
-Bitte sag mir  ob es heiß werden wird in 3 Tagen?,WARM
-Assistant  ist es warm draußen in einem Tag um 17:00?,WARM
-Ist es heiß draußen  Assistant?,WARM
-Hey Assistant  bitte sag mir  ob es warm ist.,WARM
-Hi Assitant  ist es warm draußen in 4 Tagen?,WARM
-Wird es in Prag heiß sein in 4 Stunden?,WARM
-Hey Assistant bitte sag mir  ob warmes Wetter zu erwarten ist!,WARM
-Muss ich mit warmem Wetter rechnen in der nächsten Woche?,WARM
-Hey Assistant  bitte sag mir  ob das Wetter heiß sein wird in Osnabrück!,WARM
-Ist es warm in Göteborg?,WARM
-Wird es in Venedig diese Woche heiß werden?,WARM
-Kann ich in Essen mit warmem Wetter rechnen?,WARM
-Wird es um 13 Uhr warm sein in Potsdam?,WARM
-Ist das Wetter warm in Rottenburg am nächsten Donnerstag?,WARM
-Assistant  bitte sag mir ob das Wetter warm wird in Darmstadt morgen Abend.,WARM
-Wird es hohe Temperaturen geben in Amsterdam?,WARM
-Wie warm ist es in Istanbul?,WARM
-Wie warm ist es heute?,WARM
-Wie warm wird es in Erfurt?,WARM
-Wie warm wird es in Amsterdam sein?,WARM
-Ist warmes Wetter vorhergesagt für Adelaide?,WARM
-ist das Wetter heiß heute mittag,WARM
-Ist es heiß draußen?,WARM
-Was ist die Durchschnittstemperatur,AVERAGE_TEMPERATURE
-Was wird die Durchschnittstemperatur sein?,AVERAGE_TEMPERATURE
-Welche Durchschnittstemperatur ist zu erwarten in Barcelona,AVERAGE_TEMPERATURE
-Welche Durschnittstemperatur gibt es morgen in Oslo?,AVERAGE_TEMPERATURE
-Welche Durchschnittstemperatur wird es in Edinburgh geben um 16:00?,AVERAGE_TEMPERATURE
-Wie viel Grad wird es durschnittlich in Kirow sein in 4 Tagen?,AVERAGE_TEMPERATURE
-Wie wird die Durchschnittstemperatur in Göttigen sein?,AVERAGE_TEMPERATURE
-Wie ist am Sonntag die Durchschnittstemperatur in Wiesbaden?,AVERAGE_TEMPERATURE
-Wie wird in Madrid die Durschnittstemperatur sein um 16:00?,AVERAGE_TEMPERATURE
-Welche Temperatur ist durchschnittlich zu erwarten.,AVERAGE_TEMPERATURE
-Was ist die durchschnittliche Temperatur in Los Angeles in 3 Stunden?,AVERAGE_TEMPERATURE
-Kannst du mir bitte sagen  wie viel Grad es durchschnittlich etwa sein wird in 4 Tagen?,AVERAGE_TEMPERATURE
-Bitte sag mir welche Durchschnittstemperatur um 14:00 in Prag sein wird!,AVERAGE_TEMPERATURE
-Bitte sag mir  wie viel Grad durchschnittlich wird es in Berlin um 17:00!,AVERAGE_TEMPERATURE
-Hey Assistant what is the average temperature in Rio am 17. Januar 2020!,AVERAGE_TEMPERATURE
-Wie viel Grad ist es durchschnittlich in Madrid?,AVERAGE_TEMPERATURE
-Assistant  was ist die Durschnittstemperatur in Köln?,AVERAGE_TEMPERATURE
-Bitte sag mir  mit welcher Durchschnittstemperatur sollte ich rechnen in Amsterdam in 4 Tagen?,AVERAGE_TEMPERATURE
-Mit welcher Durschnittstemperatur kann gerechnet werden? - Ich bin in Bangalore!,AVERAGE_TEMPERATURE
-Ich würde gerne die Durschnittstemperatur erfahren für Lima!,AVERAGE_TEMPERATURE
-Könntest du mir bitte sagen  wie in 4 Tagen die Durchschnittstemperatur in Peking vorhergesagt wird.,AVERAGE_TEMPERATURE
-Hey  was ist die durchschnittliche Temperatur in Buenos Aires?,AVERAGE_TEMPERATURE
-Hallo Assistent  wie viel Grad Celsius ist es durchschnittlich in Istanbul?,AVERAGE_TEMPERATURE
-Wie viel Grad Celsius ist es durchschnittlich in Dhaka?,AVERAGE_TEMPERATURE
-Könnten sie mir bitte die Durschnittstemperatur für Lyon sagen. Unzwar in 4 Tagen  bitte.,AVERAGE_TEMPERATURE
-Könntest du mir bitte sagen  welche Temperatur durchschnittlich zu erwarten ist in Tübingen?,AVERAGE_TEMPERATURE
-Ich bin gerade in Wuhan  wie wird die Durschnittstemperatur hier sein gegen 8 pm?,AVERAGE_TEMPERATURE
-Wie wird die Durschnittstemperatur sein in Dresden morgen Abend?,AVERAGE_TEMPERATURE
-Welche Durschnittstemperatur sollte ich erwarten in Gera?,AVERAGE_TEMPERATURE
-Hallo Assistant  bitte sag mir wie die Durschnittstemperatur heute Nacht sein wird.,AVERAGE_TEMPERATURE
-Sag mir bitte  mit welcher Durchschnittstemperatur ich rechenen sollte in Venedig,AVERAGE_TEMPERATURE
-Welche Temperatur ist durchschnittlich zu erwarten in Kassel?,AVERAGE_TEMPERATURE
-Wie viel Grad Celsius wird es durchschnittlich geben in Lübeck?,AVERAGE_TEMPERATURE
-Hallo  sag mir mal bitte  wie viel Grad es durchschnittlich sein wird.,AVERAGE_TEMPERATURE
-Welche Durchschnittstemperatur ist hier zu erwarten?,AVERAGE_TEMPERATURE
-Wie viel Grad wird es durchschnittlich geben?,AVERAGE_TEMPERATURE
-welche durchschnittstemperatur ist zu erwarten hier?,AVERAGE_TEMPERATURE
-wie wird denn bitte die Durchschnittstemperatur auf Sylt,AVERAGE_TEMPERATURE
-In welche Richtung weht der Wind?,WIND_DIRECTION
-Mit welcher Windrichtung ist zu rechnen?,WIND_DIRECTION
-In welche Richtung wird der Wind wehen in Prag?,WIND_DIRECTION
-In welche Richtung weht der Wind in Helsinki,WIND_DIRECTION
-Bitte sag mir  in welche Richtung der Wind weht in Tschernobyl am 26. April 2020.,WIND_DIRECTION
-Hey  bitte sag mir in welche Richtung der Wind weht am 4.6.2020!,WIND_DIRECTION
-In welche Richtung weht der Wind?,WIND_DIRECTION
-Assistant  in welche Richtung weht in 4 Tagen der Wind in Hannover?,WIND_DIRECTION
-Sag mir  in welche Richtung weht der Wind in Sevilla?,WIND_DIRECTION
-In welche Richtung weht gerade der Wind?,WIND_DIRECTION
-In welche Richtung weht in Bergen der Wind?,WIND_DIRECTION
-Könntest du mir bitte sagen  in welche Richtung der Wind weht in Lahore?,WIND_DIRECTION
-Bitte sag mir  in welche Richtung weht der Wind in Moskau am Sonntag,WIND_DIRECTION
-Bitte sag mir  ob Übermorgen der Wind in Richtung Süden weht!,WIND_DIRECTION
-Könntest du mir Sagen ob der Wind in Richtung Norden weht in Bern?,WIND_DIRECTION
-Bitte sag mir  ob der Wind in Richtung Westen weht in Kalkutta um 17:00.,WIND_DIRECTION
-Weht der Wind in Richtung Osten?,WIND_DIRECTION
-In welche Richtung weht der wind morgen um 17:00?,WIND_DIRECTION
-Assistant  bitte sag mir die Windrichtung in Rio in 8 Tagen.,WIND_DIRECTION
-Hi Assistant  bitte sag mir in welche Richtung der Wind weht!,WIND_DIRECTION
-Könntest du mir bitte sagen  in welche Richtung weht der Wind in 2 Tagen in Venedig.,WIND_DIRECTION
-In welche Richtung weht der Wind am Freitag Mittag?,WIND_DIRECTION
-Hey Assistant  bitte sag mir die Windrichtung am Donnerstag in Frankfurt.,WIND_DIRECTION
-Könntest du mir bitte sagen  in welche Richtung der Wind weht in 4 Stunden in Oslo?,WIND_DIRECTION
-Bitte sag mir  in welche Richtung weht der Wind?,WIND_DIRECTION
-In welche Richtung weht morgen der Wind in Hamburg?,WIND_DIRECTION
-In welche Richtung weht der Wind in Homburg um 16 Uhr,WIND_DIRECTION
-In welche Richtung weht gerade der Wind in Rotterdam?,WIND_DIRECTION
-Sag mir bitte  in welche Himmelsrichtung der Wind um 8.,WIND_DIRECTION
-Hallo Assistant  bitte sag mir in welche Wind Richtung weht der wind heute Abend in Kiel.,WIND_DIRECTION
-In welche Richtung weht denn gerade der Wind in Cottbus,WIND_DIRECTION
-Wie ist die Windrichtung in Sheffield?,WIND_DIRECTION
-Woher weht der Wind hier in Regensburg?,WIND_DIRECTION
-In welche Richtung weht gerade der Wind in Lüneburg?,WIND_DIRECTION
-Wie ist grade die Windrichtung?,WIND_DIRECTION
-In welche Richtung bläst der Wind?,WIND_DIRECTION
-in welche Richtung weht gerade der wind in Chemnitz?,WIND_DIRECTION
-In welche Richtung weht gerade der Wind?,WIND_DIRECTION
-Wird Schnee vorhergesagt?,SNOW
-Muss ich mein Auto von Schnee befreien?,SNOW
-Ist Schneefall vorhergesagt für Ufa?,SNOW
-Wird es Schnee geben in Oslo um 15:00?,SNOW
-Wird es am 3.3.2021 schneien in Lipezk?,SNOW
-Wie viel Schnne wird es morgen in Dresden geben?,SNOW
-Kannst du mir bitte sagen  ob Schnee vorhergesagt wird für Donnerstag?,SNOW
-Bitte sag mir  ob mit Schnee gerechnet werden sollte in Gelsenkirchen!,SNOW
-Bitte sag mir  ob morgen um 14 Uhr Schnee zu erwarten ist in Athen.,SNOW
-Brauche ich Schneehandschuhe?,SNOW
-Sag mir  ob Schnee vom Himmel fällt in Flensburg um 14:50.,SNOW
-Ist es verschneit in Nürnberg?,SNOW
-Könntest du mir sagen  ob Schnee kommt?,SNOW
-Wird es am Sonntag schneien?,SNOW
-Wird es in Washington schneien am 17.02.2020?,SNOW
-Ist Schnee zu erwarten in 3 Stunden?,SNOW
-Assistant  sollte ich mit Schnee rechnen in 5 Tagen,SNOW
-Muss ich mit Schneefall rechenen in 4 Tagen in Ulm?,SNOW
-Sollte ich mit Schnee rechnen in den nächsten Tagen?,SNOW
-Kann ich mit Schneefall rechnen in Boston?,SNOW
-Assistant  bitte sag mir ob es schneit in Toronto!,SNOW
-Hey Assistant wie sieht es morgen früh mit Schnee aus?,SNOW
-Wird in Chicago Schnee fallen am Samstag Abend?,SNOW
-Wird es schneien in Dallas gegen 15 Uhr?,SNOW
-Ist Schnee vorhergesagt für Genua.,SNOW
-Ist mit Schneefall zu rechnen? Ich bin gerade in Flensburg.,SNOW
-Muss mit Schnee gerechnet werden in Bern?,SNOW
-Wird es Schneefall geben in Stockholm?,SNOW
-Fällt gerade Schnee in Wolfsburg?,SNOW
-Hallo Assistant  bitte sag mir ob Schneefall zu erwarten ist heute Nacht.,SNOW
-Wird es Schneefall geben in Ludwigshafen?,SNOW
-Wie viel Schnee liegt gerade auf der Zugspitze?,SNOW
-Schneit es am Sonntag etwa wieder?,SNOW
-schneit es aktuell in Regensburg,SNOW
-Wird es Schnee geben in Lübeck?,SNOW
-Ist mit Schneefall zu rechnen in Melbourne,SNOW
-Hallo Assistant  bitte sag mir  ob es in Freiburg schneit,SNOW
-Ist Schnee vorhergesagt für Ansbach,SNOW
-Wird es bewölkt sein?,CLOUDS
-Sind Wolken am Himmel?,CLOUDS
-Sind Wolken am Himmel in Wolfsburg?,CLOUDS
-Ist es in Stockholm bewölkt?,CLOUDS
-Ist es am Abend bewölkt in Lissabon?,CLOUDS
-Sind diese Woche Wolken am Himmel in Vilnius?,CLOUDS
-Ist es am 17.06.2020 bewölkt in Hannover?,CLOUDS
-Wird es am Sonntag bewölkt sein in Bielefeld.,CLOUDS
-Hey! Bitte sag mir  ob es in 2 Stunden noch bewölkt ist in Palermo.,CLOUDS
-Sind wolken draußen in Regensburg?,CLOUDS
-Könntest du mir bitte sagen  ob es bewölkt ist in Cottbus heute Abend?,CLOUDS
-Ist es bewölkt in San Antonio,CLOUDS
-Muss ich mit Wolken rechnen?,CLOUDS
-Wird es am Montag bewölkt sein in den vereinigten Staaten,CLOUDS
-Hey Assistant  sag mir ob es bewölkt sein wird!,CLOUDS
-Muss mit Wolken gerechnet werden?,CLOUDS
-Wird es bewölkt sein in Managua um 17 Uhr Abends?,CLOUDS
-Hey Assistant  sag mir doch bitte ob für Charlotte bewölktes Wetter vorhergesagt wird.,CLOUDS
-Wird es in den nächsten 3 Tagen bewölkt sein in Seattle?,CLOUDS
-Hey Assistant  sag mir bitte  ob ich für Boston mit Schnee rechnen muss.,CLOUDS
-Assistant  muss ich mit Wolken rechnen in Seattle?,CLOUDS
-Hey Assistant sollte ich in Della mich auf bewölktes Wetter einstellen?,CLOUDS
-Hey Assistant ist es bewölkt in Puebla?,CLOUDS
-Wird das Wetter bewölkt sein in 4 Tagen um 15 Uhr?,CLOUDS
-Ist es bewölkt in Antwerpen um 18 Uhr?,CLOUDS
-Wird es in Ulm bewölkt sein in 4 Stunden?,CLOUDS
-Sind Wolken am Himmel? Ich bin gerade in Aalen,CLOUDS
-Sind viele Wolken am Himmel? Ich bin nämlich gerade in Erlangen.,CLOUDS
-Wie bewölt ist der Himmel in 4 Stunden,CLOUDS
-Hallo Assistant  bitte sag mir  ob das Wetter bewölkt sein wird in Las Vegas.,CLOUDS
-Sind morgen viele Wolken am Himmel?,CLOUDS
-gibt es Wolken in Belgrad?,CLOUDS
-Wie viele Wolken sind gerade in Warschau am Himmel?,CLOUDS
-Wird das Wetter bewölkt werden,CLOUDS
-Wie bewölkt ist der Himmel gerade?,CLOUDS
-Bewölktes Wetter vorhergesagt für Freitag?,CLOUDS
-Ist der Himmel in 8 Tagen bewölkt in Saragossa?,CLOUDS
-Wie wolkig wird es in Würzburg sein gegen Mittag,CLOUDS
-Wie warm wird es mindestens sein?,MIN_TEMPERATURE
-Welche Minimaltemperatur ist zu erwarten?,MIN_TEMPERATURE
-Wie warm wird es minimal in Turin?,MIN_TEMPERATURE
-Welche Minimaltemperatur ist für Kopenhagen vorhergesagt für morgen Mittag?,MIN_TEMPERATURE
-Wie viel Grad wird es mindestens geben in Cottbus?,MIN_TEMPERATURE
-Wie warm wird es minimal in Siegen um 15 Uhr?,MIN_TEMPERATURE
-Wie viel Grad Celsius wird es Übermorgen mindesten sein in Reutlingen?,MIN_TEMPERATURE
-Wie viel Grad Celsius wird es mindestens sein in 8 Stunden in Jena?,MIN_TEMPERATURE
-Hallo Assistant. Bitte sag mir welche Minimaltemperatur zu erwarten ist in 5 Stunden. Ich bin in Essen.,MIN_TEMPERATURE
-Welche Temperatur ist mindestens zu erwarten in Köln um 7 Uhr.,MIN_TEMPERATURE
-Welche Temperatur wird mindestens sein in Tianjin,MIN_TEMPERATURE
-Welche Minimaltemperatur ist zu erwarten in Los Angeles?,MIN_TEMPERATURE
-Könntest du mir bitte sagen  wie viel Grad es mindestens sein wird in Istanbul?,MIN_TEMPERATURE
-Bitte sag mir mit welcher Minimaltemperatur zu rechnen ist in San Juan am 12.05.2020,MIN_TEMPERATURE
-Hey Assistant  was ist die Vorhersage für die Minimaltemperatur um 12 Uhr in Cleveland?,MIN_TEMPERATURE
-Was ist die minimale Temperatur in Minneapolis?,MIN_TEMPERATURE
-Welche minimale Temperatur kann erwartet werden in Sacramento? Ich bin dort am Donnerstag.,MIN_TEMPERATURE
-Mit welcher Minimaltemperatur ist am Montag zu rechnen?,MIN_TEMPERATURE
-Hi Assistant  bitte sag mir  wie die Minimaltemperatur in Vancouver ist am 14.03,MIN_TEMPERATURE
-Wie ist die Minimaltemperatur am 14. April?,MIN_TEMPERATURE
-Assistant  sag mir doch bitte mit welcher Minimaltemperatur ich rechnen muss in 7 Tagen.,MIN_TEMPERATURE
-Hallo Assistant  bitte sag mir  wie viel Grad es in Tianjin mindestens geben wird um 17 Uhr.,MIN_TEMPERATURE
-Wie viel Grad Celsius wird es mindestens geben in Rio?,MIN_TEMPERATURE
-Hey  Assistant  wie viel Grad Celsius wird es mindestens geben?,MIN_TEMPERATURE
-Welche Mindestemperatur wird für Lima vorhergesagt  Übermogen um 14 Uhr?,MIN_TEMPERATURE
-Welche Temperatur ist mindestens zu erwarten in Orlando,MIN_TEMPERATURE
-Mit wie viel Grad ist nächste Woche Donnerstag um 14 Uhr mindestens zu rechnen. Ich bin in Potsdam.,MIN_TEMPERATURE
-Wie viel Grad sind mindestens zu erwarten in Zagreb?,MIN_TEMPERATURE
-Welche Minimaltemperatur wird es heute Nachmittag geben?,MIN_TEMPERATURE
-Assistant  wird die Minimaltemperatur groß sein in Berlin?,MIN_TEMPERATURE
-Wie viel Grad wird es morgen mindestens geben?,MIN_TEMPERATURE
-Welche Temperatur wird es mindestens geben hier in Belgrad?,MIN_TEMPERATURE
-Wie viel Grad wird es mindestens geben in Madrid?,MIN_TEMPERATURE
-welche Minimaltemperatur ist zu erwarten?,MIN_TEMPERATURE
-Wie viel Grad wird es mindestens geben?,MIN_TEMPERATURE
-Ich bin gerade in Sydney  wie viel Grad wird es hier minimal geben,MIN_TEMPERATURE
-welche Temperaturen wird es mindestens geben in Bilbao,MIN_TEMPERATURE
-Mindestemperatur in Schweinfurt,MIN_TEMPERATURE
-Was ist die maximal Temperatur?,MAX_TEMPERATURE
-Mit welcher Temperatur kann maximal gerechnet werden?,MAX_TEMPERATURE
-Mit warm wird es maximal in Turin?,MAX_TEMPERATURE
-Welche Maximaltemperatur ist für Riga vorhergesagt?,MAX_TEMPERATURE
-Welche Maximaltemperatur ist für Antwerpen vorhergesagt in 5 Tagen?,MAX_TEMPERATURE
-Ich bin gerade in Manchester. Bitte sag mir  welche Maximaltemperatur zu erwarten ist.,MAX_TEMPERATURE
-Wie viel Grad Celsius wird es maximal sein in Prag?,MAX_TEMPERATURE
-Könntest du mir bitte sagen  wie warm in 3 Stunden maximal sein wird in Essen?,MAX_TEMPERATURE
-Kannst du mir bitte sagen  wie warm es maximal sein wird?,MAX_TEMPERATURE
-Welche Maximaltemperatur wird vorhergesagt für Aalen?,MAX_TEMPERATURE
-Sag mir die maximale Temperatur  die in Chengdu zu erwarten ist!,MAX_TEMPERATURE
-Welche Maximaltemperatur ist in Nürnberg zu erwarten in 3 Stunden?,MAX_TEMPERATURE
-Welche Maximaltemperatur ist in Ludwigshafen zu erwarten um 16 Uhr?,MAX_TEMPERATURE
-Mit welcher Maximaltemperatur kann abends gerechnet werden  Assistant?,MAX_TEMPERATURE
-Hallo Assistent  bitte sag mir  welche Maximaltemperatur für Tianjin vorrausgesagt wird!,MAX_TEMPERATURE
-Welche Maximaltemperatur wird für Kalkutta prognostiziert?,MAX_TEMPERATURE
-Wie viel Grad wird es maximal in Rio?,MAX_TEMPERATURE
-Wie ist die maximal zu erwartende Temperatur für Hamburg?,MAX_TEMPERATURE
-Hi Assistant  bitte sag mir die Maximaltemperatur für in 4 Tagen!,MAX_TEMPERATURE
-Ich würde gerne wissen  wie viel Grad es maximal wird in Moskau um 17:30!,MAX_TEMPERATURE
-Wie ist die Maximaltemperatur in Chennai in 3 Tagen?,MAX_TEMPERATURE
-Bitte sag mir  wie die Maximaltemperatur in Bogota sein wird am Sonntag!,MAX_TEMPERATURE
-Hey Assistant  wie warm wird es maximal in Paris?,MAX_TEMPERATURE
-Hey Assistant  bitte sag mir  wie ist die Maximaltemperatur in Amsterdam?,MAX_TEMPERATURE
-Welche Maximaltemperatur wird vorhergesagt für Düsseldorf um 17 Uhr?,MAX_TEMPERATURE
-Welche Temperatur ist maximal zu erwarten in Rottenburg?,MAX_TEMPERATURE
-Mit wie viel  Grad ist maximal zu rechnen in Orlando am nächsten Donnerstag?,MAX_TEMPERATURE
-Wie warm wird es maximal sein in Bakersfield?,MAX_TEMPERATURE
-Welche Maximaltemperatur sollte man in Bakersfield erwarten heute Mittag?,MAX_TEMPERATURE
-Wie viel Grad wird es maximal sein heute Nacht um 0:00?,MAX_TEMPERATURE
-Wie viel Grad wird es morgen maximal geben?,MAX_TEMPERATURE
-Welche Temperatur wird es maximal geben in Moskau?,MAX_TEMPERATURE
-Sag mir doch bitte  wie viel Grad es maximal geben wird in Mary,MAX_TEMPERATURE
-Assistant  sag mir mal bitte  wie viel Grad wird es maximal hier in Maschhad,MAX_TEMPERATURE
-Wie viel Grad wird es maximal geben in Essen?,MAX_TEMPERATURE
-Sag mir bitte die Maximaltemperatur in New York am Samstag gegen 18 Uhr,MAX_TEMPERATURE
-Welche Temperatur wird es höchstens geben in Faro?,MAX_TEMPERATURE
-Hallo! Wie viel Grad wird es höchstens geben in Miami gegen abend,MAX_TEMPERATURE
-Wird es neblig sein?,FOG
-Ist mit Nebel zu rechnen?,FOG
-Kannst du mir bitte sagen  ob es Nebel gibt in Marseille?,FOG
-Könntest du mir bitte sagen  ob für Glasgow Nebel vorhergesagt wird?,FOG
-Ist es neblig in Astrachan?,FOG
-Wird es neblig sein in Genua?,FOG
-Ist es Übermorgen um 17 Uhr neblig in Köln?,FOG
-Sollte ich mit Nebel rechnen in 4 Stunden?,FOG
-Bitte sag mir  ob es am Samstag Nebel gibt in Leipzig?,FOG
-Wie sieht es aus mit Nebel?,FOG
-Ist es neblig New Orleans?,FOG
-Wird es in 2 Stunden Nebel geben in Austin?,FOG
-Sollte ich in Philadelphia mit Nebel rechnen am 14.04.2020?,FOG
-Wird Nebel vorhergesagt?,FOG
-Hey Assistant  sag mir doch bitte ob es in Washington neblig ist am Dienstag.,FOG
-Sollte mit Nebel gerechnet werden in Detroit?,FOG
-Wird das Wetter in 2 Tagen neblig sein in Tampa?,FOG
-Könntest du mir bitte sagen  ob es am Dienstag Nebel geben wird in St. Louis?,FOG
-Wird das Wetter neblig sein in Miami?,FOG
-Kann ich am Nachmittag mit Nebel rechnen?,FOG
-Assistant  sollte ich mit Nebel rechnen in den nächsten beiden Stunden?,FOG
-Hey Assistant  wie sieht es aus mit Nebel in Baltimore?,FOG
-Hey Assistant  ist es in 3 Tagen neblig in Orlando?,FOG
-Sollte ich mit Nebel rechnen in Pittsburgh?,FOG
-Könnten Sie mir bitte sagen  ob es in London Nebel geben wird?,FOG
-Wird es neblig sein in Göteborg am nächsten Samstag?,FOG
-Wird es Nebel geben in Ulm gegen 15 Uhr?,FOG
-Ist in Wien viel Nebel?,FOG
-Ist in 22 Stunden Nebel zu erwarten in Miami?,FOG
-Wird das Wetter neblig sein heute früh?,FOG
-Ist es in Istanbul neblig in 4 Stunden?,FOG
-Wie sieht es morgen mit Nebel aus?,FOG
-Wird es neblig in Durban?,FOG
-Muss mit starkem Nebel gerechnet werden?,FOG
-Ist es hier neblig?,FOG
-Ist denn mit Nebel zu rechnen am Montag um 17:00?,FOG
-Wird es morgen nebeln,FOG
-Hallo  ist es morgen neblig?,FOG
-Wird Sturm vorhergesagt,THUNDER
-Bitte sag mir  ob Sturm kommt!,THUNDER
-Ist in Paris mit Sturm zu rechnen?,THUNDER
-Wird es Donner und Blitze geben in Neapel?,THUNDER
-Kann ich am Sonntag mit Blitz und Donner rechnen in Göteborg?,THUNDER
-Ist es heute Mittag stürmisch in Kiel?,THUNDER
-Sollte ich mit Sturm rechnen?,THUNDER
-Wird es in 4 Tagen stürmisch sein?,THUNDER
-Ist mit Sturm zu rechnen in Budapest um 17 Uhr?,THUNDER
-Wird es stürmisches Wetter geben in 4 Tagen in Hanau?,THUNDER
-Ist in Budabest mit einem Sturm zu rechnen?,THUNDER
-Bitte sag mir  ob es am 17.03.2020 einen Sturm geben wird in Chicago.,THUNDER
-Ist ein Gewitter zu erwarten in Bergen um 12:00?,THUNDER
-Hey Assistant  wird es Übermorgen gewittern in Hanoi?,THUNDER
-Hey Assistant  bitte sag mir  ob es ein Gewitter mit Blitzen geben wird.,THUNDER
-Sag mir bitte  ob abends ein Sturm zu erwarten ist in Würzburg.,THUNDER
-Assistant  wird es einen Sturm geben in 3 Tagen in Hamburg?,THUNDER
-Wird es ein Gewitter geben am Montag? ,THUNDER
-Sollte ich mit Blitzen rechnen in 4 Tagen  Assistant?,THUNDER
-Hi Assistant  sag mir doch bitte  ob es stürmisch wird in den nächsten 3 Tagen.,THUNDER
-Ist stürmisches Wetter in der Vorhersage?,THUNDER
-Hey Assistant  wird das Wetter stürmisch in Columbus?,THUNDER
-Wie sieht es aus mit Sturm?,THUNDER
-Sollte man sich auf Sturm vorbereiten in Baltimore in dieser Woche?,THUNDER
-Ist es stürmisch in Flensburg um 16:00?,THUNDER
-Wird es in Karlsruhe morgen stürmisch werden gegen 16 Uhr?,THUNDER
-Sag mir bitte  ob es stürmisch werden wird in Rottenburg,THUNDER
-Ist es in Dortmund stürmisch um 17 Uhr?,THUNDER
-Sag mir  ob das Wetter stürmisch wird in 4 Stunden?,THUNDER
-Wird das Wetter nächste Woche am Sonntag stürmisch?,THUNDER
-Kommt stürmisches Wetter in Rottenburg um 17 Uhr?,THUNDER
-Wie stürmisch ist es gerade in Ulm?,THUNDER
-Kannst du mir bitte sagen  ob es Sturm gibt in Hannover?,THUNDER
-Wie stürmisch ist es gerade?,THUNDER
-ist es gerade stürmisch in Leogang,THUNDER
-Kommt ein Gewitter in Frankfurt,THUNDER
-Muss ich mir um 18 Uhr in Massachusetts Sorgen um Blitze machen?,THUNDER
-Wie sieht es aus mit Stum in Bad Abbach?,THUNDER
+"post","tag"
+"Wie wird das Wetter morgen um 18:00 Uhr sein","WEATHER"
+"Wird es in 2 Tagen um 4 Uhr Regen geben?","RAIN"
+"Wird es in 4 Tagen Schnee geben","SNOW"
+"Wird es in 2 Tagen Regen geben","RAIN"
+"Was ist mit dem Donner in 5 Tagen in New York","THUNDER"
+"Was ist mit Blitzen in 6 Tagen in Oslo","THUNDER"
+"Was ist mit dem morgigen Regen","RAIN"
+"Können Sie mir sagen  wie hoch die Durchschnittstemperatur in Brooklyn heute ist","AVERAGE_TEMPERATURE"
+"Brauche ich eine warme Jacke","COLD"
+"Wissen Sie  ob es am Montag in Berlin kalt sein wird","COLD"
+"Assistant  bitte sagen Sie mir  ob es in Amsterdam kaltes Wetter geben wird","COLD"
+"Assistant  bitte sagen Sie mir  wie viel Grad Celsius es in München gibt","TEMPERATURE"
+"Hey Assistent  könnten Sie mir bitte sagen  ob das Wetter heiß ist","WARM"
+"Brauche ich heute in Berlin eine Jacke","COLD"
+"Wird es in Amsterdam in 3 Tagen regnen","RAIN"
+"Wissen Sie  ob es morgen in Manhattan hohen Luftdruck geben wird","AIR_PRESSURE"
+"Könnten Sie mir bitte sagen  ob die Sonne um 13:00 Uhr in New Orleans scheint","SUN"
+"Assistentin  gibt es morgen um 14:00 Uhr hohen Luftdruck in München","AIR_PRESSURE"
+"Assistentin  muss ich mir Sorgen machen wegen Regen in 3 Tagen in Atlanta","RAIN"
+"Assistentin  muss ich warten  bis der Regen fällt","RAIN"
+"Wie wird das Wetter um 18 Uhr in Regensburg sein","WEATHER"
+"Assistentin  bitte sagen Sie mir  ob ich heute einen Regenschirm brauche","RAIN"
+"Assistentin  bitte sagen Sie mir  wie hoch die Durchschnittstemperatur heute um 17 Uhr ist","AVERAGE_TEMPERATURE"
+"Könnten Sie mir bitte sagen  wie die Durchschnittstemperatur in 4 Tagen sein wird","AVERAGE_TEMPERATURE"
+"Hallo! Könnten Sie mir bitte sagen  wie hoch die Durchschnittstemperatur in Berlin ist","AVERAGE_TEMPERATURE"
+"Guten Morgen  könnten Sie mir bitte sagen  wie hoch die Durchschnittstemperatur ist","AVERAGE_TEMPERATURE"
+"Guten Morgen  bitte sagen Sie mir die Temperatur in Barcelona","TEMPERATURE"
+"Hallo  könnten Sie mir bitte sagen  ob das Wetter in 3 Tagen in Atlanta kalt sein wird","COLD"
+"Wie ist die Richtung des Windes in Berlin um 18 Uhr","WIND_DIRECTION"
+"In welche Richtung weht der Wind am Samstag bei 6m","WIND_DIRECTION"
+"Bitte sagen Sie mir  ob der Wind draußen weht","WIND"
+"Assistentin  bitte sagen Sie mir  ob es in New York Wind gibt","WIND"
+"Bitte sagen Sie mir  ob das Wetter kalt sein wird","COLD"
+"Sehr geehrte Assistentin  bitte sagen Sie mir  wie die Temperatur in New York um 18 Uhr ist","TEMPERATURE"
+"Hey Assistentin  bitte sagen Sie mir  ob der Luftdruck in Berlin an diesem Samstag niedrig ist","AIR_PRESSURE"
+"Wird es heute um 18.00 Uhr in New York einen Hurrikan geben","THUNDER"
+"Wird es nächste Woche um 12 Uhr in Los Angeles etwas regnen?","RAIN"
+"Wird es auf Zypern sonnig","SUN"
+"Wird es in Frankfurt regnen","RAIN"
+"Wird es in Sydney verschneit sein","SNOW"
+"Gibt es sonniges Wetter in Amsterdam  Assistentin?","SUN"
+"Hey  Assistentin  in welche Richtung weht der Wind heute um 18 Uhr","WIND_DIRECTION"
+"Wird es morgen um Mitternacht Sturm geben?","THUNDER"
+"Glauben Sie  dass es heute Abend regnen wird?","RAIN"
+"Muss ich mir um 18 Uhr in Massachusetts Sorgen über Blitze machen?","THUNDER"
+"Hey Assistent  könnten Sie mir bitte sagen  ob es Schnee geben wird","SNOW"
+"Hallo  wie wird das Wetter um 18 Uhr in Regensburg sein","WEATHER"
+"Assistentin  könnten Sie mir bitte sagen  ob es morgen regnen wird","RAIN"
+"Hallo  könnten Sie bitte sagen  ob der Luftdruck morgen um 18 Uhr in München niedrig sein wird","AIR_PRESSURE"
+"Gibt es Regen","RAIN"
+"Wird es morgen Abend in Los Angeles Schnee geben","SNOW"
+"Wie wird der Luftdruck morgen in Frankfurt sein","AIR_PRESSURE"
+"Könnten Sie mir bitte sagen  ob es in 3 Tagen Regen vom Himmel fallen wird","RAIN"
+"Wie ist das Wetter in Paris?","WEATHER"
+"Wie ist das Wetter in London?","WEATHER"
+"Wie ist die Windrichtung in Sheffield?","WIND_DIRECTION"
+"Wie wird das Wetter morgen in München?","WEATHER"
+"Wie ist das Wetter in Regensburg","WEATHER"
+"Regnet es gerade in Freiburg","RAIN"
+"Wie wird das Wetter in 5 Tagen?","WEATHER"
+"Wie wird das Wetter in den nächsten 5 Tagen?","WEATHER"
+"Wie wird das Wetter nächste Woche Samstag?","WEATHER"
+"Wie wird das Wetter am Samstag?","WEATHER"
+"Wie wird das Wetter heute Mittag?","WEATHER"
+"Wie wird das Wetter heute Mittag in Regensburg?","WEATHER"
+"Wie wird das Wetter heute um 18 Uhr in Regensburg?","WEATHER"
+"Wie wird das Wetter heute um 20 Uhr in Regensburg?","WEATHER"
+"Wird es morgen regnen","RAIN"
+"Wird es morgen nebeln","FOG"
+"wie viel grad wird es morgen um 16 uhr haben","TEMPERATURE"
+"Sag mir bitte  wie viel Grad Celsius es morgen maximal geben wird","MAX_TEMPERATURE"
+"Hallo! Wie viel Grad wird es mindestens geben um 17 Uhr am Sonntag","MIN_TEMPERATURE"
+"Hallo! Wie viel Grad wird es höchstens geben in Miami gegen abend","MAX_TEMPERATURE"
+"Brauche ich eine warme Jacke?","COLD"
+"Brauche ich einen Regenschirm","RAIN"
+"Sag mir bitte  ob in Kitzbühl mit Nebel zu rechnen ist!","FOG"
+"Wird es windig werden?","WIND"
+"Wird es sonnig sein?","SUN"
+"Wie wird das Wetter morgen?","WEATHER"
+"Hallo  ist es morgen neblig?","FOG"
+"Wie ist denn bitte gerade der Luftdruck hier in Aachen","AIR_PRESSURE"
+"In welche Richtung weht gerade der Wind?","WIND_DIRECTION"
+"Ist es am Montag regnerisch in Sydney?","RAIN"
+"Wie wird das Wetter werden hier in London?","WEATHER"
+"Wie warm wird es in Zypern?","WARM"
+"Wie viel Schneefall wird es geben?","SNOW"
+"Ist das Wetter gut heute?","WEATHER"
+"Wird es warm werden?","WARM"
+"Ist Schneefall zu erwarten?","SNOW"
+"Wie wird das Wetter sein","WEATHER"
+"Welches Wetter ist zu erwarten","WEATHER"
+"Sag mir  wie das Wetter wird","WEATHER"
+"Was sagt die Wettervorhersage","WEATHER"
+"Wie wird das Wetter morgen um 16:00 sein?","WEATHER"
+"Wie sieht der Wetterbericht aus für morgen","WEATHER"
+"Mit welchem Wetter kann ich am Dienstag rechnen","WEATHER"
+"Sag mir wie das Wetter nächste Woche wird!","WEATHER"
+"Kannst du mir bitte sagen  wie das Wetter um 6 Uhr wird?","WEATHER"
+"Bitte sag mir  wie das Wetter morgen Abend wird?","WEATHER"
+"Hey Assistant  kannst du mir bitte sagen  mit welchem Wetter ich rechnen kann um 8 uhr morgens","WEATHER"
+"Mit welchem Wetter ist am Dienstag zu rechnen in Kalkutta?","WEATHER"
+"Assistant  bitte gib mir den Wetterbericht für heute für Peking?","WEATHER"
+"Mit welchem Wetter kann ich in 2 Tagen rechnen in Kairo?","WEATHER"
+"Hey Assistant  wie wird das Wetter diese Woche in Berlin","WEATHER"
+"Mit welchem Wetter kann man am Samstag morgen rechnen in Delhi?","WEATHER"
+"Wie wird in Lahore das Wetter sein um 14:00","WEATHER"
+"Mit welchem Wetter ist morgen um 3 Uhr in Los Angeles zu rechnen?","WEATHER"
+"Wie wird das Wetter übermorgen in Lagos","WEATHER"
+"Wie sieht der Wetterbericht für heute aus? Ich bin in Mumbai.","WEATHER"
+"Wie wird das Wetter in einer Woche sein in Moskau?","WEATHER"
+"Könntest du mir bitte sagen wie das Wetter in 7 Tagen ist in Tokio!","WEATHER"
+"Wie sieht der Wetterbericht für Frankfurt aus?","WEATHER"
+"Welches Wetter wird vorhergesagt für New York morgen Abend?","WEATHER"
+"Wie wird das Wetter am Donnerstag Abend in Regensburg?","WEATHER"
+"Wie wird das Wetter am morgigen Tag um 16:00?","WEATHER"
+"Ich bin morgen in Rottenburg und frage mich  wie das Wetter sein wird.","WEATHER"
+"Hey  sag mir bitte wie das Wetter am Donnerstag sein wird. Ich bin in Göteborg.","WEATHER"
+"Wird es in Erlangen morgen gutes Wetter geben?","WEATHER"
+"Sag mir bitte  wie das Wetter morgen wird!","WEATHER"
+"Wie wird das Wetter in den nächsten 5 Tagen?","WEATHER"
+"Wie ist das Wetter in London?","WEATHER"
+"Kannst du mir sagen  wie das Wetter auf dem Wendelstein ist?","WEATHER"
+"Wie ist das wetter in Texas","WEATHER"
+"Hallo  kann ich in Pentling mit gutem Wetter rechnen?","WEATHER"
+"Ich bin morgen um 7 Uhr in Hamburg. Wie wird das Wetter dort?","WEATHER"
+"wie ist das Wetter gerade","WEATHER"
+"Wie ist das Wetter in Regenstauf","WEATHER"
+"Wird es regenen","RAIN"
+"Brauche ich einen Regenschirm","RAIN"
+"Muss ich mit Regen rechnen in Nagoya","RAIN"
+"Ist mit Regen zu rechnen in Wuhan um 3 Uhr?","RAIN"
+"Sollte ich mit Regen rechnen morgen mittag in Taipei","RAIN"
+"Wird Regen vom Himmel Fallen um 16:30 in Hanoi","RAIN"
+"Kannst du mir bitte sagen  ob es regnen wird","RAIN"
+"Bitte sag mir  ob übermorgen mit Regnen zu rechnen ist in Nagoya","RAIN"
+"Bitte sag mir ob es in 4 Tagen regnen wird in Onitsha","RAIN"
+"Muss ich einen Regenschirm einpacken morgen in Paris?","RAIN"
+"Muss in Lima morgen mit Regen gerechnet werden?","RAIN"
+"Ist es regnerisch","RAIN"
+"Benötige ich in London einen Regenschirm heute Abend","RAIN"
+"Kann mit regnerischen Tagen gerechnet werden in Köln?","RAIN"
+"Hey Assistant  bitte sag mir  ob Regen kommen wird um 14 Uhr in Chennai!","RAIN"
+"Kann in Madrid mit Regen gerechnet werden Heute mittag?","RAIN"
+"Sollte ich einen Regenschirm einpacken in 3 Tagen? Ich befinde mich in Zhengzhou!","RAIN"
+"Muss ich mir Sorgen machen um Regen? Ich befinde mich gerade in Frankfurt.","RAIN"
+"Assistant  bitte sag mir ob für morgen Abend regen gemeldet ist. Ich bin in Salzburg.","RAIN"
+"Bitte sage  ob morgen regen kommt","RAIN"
+"Ist morgen Regen zu erwarten? Ich bin in Riad!","RAIN"
+"Wird es in Rom regnen in dieser Woche?","RAIN"
+"Wird es in Minsk regnen in 4 Stunden?","RAIN"
+"Wird es Niederschlag geben in London  übermorgen?","RAIN"
+"Kannst du mir bitte sagen  ob es gerade regnet","RAIN"
+"Kannst du mir bitte sagen  ob es morgen um 16 Uhr regnen wird?","RAIN"
+"Wird es in Ulm regnerisch werden gegen 14 Uhr?","RAIN"
+"Wird es regnerisch werden in Hamburg gegen 3 Uhr?","RAIN"
+"Wird das Wetter morgen regnerisch?","RAIN"
+"Kommt morgen Regen?","RAIN"
+"Kannst du mir bitte sagen  ob mit regnerischem Wetter zu rechnen ist am Donnerstag","RAIN"
+"Regnet es in Frankfurt?","RAIN"
+"Regnet es morgen in Regensburg?","RAIN"
+"Regnet es nächstes Wochenende in Erlangen?","RAIN"
+"Wird es regnerisches Wetter in Berlin geben?","RAIN"
+"Sag mir bitte ob ich morgen in Bonn mit Niederschlag rechnen sollte um 7 Uhr","RAIN"
+"regnet es in Köln","RAIN"
+"Gibt es Niederschlag in Pentling","RAIN"
+"Scheint die Sonne?","SUN"
+"Ist Sonnenschein vorhergesagt?","SUN"
+"Bitte sag mir  ob morgen in Köln die Sonne scheint!","SUN"
+"Soll ich morgen um 3 Uhr mit Sonne rechnen in Amsterdam?","SUN"
+"Ist Sonnenschein vorhergesagt morgen Abend für Dortmund?","SUN"
+"Ist am 4.3.2020 mit Sonne zu rechnen in Bergen?","SUN"
+"Kann ich morgen Abend mit Sonnenschein rechnen  ich bin gerade in LA.","SUN"
+"Scheint die Sonne gerade in Gladbach?","SUN"
+"Kann ich eine Sonnenbrille tragen morgen in Trier?","SUN"
+"Ist es Sonnig draußen in Mumbai um 18:30?","SUN"
+"Ist die Sonne draußen in Sao Paulo?","SUN"
+"Ist es sonnig in Lagos in 4 Stunden?","SUN"
+"Sind sonnige Tage vorhergesagt laut des Wetterdienstes am 17.02.2020?","SUN"
+"Ich bin in 4 Tagen in Lagos und frage mich  ob es dort Sonnenschein geben wird.","SUN"
+"Hallo Assistent  bitte sag mir  ob es in Chengdu sonnig ist.","SUN"
+"Brauche ich einen Sonnenschutz in Kairo morgen Mittag?","SUN"
+"Assistant wird es in 12 Stunden sonniges Wetter geben in Moskau?","SUN"
+"Scheint gerade die Sonne in Paris?","SUN"
+"Hi Assistant  bitte sag mir  ob es sonnig ist in 4 Tagen.","SUN"
+"Könntest du mir bitte sagen  ob die Sonne seint am Sonntag?","SUN"
+"Bitte sag mir  ob es sonnig ist in Bangkok in der Früh.","SUN"
+"Hey Assistant sag mir bitte  ob die Sonne draußen scheint","SUN"
+"Ist es sonnig in Istanbul um 4 Uhr morgens?","SUN"
+"Wird es sonnig sein in Prag am Freitag?","SUN"
+"Könnten sie mir bitte sagen  ob in 3 Tagen die Sonne scheint in Amsterdam?","SUN"
+"Hey  es wäre toll  wenn du sagen könntest  ob die Sonne morgen draußen ist","SUN"
+"Wird die Sonne scheinen in Nürnberg morgen Abend?","SUN"
+"Wird die Sonne scheinen am 5. Juni 2020?","SUN"
+"Wird das Wetter morgen sonnig?","SUN"
+"Bitte sag mir  ob in Magdeburg das Wetter sonnig wird!","SUN"
+"Wird für Samstg um 16 Uhr sonniges Wetter vorhergesagt?","SUN"
+"Kommt heute noch die Sonne raus?","SUN"
+"Wann gibt es in Regensburg wieder Sonne?","SUN"
+"Scheint in Zürich um 18 Uhr die Sonne?","SUN"
+"Wird es sonniges Wetter in Ulm geben?","SUN"
+"Hallo Assistant  sollten wir hier mit sonnigem Wetter rechnen?","SUN"
+"scheint gerade die Sonne in Montana","SUN"
+"Ist es sonnig in Nürnberg?","SUN"
+"Ist mit Wind zu rechnen?","WIND"
+"Kann ich mit Wind rechnen?","WIND"
+"Wird es in Kiew Wind geben?","WIND"
+"Wird es windig sein in Turin?","WIND"
+"Was sagt der Wetterbericht zu Wind in Bremen in 4 Tagen?","WIND"
+"In welche Richtung weht der wind in Saarbrücken um 17 Uhr?","WIND"
+"Sollte mit Wind gerechnet werden in 3 Stunden?","WIND"
+"Wird Wind kommen in Neuss","WIND"
+"Ist es windig  Assistant?","WIND"
+"Kannst du mir sagen  ob es in 3 Stundne windig sein wird?","WIND"
+"Sollte ich vorbereitet sein für Wind?","WIND"
+"Muss ich mit einem heftigen Sturm rechnen?","WIND"
+"Sag mir ob der Wind bläst in 4 Stunden in Neapel!","WIND"
+"Könntest du mir bitte sagen  ob es windig ist in Shenzhen um 17:00?","WIND"
+"Hey Assistant  bitte sag mir ob es in Bangok windig ist.","WIND"
+"Sag mir ob der Wind weht in New York in 7 Tagen.","WIND"
+"Kommt morgen um 17:00 Wind?","WIND"
+"Ist in Regensburg mit Wind zu rechnen morgen Abend?","WIND"
+"Hi Assitant  ist es windig in Hanoi um 17:00?","WIND"
+"Bitte sag mir  ob mit Wind zu rechnen ist in Chennai","WIND"
+"Weht der Wind in Osnabrück am 17.03.2020","WIND"
+"Hey Assistant ist Wind vorhergesagt?","WIND"
+"Hey Assistant ist winiges Wetter vorhergesagt?","WIND"
+"Hey Assistant wird es um 6 Uhr Abends Wetter geben mit Wind?","WIND"
+"Ist in Lima mit Wind zu rechnen in 3 Tagen?","WIND"
+"Wird morgen der Wind wehen in Ludwigshafen um 16 Uhr?","WIND"
+"Wird in Zürich ein windiges Wetter erwartet?","WIND"
+" Sag mir bitte  ob es abends windig wird in Erlangen","WIND"
+"Kann ich in Hanover mit windigem Wetter rechnen?","WIND"
+"Sag mir bitte  ob das Wetter am Montag windig wird!","WIND"
+"Wird es windiges Wetter geben?","WIND"
+"Wie stark geht der Wind in Hamburg?","WIND"
+"Ist es windig in Allersberg?","WIND"
+"Wie windig ist es gerade denn in Bern?","WIND"
+"wie windig ist es gerade in Venedig","WIND"
+"Wie windig ist es übermorgen in Göttingen?","WIND"
+"windiges Wetter vorhergesagt?","WIND"
+"Ist es windig in Pettendorf?","WIND"
+"Wird Sturm vorhergesagt","THUNDER"
+"Bitte sag mir  ob Sturm kommt!","THUNDER"
+"Ist in Paris mit Sturm zu rechnen?","THUNDER"
+"Wird es Donner und Blitze geben in Neapel?","THUNDER"
+"Kann ich am Sonntag mit Blitz und Donner rechnen in Göteborg?","THUNDER"
+"Ist es heute Mittag stürmisch in Kiel?","THUNDER"
+"Sollte ich mit Sturm rechnen?","THUNDER"
+"Wird es in 4 Tagen stürmisch sein?","THUNDER"
+"Ist mit Sturm zu rechnen in Budapest um 17 Uhr?","THUNDER"
+"Wird es stürmisches Wetter geben in 4 Tagen in Hanau?","THUNDER"
+"Ist in Budabest mit einem Sturm zu rechnen?","THUNDER"
+"Bitte sag mir  ob es am 17.03.2020 einen Sturm geben wird in Chicago.","THUNDER"
+"Ist ein Gewitter zu erwarten in Bergen um 12:00?","THUNDER"
+"Hey Assistant  wird es Übermorgen gewittern in Hanoi?","THUNDER"
+"Hey Assistant  bitte sag mir  ob es ein Gewitter mit Blitzen geben wird.","THUNDER"
+"Sag mir bitte  ob abends ein Sturm zu erwarten ist in Würzburg.","THUNDER"
+"Assistant  wird es einen Sturm geben in 3 Tagen in Hamburg?","THUNDER"
+"Wird es ein Gewitter geben am Montag? ","THUNDER"
+"Sollte ich mit Blitzen rechnen in 4 Tagen  Assistant?","THUNDER"
+"Hi Assistant  sag mir doch bitte  ob es stürmisch wird in den nächsten 3 Tagen.","THUNDER"
+"Ist stürmisches Wetter in der Vorhersage?","THUNDER"
+"Hey Assistant  wird das Wetter stürmisch in Columbus?","THUNDER"
+"Wie sieht es aus mit Sturm?","THUNDER"
+"Sollte man sich auf Sturm vorbereiten in Baltimore in dieser Woche?","THUNDER"
+"Ist es stürmisch in Flensburg um 16:00?","THUNDER"
+"Wird es in Karlsruhe morgen stürmisch werden gegen 16 Uhr?","THUNDER"
+"Sag mir bitte  ob es stürmisch werden wird in Rottenburg","THUNDER"
+"Ist es in Dortmund stürmisch um 17 Uhr?","THUNDER"
+"Sag mir  ob das Wetter stürmisch wird in 4 Stunden?","THUNDER"
+"Wird das Wetter nächste Woche am Sonntag stürmisch?","THUNDER"
+"Kommt stürmisches Wetter in Rottenburg um 17 Uhr?","THUNDER"
+"Wie stürmisch ist es gerade in Ulm?","THUNDER"
+"Kannst du mir bitte sagen  ob es Sturm gibt in Hannover?","THUNDER"
+"Wie stürmisch ist es gerade?","THUNDER"
+"ist es gerade stürmisch in Leogang","THUNDER"
+"Kommt ein Gewitter in Frankfurt","THUNDER"
+"Muss ich mir um 18 Uhr in Massachusetts Sorgen um Blitze machen?","THUNDER"
+"Wie sieht es aus mit Stum in Bad Abbach?","THUNDER"
+"Wie ist der Luftdruck","AIR_PRESSURE"
+"Kannst du mir sagen  wie der Luftdruck ist","AIR_PRESSURE"
+"Bitte sag mir  wie der Luftdruck in Rom ist!","AIR_PRESSURE"
+"Wie ist der Luftdruck in Krasnodar","AIR_PRESSURE"
+"Wie ist der Luftdruck in Dublin diese Woche?","AIR_PRESSURE"
+"Welcher Luftdruck wird vorhergesagt für Lyon um 13:00?","AIR_PRESSURE"
+"Kannst du mir bitte sagen  welcher Luftdruck für Donnerstag vorhergesagt wird? Ich bin in Berlin!","AIR_PRESSURE"
+"Kannst du mir bitte sagen  ob Morgen Regen kommen wird in Wuppertal?","AIR_PRESSURE"
+"Wie wird am 14.03.2020 der Luftdruck in Zagreb sein?","AIR_PRESSURE"
+"Welcher Luftdruck ist zu erwarten?","AIR_PRESSURE"
+"Wie ist der Luftdruck in Prag um 17:30?","AIR_PRESSURE"
+"Bitte sag mir welcher Luftdruck in 5 Stunden in Hannover sein wird!","AIR_PRESSURE"
+"Wie ist gerade der Luftdruck in Toronto?","AIR_PRESSURE"
+"Welcher Luftdruck kann erwartet werden in Madrid?","AIR_PRESSURE"
+"Bitte sag mir  wie der Luftdruck ist in Houstan in 3 Tagen!","AIR_PRESSURE"
+"Kannst du mir bitte sagen  wie in 7 Stunden der Luftdruck in Riad ist?","AIR_PRESSURE"
+"Assistant  wie ist in Surat der Luftdruck am Donnerstag.","AIR_PRESSURE"
+"Wie ist am Dienstag der Luftdruck in Bern?","AIR_PRESSURE"
+"Hi Assistant  bitte sag mir  wie der Luftdruck in Quanzhou ist!","AIR_PRESSURE"
+"Welcher Luftdruck um 18 Uhr ist in Santiago.","AIR_PRESSURE"
+"Weißt du  wie der Luftdruck für Luanda vorhergesagt wird für morgen um 17 Uhr?","AIR_PRESSURE"
+"Hey Assistant  wie ist der Luftdruck morgen Mittag in Kuala Lumpur?","AIR_PRESSURE"
+"Welcher Luftdruck wird für den 17.08.2020 vorhergesagt für Boston?","AIR_PRESSURE"
+"Wie wird der Luftdruck sein?","AIR_PRESSURE"
+"Welcher Luftdruck ist zu erwarten in 4 Stunden?","AIR_PRESSURE"
+"Wie wird in Pitsburg der Luftdruck sein am nächsten Donnerstag?","AIR_PRESSURE"
+"Wie ist der Luftdruck hier in Bern gegen 21 Uhr?","AIR_PRESSURE"
+"Wie wird in 4 Stunden der Luftdruck in Amsterdam sein?","AIR_PRESSURE"
+"Kannst du mir bitte sagen  wie der Luftdruck in Ludwigshafen in 3 Tagen sein wird?","AIR_PRESSURE"
+"Bitte sag mir  wie der Luftdruck in Ulm ist morgen?","AIR_PRESSURE"
+"Sag mit bitte  wie der Luftdruck ist in Prag","AIR_PRESSURE"
+"Assistant  sag mir doch bitte  wie der Luftdruck ist in Trontheim.","AIR_PRESSURE"
+"Wie ist denn gerade der Luftdruck in Göteborg?","AIR_PRESSURE"
+"Ich bin in Saarbrücken  wie ist hier morgen der Luftdruck? ","AIR_PRESSURE"
+"Welcher Luftdruck ist hier zu erwarten in Trondheim?","AIR_PRESSURE"
+"Mit welchem Luftdruck ist in Essen am Donnerstag zu rechnen?","AIR_PRESSURE"
+"Sag mir mal bitte  wie der Luftdruck sein wird in Würzburg morgen","AIR_PRESSURE"
+"Wie wird der Luftdruck sein in Pielenhofen?","AIR_PRESSURE"
+"Wie wird die Temperatur sein?","TEMPERATURE"
+"Wie viel Grad Celsius ist es?","TEMPERATURE"
+"Sag mir  wie viel Grad ist es in Minsk","TEMPERATURE"
+"Welche Temperatur wird vorhergesagt?","TEMPERATURE"
+"Wie viel Grad wird es in Orenburg morgen Abend?","TEMPERATURE"
+"Wie wird in einer Woche die Temperatur in Lyon sein?","TEMPERATURE"
+"Wie viel Grad ist es gerade in Paderborn?","TEMPERATURE"
+"Bitte sag mir wie viel Grad es in 4 Stunden sein wird!","TEMPERATURE"
+"Mit welchen Temperaturen kann ich rechnen auf Gozo in 3 Tagen um 17:00?","TEMPERATURE"
+"Bitte sag mir  wie viel Grad es ist in Wuhan!","TEMPERATURE"
+"Wie viel Grad wird es in Santiago sein um 17:00?","TEMPERATURE"
+"Wie ist die Temperatur auf Malta in 4 Tagen?","TEMPERATURE"
+"Kannst du mir sagen  wie die Temperatur in Regensburg sein wird in 3 Stunden?","TEMPERATURE"
+"Wie viel Grad Celsius wird es in Berlin sein?","TEMPERATURE"
+"Hey Assistant wie ist die Temperatur in Lagos um 4 Uhr morgens am Dienstag?","TEMPERATURE"
+"Wie ist die Temperatur in London in 3 Tagen?","TEMPERATURE"
+"Welche Temperatur haben wir in Bangalore um 17 Uhr?","TEMPERATURE"
+"Wie viel Grad ist es gerade in Paris?","TEMPERATURE"
+"Hi Assistant  bitte sag mir wie viel Grad ist es in Nagoya?","TEMPERATURE"
+"Ich muss wissen  wie viel Grad es in Luanda ist.","TEMPERATURE"
+"Hey Assistant  wie viel Grad ist es in Riad?","TEMPERATURE"
+"Hallo  wie ist die Temperatur in sieben Tagen in Washington?","TEMPERATURE"
+"Wie ist die Temperatur in Wuhan am Dienstag  morgens.","TEMPERATURE"
+"Wie wird die Temperatur morgen um 17:00 in Paris sein?","TEMPERATURE"
+"Welche Temperatur ist auf dem Thermometer für Leipzig.","TEMPERATURE"
+"Welche Temperaturen kann ich morgen erwarten. Ich bin in Berlin.","TEMPERATURE"
+"Kannst du mir mal bitte sagen  mit welchen Temperaturen gerechnet werden muss  morgen?","TEMPERATURE"
+"Mit welcher Temperatur ist zu rechnen in Zagreb?","TEMPERATURE"
+"Wie viel Grad ist es gerade in Mannheim?","TEMPERATURE"
+"Welche Temperatur ist gerade in Zürich?","TEMPERATURE"
+"Welche Temperatur wird es in Prag geben am nächsten Montag?","TEMPERATURE"
+"Wie viel Grad ist es morgen um 17 Uhr in Budapest?","TEMPERATURE"
+"Wie ist denn die Temperatur hier?","TEMPERATURE"
+"Wie viel Grad wird es in Düsseldorf geben?","TEMPERATURE"
+"Wie ist die Temperatur gerade?","TEMPERATURE"
+"Wie viel Grad sind es gerade in New York?","TEMPERATURE"
+"Wie viel Grad hat es in Pilsen","TEMPERATURE"
+"Sag mir bitte  wie viel Grad es geben wird in Ingolstadt gegen 18 Uhr","TEMPERATURE"
+"Ist es kalt?","COLD"
+"Wird es kalt sein?","COLD"
+"Bitte sag mir  ob es Kalt wird in Istanbul!","COLD"
+"Kannst du mir bitte sagen  ob ich eine warme Jacke brauche in Wien?","COLD"
+"Ist es am Sonntag um 15 Uhr kalt in Pensa?","COLD"
+"Ist es in 4 Tagen kalt in Homel?","COLD"
+"Ist es kalt in Neuss?","COLD"
+"Ist es am 16.05.2020 kalt in Augsburg?","COLD"
+"Wird es sehr kalt werden morgen um 18:30","COLD"
+"Brauche ich eine warme Jacke?","COLD"
+"Ist es Eiskalt in Oslo?","COLD"
+"Wie sieht es aus mit niedrigen Temperaturen in Berlin?","COLD"
+"Ist es kalt in Bonn um 17:30?","COLD"
+"Wird es am Samstag kalt sein in München?","COLD"
+"Ist in Paris um 17:00 am Donnerstag mit kaltem Wetter zu rechnen?","COLD"
+"Wird das Wetter in 2 Stunden kalt sein?","COLD"
+"Ist das Wetter kalt in Luanda?","COLD"
+"Bitte sag mir ob es kalte Temperaturen geben wird in Seoul in 4 Stunden.","COLD"
+"Wird es sehr kalt sein in Bergen?","COLD"
+"Hey Assistant  muss ich mit kalten Temperaturen rechnen?","COLD"
+"Brauche ich eine warme Jacke in Salzburg?","COLD"
+"Hey Assistant  sag mir doch bitte ob ich eine warme Jacke benötige in Aachen!","COLD"
+"Hallo  könntest du mir bitte sagen  ob es kalt sein wird in Dortmund.","COLD"
+"Wird das Wetter kalt sein in Shenzhen am Dienstag?","COLD"
+"Gibt es kalte Temperaturen in Turin?","COLD"
+"Wird es in Flensburg morgen kalt sein?","COLD"
+"Wird es in Cottbus kalt werden?","COLD"
+"Wie kalt ist es in Berlin?","COLD"
+"Ist das Wetter übermorgen kalt in Karlsruhe?","COLD"
+"Hey Assistant  bitte sag mir  ob das Wetter kalt ist in Limburg heute Morgen.","COLD"
+"Wird es kalte Temperaturen geben in Madrid?","COLD"
+"Ist es am Samstag kalt in Frankfurt?","COLD"
+"Wird die Temperatur kalt sein übermorgen?","COLD"
+"Hallo  sag mir doch bitte wie kalt es in 4 Tagen sein wird!","COLD"
+"Ist es gerade kalt?","COLD"
+"hey  bitte sag mir wie kalt es ist in Buenos Aires","COLD"
+"wie kalt ist es gerade","COLD"
+"Werde ich eine Jacke benötigen in Bergamo?","COLD"
+"Ist es warm?","WARM"
+"Bitte sag mir  ob es warm sein wird!","WARM"
+"Wird es heiß werden in Bukarest?","WARM"
+"Wird es in Krakau warm sein?","WARM"
+"Ist es am Samstag warm in Lyon?","WARM"
+"Wird es warm sein in Zweibrücken am Sonntag?","WARM"
+"Should I expect warm and hot temperatures","WARM"
+"Bitte sagen Sie mir  ob in 3 Tagen warmes Wetter sein wird!","WARM"
+"Kann ich ein T-Shirt tragen?","WARM"
+"Sind warme Temperaturen vorhergesagt  Assistant?","WARM"
+"Ist eine hohe Temperatur zu erwarten in Kairo in 4 Stunden?","WARM"
+"Wie sieht es aus mit einger hohen Temperatur?","WARM"
+"Kann ich eine kurze Hose tragen?","WARM"
+"Ist es heiß in Prag um 12:00 am Dienstag?","WARM"
+"Hey Assistant  wird es heiß werden?","WARM"
+"Bitte sag mir  ob es heiß werden wird in 3 Tagen?","WARM"
+"Assistant  ist es warm draußen in einem Tag um 17:00?","WARM"
+"Ist es heiß draußen  Assistant?","WARM"
+"Hey Assistant  bitte sag mir  ob es warm ist.","WARM"
+"Hi Assitant  ist es warm draußen in 4 Tagen?","WARM"
+"Wird es in Prag heiß sein in 4 Stunden?","WARM"
+"Hey Assistant bitte sag mir  ob warmes Wetter zu erwarten ist!","WARM"
+"Muss ich mit warmem Wetter rechnen in der nächsten Woche?","WARM"
+"Hey Assistant  bitte sag mir  ob das Wetter heiß sein wird in Osnabrück!","WARM"
+"Ist es warm in Göteborg?","WARM"
+"Wird es in Venedig diese Woche heiß werden?","WARM"
+"Kann ich in Essen mit warmem Wetter rechnen?","WARM"
+"Wird es um 13 Uhr warm sein in Potsdam?","WARM"
+"Ist das Wetter warm in Rottenburg am nächsten Donnerstag?","WARM"
+"Assistant  bitte sag mir ob das Wetter warm wird in Darmstadt morgen Abend.","WARM"
+"Wird es hohe Temperaturen geben in Amsterdam?","WARM"
+"Wie warm ist es in Istanbul?","WARM"
+"Wie warm ist es heute?","WARM"
+"Wie warm wird es in Erfurt?","WARM"
+"Wie warm wird es in Amsterdam sein?","WARM"
+"Ist warmes Wetter vorhergesagt für Adelaide?","WARM"
+"ist das Wetter heiß heute mittag","WARM"
+"Ist es heiß draußen?","WARM"
+"Was ist die Durchschnittstemperatur","AVERAGE_TEMPERATURE"
+"Was wird die Durchschnittstemperatur sein?","AVERAGE_TEMPERATURE"
+"Welche Durchschnittstemperatur ist zu erwarten in Barcelona","AVERAGE_TEMPERATURE"
+"Welche Durschnittstemperatur gibt es morgen in Oslo?","AVERAGE_TEMPERATURE"
+"Welche Durchschnittstemperatur wird es in Edinburgh geben um 16:00?","AVERAGE_TEMPERATURE"
+"Wie viel Grad wird es durschnittlich in Kirow sein in 4 Tagen?","AVERAGE_TEMPERATURE"
+"Wie wird die Durchschnittstemperatur in Göttigen sein?","AVERAGE_TEMPERATURE"
+"Wie ist am Sonntag die Durchschnittstemperatur in Wiesbaden?","AVERAGE_TEMPERATURE"
+"Wie wird in Madrid die Durschnittstemperatur sein um 16:00?","AVERAGE_TEMPERATURE"
+"Welche Temperatur ist durchschnittlich zu erwarten.","AVERAGE_TEMPERATURE"
+"Was ist die durchschnittliche Temperatur in Los Angeles in 3 Stunden?","AVERAGE_TEMPERATURE"
+"Kannst du mir bitte sagen  wie viel Grad es durchschnittlich etwa sein wird in 4 Tagen?","AVERAGE_TEMPERATURE"
+"Bitte sag mir welche Durchschnittstemperatur um 14:00 in Prag sein wird!","AVERAGE_TEMPERATURE"
+"Bitte sag mir  wie viel Grad durchschnittlich wird es in Berlin um 17:00!","AVERAGE_TEMPERATURE"
+"Hey Assistant what is the average temperature in Rio am 17. Januar 2020!","AVERAGE_TEMPERATURE"
+"Wie viel Grad ist es durchschnittlich in Madrid?","AVERAGE_TEMPERATURE"
+"Assistant  was ist die Durschnittstemperatur in Köln?","AVERAGE_TEMPERATURE"
+"Bitte sag mir  mit welcher Durchschnittstemperatur sollte ich rechnen in Amsterdam in 4 Tagen?","AVERAGE_TEMPERATURE"
+"Mit welcher Durschnittstemperatur kann gerechnet werden? - Ich bin in Bangalore!","AVERAGE_TEMPERATURE"
+"Ich würde gerne die Durschnittstemperatur erfahren für Lima!","AVERAGE_TEMPERATURE"
+"Könntest du mir bitte sagen  wie in 4 Tagen die Durchschnittstemperatur in Peking vorhergesagt wird.","AVERAGE_TEMPERATURE"
+"Hey  was ist die durchschnittliche Temperatur in Buenos Aires?","AVERAGE_TEMPERATURE"
+"Hallo Assistent  wie viel Grad Celsius ist es durchschnittlich in Istanbul?","AVERAGE_TEMPERATURE"
+"Wie viel Grad Celsius ist es durchschnittlich in Dhaka?","AVERAGE_TEMPERATURE"
+"Könnten sie mir bitte die Durschnittstemperatur für Lyon sagen. Unzwar in 4 Tagen  bitte.","AVERAGE_TEMPERATURE"
+"Könntest du mir bitte sagen  welche Temperatur durchschnittlich zu erwarten ist in Tübingen?","AVERAGE_TEMPERATURE"
+"Ich bin gerade in Wuhan  wie wird die Durschnittstemperatur hier sein gegen 8 pm?","AVERAGE_TEMPERATURE"
+"Wie wird die Durschnittstemperatur sein in Dresden morgen Abend?","AVERAGE_TEMPERATURE"
+"Welche Durschnittstemperatur sollte ich erwarten in Gera?","AVERAGE_TEMPERATURE"
+"Hallo Assistant  bitte sag mir wie die Durschnittstemperatur heute Nacht sein wird.","AVERAGE_TEMPERATURE"
+"Sag mir bitte  mit welcher Durchschnittstemperatur ich rechenen sollte in Venedig","AVERAGE_TEMPERATURE"
+"Welche Temperatur ist durchschnittlich zu erwarten in Kassel?","AVERAGE_TEMPERATURE"
+"Wie viel Grad Celsius wird es durchschnittlich geben in Lübeck?","AVERAGE_TEMPERATURE"
+"Hallo  sag mir mal bitte  wie viel Grad es durchschnittlich sein wird.","AVERAGE_TEMPERATURE"
+"Welche Durchschnittstemperatur ist hier zu erwarten?","AVERAGE_TEMPERATURE"
+"Wie viel Grad wird es durchschnittlich geben?","AVERAGE_TEMPERATURE"
+"welche durchschnittstemperatur ist zu erwarten hier?","AVERAGE_TEMPERATURE"
+"wie wird denn bitte die Durchschnittstemperatur auf Sylt","AVERAGE_TEMPERATURE"
+"In welche Richtung weht der Wind?","WIND_DIRECTION"
+"Mit welcher Windrichtung ist zu rechnen?","WIND_DIRECTION"
+"In welche Richtung wird der Wind wehen in Prag?","WIND_DIRECTION"
+"In welche Richtung weht der Wind in Helsinki","WIND_DIRECTION"
+"Bitte sag mir  in welche Richtung der Wind weht in Tschernobyl am 26. April 2020.","WIND_DIRECTION"
+"Hey  bitte sag mir in welche Richtung der Wind weht am 4.6.2020!","WIND_DIRECTION"
+"In welche Richtung weht der Wind?","WIND_DIRECTION"
+"Assistant  in welche Richtung weht in 4 Tagen der Wind in Hannover?","WIND_DIRECTION"
+"Sag mir  in welche Richtung weht der Wind in Sevilla?","WIND_DIRECTION"
+"In welche Richtung weht gerade der Wind?","WIND_DIRECTION"
+"In welche Richtung weht in Bergen der Wind?","WIND_DIRECTION"
+"Könntest du mir bitte sagen  in welche Richtung der Wind weht in Lahore?","WIND_DIRECTION"
+"Bitte sag mir  in welche Richtung weht der Wind in Moskau am Sonntag","WIND_DIRECTION"
+"Bitte sag mir  ob Übermorgen der Wind in Richtung Süden weht!","WIND_DIRECTION"
+"Könntest du mir Sagen ob der Wind in Richtung Norden weht in Bern?","WIND_DIRECTION"
+"Bitte sag mir  ob der Wind in Richtung Westen weht in Kalkutta um 17:00.","WIND_DIRECTION"
+"Weht der Wind in Richtung Osten?","WIND_DIRECTION"
+"In welche Richtung weht der wind morgen um 17:00?","WIND_DIRECTION"
+"Assistant  bitte sag mir die Windrichtung in Rio in 8 Tagen.","WIND_DIRECTION"
+"Hi Assistant  bitte sag mir in welche Richtung der Wind weht!","WIND_DIRECTION"
+"Könntest du mir bitte sagen  in welche Richtung weht der Wind in 2 Tagen in Venedig.","WIND_DIRECTION"
+"In welche Richtung weht der Wind am Freitag Mittag?","WIND_DIRECTION"
+"Hey Assistant  bitte sag mir die Windrichtung am Donnerstag in Frankfurt.","WIND_DIRECTION"
+"Könntest du mir bitte sagen  in welche Richtung der Wind weht in 4 Stunden in Oslo?","WIND_DIRECTION"
+"Bitte sag mir  in welche Richtung weht der Wind?","WIND_DIRECTION"
+"In welche Richtung weht morgen der Wind in Hamburg?","WIND_DIRECTION"
+"In welche Richtung weht der Wind in Homburg um 16 Uhr","WIND_DIRECTION"
+"In welche Richtung weht gerade der Wind in Rotterdam?","WIND_DIRECTION"
+"Sag mir bitte  in welche Himmelsrichtung der Wind um 8.","WIND_DIRECTION"
+"Hallo Assistant  bitte sag mir in welche Wind Richtung weht der wind heute Abend in Kiel.","WIND_DIRECTION"
+"In welche Richtung weht denn gerade der Wind in Cottbus","WIND_DIRECTION"
+"Wie ist die Windrichtung in Sheffield?","WIND_DIRECTION"
+"Woher weht der Wind hier in Regensburg?","WIND_DIRECTION"
+"In welche Richtung weht gerade der Wind in Lüneburg?","WIND_DIRECTION"
+"Wie ist grade die Windrichtung?","WIND_DIRECTION"
+"In welche Richtung bläst der Wind?","WIND_DIRECTION"
+"in welche Richtung weht gerade der wind in Chemnitz?","WIND_DIRECTION"
+"In welche Richtung weht gerade der Wind?","WIND_DIRECTION"
+"Wird Schnee vorhergesagt?","SNOW"
+"Muss ich mein Auto von Schnee befreien?","SNOW"
+"Ist Schneefall vorhergesagt für Ufa?","SNOW"
+"Wird es Schnee geben in Oslo um 15:00?","SNOW"
+"Wird es am 3.3.2021 schneien in Lipezk?","SNOW"
+"Wie viel Schnne wird es morgen in Dresden geben?","SNOW"
+"Kannst du mir bitte sagen  ob Schnee vorhergesagt wird für Donnerstag?","SNOW"
+"Bitte sag mir  ob mit Schnee gerechnet werden sollte in Gelsenkirchen!","SNOW"
+"Bitte sag mir  ob morgen um 14 Uhr Schnee zu erwarten ist in Athen.","SNOW"
+"Brauche ich Schneehandschuhe?","SNOW"
+"Sag mir  ob Schnee vom Himmel fällt in Flensburg um 14:50.","SNOW"
+"Ist es verschneit in Nürnberg?","SNOW"
+"Könntest du mir sagen  ob Schnee kommt?","SNOW"
+"Wird es am Sonntag schneien?","SNOW"
+"Wird es in Washington schneien am 17.02.2020?","SNOW"
+"Ist Schnee zu erwarten in 3 Stunden?","SNOW"
+"Assistant  sollte ich mit Schnee rechnen in 5 Tagen","SNOW"
+"Muss ich mit Schneefall rechenen in 4 Tagen in Ulm?","SNOW"
+"Sollte ich mit Schnee rechnen in den nächsten Tagen?","SNOW"
+"Kann ich mit Schneefall rechnen in Boston?","SNOW"
+"Assistant  bitte sag mir ob es schneit in Toronto!","SNOW"
+"Hey Assistant wie sieht es morgen früh mit Schnee aus?","SNOW"
+"Wird in Chicago Schnee fallen am Samstag Abend?","SNOW"
+"Wird es schneien in Dallas gegen 15 Uhr?","SNOW"
+"Ist Schnee vorhergesagt für Genua.","SNOW"
+"Ist mit Schneefall zu rechnen? Ich bin gerade in Flensburg.","SNOW"
+"Muss mit Schnee gerechnet werden in Bern?","SNOW"
+"Wird es Schneefall geben in Stockholm?","SNOW"
+"Fällt gerade Schnee in Wolfsburg?","SNOW"
+"Hallo Assistant  bitte sag mir ob Schneefall zu erwarten ist heute Nacht.","SNOW"
+"Wird es Schneefall geben in Ludwigshafen?","SNOW"
+"Wie viel Schnee liegt gerade auf der Zugspitze?","SNOW"
+"Schneit es am Sonntag etwa wieder?","SNOW"
+"schneit es aktuell in Regensburg","SNOW"
+"Wird es Schnee geben in Lübeck?","SNOW"
+"Ist mit Schneefall zu rechnen in Melbourne","SNOW"
+"Hallo Assistant  bitte sag mir  ob es in Freiburg schneit","SNOW"
+"Ist Schnee vorhergesagt für Ansbach","SNOW"
+"Wird es bewölkt sein?","CLOUDS"
+"Sind Wolken am Himmel?","CLOUDS"
+"Sind Wolken am Himmel in Wolfsburg?","CLOUDS"
+"Ist es in Stockholm bewölkt?","CLOUDS"
+"Ist es am Abend bewölkt in Lissabon?","CLOUDS"
+"Sind diese Woche Wolken am Himmel in Vilnius?","CLOUDS"
+"Ist es am 17.06.2020 bewölkt in Hannover?","CLOUDS"
+"Wird es am Sonntag bewölkt sein in Bielefeld.","CLOUDS"
+"Hey! Bitte sag mir  ob es in 2 Stunden noch bewölkt ist in Palermo.","CLOUDS"
+"Sind wolken draußen in Regensburg?","CLOUDS"
+"Könntest du mir bitte sagen  ob es bewölkt ist in Cottbus heute Abend?","CLOUDS"
+"Ist es bewölkt in San Antonio","CLOUDS"
+"Muss ich mit Wolken rechnen?","CLOUDS"
+"Wird es am Montag bewölkt sein in den vereinigten Staaten","CLOUDS"
+"Hey Assistant  sag mir ob es bewölkt sein wird!","CLOUDS"
+"Muss mit Wolken gerechnet werden?","CLOUDS"
+"Wird es bewölkt sein in Managua um 17 Uhr Abends?","CLOUDS"
+"Hey Assistant  sag mir doch bitte ob für Charlotte bewölktes Wetter vorhergesagt wird.","CLOUDS"
+"Wird es in den nächsten 3 Tagen bewölkt sein in Seattle?","CLOUDS"
+"Hey Assistant  sag mir bitte  ob ich für Boston mit Schnee rechnen muss.","CLOUDS"
+"Assistant  muss ich mit Wolken rechnen in Seattle?","CLOUDS"
+"Hey Assistant sollte ich in Della mich auf bewölktes Wetter einstellen?","CLOUDS"
+"Hey Assistant ist es bewölkt in Puebla?","CLOUDS"
+"Wird das Wetter bewölkt sein in 4 Tagen um 15 Uhr?","CLOUDS"
+"Ist es bewölkt in Antwerpen um 18 Uhr?","CLOUDS"
+"Wird es in Ulm bewölkt sein in 4 Stunden?","CLOUDS"
+"Sind Wolken am Himmel? Ich bin gerade in Aalen","CLOUDS"
+"Sind viele Wolken am Himmel? Ich bin nämlich gerade in Erlangen.","CLOUDS"
+"Wie bewölt ist der Himmel in 4 Stunden","CLOUDS"
+"Hallo Assistant  bitte sag mir  ob das Wetter bewölkt sein wird in Las Vegas.","CLOUDS"
+"Sind morgen viele Wolken am Himmel?","CLOUDS"
+"gibt es Wolken in Belgrad?","CLOUDS"
+"Wie viele Wolken sind gerade in Warschau am Himmel?","CLOUDS"
+"Wird das Wetter bewölkt werden","CLOUDS"
+"Wie bewölkt ist der Himmel gerade?","CLOUDS"
+"Bewölktes Wetter vorhergesagt für Freitag?","CLOUDS"
+"Ist der Himmel in 8 Tagen bewölkt in Saragossa?","CLOUDS"
+"Wie wolkig wird es in Würzburg sein gegen Mittag","CLOUDS"
+"Wie warm wird es mindestens sein?","MIN_TEMPERATURE"
+"Welche Minimaltemperatur ist zu erwarten?","MIN_TEMPERATURE"
+"Wie warm wird es minimal in Turin?","MIN_TEMPERATURE"
+"Welche Minimaltemperatur ist für Kopenhagen vorhergesagt für morgen Mittag?","MIN_TEMPERATURE"
+"Wie viel Grad wird es mindestens geben in Cottbus?","MIN_TEMPERATURE"
+"Wie warm wird es minimal in Siegen um 15 Uhr?","MIN_TEMPERATURE"
+"Wie viel Grad Celsius wird es Übermorgen mindesten sein in Reutlingen?","MIN_TEMPERATURE"
+"Wie viel Grad Celsius wird es mindestens sein in 8 Stunden in Jena?","MIN_TEMPERATURE"
+"Hallo Assistant. Bitte sag mir welche Minimaltemperatur zu erwarten ist in 5 Stunden. Ich bin in Essen.","MIN_TEMPERATURE"
+"Welche Temperatur ist mindestens zu erwarten in Köln um 7 Uhr.","MIN_TEMPERATURE"
+"Welche Temperatur wird mindestens sein in Tianjin","MIN_TEMPERATURE"
+"Welche Minimaltemperatur ist zu erwarten in Los Angeles?","MIN_TEMPERATURE"
+"Könntest du mir bitte sagen  wie viel Grad es mindestens sein wird in Istanbul?","MIN_TEMPERATURE"
+"Bitte sag mir mit welcher Minimaltemperatur zu rechnen ist in San Juan am 12.05.2020","MIN_TEMPERATURE"
+"Hey Assistant  was ist die Vorhersage für die Minimaltemperatur um 12 Uhr in Cleveland?","MIN_TEMPERATURE"
+"Was ist die minimale Temperatur in Minneapolis?","MIN_TEMPERATURE"
+"Welche minimale Temperatur kann erwartet werden in Sacramento? Ich bin dort am Donnerstag.","MIN_TEMPERATURE"
+"Mit welcher Minimaltemperatur ist am Montag zu rechnen?","MIN_TEMPERATURE"
+"Hi Assistant  bitte sag mir  wie die Minimaltemperatur in Vancouver ist am 14.03","MIN_TEMPERATURE"
+"Wie ist die Minimaltemperatur am 14. April?","MIN_TEMPERATURE"
+"Assistant  sag mir doch bitte mit welcher Minimaltemperatur ich rechnen muss in 7 Tagen.","MIN_TEMPERATURE"
+"Hallo Assistant  bitte sag mir  wie viel Grad es in Tianjin mindestens geben wird um 17 Uhr.","MIN_TEMPERATURE"
+"Wie viel Grad Celsius wird es mindestens geben in Rio?","MIN_TEMPERATURE"
+"Hey  Assistant  wie viel Grad Celsius wird es mindestens geben?","MIN_TEMPERATURE"
+"Welche Mindestemperatur wird für Lima vorhergesagt  Übermogen um 14 Uhr?","MIN_TEMPERATURE"
+"Welche Temperatur ist mindestens zu erwarten in Orlando","MIN_TEMPERATURE"
+"Mit wie viel Grad ist nächste Woche Donnerstag um 14 Uhr mindestens zu rechnen. Ich bin in Potsdam.","MIN_TEMPERATURE"
+"Wie viel Grad sind mindestens zu erwarten in Zagreb?","MIN_TEMPERATURE"
+"Welche Minimaltemperatur wird es heute Nachmittag geben?","MIN_TEMPERATURE"
+"Assistant  wird die Minimaltemperatur groß sein in Berlin?","MIN_TEMPERATURE"
+"Wie viel Grad wird es morgen mindestens geben?","MIN_TEMPERATURE"
+"Welche Temperatur wird es mindestens geben hier in Belgrad?","MIN_TEMPERATURE"
+"Wie viel Grad wird es mindestens geben in Madrid?","MIN_TEMPERATURE"
+"welche Minimaltemperatur ist zu erwarten?","MIN_TEMPERATURE"
+"Wie viel Grad wird es mindestens geben?","MIN_TEMPERATURE"
+"Ich bin gerade in Sydney  wie viel Grad wird es hier minimal geben","MIN_TEMPERATURE"
+"welche Temperaturen wird es mindestens geben in Bilbao","MIN_TEMPERATURE"
+"Mindestemperatur in Schweinfurt","MIN_TEMPERATURE"
+"Was ist die maximal Temperatur?","MAX_TEMPERATURE"
+"Mit welcher Temperatur kann maximal gerechnet werden?","MAX_TEMPERATURE"
+"Mit warm wird es maximal in Turin?","MAX_TEMPERATURE"
+"Welche Maximaltemperatur ist für Riga vorhergesagt?","MAX_TEMPERATURE"
+"Welche Maximaltemperatur ist für Antwerpen vorhergesagt in 5 Tagen?","MAX_TEMPERATURE"
+"Ich bin gerade in Manchester. Bitte sag mir  welche Maximaltemperatur zu erwarten ist.","MAX_TEMPERATURE"
+"Wie viel Grad Celsius wird es maximal sein in Prag?","MAX_TEMPERATURE"
+"Könntest du mir bitte sagen  wie warm in 3 Stunden maximal sein wird in Essen?","MAX_TEMPERATURE"
+"Kannst du mir bitte sagen  wie warm es maximal sein wird?","MAX_TEMPERATURE"
+"Welche Maximaltemperatur wird vorhergesagt für Aalen?","MAX_TEMPERATURE"
+"Sag mir die maximale Temperatur  die in Chengdu zu erwarten ist!","MAX_TEMPERATURE"
+"Welche Maximaltemperatur ist in Nürnberg zu erwarten in 3 Stunden?","MAX_TEMPERATURE"
+"Welche Maximaltemperatur ist in Ludwigshafen zu erwarten um 16 Uhr?","MAX_TEMPERATURE"
+"Mit welcher Maximaltemperatur kann abends gerechnet werden  Assistant?","MAX_TEMPERATURE"
+"Hallo Assistent  bitte sag mir  welche Maximaltemperatur für Tianjin vorrausgesagt wird!","MAX_TEMPERATURE"
+"Welche Maximaltemperatur wird für Kalkutta prognostiziert?","MAX_TEMPERATURE"
+"Wie viel Grad wird es maximal in Rio?","MAX_TEMPERATURE"
+"Wie ist die maximal zu erwartende Temperatur für Hamburg?","MAX_TEMPERATURE"
+"Hi Assistant  bitte sag mir die Maximaltemperatur für in 4 Tagen!","MAX_TEMPERATURE"
+"Ich würde gerne wissen  wie viel Grad es maximal wird in Moskau um 17:30!","MAX_TEMPERATURE"
+"Wie ist die Maximaltemperatur in Chennai in 3 Tagen?","MAX_TEMPERATURE"
+"Bitte sag mir  wie die Maximaltemperatur in Bogota sein wird am Sonntag!","MAX_TEMPERATURE"
+"Hey Assistant  wie warm wird es maximal in Paris?","MAX_TEMPERATURE"
+"Hey Assistant  bitte sag mir  wie ist die Maximaltemperatur in Amsterdam?","MAX_TEMPERATURE"
+"Welche Maximaltemperatur wird vorhergesagt für Düsseldorf um 17 Uhr?","MAX_TEMPERATURE"
+"Welche Temperatur ist maximal zu erwarten in Rottenburg?","MAX_TEMPERATURE"
+"Mit wie viel  Grad ist maximal zu rechnen in Orlando am nächsten Donnerstag?","MAX_TEMPERATURE"
+"Wie warm wird es maximal sein in Bakersfield?","MAX_TEMPERATURE"
+"Welche Maximaltemperatur sollte man in Bakersfield erwarten heute Mittag?","MAX_TEMPERATURE"
+"Wie viel Grad wird es maximal sein heute Nacht um 0:00?","MAX_TEMPERATURE"
+"Wie viel Grad wird es morgen maximal geben?","MAX_TEMPERATURE"
+"Welche Temperatur wird es maximal geben in Moskau?","MAX_TEMPERATURE"
+"Sag mir doch bitte  wie viel Grad es maximal geben wird in Mary","MAX_TEMPERATURE"
+"Assistant  sag mir mal bitte  wie viel Grad wird es maximal hier in Maschhad","MAX_TEMPERATURE"
+"Wie viel Grad wird es maximal geben in Essen?","MAX_TEMPERATURE"
+"Sag mir bitte die Maximaltemperatur in New York am Samstag gegen 18 Uhr","MAX_TEMPERATURE"
+"Welche Temperatur wird es höchstens geben in Faro?","MAX_TEMPERATURE"
+"Hallo! Wie viel Grad wird es höchstens geben in Miami gegen abend","MAX_TEMPERATURE"
+"Wird es neblig sein?","FOG"
+"Ist mit Nebel zu rechnen?","FOG"
+"Kannst du mir bitte sagen  ob es Nebel gibt in Marseille?","FOG"
+"Könntest du mir bitte sagen  ob für Glasgow Nebel vorhergesagt wird?","FOG"
+"Ist es neblig in Astrachan?","FOG"
+"Wird es neblig sein in Genua?","FOG"
+"Ist es Übermorgen um 17 Uhr neblig in Köln?","FOG"
+"Sollte ich mit Nebel rechnen in 4 Stunden?","FOG"
+"Bitte sag mir  ob es am Samstag Nebel gibt in Leipzig?","FOG"
+"Wie sieht es aus mit Nebel?","FOG"
+"Ist es neblig New Orleans?","FOG"
+"Wird es in 2 Stunden Nebel geben in Austin?","FOG"
+"Sollte ich in Philadelphia mit Nebel rechnen am 14.04.2020?","FOG"
+"Wird Nebel vorhergesagt?","FOG"
+"Hey Assistant  sag mir doch bitte ob es in Washington neblig ist am Dienstag.","FOG"
+"Sollte mit Nebel gerechnet werden in Detroit?","FOG"
+"Wird das Wetter in 2 Tagen neblig sein in Tampa?","FOG"
+"Könntest du mir bitte sagen  ob es am Dienstag Nebel geben wird in St. Louis?","FOG"
+"Wird das Wetter neblig sein in Miami?","FOG"
+"Kann ich am Nachmittag mit Nebel rechnen?","FOG"
+"Assistant  sollte ich mit Nebel rechnen in den nächsten beiden Stunden?","FOG"
+"Hey Assistant  wie sieht es aus mit Nebel in Baltimore?","FOG"
+"Hey Assistant  ist es in 3 Tagen neblig in Orlando?","FOG"
+"Sollte ich mit Nebel rechnen in Pittsburgh?","FOG"
+"Könnten Sie mir bitte sagen  ob es in London Nebel geben wird?","FOG"
+"Wird es neblig sein in Göteborg am nächsten Samstag?","FOG"
+"Wird es Nebel geben in Ulm gegen 15 Uhr?","FOG"
+"Ist in Wien viel Nebel?","FOG"
+"Ist in 22 Stunden Nebel zu erwarten in Miami?","FOG"
+"Wird das Wetter neblig sein heute früh?","FOG"
+"Ist es in Istanbul neblig in 4 Stunden?","FOG"
+"Wie sieht es morgen mit Nebel aus?","FOG"
+"Wird es neblig in Durban?","FOG"
+"Muss mit starkem Nebel gerechnet werden?","FOG"
+"Ist es hier neblig?","FOG"
+"Ist denn mit Nebel zu rechnen am Montag um 17:00?","FOG"
+"Wird es morgen nebeln","FOG"
+"Hallo  ist es morgen neblig?","FOG"
+"Wird Sturm vorhergesagt","THUNDER"
+"Bitte sag mir  ob Sturm kommt!","THUNDER"
+"Ist in Paris mit Sturm zu rechnen?","THUNDER"
+"Wird es Donner und Blitze geben in Neapel?","THUNDER"
+"Kann ich am Sonntag mit Blitz und Donner rechnen in Göteborg?","THUNDER"
+"Ist es heute Mittag stürmisch in Kiel?","THUNDER"
+"Sollte ich mit Sturm rechnen?","THUNDER"
+"Wird es in 4 Tagen stürmisch sein?","THUNDER"
+"Ist mit Sturm zu rechnen in Budapest um 17 Uhr?","THUNDER"
+"Wird es stürmisches Wetter geben in 4 Tagen in Hanau?","THUNDER"
+"Ist in Budabest mit einem Sturm zu rechnen?","THUNDER"
+"Bitte sag mir  ob es am 17.03.2020 einen Sturm geben wird in Chicago.","THUNDER"
+"Ist ein Gewitter zu erwarten in Bergen um 12:00?","THUNDER"
+"Hey Assistant  wird es Übermorgen gewittern in Hanoi?","THUNDER"
+"Hey Assistant  bitte sag mir  ob es ein Gewitter mit Blitzen geben wird.","THUNDER"
+"Sag mir bitte  ob abends ein Sturm zu erwarten ist in Würzburg.","THUNDER"
+"Assistant  wird es einen Sturm geben in 3 Tagen in Hamburg?","THUNDER"
+"Wird es ein Gewitter geben am Montag? ","THUNDER"
+"Sollte ich mit Blitzen rechnen in 4 Tagen  Assistant?","THUNDER"
+"Hi Assistant  sag mir doch bitte  ob es stürmisch wird in den nächsten 3 Tagen.","THUNDER"
+"Ist stürmisches Wetter in der Vorhersage?","THUNDER"
+"Hey Assistant  wird das Wetter stürmisch in Columbus?","THUNDER"
+"Wie sieht es aus mit Sturm?","THUNDER"
+"Sollte man sich auf Sturm vorbereiten in Baltimore in dieser Woche?","THUNDER"
+"Ist es stürmisch in Flensburg um 16:00?","THUNDER"
+"Wird es in Karlsruhe morgen stürmisch werden gegen 16 Uhr?","THUNDER"
+"Sag mir bitte  ob es stürmisch werden wird in Rottenburg","THUNDER"
+"Ist es in Dortmund stürmisch um 17 Uhr?","THUNDER"
+"Sag mir  ob das Wetter stürmisch wird in 4 Stunden?","THUNDER"
+"Wird das Wetter nächste Woche am Sonntag stürmisch?","THUNDER"
+"Kommt stürmisches Wetter in Rottenburg um 17 Uhr?","THUNDER"
+"Wie stürmisch ist es gerade in Ulm?","THUNDER"
+"Kannst du mir bitte sagen  ob es Sturm gibt in Hannover?","THUNDER"
+"Wie stürmisch ist es gerade?","THUNDER"
+"ist es gerade stürmisch in Leogang","THUNDER"
+"Kommt ein Gewitter in Frankfurt","THUNDER"
+"Muss ich mir um 18 Uhr in Massachusetts Sorgen um Blitze machen?","THUNDER"
+"Wie sieht es aus mit Stum in Bad Abbach?","THUNDER"
+"Wie wird das Wetter","WEATHER"

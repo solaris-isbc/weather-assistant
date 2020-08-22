@@ -25,4 +25,5 @@ nb = Pipeline([('vect', CountVectorizer()),('tfidf', TfidfTransformer()),('clf',
 nb.fit(posts, tags)
 
 with open('question_model.pkl','wb') as f:
+    print("Model trained.")
     pickle.dump(nb,f)
