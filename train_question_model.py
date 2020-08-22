@@ -10,7 +10,7 @@ import pickle
 df = pd.read_csv('question_model_training_data/training.csv')
 
 def clean_text(text):
-    text = text.lower() #lowercase the query
+    text = text.lower() # lowercase the query
     text = ' '.join(word for word in text.split() if word not in stopword_list)  # delete stopwors from text
     text = ' '.join(stemmer.stem(word) for word in text.split())
     return text
@@ -21,7 +21,7 @@ df['post'] = df['post'].apply(clean_text)
 posts = df.post
 tags = df.tag
 
-nb = Pipeline([('vect', CountVectorizer()),('tfidf', TfidfTransformer()),('clf', LogisticRegression(n_jobs=1, C=1e5))])
+nb = Pipeline([('vect', CountVectorizer()),('tfidf', TfidfTransformer()),('lr', LogisticRegression(C=10,multi_class='ovr'))])
 nb.fit(posts, tags)
 
 with open('question_model.pkl','wb') as f:

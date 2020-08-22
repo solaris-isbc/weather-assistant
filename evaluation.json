@@ -40,7 +40,7 @@
       "city": "Regensburg"
     },
     {
-      "text": "Wann regnet es das n\u00e4chste Mal wieder?",
+      "text": "Wann regnet es das nächste Mal wieder?",
       "timeinfo": "2020.07.14 00:00",
       "question_type": "None",
       "time": {
@@ -144,7 +144,7 @@
       "city": "None"
     },
     {
-      "text": "Wann wird es heute k\u00fchler?",
+      "text": "Wann wird es heute kühler?",
       "timeinfo": "2020.07.14 00:00",
       "question_type": "None",
       "time": {
@@ -170,9 +170,9 @@
       "city": "None"
     },
     {
-      "text": "Wird es morgen fr\u00fch neblig sein?",
+      "text": "Wird es morgen früh neblig sein?",
       "timeinfo": "2020.07.14 00:00",
-      "question_type": "",
+      "question_type": "FOG",
       "time": {
         "time_type": "time_point",
         "time_objects": {
@@ -326,7 +326,7 @@
       "city": "Mannheim"
     },
     {
-      "text": "wann ist der n\u00e4chste Sturm in Regensburg? ",
+      "text": "wann ist der nächste Sturm in Regensburg? ",
       "timeinfo": "2020.07.14 00:00",
       "question_type": "None",
       "time": {
@@ -339,7 +339,7 @@
       "city": "None"
     },
     {
-      "text": "Ist es gerade bew\u00f6lkt",
+      "text": "Ist es gerade bewölkt",
       "timeinfo": "2020.07.14 00:00",
       "question_type": "CLOUDS",
       "time": {
@@ -352,7 +352,7 @@
       "city": "None"
     },
     {
-      "text": " wird es in den n\u00e4chsten drei Tagen Regnen in Köln ",
+      "text": " wird es in den nächsten drei Tagen Regnen in Köln ",
       "timeinfo": "2020.07.14 00:00",
       "question_type": "RAIN",
       "time": {
@@ -365,7 +365,7 @@
       "city": "Köln"
     },
     {
-      "text": "Kommen in den n\u00e4chsten 3 Tagen Wolken in Frankfurt",
+      "text": "Kommen in den nächsten 3 Tagen Wolken in Frankfurt",
       "timeinfo": "2020.07.14 00:00",
       "question_type": "CLOUDS",
       "time": {
@@ -378,7 +378,7 @@
       "city": "Frankfurt"
     },
     {
-      "text": "Kommt in den n\u00e4chsten drei Tagen Regen in Pentling ",
+      "text": "Kommt in den nächsten drei Tagen Regen in Pentling ",
       "timeinfo": "2020.07.14 00:00",
       "question_type": "RAIN",
       "time": {
@@ -391,7 +391,7 @@
       "city": "Pentling"
     },
     {
-      "text": "Kommt in den n\u00e4chsten 3 Tagen Regen in Oslo ",
+      "text": "Kommt in den nächsten 3 Tagen Regen in Oslo ",
       "timeinfo": "2020.07.14 00:00",
       "question_type": "RAIN",
       "time": {
@@ -417,7 +417,7 @@
       "city": "None"
     },
     {
-      "text": "ist es heute sch\u00f6ner als gestern",
+      "text": "ist es heute schöner als gestern",
       "timeinfo": "2020.07.14 00:00",
       "question_type": "None",
       "time": {
