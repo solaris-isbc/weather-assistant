@@ -5,3 +5,4 @@ venv/*
 .csv
 .tml
 /venv_2/
+**/.DS_Store
