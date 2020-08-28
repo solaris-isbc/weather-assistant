@@ -8,6 +8,9 @@ from nltk.stem.snowball import SnowballStemmer
 import pickle
 
 df = pd.read_csv('question_model_training_data/training.csv')
+stopword_list = set(stopwords.words('german'))
+# Documentation of stemmer: https://www.nltk.org/howto/stem.html
+stemmer = SnowballStemmer("german")
 
 
 def clean_query(text):
@@ -17,12 +20,15 @@ def clean_query(text):
     return text
 
 
-stopword_list = set(stopwords.words('german'))
-# Documentation of stemmer: https://www.nltk.org/howto/stem.html
-stemmer = SnowballStemmer("german")
 df['post'] = df['post'].apply(clean_query)
 posts = df.post
 tags = df.tag
+
+# Documentations we used for vector-representation of words/queries and logistic regression:
+# [1] https://realpython.com/logistic-regression-python/
+# [2] https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html
+# [3] https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html
+# [4] https://stackoverflow.com/questions/10592605/save-classifier-to-disk-in-scikit-learn
 
 nb = Pipeline(
     [('vect', CountVectorizer()), ('tfidf', TfidfTransformer()), ('lr', LogisticRegression(C=10, multi_class='ovr'))])
