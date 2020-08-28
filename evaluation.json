@@ -441,6 +441,19 @@
         }
       },
       "city": "Wien"
+    },
+    {
+      "text": "Hallo, wie wird das Wetter in einer Stunde?",
+      "timeinfo": "2020.07.14 00:00",
+      "question_type": "WEATHER",
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.07.14 01:00",
+          "end": ""
+        }
+      },
+      "city": "None"
     }
   ]
 }
