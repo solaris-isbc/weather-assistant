@@ -467,6 +467,19 @@
         }
       },
       "city": "Pentling"
+    },
+    {
+      "text": "Hallo, bitte sag mir wie viel Grad es gerade ist!",
+      "timeinfo": "2020.07.14 00:00",
+      "question_type": "TEMPERATURE",
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.07.14 00:00",
+          "end": ""
+        }
+      },
+      "city": "None"
     }
   ]
 }
