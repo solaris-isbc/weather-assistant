@@ -1,11 +1,11 @@
 import de_core_news_sm
 
-class CityDetector():
 
+class CityDetector():
     global found_cities
     global geocoder
 
-    def get_data(self,location):
+    def get_data(self, location):
         response = self.geocoder.forward(location)
         return response.json()  # returns the geocoding result as GeoJSON.
 
@@ -32,5 +32,6 @@ class CityDetector():
         if len(self.found_cities) == 0:
             return None
         return self.found_cities[0]
+
 
 city_detector = CityDetector()

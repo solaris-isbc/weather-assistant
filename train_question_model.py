@@ -9,21 +9,25 @@ import pickle
 
 df = pd.read_csv('question_model_training_data/training.csv')
 
-def clean_text(text):
-    text = text.lower() # lowercase the query
+
+def clean_query(text):
+    text = text.lower()  # lowercase the query
     text = ' '.join(word for word in text.split() if word not in stopword_list)  # delete stopwors from text
     text = ' '.join(stemmer.stem(word) for word in text.split())
     return text
 
+
 stopword_list = set(stopwords.words('german'))
+# Documentation of stemmer: https://www.nltk.org/howto/stem.html
 stemmer = SnowballStemmer("german")
-df['post'] = df['post'].apply(clean_text)
+df['post'] = df['post'].apply(clean_query)
 posts = df.post
 tags = df.tag
 
-nb = Pipeline([('vect', CountVectorizer()),('tfidf', TfidfTransformer()),('lr', LogisticRegression(C=10,multi_class='ovr'))])
+nb = Pipeline(
+    [('vect', CountVectorizer()), ('tfidf', TfidfTransformer()), ('lr', LogisticRegression(C=10, multi_class='ovr'))])
 nb.fit(posts, tags)
 
-with open('question_model.pkl','wb') as f:
+with open('question_model.pkl', 'wb') as f:
     print("Model trained.")
-    pickle.dump(nb,f)
+    pickle.dump(nb, f)

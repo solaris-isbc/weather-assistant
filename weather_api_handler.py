@@ -11,6 +11,8 @@ class WeatherAPIHandler():
         self.identify_question_type(question_type, city, selected_time, selected_time_type)
 
     def identify_question_type(self, question_type, city, selected_time, selected_time_type):
+        # Depending on the type of question recognized, a method is called to answer the respective question.
+        # Information about the city and time found is also passed.
         if question_type == "WEATHER":
             self.create_weather_answer(city, selected_time, selected_time_type)
         if question_type == "RAIN":
@@ -25,7 +27,7 @@ class WeatherAPIHandler():
             self.create_snow_answer(city, selected_time, selected_time_type)
         if question_type == "FOG":
             self.create_fog_answer(city, selected_time, selected_time_type)
-        if question_type == "AIR PRESSURE":
+        if question_type == "AIR_PRESSURE":
             self.create_air_pressure_answer(city, selected_time, selected_time_type)
         if question_type == "TEMPERATURE":
             self.create_temperature_answer(city, selected_time, selected_time_type)
@@ -42,7 +44,6 @@ class WeatherAPIHandler():
         if question_type == "MIN_TEMPERATURE":
             self.create_min_temperature_answer(city, selected_time, selected_time_type)
 
-    # Processing methods for each question type
     def create_max_temperature_answer(self, city, selected_time, selected_time_type):
         if selected_time_type == "time_point":
             formatted_date = self.convert_date_to_formatted_text(selected_time[0])
@@ -126,8 +127,8 @@ class WeatherAPIHandler():
                 print(answer)
 
     def get_cloud_description(self, coverage):
-        # We need to convert the percentage 0-100 of cloud coverage into a text that is unterstandable for the user of the system
-        if 0 < coverage < 3:
+        # We need to convert the percentage 0-100 of cloud coverage into a text that is unterstandable for the user of the assistant
+        if 0 <= coverage < 3:
             return "nicht bewölkt(freier Himmel)"
         if 3 <= coverage < 10:
             return "sehr wenig bewölkt"
