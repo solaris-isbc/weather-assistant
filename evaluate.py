@@ -9,6 +9,7 @@ import pickle
 from nltk.corpus import stopwords
 from nltk.stem.snowball import SnowballStemmer
 
+
 def clean_query(text):
     stopword_list = set(stopwords.words('german'))
     stemmer = SnowballStemmer("german")
@@ -16,6 +17,7 @@ def clean_query(text):
     text = ' '.join(word for word in text.split() if word not in stopword_list)  # delete stopwors from text
     text = ' '.join(stemmer.stem(word) for word in text.split())
     return text
+
 
 def get_question_type(query):
     cleaned_query = clean_query(query)
@@ -30,11 +32,13 @@ def get_question_type(query):
         return None
     return label_pred
 
+
 def get_time_info(query, datetime_relative):
     extractor = dte.DateTimeExtractor(dtg.datetime_grammar, datetime_relative_to=datetime_relative, mode="evaluation")
     extractor.parse(query)
     r = extractor.get_evaluation_result()
     return r
+
 
 with open('evaluation.json', encoding='utf-8') as json_file:
     data = json.load(json_file)
@@ -49,13 +53,12 @@ correct_time_type = 0
 correct_time = 0
 main_score = 0
 
-
 for query in data:
     print("-----------------------------------------------------------------------------")
     query_text = query["text"]
     found_question_type = get_question_type(query_text)
-#    print(found_question_type, query["question_type"])
-    if query["question_type"] != "None" or found_question_type!=None:
+    #    print(found_question_type, query["question_type"])
+    if query["question_type"] != "None" or found_question_type != None:
         data_with_valid_questions += 1
         found_city = cd.find_location_in_query(query_text)
         found_time = td.get_formatted_time(query_text)
@@ -86,7 +89,6 @@ for query in data:
             if time_result["type"] == query["time"]["time_type"]:
                 found_time_type_bool = True
 
-
             if time_result["type"] == "time_point" and query["time"]["time_type"] == "time_point":
                 correct_time_type += 1
 
@@ -97,9 +99,8 @@ for query in data:
                 ground_truth_date = ground_truth.date()
                 ground_truth_time = ground_truth.time()
 
-
-#                print(ground_truth_date, "-----", extracted_date)
-#                print(ground_truth_time, "-----", extracted_time)
+                #                print(ground_truth_date, "-----", extracted_date)
+                #                print(ground_truth_time, "-----", extracted_time)
 
                 if extracted_date == ground_truth_date and extracted_time == ground_truth_time:
                     correct_time += 1
@@ -112,10 +113,10 @@ for query in data:
 
                 extracted_date = time_result["extracted_date_datetime"].date()
 
-                ground_truth_date = datetime.datetime.strptime(query["time"]["time_objects"]["start"], "%Y.%m.%d %H:%M").date()
+                ground_truth_date = datetime.datetime.strptime(query["time"]["time_objects"]["start"],
+                                                               "%Y.%m.%d %H:%M").date()
 
-#                print(ground_truth_date, "-----", extracted_date)
-
+                #                print(ground_truth_date, "-----", extracted_date)
 
                 if extracted_date == ground_truth_date:
                     correct_time += 1
@@ -131,15 +132,14 @@ for query in data:
                 extracted_date_start = time_result["extracted_range_duration_start_datetime"].date()
                 extracted_date_end = time_result["extracted_range_duration_end_datetime"].date()
 
-                ground_truth_start = datetime.datetime.strptime(query["time"]["time_objects"]["start"], "%Y.%m.%d %H:%M")
+                ground_truth_start = datetime.datetime.strptime(query["time"]["time_objects"]["start"],
+                                                                "%Y.%m.%d %H:%M")
                 ground_truth_start_date = ground_truth_start.date()
                 ground_truth_end = datetime.datetime.strptime(query["time"]["time_objects"]["end"], "%Y.%m.%d %H:%M")
                 ground_truth_end_date = ground_truth_end.date()
 
-#                print(ground_truth_start, "-----", extracted_date_start)
-#                print(ground_truth_end, "-----", extracted_date_end)
-
-
+                #                print(ground_truth_start, "-----", extracted_date_start)
+                #                print(ground_truth_end, "-----", extracted_date_end)
 
                 if ground_truth_start_date == extracted_date_start and ground_truth_end_date == extracted_date_end:
                     correct_time += 1
@@ -163,18 +163,19 @@ for query in data:
               "| correct interpretation of query: ", str(correct_interpretation_of_query), "|")
     else:
         if found_question_type is None and query["question_type"] == "None":
-            print("| Query: ", query_text, "|","Korrekterweise wurde kein Fragetyp gefunden.")
+            print("| Query: ", query_text, "|", "Korrekterweise wurde kein Fragetyp gefunden.")
             main_score += 1
             correct_question_type += 1
         if found_question_type is None and query["question_type"] != "None":
-            print("| Query: ", query_text, "|","Es wurde ein Fragetyp gefunden, obwohl die Query sinnlos ist.")
+            print("| Query: ", query_text, "|", "Es wurde ein Fragetyp gefunden, obwohl die Query sinnlos ist.")
         if found_question_type is None and query["question_type"] != "None":
-            print("| Query: ", query_text, "|","Es wurde kein Fragetyp gefunden, obwohl die Query eine valide Frage ist.")
+            print("| Query: ", query_text, "|",
+                  "Es wurde kein Fragetyp gefunden, obwohl die Query eine valide Frage ist.")
 
 print("#---------------------------------------------------------------------------#")
-print("| Correct Question Types: ",correct_question_type/data_size)
-print("| Correct City: ",correct_city/data_with_valid_questions)
-print("| Correct Time Type: ",correct_time_type/data_with_valid_questions)
-print("| Correct Time: ",correct_time/data_with_valid_questions)
+print("| Correct Question Types: ", correct_question_type / data_size)
+print("| Correct City: ", correct_city / data_with_valid_questions)
+print("| Correct Time Type: ", correct_time_type / data_with_valid_questions)
+print("| Correct Time: ", correct_time / data_with_valid_questions)
 print("#---------------------------------------------------------------------------#")
-print("| Main Accuracy: ",main_score/data_size)
+print("| Main Accuracy: ", main_score / data_size)

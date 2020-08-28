@@ -6,6 +6,8 @@ from nltk.corpus import stopwords
 from nltk.stem.snowball import SnowballStemmer
 import geocoder
 from geopy.geocoders import Nominatim
+import colorama
+from colorama import Fore, Style
 import sys
 import pickle
 
@@ -22,6 +24,7 @@ import pickle
 # pip install nltk
 # pip install pandas
 # pip install scikit-learn
+# pip install colorama
 
 def clean_query(text):
     stopword_list = set(stopwords.words('german'))
@@ -95,10 +98,20 @@ def query_processing(query):
             else:
                 find_question_type(query, city, selected_time_type, [selected_time])
 
-def main():
-    if len(sys.argv) > 1:
-        query = sys.argv[1]
-        query_processing(query)
+def display_assistant_information():
+    print("--------------------------------------------------------------")
+    print(f"{Fore.RED}Weather Assistant{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW}Wetterdaten von weatherbit.io{Style.RESET_ALL}")
+    print("--------------------------------------------------------------")
+    print("The system can answer the following questions: ")
+    print("Weather, Rain, Snow, Sun, Air Pressure, Fog, Temperature,\nMinimum Temperature, Maximum Temperature, Average Temperature,"+
+          " Warm Temperature,\nCold Temperature, Storm, Wind, Clouds, Wind Direction")
+    print("--------------------------------------------------------------")
 
-if __name__ == "__main__":
-    main()
+def start_assistant():
+    while True:
+        user_input = input(f"{Fore.BLUE}Please ask a question: {Style.RESET_ALL}")
+        query_processing(user_input)
+
+display_assistant_information()
+start_assistant()

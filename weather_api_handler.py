@@ -181,9 +181,9 @@ class WeatherAPIHandler():
         if (degree > 202.5):
             return 'in Richtung Süd-Westen'
         if (degree > 157.5):
-            return 'in Richtung Sünden'
+            return 'in Richtung Süden'
         if (degree > 122.5):
-            return 'in Richtung Süde-Osten'
+            return 'in Richtung Süd-Osten'
         if (degree > 67.5):
             return 'in Richtung Osten'
         if (degree > 22.5):
@@ -395,12 +395,12 @@ class WeatherAPIHandler():
             forecast_object_time_point = self.get_forecast_object_for_time_point(selected_time[0], city)
             if len(re.findall("Snow", forecast_object_time_point["weather"]["description"])) > 0:
                 answer = "Es kann mit " + str(self.translate_weather_description(forecast_object_time_point["weather"][
-                                                                                     "description"])) + " in " + city + " gerechnet werden! \n Es liegen " + str(
+                                                                                     "description"])) + " in " + city + " gerechnet werden! \nEs liegen " + str(
                     forecast_object_time_point["snow_depth"]) + " mm Schnee!"
                 print(answer)
             else:
                 answer = "Am " + formatted_date + " um " + str(
-                    selected_time[0].hour) + " Uhr wird es keinen Schnee geben in " + city + "!\n Es liegen " + str(
+                    selected_time[0].hour) + " Uhr wird es keinen Schnee geben in " + city + "!\nEs liegen " + str(
                     forecast_object_time_point["snow_depth"]) + " mm Schnee!"
                 print(answer)
 
@@ -409,11 +409,11 @@ class WeatherAPIHandler():
             forecast_object_for_day = self.get_forecast_object_for_day(selected_time[0], city)
             if len(re.findall("Snow", forecast_object_for_day["weather"]["description"])) > 0:
                 answer = "Es kann mit " + str(self.translate_weather_description(forecast_object_for_day["weather"][
-                                                                                     "description"])) + " gerechnet werden in " + city + " am " + formatted_date + "!\n Es liegen " + str(
+                                                                                     "description"])) + " gerechnet werden in " + city + " am " + formatted_date + "!\nEs liegen " + str(
                     forecast_object_for_day["snow_depth"]) + " mm Schnee!"
                 print(answer)
             else:
-                answer = "Am " + formatted_date + " wird es keinen Schnee geben in " + city + "!\n Es liegen " + str(
+                answer = "Am " + formatted_date + " wird es keinen Schnee geben in " + city + "!\nEs liegen " + str(
                     forecast_object_for_day["snow_depth"]) + " mm Schnee!"
                 print(answer)
 
@@ -423,11 +423,11 @@ class WeatherAPIHandler():
                 formatted_date = self.convert_date_to_formatted_text(fc["datetime"])
                 if len(re.findall("Snow", fc["weather"]["description"])) > 0:
                     answer = "Es kann mit " + str(self.translate_weather_description(fc["weather"][
-                                                                                         "description"])) + " in " + city + " gerechnet werden am " + formatted_date + " geben!\n Es liegen " + str(
+                                                                                         "description"])) + " in " + city + " gerechnet werden am " + formatted_date + " geben!\nEs liegen " + str(
                         fc["snow_depth"]) + " mm Schnee!"
                     print(answer)
                 else:
-                    answer = "Am " + formatted_date + " wird es keinen Schnee geben in " + city + "!\n Es liegen " + str(
+                    answer = "Am " + formatted_date + " wird es keinen Schnee geben in " + city + "!\nEs liegen " + str(
                         fc["snow_depth"]) + " mm Schnee!"
                     print(answer)
 
