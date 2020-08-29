@@ -136,7 +136,7 @@ for query in data:
             main_score += 1
             correct_question_type += 1
         if found_question_type is None and query["question_type"] != "None":
-            
+
             print("| Query: ", query_text, "|", "Es wurde ein Fragetyp gefunden, obwohl die Query sinnlos ist.")
         if found_question_type is None and query["question_type"] != "None":
             print("| Query: ", query_text, "|",

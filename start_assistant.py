@@ -94,14 +94,14 @@ def query_processing(query):
                 find_question_type(query, city, selected_time_type, [selected_time])
         if selected_time_type == "day":
             if td.check_if_day_is_one_of_the_next_15(selected_time) is False:
-                print("Hoppla. Wir können Ihnen nur Wetterinformationen für die nächsten 15 Tage geben.")
+                print("Hoppla. Wir können für Sie nur Wetterinformationen für die nächsten 15 Tage bereitstellen.")
             else:
                 find_question_type(query, city, selected_time_type, [selected_time])
 
 def display_assistant_information():
     print("--------------------------------------------------------------")
     print(f"{Fore.RED}Weather Assistant{Style.RESET_ALL}")
-    print(f"{Fore.YELLOW}Wetterdata by weatherbit.io{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW}Weatherdata by weatherbit.io{Style.RESET_ALL}")
     print("--------------------------------------------------------------")
     print("The system can answer the following questions: ")
     print("Weather, Rain, Snow, Sun, Air Pressure, Fog, Temperature,\nMinimum Temperature, Maximum Temperature, Average Temperature,"+

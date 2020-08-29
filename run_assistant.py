@@ -22,6 +22,7 @@ import pickle
 # pip install nltk
 # pip install pandas
 # pip install scikit-learn
+# pip install colorama
 
 def clean_query(text):
     stopword_list = set(stopwords.words('german'))
@@ -91,7 +92,7 @@ def query_processing(query):
                 find_question_type(query, city, selected_time_type, [selected_time])
         if selected_time_type == "day":
             if td.check_if_day_is_one_of_the_next_15(selected_time) is False:
-                print("Hoppla. Wir können Ihnen nur Wetterinformationen für die nächsten 15 Tage geben.")
+                print("Hoppla. Wir können für Sie nur Wetterinformationen für die nächsten 15 Tage bereitstellen.")
             else:
                 find_question_type(query, city, selected_time_type, [selected_time])
 

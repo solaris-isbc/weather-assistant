@@ -480,6 +480,58 @@
         }
       },
       "city": "None"
+    },
+    {
+      "text": "Sag mir bitte wie der Luftdruck wird gegen sechs Uhr heute Abend!",
+      "timeinfo": "2020.07.14 00:00",
+      "question_type": "AIR_PRESSURE",
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.07.14 18:00",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Wie viel Sonne scheint denn morgen in Sinzing um 18 Uhr?",
+      "timeinfo": "2020.07.14 00:00",
+      "question_type": "SUN",
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.07.15 18:00",
+          "end": ""
+        }
+      },
+      "city": "Sinzing"
+    },
+    {
+      "text": "In welche Richtung wird der wind heute Abend wehen?",
+      "timeinfo": "2020.07.14 00:00",
+      "question_type": "WIND_DIRECTION",
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.07.15 18:00",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Wie wird das Wetter in 46 Stunden",
+      "timeinfo": "2020.07.14 00:00",
+      "question_type": "WEATHER",
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.07.15 22:00",
+          "end": ""
+        }
+      },
+      "city": "None"
     }
   ]
 }
