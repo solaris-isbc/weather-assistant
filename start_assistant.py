@@ -101,7 +101,7 @@ def query_processing(query):
 def display_assistant_information():
     print("--------------------------------------------------------------")
     print(f"{Fore.RED}Weather Assistant{Style.RESET_ALL}")
-    print(f"{Fore.YELLOW}Wetterdaten von weatherbit.io{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW}Wetterdata by weatherbit.io{Style.RESET_ALL}")
     print("--------------------------------------------------------------")
     print("The system can answer the following questions: ")
     print("Weather, Rain, Snow, Sun, Air Pressure, Fog, Temperature,\nMinimum Temperature, Maximum Temperature, Average Temperature,"+
