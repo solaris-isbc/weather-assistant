@@ -73,51 +73,34 @@ for query in data:
                 found_city_bool = True
             else:
                 found_city_bool = False
-
         if found_question_type == query["question_type"]:
             found_question_type_bool = True
             correct_question_type += 1
         else:
             found_question_type_bool = False
-
         datetime_relative_to = datetime.datetime.strptime(query["timeinfo"], "%Y.%m.%d %H:%M")
-
         time_result = get_time_info(query_text, datetime_relative_to)
         found_time_type_bool = False
-
         try:
             if time_result["type"] == query["time"]["time_type"]:
                 found_time_type_bool = True
-
             if time_result["type"] == "time_point" and query["time"]["time_type"] == "time_point":
                 correct_time_type += 1
-
                 extracted_date = time_result["extracted_date_datetime"].date()
                 extracted_time = time_result["extracted_time_datetime"]
-
                 ground_truth = datetime.datetime.strptime(query["time"]["time_objects"]["start"], "%Y.%m.%d %H:%M")
                 ground_truth_date = ground_truth.date()
                 ground_truth_time = ground_truth.time()
-
-                #                print(ground_truth_date, "-----", extracted_date)
-                #                print(ground_truth_time, "-----", extracted_time)
-
                 if extracted_date == ground_truth_date and extracted_time == ground_truth_time:
                     correct_time += 1
                     time_bool = True
                 else:
                     time_bool = False
-
             if time_result["type"] == "day" and query["time"]["time_type"] == "day":
                 correct_time_type += 1
-
                 extracted_date = time_result["extracted_date_datetime"].date()
-
                 ground_truth_date = datetime.datetime.strptime(query["time"]["time_objects"]["start"],
                                                                "%Y.%m.%d %H:%M").date()
-
-                #                print(ground_truth_date, "-----", extracted_date)
-
                 if extracted_date == ground_truth_date:
                     correct_time += 1
                     time_bool = True
@@ -128,19 +111,12 @@ for query in data:
                 correct_time_type += 1
                 range_start = found_time[0]
                 range_end = found_time[1]
-
                 extracted_date_start = time_result["extracted_range_duration_start_datetime"].date()
                 extracted_date_end = time_result["extracted_range_duration_end_datetime"].date()
-
-                ground_truth_start = datetime.datetime.strptime(query["time"]["time_objects"]["start"],
-                                                                "%Y.%m.%d %H:%M")
+                ground_truth_start = datetime.datetime.strptime(query["time"]["time_objects"]["start"],"%Y.%m.%d %H:%M")
                 ground_truth_start_date = ground_truth_start.date()
                 ground_truth_end = datetime.datetime.strptime(query["time"]["time_objects"]["end"], "%Y.%m.%d %H:%M")
                 ground_truth_end_date = ground_truth_end.date()
-
-                #                print(ground_truth_start, "-----", extracted_date_start)
-                #                print(ground_truth_end, "-----", extracted_date_end)
-
                 if ground_truth_start_date == extracted_date_start and ground_truth_end_date == extracted_date_end:
                     correct_time += 1
                     time_bool = True
@@ -148,25 +124,19 @@ for query in data:
                     time_bool = False
         except:
             time_bool = False
-
         if found_question_type_bool is True and found_city_bool is True and found_question_type_bool is True and time_bool is True:
             main_score += 1
             correct_interpretation_of_query = True
         else:
             correct_interpretation_of_query = False
-
-        print("| Query: ", query_text, "| question type: ",
-              str(found_question_type_bool),
-              "| city: ", str(found_city_bool),
-              "| time type: ", str(found_time_type_bool),
-              "| time: ", str(time_bool),
-              "| correct interpretation of query: ", str(correct_interpretation_of_query), "|")
+        print("| Query: ", query_text, "| question type: ", str(found_question_type_bool), "| city: ", str(found_city_bool), "| time type: ", str(found_time_type_bool), "| time: ", str(time_bool), "| correct interpretation of query: ", str(correct_interpretation_of_query), "|")
     else:
         if found_question_type is None and query["question_type"] == "None":
             print("| Query: ", query_text, "|", "Korrekterweise wurde kein Fragetyp gefunden.")
             main_score += 1
             correct_question_type += 1
         if found_question_type is None and query["question_type"] != "None":
+            
             print("| Query: ", query_text, "|", "Es wurde ein Fragetyp gefunden, obwohl die Query sinnlos ist.")
         if found_question_type is None and query["question_type"] != "None":
             print("| Query: ", query_text, "|",
