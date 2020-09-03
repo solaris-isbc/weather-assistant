@@ -1,5 +1,7 @@
 import json
 import os
+import re
+
 from time_detector import time_detector as td
 from city_detector import city_detector as cd
 from irrelevance_detection import irrelevance_detector as id
@@ -26,6 +28,8 @@ def get_question_type(query):
     label_pred = question_model.predict([cleaned_query])
     probabilities = question_model.predict_proba([cleaned_query])[0]
     probability_of_predicted_label = max(probabilities)
+    if bool(re.search("hpa", query, re.IGNORECASE)):
+        return "AIR_PRESSURE"
     if probability_of_predicted_label <= 0.2:
         return None
     if probability_of_predicted_label < 0.5 and id.query_has_relevant_tokens(query) is False:

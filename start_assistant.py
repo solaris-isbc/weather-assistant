@@ -1,3 +1,5 @@
+import re
+
 from time_detector import time_detector as td
 from city_detector import city_detector as cd
 from irrelevance_detection import irrelevance_detector as id
@@ -41,6 +43,8 @@ def get_question_type(query):
     label_pred = question_model.predict([cleaned_query])
     probabilities = question_model.predict_proba([cleaned_query])[0]
     probability_of_predicted_label = max(probabilities)
+    if bool(re.search("hpa", query, re.IGNORECASE)):
+        return "AIR_PRESSURE"
     if probability_of_predicted_label <= 0.2:
         return None
     if probability_of_predicted_label < 0.5 and id.query_has_relevant_tokens(query) is False:
@@ -59,10 +63,11 @@ def find_time_information_in_query(query):
 
 def find_question_type(query, city, selected_time_type, selected_time):
     question_type = get_question_type(query)
+    next_appearance_mode = bool(re.search("wann", query, re.IGNORECASE))
     if question_type != None:
         # The only reason for an error is the absence of weather data for the requested location.
         try:
-            weather_api_handler.interpret_data_and_create_answer(question_type, city, selected_time, selected_time_type)
+            weather_api_handler.interpret_data_and_create_answer(question_type, city, selected_time, selected_time_type, next_appearance_mode, query)
         except Exception as e:
             print("<!--")
             print(str(e))
@@ -101,7 +106,7 @@ def query_processing(query):
 def display_assistant_information():
     print("--------------------------------------------------------------")
     print(f"{Fore.RED}Weather Assistant{Style.RESET_ALL}")
-    print(f"{Fore.YELLOW}Weatherdata by weatherbit.io{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW}weather-data by weatherbit.io{Style.RESET_ALL}")
     print("--------------------------------------------------------------")
     print("The system can answer the following questions: ")
     print("Weather, Rain, Snow, Sun, Air Pressure, Fog, Temperature,\nMinimum Temperature, Maximum Temperature, Average Temperature,"+
