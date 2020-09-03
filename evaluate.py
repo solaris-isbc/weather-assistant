@@ -30,6 +30,12 @@ def get_question_type(query):
     probability_of_predicted_label = max(probabilities)
     if bool(re.search("hpa", query, re.IGNORECASE)):
         return "AIR_PRESSURE"
+    if bool(re.search("sonnenschirm|sonnencreme", query, re.IGNORECASE)):
+        return "SUN"
+    if bool(re.search("regenschirm", query, re.IGNORECASE)):
+        return "RAIN"
+    if bool(re.search("jacke", query, re.IGNORECASE)):
+        return "COLD"
     if probability_of_predicted_label <= 0.2:
         return None
     if probability_of_predicted_label < 0.5 and id.query_has_relevant_tokens(query) is False:
