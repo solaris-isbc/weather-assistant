@@ -321,7 +321,7 @@ class WeatherAPIHandler():
             elif forecasts_with_warm_weather[0]['datetime'] > next_day:
                 print("Am " + str(
                     formatted_date) + " kann nicht mit warmer Temperatur gerechnet werden. Dafür kann jedoch am " + self.convert_date_to_formatted_text(
-                    forecasts_with_warm_weather[0]['datetime']) + " um " + str(forecasts_with_warm_weather[0]['datetime'].hour) + " Uhr wieder mit warmen Temperaturen gerechnet werden ("+str(forecasts_with_warm_weather[0]["temp"])+")!")
+                    forecasts_with_warm_weather[0]['datetime']) + " um " + str(forecasts_with_warm_weather[0]['datetime'].hour) + " Uhr wieder mit warmen Temperaturen gerechnet werden ("+str(forecasts_with_warm_weather[0]["temp"])+"°C)!")
             else:
                 print("Es ist mit warmer Temperatur zu rechnen in " + city + ". Am " + self.convert_date_to_formatted_text(
                     forecasts_with_warm_weather[0]['datetime']) + " um " + str(
