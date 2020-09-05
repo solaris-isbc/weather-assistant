@@ -49,7 +49,7 @@ class WeatherAPIHandler():
            if temperature_extracted == None:
                print("Hoppla! Diese Frage kann leider nicht beantwortet werden! [Temperature Error]")
            else:
-               if ((question_type == "TEMPERATURE" or question_type == "AVERAGE_TEMPERATURE") and comparison_operator_extracted.__name__=="eq") or ((question_type == "MAX_TEMPERATURE" or question_type == "MIN_TEMPERATURE") and selected_time_type=="day"):
+               if (question_type == "TEMPERATURE" or question_type == "AVERAGE_TEMPERATURE") or ((question_type == "MAX_TEMPERATURE" or question_type == "MIN_TEMPERATURE") and selected_time_type=="day"):
                    self.create_temperature_answer_next_appearance(city, selected_time, selected_time_type, temperature_extracted, comparison_operator_extracted, question_type)
                if (question_type == "MAX_TEMPERATURE" or comparison_operator_extracted.__name__=="le" or comparison_operator_extracted.__name__=="lt") and selected_time_type!="day":
                    self.create_max_temperature_answer_next_appearance(city, selected_time, selected_time_type, temperature_extracted, comparison_operator_extracted)
@@ -74,11 +74,11 @@ class WeatherAPIHandler():
     def find_comparison_operator_extracted(self,query):
         if bool(re.search("mindest|größer als|>=", query, re.IGNORECASE)):
             return operator.ge # a>=b
-        if bool(re.search("mehr|größer|>", query, re.IGNORECASE)):
+        if bool(re.search("mehr|größer|über|>", query, re.IGNORECASE)):
             return operator.gt # a>b
         if bool(re.search("höchstens|bis|<=", query, re.IGNORECASE)):
             return operator.le # a<=b
-        if bool(re.search("weniger|<", query, re.IGNORECASE)):
+        if bool(re.search("weniger|unter|<", query, re.IGNORECASE)):
             return operator.lt # a<b
         return operator.eq
 
@@ -345,7 +345,7 @@ class WeatherAPIHandler():
                                          selected_time[0].day) + datetime.timedelta(days=1)
             if len(forecasts_with_cold_weather) == 0:
                 print(
-                    "Am " + formatted_date + " kann nicht mit kalten Temperatur gerechnet werden in " + city + "! Auch in den restlichen Stunden, für die Wetterinformationen vorliegen ist nicht mit warmen Temperaturen zu rechnen!")
+                    "Am " + formatted_date + " muss nicht mit kalten Temperaturen gerechnet werden in " + city + "! Auch in den restlichen Stunden, für die Wetterinformationen vorliegen ist nicht mit warmen Temperaturen zu rechnen!")
             elif forecasts_with_cold_weather[0]['datetime'] > next_day:
                 print("Am " + str(
                     formatted_date) + " kann nicht mit kalten Temperatur gerechnet werden. Dafür kann jedoch am " + self.convert_date_to_formatted_text(
@@ -354,7 +354,7 @@ class WeatherAPIHandler():
                     forecasts_with_cold_weather[0]["temp"]) + "°C )!")
             else:
                 print(
-                    "Es ist mit kalten Temperaturen zu rechnen in " + city + ". Am " + self.convert_date_to_formatted_text(
+                    "Es kann mit kalten Temperaturen gerechnet werden in " + city + ". Am " + self.convert_date_to_formatted_text(
                         forecasts_with_cold_weather[0]['datetime']) + " um " + str(
                         forecasts_with_cold_weather[0][
                             'datetime'].hour) + " Uhr kann mit kalten Temperaturen gerechnet werden (" + str(
