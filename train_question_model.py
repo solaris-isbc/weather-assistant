@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
 from nltk.corpus import stopwords
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import TfidfTransformer
@@ -12,13 +12,11 @@ stopword_list = set(stopwords.words('german'))
 # Documentation of stemmer: https://www.nltk.org/howto/stem.html
 stemmer = SnowballStemmer("german")
 
-
 def clean_query(text):
     text = text.lower()  # lowercase the query
     text = ' '.join(word for word in text.split() if word not in stopword_list)  # delete stopwors from text
     text = ' '.join(stemmer.stem(word) for word in text.split())
     return text
-
 
 df['post'] = df['post'].apply(clean_query)
 posts = df.post

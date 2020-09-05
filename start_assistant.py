@@ -8,12 +8,10 @@ from nltk.corpus import stopwords
 from nltk.stem.snowball import SnowballStemmer
 import geocoder
 from geopy.geocoders import Nominatim
-import colorama
 from colorama import Fore, Style
-import sys
 import pickle
 
-### Run this command in the project folder to install all packages needed:
+### 1. Run this command in the project folder to install all packages needed:
 # pip install -r requirements.txt
 
 ### Alternatively:
@@ -27,6 +25,10 @@ import pickle
 # pip install pandas
 # pip install scikit-learn
 # pip install colorama
+# pip install spacy
+
+### 2. as soon as space is installed:
+# python -m spacy download de_core_news_sm
 
 def clean_query(text):
     stopword_list = set(stopwords.words('german'))
@@ -59,7 +61,7 @@ def get_question_type(query):
 
 def get_current_location():
     g = geocoder.ip('me')
-    geolocator = Nominatim(user_agent="weather assistant")
+    geolocator = Nominatim(user_agent="weather-assistant")
     coord = str(g.latlng[0])+", "+str(g.latlng[1])
     location = geolocator.reverse(coord)
     return location.raw["address"]["city"]
@@ -69,7 +71,7 @@ def find_time_information_in_query(query):
 
 def find_question_type(query, city, selected_time_type, selected_time):
     question_type = get_question_type(query)
-    next_appearance_mode = bool(re.search("wann", query, re.IGNORECASE))
+    next_appearance_mode = bool(re.search("wann|zeitpunkt", query, re.IGNORECASE))
     if question_type != None:
         # The only reason for an error is the absence of weather data for the requested location.
         try:
@@ -111,7 +113,7 @@ def query_processing(query):
 
 def display_assistant_information():
     print("--------------------------------------------------------------")
-    print(f"{Fore.RED}Weather Assistant{Style.RESET_ALL}")
+    print(f"{Fore.RED}Weather-Assistant{Style.RESET_ALL}")
     print(f"{Fore.YELLOW}weather-data by weatherbit.io{Style.RESET_ALL}")
     print("--------------------------------------------------------------")
     print("The system can answer the following questions: ")

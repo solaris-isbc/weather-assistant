@@ -1,5 +1,4 @@
 import json
-import os
 import re
 
 from time_detector import time_detector as td

@@ -8,10 +8,9 @@ from nltk.corpus import stopwords
 from nltk.stem.snowball import SnowballStemmer
 import geocoder
 from geopy.geocoders import Nominatim
-import sys
 import pickle
 
-### Run this command in the project folder to install all packages needed:
+### 1. Run this command in the project folder to install all packages needed:
 # pip install -r requirements.txt
 
 ### Alternatively:
@@ -25,6 +24,10 @@ import pickle
 # pip install pandas
 # pip install scikit-learn
 # pip install colorama
+# pip install spacy
+
+### 2. as soon as space is installed:
+# python -m spacy download de_core_news_sm
 
 def clean_query(text):
     stopword_list = set(stopwords.words('german'))
@@ -41,9 +44,6 @@ def get_question_type(query):
     label_pred = question_model.predict([cleaned_query])
     probabilities = question_model.predict_proba([cleaned_query])[0]
     probability_of_predicted_label = max(probabilities)
-    if probability_of_predicted_label <= 0.2:
-        return None
-    # if certain phrases occur in the query, the query can be classified immediately
     if bool(re.search("hpa", query, re.IGNORECASE)):
         return "AIR_PRESSURE"
     if bool(re.search("sonnenschirm|sonnencreme", query, re.IGNORECASE)):
@@ -52,13 +52,15 @@ def get_question_type(query):
         return "RAIN"
     if bool(re.search("jacke", query, re.IGNORECASE)):
         return "COLD"
+    if probability_of_predicted_label <= 0.2:
+        return None
     if probability_of_predicted_label < 0.5 and id.query_has_relevant_tokens(query) is False:
         return None
     return label_pred
 
 def get_current_location():
     g = geocoder.ip('me')
-    geolocator = Nominatim(user_agent="weather assistant")
+    geolocator = Nominatim(user_agent="weather-assistant")
     coord = str(g.latlng[0])+", "+str(g.latlng[1])
     location = geolocator.reverse(coord)
     return location.raw["address"]["city"]
@@ -68,7 +70,7 @@ def find_time_information_in_query(query):
 
 def find_question_type(query, city, selected_time_type, selected_time):
     question_type = get_question_type(query)
-    next_appearance_mode = bool(re.search("wann", query, re.IGNORECASE))
+    next_appearance_mode = bool(re.search("wann|zeitpunkt", query, re.IGNORECASE))
     if question_type != None:
         # The only reason for an error is the absence of weather data for the requested location.
         try:
