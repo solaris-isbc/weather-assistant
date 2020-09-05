@@ -16,7 +16,7 @@ class WeatherAPIHandler():
              else:
                  print("Für die einzelnen Stunden von diesem Tag können leider keine Vorhersagen getroffen werden (nur die nächsten 48 Stunden).")
           if selected_time_type == "range":
-             self.identify_question_type_for_next_appearance_mode(question_type, city, selected_time, selected_time_type)
+             self.identify_question_type_for_next_appearance_mode(question_type, city, selected_time, selected_time_type, query)
         else:
           self.identify_question_type(question_type, city, selected_time, selected_time_type)
 
@@ -1173,26 +1173,12 @@ class WeatherAPIHandler():
         api = Api(api_key)
         api.set_granularity('daily')
         forecast = api.get_forecast(city=city)
-        start_counter = 0
-        start_index = 0
-        end_counter = 0
-        end_index = 0
         forecasts = forecast.get_series(
             ['clouds', 'precip', "temp", "min_temp", "max_temp", "weather", "pres", "datetime", "wind_dir", "clouds",
              "snow", "wind_spd", "snow_depth"])
-        for fc in forecasts:
-            if fc["datetime"].year == start.year and fc["datetime"].month == start.month and fc[
-                "datetime"].day == start.day:
-                start_index = start_counter
-            start_counter = start_counter + 1
-        for fc in forecasts:
-            if fc["datetime"].year == end.year and fc["datetime"].month == end.month and fc["datetime"].day == end.day:
-                end_index = end_counter
-            end_counter = end_counter + 1
-        forecasts_return = []
-        for i in range(start_index, end_index + 1):
-            forecasts_return.append(forecasts[i])
-        return forecasts_return
+        # we need to select the forecasts for the range the user specified in the query
+        forecasts = [x for x in forecasts if x['datetime']>= datetime.datetime(start.year,start.month,start.day,0,0) and x["datetime"]<=datetime.datetime(end.year,end.month,end.day,0,0)]
+        return forecasts
 
     def convert_date_to_formatted_text(self, selected_time):
         months = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober",

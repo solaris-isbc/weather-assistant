@@ -71,6 +71,8 @@ def find_time_information_in_query(query):
 def find_question_type(query, city, selected_time_type, selected_time):
     question_type = get_question_type(query)
     next_appearance_mode = bool(re.search("wann|zeitpunkt", query, re.IGNORECASE))
+    if bool(re.search("uhr",query,re.IGNORECASE)) and selected_time_type == "day":
+        next_appearance_mode = True
     if question_type != None:
         # The only reason for an error is the absence of weather data for the requested location.
         try:
