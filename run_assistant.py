@@ -74,7 +74,8 @@ def find_question_type(query, city, selected_time_type, selected_time):
     if question_type != None:
         # The only reason for an error is the absence of weather data for the requested location.
         try:
-            weather_api_handler.interpret_data_and_create_answer(question_type, city, selected_time, selected_time_type, next_appearance_mode, query)
+            # We need to call the title()-method to format entered city names properly. Users often enter everything in lower case.
+            weather_api_handler.interpret_data_and_create_answer(question_type, city.title(), selected_time, selected_time_type, next_appearance_mode, query)
         except Exception as e:
             print("<!--")
             print(str(e))
