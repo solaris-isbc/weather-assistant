@@ -28,8 +28,7 @@ tags = df.tag
 # [3] https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html
 # [4] https://stackoverflow.com/questions/10592605/save-classifier-to-disk-in-scikit-learn
 
-nb = Pipeline(
-    [('vect', CountVectorizer()), ('tfidf', TfidfTransformer()), ('lr', LogisticRegression(C=10, multi_class='ovr'))])
+nb = Pipeline([('vect', CountVectorizer()), ('tfidf', TfidfTransformer()), ('lr', LogisticRegression(C=10, multi_class='ovr'))])
 nb.fit(posts, tags)
 
 with open('question_model.pkl', 'wb') as f:
