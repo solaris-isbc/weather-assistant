@@ -104,7 +104,7 @@ datetime_grammar = u"""
     THE: ("den")WS+
     IN: ("in")WS+
     DAYS_CHAR: ("tagen")WS+
-    RELATIVE_DAYS: ("2".."9" | "1"("0".."5"))WS+
+    RELATIVE_DAYS: ("2".."9" | "1"("0".."9") | "2"("0".."9") | "3"("0".."9") | "4"("0".."9") | "5"("0".."9") | "6"("0".."9") | "7"("0".."9") | "8"("0".."9") | "9"("0".."9"))WS+
     NEXT: ("nächster" | "nächsten" | "nächste" | "nächster" | "nächsten" | "nächste" | "nächstes" | "kommendes" | "kommenden" | "kommender" | "kommende" | "kommenden")WS+
     TOMORROW: ("morgen")WS+
     DAY_AFTER_TOMORROW: ("übermorgen")WS+
