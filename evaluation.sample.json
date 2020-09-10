@@ -1,0 +1,45 @@
+{
+  "queries": [
+    {
+      "text": "Wie wird das Wetter morgen in München um 7 Uhr",
+      "timeinfo": "2020.07.12 00:00",
+      "question_type": "WEATHER",
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.07.13 07:00"
+        }
+      },
+      "city": "München"
+    },
+    {
+      "text": "Sag mir ob es heute Schnee gibt",
+      "timeinfo": "2020.07.12 00:00",
+      "question_type": "SNOW",
+      "time": {
+        "time_type": "day",
+        "time_objects": {
+          "start": "2020.07.12 00:00"
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Wird es in den nächsten 3 Tagen schneien?",
+      "timeinfo": "2020.07.12 00:00",
+      "question_type": "SNOW",
+      "time": {
+        "time_type": "range",
+        "time_objects": {
+          "start": "2020.07.13 00:00",
+          "end": "2020.07.15 00:00"
+        }
+      },
+      "city": "None"
+    },
+    {
+      "question_type": "None",
+      "text": "Sag mir wo ich einen Apfel kaufen kann"
+    }
+  ]
+}
