@@ -20,7 +20,7 @@
       "time": {
         "time_type": "day",
         "time_objects": {
-          "start": "2020.07.14 00:00",
+          "start": "2020.07.15 00:00",
           "end": ""
         }
       },
@@ -46,7 +46,7 @@
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "",
+          "start": "2020.07.14 00:00",
           "end": ""
         }
       },
@@ -72,7 +72,7 @@
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "",
+          "start": "2020.07.14 00:00",
           "end": ""
         }
       },
@@ -85,7 +85,7 @@
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "",
+          "start": "2020.07.14 00:00",
           "end": ""
         }
       },
@@ -148,9 +148,9 @@
       "timeinfo": "2020.07.14 00:00",
       "question_type": "None",
       "time": {
-        "time_type": "time_point",
+        "time_type": "day",
         "time_objects": {
-          "start": "",
+          "start": "2020.07.14 00:00",
           "end": ""
         }
       },
@@ -187,9 +187,9 @@
       "timeinfo": "2020.07.14 00:00",
       "question_type": "None",
       "time": {
-        "time_type": "time_point",
+        "time_type": "day",
         "time_objects": {
-          "start": "",
+          "start": "2020.07.15 00:00",
           "end": ""
         }
       },
@@ -241,7 +241,7 @@
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "",
+          "start": "2020.07.14 00:00",
           "end": ""
         }
       },
@@ -332,7 +332,7 @@
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "",
+          "start": "2020.07.14 00:00",
           "end": ""
         }
       },
@@ -421,9 +421,9 @@
       "timeinfo": "2020.07.14 00:00",
       "question_type": "None",
       "time": {
-        "time_type": "time_point",
+        "time_type": "day",
         "time_objects": {
-          "start": "",
+          "start": "2020.07.14 00:0",
           "end": ""
         }
       },
@@ -462,7 +462,7 @@
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "2020.07.15 15:00",
+          "start": "2020.07.15 12:00",
           "end": ""
         }
       },
@@ -514,7 +514,7 @@
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "2020.07.15 18:00",
+          "start": "2020.07.14 19:00",
           "end": ""
         }
       },

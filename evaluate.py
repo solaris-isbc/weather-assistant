@@ -89,17 +89,21 @@ for query in data:
             found_question_type_bool = False
         datetime_relative_to = datetime.datetime.strptime(query["timeinfo"], "%Y.%m.%d %H:%M")
         time_result = get_time_info(query_text, datetime_relative_to)
+
         found_time_type_bool = False
         try:
             if time_result["type"] == query["time"]["time_type"]:
                 found_time_type_bool = True
             if time_result["type"] == "time_point" and query["time"]["time_type"] == "time_point":
                 correct_time_type += 1
-                extracted_date = time_result["extracted_date_datetime"].date()
+
+                extracted_date = time_result["extracted_date_datetime"]
                 extracted_time = time_result["extracted_time_datetime"]
+
                 ground_truth = datetime.datetime.strptime(query["time"]["time_objects"]["start"], "%Y.%m.%d %H:%M")
                 ground_truth_date = ground_truth.date()
                 ground_truth_time = ground_truth.time()
+
                 if extracted_date == ground_truth_date and extracted_time == ground_truth_time:
                     correct_time += 1
                     time_bool = True
@@ -107,7 +111,7 @@ for query in data:
                     time_bool = False
             if time_result["type"] == "day" and query["time"]["time_type"] == "day":
                 correct_time_type += 1
-                extracted_date = time_result["extracted_date_datetime"].date()
+                extracted_date = time_result["extracted_date_datetime"]
                 ground_truth_date = datetime.datetime.strptime(query["time"]["time_objects"]["start"],
                                                                "%Y.%m.%d %H:%M").date()
                 if extracted_date == ground_truth_date:
@@ -122,7 +126,8 @@ for query in data:
                 range_end = found_time[1]
                 extracted_date_start = time_result["extracted_range_duration_start_datetime"].date()
                 extracted_date_end = time_result["extracted_range_duration_end_datetime"].date()
-                ground_truth_start = datetime.datetime.strptime(query["time"]["time_objects"]["start"],"%Y.%m.%d %H:%M")
+                ground_truth_start = datetime.datetime.strptime(query["time"]["time_objects"]["start"],
+                                                                "%Y.%m.%d %H:%M")
                 ground_truth_start_date = ground_truth_start.date()
                 ground_truth_end = datetime.datetime.strptime(query["time"]["time_objects"]["end"], "%Y.%m.%d %H:%M")
                 ground_truth_end_date = ground_truth_end.date()
@@ -131,8 +136,10 @@ for query in data:
                     time_bool = True
                 else:
                     time_bool = False
-        except:
+        except BaseException as e:
+            # print(str(e))
             time_bool = False
+
         if found_question_type_bool is True and found_city_bool is True and found_question_type_bool is True and time_bool is True:
             main_score += 1
             correct_interpretation_of_query = True

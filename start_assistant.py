@@ -30,6 +30,10 @@ import pickle
 ### 2. as soon as space is installed:
 # python -m spacy download de_core_news_sm
 
+### 3. as soon as nltk is installed
+### execute the following somehow
+# nltk.download('stopwords')
+
 def clean_query(text):
     stopword_list = set(stopwords.words('german'))
     stemmer = SnowballStemmer("german")

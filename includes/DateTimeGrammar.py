@@ -3,7 +3,9 @@
 TODOs:
 - Make sure every matching rule is sorted by matching length, e.g. day: DAY_AFTER_TOMORROW | TOMORROW
   otherwise wrong matching might happen, e.g. übermorgen matches über(optional_s) morgen(TOMORROW)
-- written digits: drei -> 3, sechzehn -> 16
+    => is mostly correct
+- written digits: drei -> 3, sechzehn -> 16 ->
+    => fixed in DateTimeExtractor by regex replace for 2-9
 - specially named days: Weihnachten, Ostermontag, Muttertag
 """
 ##################################################################################
@@ -32,9 +34,9 @@ datetime_grammar = u"""
     
     //formatted date, e.g. 20.5.2020
     //digit date spoken
-    //date_formatted.2: digit_date_day DATE_SEPARATOR? (MONTH | MONTH_ABBR | DIGIT_MONTH | DIGIT_MONTH_SPOKEN) year?
+    //date_formatted.2: digit_date_day DATE_SEPARATOR (MONTH | MONTH_ABBR | DIGIT_MONTH | DIGIT_MONTH_SPOKEN) year?
     //digit_date_day.1: (DIGIT_LIMITED_DAY? DIGIT) | DIGIT_DAY_SPOKEN  
-    date_formatted.2: digit_date_day DATE_SEPARATOR? (MONTH | MONTH_ABBR | DIGIT_MONTH) year?
+    date_formatted.2: digit_date_day DATE_SEPARATOR (MONTH | MONTH_ABBR | DIGIT_MONTH) year?
     digit_date_day.1: (DIGIT_LIMITED_DAY? DIGIT) 
     year: (DATE_SEPARATOR YEAR) | YEAR
     
@@ -62,7 +64,7 @@ datetime_grammar = u"""
     
     
     //relative time, e.g. in 10 Minuten
-    time_relative.1: (IN time_relative_minutes WS? MINUTES_CHAR) | (IN time_relative_hours WS? HOURS_CHAR)
+    time_relative.1: (IN time_relative_minutes WS? MINUTES_CHAR) | (IN time_relative_hours WS? HOURS_CHAR) | (IN_ONE HOURS_CHAR) | (IN_ONE MINUTES_CHAR) 
     time_relative_minutes.1: DIGIT? DIGIT? DIGIT
     time_relative_hours.1: DIGIT? DIGIT
     
@@ -71,7 +73,7 @@ datetime_grammar = u"""
     time.2: ((time_of_day) time_specific) | (time_specific (time_of_day)) | time_specific | time_of_day
 
     time_specific.1: clock_time | qualified_times
-    clock_time.1: (AT hour) | (hour CLOCK) | hour_clock_minutes
+    clock_time.1: ((AT|TOWARDS) hour) | (hour CLOCK) | hour_clock_minutes
     //14:20 or 12
     hour.1: def_hour | digit_num 
     def_hour.1: digit_num COLON full_digit_num
@@ -90,7 +92,7 @@ datetime_grammar = u"""
     //terminals
     //all surrounded with possible whitespaces
     //TODO maybe change some WS* into WS+
-    DATE_SEPARATOR: ("-"|".") WS?
+    DATE_SEPARATOR: ("-"|"."|WS) WS?
     MONTH:("januar" | "februar" | "märz" | "april" | "mai" | "juni" | "juli" | "august" | "september" | "oktober" | "november" | "dezember") WS+
     MONTH_ABBR: ("jan" | "feb" | "mar" | "apr" | "mai" | "jun" | "jul" | "aug" | "sept" | "okt" | "nov" | "dez") WS+
     DIGIT_MONTH: (("0".."1" "0".."9") | ("0".."9"))WS?
@@ -114,7 +116,7 @@ datetime_grammar = u"""
     ON: ("am" | "an")WS+
     WEEK_END: ("wochenende")WS+
     THIS: ("diese" | "dieses" | "dieser")WS+
-    IN_ONE: ("in" WS+ "einer") WS+
+    IN_ONE: ("in" WS+ ("einer"|"1")) WS+
     WEEK: ("woche")WS+
     MINUTES_CHAR: ("minute"("n")?)WS+
     HOURS_CHAR: ("stunde"("n")?)WS+
