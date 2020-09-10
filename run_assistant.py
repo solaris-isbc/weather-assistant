@@ -81,8 +81,11 @@ def find_question_type(query, city, selected_time_type, selected_time):
     # like to know the time of day when something happened (e.g. rain) -> "when"-Question
     if bool(re.search("uhr", query, re.IGNORECASE)) and selected_time_type == "day":
         next_appearance_mode = True
-    if selected_time_type == "time_point":
-        next_appearance_mode = False
+    if selected_time_type == "time_point" and next_appearance_mode == True:
+        # a time_point will only be returned by the time detector in a "when"-question if the user did not specify a
+        # time in the query. Time points (for example "12 o'clock tomorrow") do not make sense in a "when" question.
+        # so if the time_detector returns a time_point we will automatically set the selected_time_type to a day.
+        selected_time_type = "day"
     if question_type != None:
         # The only reason for an error is the absence of weather data for the requested location.
         try:
