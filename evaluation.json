@@ -42,7 +42,7 @@
     {
       "text": "Wann regnet es das nächste Mal wieder?",
       "timeinfo": "2020.07.14 00:00",
-      "question_type": "None",
+      "question_type": "RAIN",
       "time": {
         "time_type": "time_point",
         "time_objects": {
@@ -144,9 +144,9 @@
       "city": "None"
     },
     {
-      "text": "Wann wird es heute kühler?",
+      "text": "Wann wird es heute kalt?",
       "timeinfo": "2020.07.14 00:00",
-      "question_type": "None",
+      "question_type": "COLD",
       "time": {
         "time_type": "day",
         "time_objects": {
@@ -185,7 +185,7 @@
     {
       "text": "Ab wann wird es morgen warm sein?",
       "timeinfo": "2020.07.14 00:00",
-      "question_type": "None",
+      "question_type": "WARM",
       "time": {
         "time_type": "day",
         "time_objects": {
@@ -237,7 +237,7 @@
     {
       "text": "Wann wird es in Regensburg wieder schneien?",
       "timeinfo": "2020.07.14 00:00",
-      "question_type": "None",
+      "question_type": "SNOW",
       "time": {
         "time_type": "time_point",
         "time_objects": {
@@ -245,7 +245,7 @@
           "end": ""
         }
       },
-      "city": "None"
+      "city": "Regensburg"
     },
     {
       "text": "Wie viel Grad hat es gerade in Wuppertal?",
@@ -328,15 +328,15 @@
     {
       "text": "wann ist der nächste Sturm in Regensburg? ",
       "timeinfo": "2020.07.14 00:00",
-      "question_type": "None",
+      "question_type": "THUNDER",
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "2020.07.14 00:00",
+          "start": "2020.07.15 00:00",
           "end": ""
         }
       },
-      "city": "None"
+      "city": "Regensburg"
     },
     {
       "text": "Ist es gerade bewölkt",
