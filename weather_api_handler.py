@@ -478,18 +478,18 @@ class WeatherAPIHandler():
 
     def operator_to_text(self,temperature_extracted, comparison_operator_extracted, question_type):
         if question_type == "MIN_TEMPERATURE":
-            return "mindestens "+temperature_extracted+" °C (Minimaltemperatur)"
+            return "mindestens "+temperature_extracted+"°C (Minimaltemperatur)"
         if question_type == "MAX_TEMPERATURE":
-            return "maximal "+temperature_extracted+" °C (Maximaltemperatur)"
+            return "maximal "+temperature_extracted+"°C (Maximaltemperatur)"
         if comparison_operator_extracted.__name__ == "ge":
-            return "mindestens "+temperature_extracted+" °C"
+            return "mindestens "+temperature_extracted+"°C"
         if comparison_operator_extracted.__name__ == "gt":
-            return "mehr als " + temperature_extracted + " °C"
+            return "mehr als " + temperature_extracted + "°C"
         if comparison_operator_extracted.__name__ == "le":
-            return "bis zu " + temperature_extracted + " °C"
+            return "bis zu " + temperature_extracted + "°C"
         if comparison_operator_extracted.__name__ == "lt":
-            return "weniger als " + temperature_extracted + " °C"
-        return "genau "+temperature_extracted+" °C"
+            return "weniger als " + temperature_extracted + "°C"
+        return "genau "+temperature_extracted+"°C"
 
     def create_max_temperature_answer_next_appearance(self, city, selected_time, selected_time_type, temperature_extracted, comparison_operator_extracted):
         if selected_time_type == "range":
@@ -528,14 +528,14 @@ class WeatherAPIHandler():
             answer = "Am " + formatted_date + " um " + str(
                 selected_time[0].hour) + " Uhr kann mit einer Durschschnittstemperatur von " + str(
                 forecast_object_time_point[
-                    "temp"]) + " Grad Celsius gerechnet werden in " + city + "! \n" + '\033[93m' + "Leider bietet der Wetterdienst für einzelne Stunden keine Maxmialtemperatur/Minimaltemperatur, jedoch eine Durchschnittstemperatur." + '\033[0m'
+                    "temp"]) + "°C gerechnet werden in " + city + "! \n" + '\033[93m' + "Leider bietet der Wetterdienst für einzelne Stunden keine Maxmialtemperatur/Minimaltemperatur, jedoch eine Durchschnittstemperatur." + '\033[0m'
             print(answer)
 
         if selected_time_type == "day":
             formatted_date = self.convert_date_to_formatted_text(selected_time[0])
             forecast_object = self.get_forecast_object_for_day(selected_time[0], city)
             answer = "Die Maximaltemperatur in " + city + " beträgt ungefähr " + str(
-                forecast_object["max_temp"]) + " Grad Celsius am " + formatted_date + "."
+                forecast_object["max_temp"]) + "°C am " + formatted_date + "."
             print(answer)
 
         if selected_time_type == "range":
@@ -544,7 +544,7 @@ class WeatherAPIHandler():
                 formatted_date = self.convert_date_to_formatted_text(fc["datetime"])
                 forecast_object = fc
                 answer = "Am " + formatted_date + " beträgt die Maximaltemperatur in " + city + " ungefähr " + str(
-                    forecast_object["max_temp"]) + " Grad Celsius!"
+                    forecast_object["max_temp"]) + "°C!"
                 print(answer)
 
     def create_min_temperature_answer(self, city, selected_time, selected_time_type):
@@ -553,14 +553,14 @@ class WeatherAPIHandler():
             forecast_object_time_point = self.get_forecast_object_for_time_point(selected_time[0], city)
             answer = "Sie können am " + formatted_date + " um " + str(
                 selected_time[0].hour) + " Uhr mit einer Durchschnittstemperatur von " + str(forecast_object_time_point[
-                                                                                                 "temp"]) + " Grad Celsius rechen in " + city + "! \n" + '\033[93m' + "Leider bietet der Wetterdienst für einzelne Stunden keine Maxmialtemperatur/Minimaltemperatur, jedoch eine Durchschnittstemperatur." + '\033[0m'
+                                                                                                 "temp"]) + "°C rechen in " + city + "! \n" + '\033[93m' + "Leider bietet der Wetterdienst für einzelne Stunden keine Maxmialtemperatur/Minimaltemperatur, jedoch eine Durchschnittstemperatur." + '\033[0m'
             print(answer)
 
         if selected_time_type == "day":
             formatted_date = self.convert_date_to_formatted_text(selected_time[0])
             forecast_object = self.get_forecast_object_for_day(selected_time[0], city)
             answer = "Die Minimaltemperatur in " + city + " beträgt ungefähr " + str(
-                forecast_object["min_temp"]) + " Grad Celsius am " + formatted_date + "."
+                forecast_object["min_temp"]) + "°C am " + formatted_date + "."
             print(answer)
 
         if selected_time_type == "range":
@@ -569,7 +569,7 @@ class WeatherAPIHandler():
                 formatted_date = self.convert_date_to_formatted_text(fc["datetime"])
                 forecast_object = fc
                 answer = "Am " + formatted_date + " beträgt die Minimaltemperatur in " + city + " ungefähr " + str(
-                    forecast_object["min_temp"]) + " Grad Celsius!"
+                    forecast_object["min_temp"]) + "°C!"
                 print(answer)
 
     def create_clouds_answer(self, city, selected_time, selected_time_type):
@@ -673,14 +673,14 @@ class WeatherAPIHandler():
             forecast_object_time_point = self.get_forecast_object_for_time_point(selected_time[0], city)
             answer = "Sie können am " + formatted_date + " um " + str(
                 selected_time[0].hour) + " Uhr mit einer Durschschnittstemperatur von " + str(
-                forecast_object_time_point["temp"]) + " Grad Celsius rechen in " + city + "!"
+                forecast_object_time_point["temp"]) + "°C rechen in " + city + "!"
             print(answer)
 
         if selected_time_type == "day":
             formatted_date = self.convert_date_to_formatted_text(selected_time[0])
             forecast_object = self.get_forecast_object_for_day(selected_time[0], city)
             answer = "Die Durschnittstemperatur in " + city + " beträgt ungefähr " + str(
-                forecast_object["temp"]) + " Grad Celsius am " + formatted_date + "."
+                forecast_object["temp"]) + "°C am " + formatted_date + "."
             print(answer)
 
         if selected_time_type == "range":
@@ -689,7 +689,7 @@ class WeatherAPIHandler():
                 formatted_date = self.convert_date_to_formatted_text(fc["datetime"])
                 forecast_object = fc
                 answer = "Am " + formatted_date + " beträgt die Durschnittstemperatur in " + city + " ungefähr " + str(
-                    forecast_object["temp"]) + " Grad Celsius!"
+                    forecast_object["temp"]) + "°C!"
                 print(answer)
 
     def create_cold_warm_answer(self, city, selected_time, selected_time_type):
@@ -700,23 +700,23 @@ class WeatherAPIHandler():
             if 0 < forecast_object_time_point["temp"] < 15:
                 answer = "Sie werden wärmere Kleidung benötigen, da es etwas kälter draußen ist. " + "Um " + str(
                     selected_time[0].hour) + " Uhr am " + formatted_date + " kann mit ungefähr " + str(
-                    forecast_object_time_point["temp"]) + " Grad Celsius gerechnet werden in " + city + "!"
+                    forecast_object_time_point["temp"]) + "°C gerechnet werden in " + city + "!"
             if 0 > forecast_object_time_point["temp"]:
-                answer = "Es ist sehr kalt draußen. Die zu erwartende Temperatur liegt bei unter 0 Grad Celsius!" + "Um " + str(
+                answer = "Es ist sehr kalt draußen. Die zu erwartende Temperatur liegt bei unter 0°C!" + "Um " + str(
                     selected_time[0].hour) + " Uhr am " + formatted_date + " kann mit ungefähr " + str(
-                    forecast_object_time_point["temp"]) + " Grad Celsius gerechnet werden in " + city + "!"
+                    forecast_object_time_point["temp"]) + "°C gerechnet werden in " + city + "!"
             if 15 <= forecast_object_time_point["temp"] < 22:
                 answer = "Es sind milde Temperaturen zu erwarten. " + "Um " + str(
                     selected_time[0].hour) + " Uhr am " + formatted_date + " kann mit ungefähr " + str(
-                    forecast_object_time_point["temp"]) + " Grad Celsius gerechnet werden in " + city + "!"
+                    forecast_object_time_point["temp"]) + "°C gerechnet werden in " + city + "!"
             if 22 <= forecast_object_time_point["temp"] < 30:
                 answer = "Es wird warm. Eine Jacke benötigt man nicht unbedingt." + "Um " + str(
                     selected_time[0].hour) + " Uhr am " + formatted_date + " kann mit ungefähr " + str(
-                    forecast_object_time_point["temp"]) + " Grad Celsius gerechnet werden in " + city + "!"
+                    forecast_object_time_point["temp"]) + "°C gerechnet werden in " + city + "!"
             if 30 <= forecast_object_time_point["temp"]:
                 answer = "Es wird sehr warm! Ein T-Shirt reicht auf jeden Fall!" + " Um " + str(
                     selected_time[0].hour) + " Uhr am " + formatted_date + " kann mit ungefähr " + str(
-                    forecast_object_time_point["temp"]) + " Grad Celsius gerechnet werden in " + city + "!"
+                    forecast_object_time_point["temp"]) + "°C gerechnet werden in " + city + "!"
             print(answer)
 
         if selected_time_type == "day":
@@ -725,29 +725,29 @@ class WeatherAPIHandler():
             answer = ""
             if 0 < forecast_object["temp"] < 15:
                 answer = "Sie werden wärmere Kleidung benötigen, da es etwas kälter draußen ist. " + "Sie können in " + city + " am " + formatted_date + " über den Tag verteilt ungefähr mit Temperaturen von mindestens " + str(
-                    forecast_object["min_temp"]) + " Grad Celsius bis zu maximal " + str(
-                    forecast_object["max_temp"]) + " Grad Celsius rechen!" + " Durchschnittlich wird es etwa " + str(
-                    forecast_object["temp"]) + " Grad Celsius geben!"
+                    forecast_object["min_temp"]) + "°C bis zu maximal " + str(
+                    forecast_object["max_temp"]) + "°C rechen!" + " Durchschnittlich wird es etwa " + str(
+                    forecast_object["temp"]) + "°C geben!"
             if 0 > forecast_object["temp"]:
-                answer = "Es ist sehr kalt draußen. Die zu erwartende Temperatur liegt bei unter 0 Grad Celsius!" + "Sie können in " + city + " am " + formatted_date + " über den Tag verteilt ungefähr mit Temperaturen von mindestens " + str(
-                    forecast_object["min_temp"]) + " Grad Celsius bis zu maximal " + str(
-                    forecast_object["max_temp"]) + " Grad Celsius rechen!" + " Durchschnittlich wird es etwa " + str(
-                    forecast_object["temp"]) + " Grad Celsius geben!"
+                answer = "Es ist sehr kalt draußen. Die zu erwartende Temperatur liegt bei unter 0°C!" + "Sie können in " + city + " am " + formatted_date + " über den Tag verteilt ungefähr mit Temperaturen von mindestens " + str(
+                    forecast_object["min_temp"]) + "°C bis zu maximal " + str(
+                    forecast_object["max_temp"]) + "°C rechen!" + " Durchschnittlich wird es etwa " + str(
+                    forecast_object["temp"]) + "°C geben!"
             if 15 <= forecast_object["temp"] < 22:
                 answer = "Es sind milde Temperaturen zu erwarten. " + "Sie können in " + city + " am " + formatted_date + " über den Tag verteilt ungefähr mit Temperaturen von mindestens " + str(
-                    forecast_object["min_temp"]) + " Grad Celsius bis zu maximal " + str(
-                    forecast_object["max_temp"]) + " Grad Celsius rechen!" + " Durchschnittlich wird es etwa " + str(
-                    forecast_object["temp"]) + " Grad Celsius geben!"
+                    forecast_object["min_temp"]) + "°C bis zu maximal " + str(
+                    forecast_object["max_temp"]) + "°C rechen!" + " Durchschnittlich wird es etwa " + str(
+                    forecast_object["temp"]) + "°C geben!"
             if 22 <= forecast_object["temp"] < 30:
                 answer = "Es wird warm. Eine Jacke benötigt man nicht unbedingt." + "Sie können in " + city + " am " + formatted_date + " über den Tag verteilt ungefähr mit Temperaturen von mindestens " + str(
-                    forecast_object["min_temp"]) + " Grad Celsius bis zu maximal " + str(
-                    forecast_object["max_temp"]) + " Grad Celsius rechen!" + " Durchschnittlich wird es etwa " + str(
-                    forecast_object["temp"]) + " Grad Celsius geben!"
+                    forecast_object["min_temp"]) + "°C bis zu maximal " + str(
+                    forecast_object["max_temp"]) + "°C rechen!" + " Durchschnittlich wird es etwa " + str(
+                    forecast_object["temp"]) + "°C geben!"
             if 30 <= forecast_object["temp"]:
                 answer = "Es wird sehr warm! Ein T-Shirt reicht auf jeden Fall!" + "Sie können in " + city + " am " + formatted_date + " über den Tag verteilt ungefähr mit Temperaturen von mindestens " + str(
-                    forecast_object["min_temp"]) + " Grad Celsius bis zu maximal " + str(
-                    forecast_object["max_temp"]) + " Grad Celsius rechen!" + " Durchschnittlich wird es etwa " + str(
-                    forecast_object["temp"]) + " Grad Celsius geben!"
+                    forecast_object["min_temp"]) + "°C bis zu maximal " + str(
+                    forecast_object["max_temp"]) + "°C rechen!" + " Durchschnittlich wird es etwa " + str(
+                    forecast_object["temp"]) + "°C geben!"
             print(answer)
 
         if selected_time_type == "range":
@@ -758,29 +758,29 @@ class WeatherAPIHandler():
                 answer = ""
                 if 0 < forecast_object["temp"] < 15:
                     answer = "Am " + formatted_date + " werden Sie werden wärmere Kleidung benötigen, da es etwas kälter draußen ist. " + "Es kann in " + city + " über den Tag verteilt ungefähr mit Temperaturen von mindestens " + str(
-                        forecast_object["min_temp"]) + " Grad Celsius bis zu maximal " + str(forecast_object[
-                                                                                                 "max_temp"]) + " Grad Celsius gerechnet werden!" + " Durchschnittlich wird es etwa " + str(
-                        forecast_object["temp"]) + " Grad Celsius geben!"
+                        forecast_object["min_temp"]) + "°C bis zu maximal " + str(forecast_object[
+                                                                                                 "max_temp"]) + "°C gerechnet werden!" + " Durchschnittlich wird es etwa " + str(
+                        forecast_object["temp"]) + "°C geben!"
                 if 0 > forecast_object["temp"]:
-                    answer = "Am " + formatted_date + " wird es sehr kalt draußen. Die zu erwartende Temperatur liegt bei unter 0 Grad Celsius!" + "Es kann in " + city + " über den Tag verteilt ungefähr mit Temperaturen von mindestens " + str(
-                        forecast_object["min_temp"]) + " Grad Celsius bis zu maximal " + str(forecast_object[
-                                                                                                 "max_temp"]) + " Grad Celsius gerechnet werde!" + " Durchschnittlich wird es etwa " + str(
-                        forecast_object["temp"]) + " Grad Celsius geben!"
+                    answer = "Am " + formatted_date + " wird es sehr kalt draußen. Die zu erwartende Temperatur liegt bei unter 0°C!" + "Es kann in " + city + " über den Tag verteilt ungefähr mit Temperaturen von mindestens " + str(
+                        forecast_object["min_temp"]) + "°C bis zu maximal " + str(forecast_object[
+                                                                                                 "max_temp"]) + "°C gerechnet werde!" + " Durchschnittlich wird es etwa " + str(
+                        forecast_object["temp"]) + "°C geben!"
                 if 15 <= forecast_object["temp"] < 22:
                     answer = "Am " + formatted_date + " sind milde Temperaturen zu erwarten. " + "In " + city + " wird es über den Tag verteilt ungefähr " + str(
-                        forecast_object["min_temp"]) + " Grad Celsius bis zu maximal " + str(
-                        forecast_object["max_temp"]) + " Grad Celsius geben!" + " Durchschnittlich wird es etwa " + str(
-                        forecast_object["temp"]) + " Grad Celsius geben!"
+                        forecast_object["min_temp"]) + "°C bis zu maximal " + str(
+                        forecast_object["max_temp"]) + "°C geben!" + " Durchschnittlich wird es etwa " + str(
+                        forecast_object["temp"]) + "°C geben!"
                 if 22 <= forecast_object["temp"] < 30:
                     answer = "Am " + formatted_date + " wird es warm. Eine Jacke benötigt man nicht unbedingt." + " In " + city + " kann über den Tag verteilt ungefähr mit Temperaturen von mindestens " + str(
-                        forecast_object["min_temp"]) + " Grad Celsius bis zu maximal " + str(forecast_object[
-                                                                                                 "max_temp"]) + " Grad Celsius gerechnet!" + " Durchschnittlich wird es etwa " + str(
-                        forecast_object["temp"]) + " Grad Celsius geben!"
+                        forecast_object["min_temp"]) + "°C bis zu maximal " + str(forecast_object[
+                                                                                                 "max_temp"]) + "°C gerechnet!" + " Durchschnittlich wird es etwa " + str(
+                        forecast_object["temp"]) + "°C geben!"
                 if 30 <= forecast_object["temp"]:
                     answer = "Am " + formatted_date + " wird es sehr warm! Ein T-Shirt reicht auf jeden Fall!" + "In " + city + " kann über den Tag verteilt ungefähr mit Temperaturen von mindestens " + str(
-                        forecast_object["min_temp"]) + " Grad Celsius bis zu maximal " + str(forecast_object[
-                                                                                                 "max_temp"]) + " Grad Celsius gerechnet werden!" + " Durchschnittlich wird es etwa " + str(
-                        forecast_object["temp"]) + " Grad Celsius geben!"
+                        forecast_object["min_temp"]) + "°C bis zu maximal " + str(forecast_object[
+                                                                                                 "max_temp"]) + "°C gerechnet werden!" + " Durchschnittlich wird es etwa " + str(
+                        forecast_object["temp"]) + "°C geben!"
                 print(answer)
 
     def create_temperature_answer(self, city, selected_time, selected_time_type):
@@ -788,16 +788,16 @@ class WeatherAPIHandler():
             formatted_date = self.convert_date_to_formatted_text(selected_time[0])
             forecast_object_time_point = self.get_forecast_object_for_time_point(selected_time[0], city)
             answer = "Um " + str(selected_time[0].hour) + " Uhr am " + formatted_date + " kann mit ungefähr " + str(
-                forecast_object_time_point["temp"]) + " Grad Celsius gerechnet werden in " + city + "!"
+                forecast_object_time_point["temp"]) + "°C gerechnet werden in " + city + "!"
             print(answer)
 
         if selected_time_type == "day":
             formatted_date = self.convert_date_to_formatted_text(selected_time[0])
             forecast_object = self.get_forecast_object_for_day(selected_time[0], city)
             answer = "Sie können in " + city + " am " + formatted_date + " über den Tag verteilt ungefähr mit " + str(
-                forecast_object["min_temp"]) + " Grad Celsius bis zu maximal " + str(
-                forecast_object["max_temp"]) + " Grad Celsius erwarten!" + " Durchschnittlich wird es etwa " + str(
-                forecast_object["temp"]) + " Grad Celsius geben!"
+                forecast_object["min_temp"]) + "°C bis zu maximal " + str(
+                forecast_object["max_temp"]) + "°C rechnen!" + " Durchschnittlich wird es etwa " + str(
+                forecast_object["temp"]) + "°C geben!"
             print(answer)
 
         if selected_time_type == "range":
@@ -806,9 +806,9 @@ class WeatherAPIHandler():
                 formatted_date = self.convert_date_to_formatted_text(fc["datetime"])
                 forecast_object = fc
                 answer = "Am " + formatted_date + " kann in " + city + " über den Tag verteilt ungefähr mit Temperaturen von mindestens " + str(
-                    forecast_object["min_temp"]) + " Grad Celsius bis zu maximal " + str(
-                    forecast_object["max_temp"]) + " Grad Celsius rechen!" + " Durchschnittlich wird es etwa " + str(
-                    forecast_object["temp"]) + " Grad Celsius geben!"
+                    forecast_object["min_temp"]) + "°C bis zu maximal " + str(
+                    forecast_object["max_temp"]) + "°C rechen!" + " Durchschnittlich wird es etwa " + str(
+                    forecast_object["temp"]) + "°C geben!"
                 print(answer)
 
     def create_air_pressure_answer(self, city, selected_time, selected_time_type):
@@ -843,7 +843,7 @@ class WeatherAPIHandler():
             answer = "Am " + formatted_date + " um " + str(selected_time[0].hour) + " Uhr" + " können Sie mit " + str(
                 self.translate_weather_description(forecast_object_time_point["weather"][
                                                        "description"])) + " rechnen in " + city + ". Sie können außerdem mit Temperaturen von " + str(
-                forecast_object_time_point["temp"]) + " Grad Celsius ausgehen!"
+                forecast_object_time_point["temp"]) + "°C ausgehen!"
             print(answer)
 
         if selected_time_type == "day":
@@ -852,7 +852,7 @@ class WeatherAPIHandler():
             answer = "Am " + formatted_date + " sollten Sie mit " + str(self.translate_weather_description(
                 forecast_object["weather"][
                     "description"])) + " in " + city + " rechnen. Sie können außerdem von " + str(
-                forecast_object["max_temp"]) + " Grad Celsius ausgehen!"
+                forecast_object["max_temp"]) + "°C ausgehen!"
             print(answer)
 
         if selected_time_type == "range":
@@ -863,7 +863,7 @@ class WeatherAPIHandler():
                 answer = "Am " + formatted_date + " sollten Sie mit " + str(self.translate_weather_description(
                     forecast_object["weather"][
                         "description"])) + " in " + city + " rechnen. Sie können außerdem von " + str(
-                    forecast_object["max_temp"]) + " Grad Celsius ausgehen!"
+                    forecast_object["max_temp"]) + "°C ausgehen!"
                 print(answer)
 
     def create_snow_answer(self, city, selected_time, selected_time_type):
