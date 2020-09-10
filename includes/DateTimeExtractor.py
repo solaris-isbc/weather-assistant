@@ -312,7 +312,13 @@ class DateTimeExtractor:
             if isToken(c) and isTokenType(c, "NEXT"):
                 self.modifier_week = 1
             if isToken(c) and isTokenType(c, "IN_ONE"):
-                self.modifier_week = 1
+                # used to be this before
+                # self.modifier_week = 1
+                # now get a day and change it to a certain day
+                day_temp = (self.datetime_relative_to + timedelta(days=7)).date()
+                self.date = day_temp
+                # stop caring about the rest
+                return
             if isToken(c) and isTokenType(c, "WEEK"):
                 #no need to do anything here
                 continue
@@ -322,15 +328,26 @@ class DateTimeExtractor:
             if isToken(c) and isTokenType(c, "DAY_ABBR"):
                 #case weekday specified
                 day_temp = self.day_date_mapping[self.day_abbreviations[str(c).strip()]]
+
         if day_temp is None:
-            #create day range for saturday and sunday
+            #either start today until weekend
+            #or from upcoming monday to sunday
+            start = self.datetime_relative_to
+            end = self.get_datetime_for_next(self.day_date_mapping["sonntag"])
+
+            if start.date() == end.date():
+                end = end + timedelta(days=6)
+
+            """
             #start is today
             #start = datetime.date.today()
             start = self.datetime_relative_to
             end = start + timedelta(days=7)
+            """
             if self.modifier_week == 1:
-                start = start + timedelta(days=7)
-                end = end + timedelta(days=7)
+                start = end + timedelta(days=1)
+                end = start + timedelta(days=6)
+
             self.date_range = (start, end)
         else:
             #case day is specified

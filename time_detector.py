@@ -20,7 +20,7 @@ class TimeDetector:
         return False
 
     def check_if_day_is_one_of_the_next_15(self,selected_time):
-        datetime_object_for_day_in_15_days = self.get_current_day() + datetime.timedelta(days=15)
+        datetime_object_for_day_in_15_days = (self.get_current_day() + datetime.timedelta(days=15)).date()
         if datetime_object_for_day_in_15_days > selected_time:
             return True
         return False
