@@ -43,7 +43,6 @@ def clean_query(text):
     text = ' '.join(stemmer.stem(word) for word in text.split())
     return text
 
-
 def get_question_type(query):
     cleaned_query = clean_query(query)
     with open('question_model.pkl', 'rb') as fid:
@@ -53,6 +52,11 @@ def get_question_type(query):
     probability_of_predicted_label = max(probabilities)
     if bool(re.search("hpa", query, re.IGNORECASE)):
         return "AIR_PRESSURE"
+    # If the classificator predicted warm or cold but there's a temperature specified in the query
+    # we will automatically classify the query as "TEMPERATURE". The classifier is very likely to classify a query
+    # like "when will it be 20 degrees warm?" as "WARM" but the user would like to know, however, when there will be 20°C again. Not, when it becomes warm again.
+    if (label_pred == "WARM" or label_pred == "COLD") and bool(re.search("[0-9]+ *(Grad|°)", query, re.IGNORECASE)):
+        return "TEMPERATURE"
     if bool(re.search("sonnenschirm|sonnencreme", query, re.IGNORECASE)):
         return "SUN"
     if bool(re.search("regenschirm", query, re.IGNORECASE)):
@@ -74,13 +78,9 @@ def get_current_location():
     return location.raw["address"]["city"]
 
 
-def find_question_type(query, city, selected_time_type, selected_time):
+def find_question_type_and_create_answer(query, city, selected_time_type, selected_time):
     question_type = get_question_type(query)
     next_appearance_mode = bool(re.search("wann|zeitpunkt", query, re.IGNORECASE))
-    # If a time specification of type day was found in the query and the word clock was mentioned, then one can also assume that the user would
-    # like to know the time of day when something happened (e.g. rain) -> "when"-Question
-    if bool(re.search("uhr", query, re.IGNORECASE)) and selected_time_type == "day":
-        next_appearance_mode = True
     if selected_time_type == "time_point" and next_appearance_mode == True:
         # a time_point will only be returned by the time detector in a "when"-question if the user did not specify a
         # time in the query. Time points (for example "12 o'clock tomorrow") do not make sense in a "when" question.
@@ -116,18 +116,18 @@ def query_processing(query):
         if selected_time_type == "range":
             range_start = time_information[1][0]
             range_end = time_information[1][1]
-            find_question_type(query, city, selected_time_type, [range_start, range_end])
+            find_question_type_and_create_answer(query, city, selected_time_type, [range_start, range_end])
         if selected_time_type == "time_point":
             if td.check_if_time_point_can_be_looked_up(selected_time) is False:
                 print(
                     "Es tut uns leid, aber manchmal haben wir nur Daten für die nächsten 48 Stunden. Fragen Sie einfach nach dem ganzen Tag, hier kann ich Ihnen etwas über die nächsten 15 Tage sagen!")
             else:
-                find_question_type(query, city, selected_time_type, [selected_time])
+                find_question_type_and_create_answer(query, city, selected_time_type, [selected_time])
         if selected_time_type == "day":
             if td.check_if_day_is_one_of_the_next_15(selected_time) is False:
                 print("Hoppla. Wir können für Sie nur Wetterinformationen für die nächsten 14 Tage bereitstellen.")
             else:
-                find_question_type(query, city, selected_time_type, [selected_time])
+                find_question_type_and_create_answer(query, city, selected_time_type, [selected_time])
 
 
 def main():

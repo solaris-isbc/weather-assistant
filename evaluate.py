@@ -19,7 +19,6 @@ def clean_query(text):
     text = ' '.join(stemmer.stem(word) for word in text.split())
     return text
 
-
 def get_question_type(query):
     cleaned_query = clean_query(query)
     with open('question_model.pkl', 'rb') as fid:
@@ -29,6 +28,11 @@ def get_question_type(query):
     probability_of_predicted_label = max(probabilities)
     if bool(re.search("hpa", query, re.IGNORECASE)):
         return "AIR_PRESSURE"
+    # If the classificator predicted warm or cold but there's a temperature specified in the query
+    # we will automatically classify the query as "TEMPERATURE". The classifier is very likely to classify a query
+    # like "when will it be 20 degrees warm?" as "WARM" but the user would like to know, however, when there will be 20°C again. Not, when it becomes warm again.
+    if (label_pred == "WARM" or label_pred == "COLD") and bool(re.search("[0-9]+ *(Grad|°)", query, re.IGNORECASE)):
+        return "TEMPERATURE"
     if bool(re.search("sonnenschirm|sonnencreme", query, re.IGNORECASE)):
         return "SUN"
     if bool(re.search("regenschirm", query, re.IGNORECASE)):
@@ -41,13 +45,11 @@ def get_question_type(query):
         return None
     return label_pred
 
-
 def get_time_info(query, datetime_relative):
     extractor = dte.DateTimeExtractor(dtg.datetime_grammar, datetime_relative_to=datetime_relative, mode="evaluation")
     extractor.parse(query)
     r = extractor.get_evaluation_result()
     return r
-
 
 with open('evaluation.json', encoding='utf-8') as json_file:
     data = json.load(json_file)
@@ -73,6 +75,7 @@ for query in data:
         found_time = td.get_formatted_time(query_text)
         found_time_type = found_time[0]
         found_time = found_time[1]
+        found_when_question = bool(re.search("wann|zeitpunkt", query_text, re.IGNORECASE))
         if found_city == query["city"]:
             correct_city += 1
             found_city_bool = True
@@ -82,7 +85,7 @@ for query in data:
                 found_city_bool = True
             else:
                 found_city_bool = False
-        if found_question_type == query["question_type"]:
+        if found_question_type == query["question_type"] and found_when_question == query["when_question"]:
             found_question_type_bool = True
             correct_question_type += 1
         else:
