@@ -108,7 +108,7 @@ def query_processing(query):
         city = get_current_location()
 
     if cd.more_than_one_city() is True:
-        print("Bitte geben Sie maximal einen Ort an. Bitte fordern Sie Wetterinformationen nur für eine Stadt an!")
+        print("Bitte stellen Sie nur Anfragen für Wetterinformationen zu einer Stadt an das System!")
     else:
         time_information = td.get_formatted_time(query)
         selected_time_type = time_information[0]
