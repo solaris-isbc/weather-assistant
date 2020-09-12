@@ -406,7 +406,6 @@ class WeatherAPIHandler():
         if bool(re.search("nord ?\-?osten", text, re.IGNORECASE)):
             return [22.5,67.5]
         if bool(re.search("nord ?\-?west", text, re.IGNORECASE)):
-            print("enter")
             return [292.5,337.5]
         if bool(re.search("süd ?\-?osten", text, re.IGNORECASE)):
             return [112.5,157.5]
