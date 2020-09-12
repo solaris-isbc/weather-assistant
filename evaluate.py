@@ -160,11 +160,7 @@ for labeled_query in labeled_queries:
         except BaseException as e:
             #print(str(e))
             time_bool = False
-
-        if cd.more_than_one_city() and labeled_query["city"] == "False":
-            main_score += 1
-            correct_interpretation_of_query = True
-        elif found_question_type_bool is True and found_city_bool is True and found_question_type_bool is True and time_bool is True:
+        if found_question_type_bool is True and found_city_bool is True and found_question_type_bool is True and time_bool is True:
             main_score += 1
             correct_interpretation_of_query = True
         else:
@@ -186,4 +182,5 @@ print("| Correct City: ", correct_city / data_with_valid_questions)
 print("| Correct Time Type: ", correct_time_type / data_with_valid_questions)
 print("| Correct Time: ", correct_time / data_with_valid_questions)
 print("#---------------------------------------------------------------------------#")
-print("| Main Accuracy: ", main_score / amount_of_labeled_queries)
+print("| General Accuracy: ", main_score / amount_of_labeled_queries)
+

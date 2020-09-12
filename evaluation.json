@@ -1,9 +1,9 @@
 {
   "queries": [
     {
-      "text": "Schneit es morgen?",
+      "text": "Wie wird das Wetter am 15.7.2020?",
       "timeinfo": "2020.07.14 00:00",
-      "question_type": "SNOW",
+      "question_type": "WEATHER",
       "when_question": false,
       "time": {
         "time_type": "day",
@@ -300,9 +300,9 @@
       "question_type": "WEATHER",
       "when_question": false,
       "time": {
-        "time_type": "day",
+        "time_type": "False",
         "time_objects": {
-          "start": "2000.02.19 00:00",
+          "start": "",
           "end": ""
         }
       },
@@ -358,7 +358,7 @@
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "2020.07.15 00:00",
+          "start": "2020.07.14 00:00",
           "end": ""
         }
       },
@@ -440,9 +440,9 @@
       "question_type": "WEATHER",
       "when_question": false,
       "time": {
-        "time_type": "day",
+        "time_type": "time_point",
         "time_objects": {
-          "start": "2020.07.15 00:00",
+          "start": "2020.07.14 00:00",
           "end": ""
         }
       },
@@ -454,13 +454,13 @@
       "question_type": "SUN",
       "when_question": false,
       "time": {
-        "time_type": "None",
+        "time_type": "False",
         "time_objects": {
           "start": "",
           "end": ""
         }
       },
-      "city": "None"
+      "city": "False"
     },
     {
       "text": "Wie hoch ist die Temperatur in Wien",
