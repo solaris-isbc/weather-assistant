@@ -75,11 +75,11 @@ class WeatherAPIHandler():
     def find_comparison_operator_extracted(self,query):
         if bool(re.search("mindest|größer als|>=", query, re.IGNORECASE)):
             return operator.ge # a>=b
-        if bool(re.search("mehr|größer|über|>", query, re.IGNORECASE)):
+        if bool(re.search("mehr|größer|über|>|wärmer als", query, re.IGNORECASE)):
             return operator.gt # a>b
         if bool(re.search("höchstens|bis|<=", query, re.IGNORECASE)):
             return operator.le # a<=b
-        if bool(re.search("weniger|unter|<", query, re.IGNORECASE)):
+        if bool(re.search("weniger|unter|kälter als|<", query, re.IGNORECASE)):
             return operator.lt # a<b
         return operator.eq
 
@@ -290,7 +290,7 @@ class WeatherAPIHandler():
             elif forecasts_with_specific_air_pressure[0]['datetime'] > next_day:
                 print("Am " + str(formatted_date) + " ist nicht mehr mit "+operator_to_text+air_pressure_found+" hPa ("+str(forecasts_with_specific_air_pressure[0]['pres'])+" hPa)"+" zu rechnen. Dafür kann jedoch am " + self.convert_date_to_formatted_text(forecasts_with_specific_air_pressure[0]['datetime']) + " um " + str(forecasts_with_specific_air_pressure[0]['datetime'].hour) + " Uhr mit "+operator_to_text+air_pressure_found+" hPa ("+str(forecasts_with_specific_air_pressure[0]['pres'])+" hPa)"+" gerechnet werden.")
             else:
-                print("In " + city + " kann am " + self.convert_date_to_formatted_text(forecasts_with_specific_air_pressure[0]['datetime']) + " um " + str(forecasts_with_specific_air_pressure[0]['datetime'].hour) + " Uhr kann mit "+operator_to_text+air_pressure_found+" hPa ("+str(forecasts_with_specific_air_pressure[0]['pres'])+" hPa)"+" gerechnet werden.")
+                print("In " + city + " kann am " + self.convert_date_to_formatted_text(forecasts_with_specific_air_pressure[0]['datetime']) + " um " + str(forecasts_with_specific_air_pressure[0]['datetime'].hour) + " Uhr mit "+operator_to_text+air_pressure_found+" hPa ("+str(forecasts_with_specific_air_pressure[0]['pres'])+" hPa)"+" gerechnet werden.")
 
         if selected_time_type == "range":
             forecasts = self.get_forecast_object_for_range(selected_time[0], selected_time[1], city)
@@ -298,7 +298,7 @@ class WeatherAPIHandler():
             if len(forecasts_with_specific_air_pressure) == 0:
                 print("In diesem Zeitraum ist nicht mit "+operator_to_text+air_pressure_found+" hPa ("+str(forecasts_with_specific_air_pressure[0]['pres'])+" hPa)"+" zu rechnen in " + city + "!")
             else:
-                print("In " + city + "kann am " + self.convert_date_to_formatted_text(forecasts_with_specific_air_pressure[0]['datetime']) + " kann mit "+operator_to_text+air_pressure_found+" hPa ("+str(forecasts_with_specific_air_pressure[0]['pres'])+" hPa)"+" gerechnet werden.")
+                print("In " + city + "kann am " + self.convert_date_to_formatted_text(forecasts_with_specific_air_pressure[0]['datetime']) + " mit "+operator_to_text+air_pressure_found+" hPa ("+str(forecasts_with_specific_air_pressure[0]['pres'])+" hPa)"+" gerechnet werden.")
 
     def ap_operator_to_text(self, comparison_operator_extracted):
         if comparison_operator_extracted.__name__ == "ge":
@@ -332,7 +332,7 @@ class WeatherAPIHandler():
             forecasts = self.get_forecast_object_for_range(selected_time[0], selected_time[1], city)
             forecasts_with_warm_weather = [x for x in forecasts if x['temp'] > 22]
             if len(forecasts_with_warm_weather) == 0:
-                print("In diesem Zeitraum kann nicht mit warmen Temperaturen zu rechnen in " + city + "!")
+                print("In diesem Zeitraum ist nicht mit warmen Temperaturen zu rechnen in " + city + "!")
             else:
                 print(". Am " + self.convert_date_to_formatted_text(
                     forecasts_with_warm_weather[0]['datetime']) + " kann das nächste mal mit warmen Temperaturen gerechnet werden ("+str(forecasts_with_warm_weather[0]["temp"])+"°C)!")
@@ -358,7 +358,7 @@ class WeatherAPIHandler():
                     "Es kann mit kalten Temperaturen gerechnet werden in " + city + ". Am " + self.convert_date_to_formatted_text(
                         forecasts_with_cold_weather[0]['datetime']) + " um " + str(
                         forecasts_with_cold_weather[0][
-                            'datetime'].hour) + " Uhr kann mit kalten Temperaturen gerechnet werden (" + str(
+                            'datetime'].hour) + " Uhr sollte mit kalten Temperaturen gerechnet werden (" + str(
                         forecasts_with_cold_weather[0]["temp"]) + "°C )!")
 
         if selected_time_type == "range":
@@ -464,7 +464,7 @@ class WeatherAPIHandler():
             else:
                 print("In " + city + " kann am " + self.convert_date_to_formatted_text(
                     forecasts_with_specific_temperature[0]['datetime']) + " um " + str(
-                    forecasts_with_specific_temperature[0]['datetime'].hour) + " Uhr kann mit " + temperature_requested_formatted_text + " gerechnet werden.")
+                    forecasts_with_specific_temperature[0]['datetime'].hour) + " Uhr mit " + temperature_requested_formatted_text + " gerechnet werden.")
 
         if selected_time_type == "range":
             forecasts = self.get_forecast_object_for_range(selected_time[0], selected_time[1], city)
