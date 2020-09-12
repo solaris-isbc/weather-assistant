@@ -39,6 +39,7 @@ class WeatherAPIHandler():
             self.create_fog_answer_next_appearance(city, selected_time, selected_time_type)
         if question_type == "AIR_PRESSURE":
             self.create_air_pressure_answer_next_appearance(city, selected_time, selected_time_type, query)
+        # we might need to use the methods of other labels depending of the comparison_operator that has been found in the query
         if question_type == "TEMPERATURE" or question_type == "AVERAGE_TEMPERATURE" or question_type == "MAX_TEMPERATURE" or question_type == "MIN_TEMPERATURE":
            temperature_extracted = self.find_temperature(query)
            comparison_operator_extracted = self.find_comparison_operator_extracted(query)

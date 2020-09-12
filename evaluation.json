@@ -449,14 +449,14 @@
       "city": "None"
     },
     {
-      "text": "ist es heute schöner als gestern",
+      "text": "ist es in Regensburg heute schöner als gestern in Berlin",
       "timeinfo": "2020.07.14 00:00",
-      "question_type": "None",
+      "question_type": "SUN",
       "when_question": false,
       "time": {
-        "time_type": "day",
+        "time_type": "None",
         "time_objects": {
-          "start": "2020.07.14 00:0",
+          "start": "",
           "end": ""
         }
       },
@@ -493,7 +493,7 @@
     {
       "text": "Sag mir bitte, ob morgen mittag das wetter schön wird in Pentling",
       "timeinfo": "2020.07.14 00:00",
-      "question_type": "WEATHER",
+      "question_type": "SUN",
       "when_question": false,
       "time": {
         "time_type": "time_point",

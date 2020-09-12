@@ -51,7 +51,7 @@ def get_time_info(query, datetime_relative):
     r = extractor.get_evaluation_result()
     return r
 
-with open('evaluation.json', encoding='utf-8') as json_file:
+with open('eval.json', encoding='utf-8') as json_file:
     data = json.load(json_file)
 
 labeled_queries = data["queries"]
@@ -80,6 +80,9 @@ for labeled_query in labeled_queries:
         found_time = found_time[1]
         found_when_question = bool(re.search("wann|zeitpunkt", query_text, re.IGNORECASE))
         if found_city == labeled_query["city"]:
+            correct_city += 1
+            found_city_bool = True
+        elif labeled_query["city"] == "False" and cd.more_than_one_city():
             correct_city += 1
             found_city_bool = True
         else:
@@ -146,12 +149,33 @@ for labeled_query in labeled_queries:
             # print(str(e))
             time_bool = False
 
-        if found_question_type_bool is True and found_city_bool is True and found_question_type_bool is True and time_bool is True:
-            main_score += 1
-            correct_interpretation_of_query = True
-        else:
-            correct_interpretation_of_query = False
-        print("| Query: ", query_text, "| question type: ", str(found_question_type_bool), "| city: ", str(found_city_bool), "| time type: ", str(found_time_type_bool), "| time: ", str(time_bool), "| correct interpretation of query: ", str(correct_interpretation_of_query), "|")
+        try:
+            date_string = time_result["extracted_date"] + " " + time_result["extracted_time"]
+            extracted_time = datetime.datetime.strptime(date_string, "%Y.%m.%d %H:%M")
+            if time_result["type"] == "time_point" and td.check_if_time_point_can_be_looked_up(extracted_time) == False and labeled_query["time"]["time_type"] == "False":
+                main_score += 1
+                correct_interpretation_of_query = True
+            else:
+                raise Exception
+        except:
+            try:
+                if time_result["type"] == "day" and td.check_if_day_is_one_of_the_next_15(time_result["extracted_date"]) == False and labeled_query["time"]["time_type"] == "False":
+                    main_score += 1
+                    correct_interpretation_of_query = True
+                else:
+                    raise Exception
+            except:
+                if cd.more_than_one_city() and labeled_query["city"] == "False":
+                    main_score += 1
+                    correct_interpretation_of_query = True
+                elif found_question_type_bool is True and found_city_bool is True and found_question_type_bool is True and time_bool is True:
+                    main_score += 1
+                    correct_interpretation_of_query = True
+                else:
+                    correct_interpretation_of_query = False
+
+
+        print("| Query: ", query_text, "| question type: ", str(found_question_type_bool), "| city: ",str(found_city_bool), "| time type: ", str(found_time_type_bool), "| time: ", str(time_bool),"| correct interpretation of query: ", str(correct_interpretation_of_query), "|")
     else:
         if found_question_type is None and labeled_query["question_type"] == "None":
             print("| Query: ", query_text, "|", "Korrekterweise wurde kein Fragetyp gefunden.")
