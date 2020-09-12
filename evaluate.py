@@ -116,21 +116,17 @@ for labeled_query in labeled_queries:
 
                 if extracted_date == ground_truth_date and extracted_time == ground_truth_time:
                     correct_time += 1
-                    print("118")
                     time_bool = True
                 else:
-                    print("121")
                     time_bool = False
             if time_result["type"] == "day" and labeled_query["time"]["time_type"] == "day":
                 correct_time_type += 1
                 extracted_date = time_result["extracted_date_datetime"]
                 ground_truth_date = datetime.datetime.strptime(labeled_query["time"]["time_objects"]["start"],"%Y.%m.%d %H:%M").date()
                 if extracted_date == ground_truth_date:
-                    print("128")
                     correct_time += 1
                     time_bool = True
                 else:
-                    print("132")
                     time_bool = False
 
             if time_result["type"] == "range" and labeled_query["time"]["time_type"] == "range":
@@ -146,15 +142,12 @@ for labeled_query in labeled_queries:
                 ground_truth_end_date = ground_truth_end.date()
                 if ground_truth_start_date == extracted_date_start and ground_truth_end_date == extracted_date_end:
                     correct_time += 1
-                    print("148")
                     time_bool = True
                 else:
-                    print("151")
                     time_bool = False
             if time_result["type"] == "day" and td.check_if_day_is_one_of_the_next_15(time_result["extracted_date_datetime"]) == False and labeled_query["time"]["time_type"] == "False":
                 correct_time += 1
                 found_time_type_bool = True
-                print("155")
                 time_bool = True
             if time_result["type"] == "time_point":
                 date_string = time_result["extracted_date"] + " " + time_result["extracted_time"]
@@ -162,13 +155,10 @@ for labeled_query in labeled_queries:
                 if time_result["type"] == "time_point" and td.check_if_time_point_can_be_looked_up(extracted_time) == False and labeled_query["time"]["time_type"] == "False":
                     correct_time += 1
                     found_time_type_bool = True
-                    print("158")
                     time_bool = True
-            print("worked")
 
         except BaseException as e:
             #print(str(e))
-            print("163")
             time_bool = False
 
         if cd.more_than_one_city() and labeled_query["city"] == "False":
