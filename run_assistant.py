@@ -119,8 +119,7 @@ def query_processing(query):
             find_question_type_and_create_answer(query, city, selected_time_type, [range_start, range_end])
         if selected_time_type == "time_point":
             if td.check_if_time_point_can_be_looked_up(selected_time) is False:
-                print(
-                    "Es tut uns leid, aber manchmal haben wir nur Daten für die nächsten 48 Stunden. Fragen Sie einfach nach dem ganzen Tag, hier kann ich Ihnen etwas über die nächsten 15 Tage sagen!")
+                print("Es tut uns leid, aber Wetterinformationen zu einzelnen Stunden werden nur für die nächsten 48 Stunden bereit gestellt.")
             else:
                 find_question_type_and_create_answer(query, city, selected_time_type, [selected_time])
         if selected_time_type == "day":
