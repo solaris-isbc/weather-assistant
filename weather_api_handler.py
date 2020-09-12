@@ -844,7 +844,7 @@ class WeatherAPIHandler():
             answer = "Am " + formatted_date + " um " + str(selected_time[0].hour) + " Uhr" + " können Sie mit " + str(
                 self.translate_weather_description(forecast_object_time_point["weather"][
                                                        "description"])) + " rechnen in " + city + ". Sie können außerdem mit Temperaturen von " + str(
-                forecast_object_time_point["temp"]) + "°C ausgehen!"
+                forecast_object_time_point["temp"]) + "°C rechnen!"
             print(answer)
 
         if selected_time_type == "day":
