@@ -11,6 +11,7 @@ from geopy.geocoders import Nominatim
 from colorama import Fore, Style
 import pickle
 
+
 ### 1. Run this command in the project folder to install all packages needed:
 # pip install -r requirements.txt
 
@@ -51,11 +52,18 @@ def get_question_type(query):
     probability_of_predicted_label = max(probabilities)
     if bool(re.search("hpa", query, re.IGNORECASE)):
         return "AIR_PRESSURE"
+    # If the classificator predicted warm or cold but there's a temperature specified in the query
+    # we will automatically classify the query as "TEMPERATURE". The classifier is very likely to classify a query
+    # like "when will it be 20 degrees warm?" as "WARM" but the user would like to know, however, when there will be 20°C again. Not, when it becomes warm again.
+    if (label_pred == "WARM" or label_pred == "COLD") and bool(re.search("[0-9]+ *(Grad|°)", query, re.IGNORECASE)):
+        return "TEMPERATURE"
     if bool(re.search("sonnenschirm|sonnencreme", query, re.IGNORECASE)):
         return "SUN"
     if bool(re.search("regenschirm", query, re.IGNORECASE)):
         return "RAIN"
     if bool(re.search("jacke", query, re.IGNORECASE)):
+        return "RAIN"
+    if bool(re.search("mantel", query, re.IGNORECASE)):
         return "COLD"
     if probability_of_predicted_label <= 0.2:
         return None
@@ -63,63 +71,66 @@ def get_question_type(query):
         return None
     return label_pred
 
+
 def get_current_location():
     g = geocoder.ip('me')
     geolocator = Nominatim(user_agent="weather-assistant")
-    coord = str(g.latlng[0])+", "+str(g.latlng[1])
+    coord = str(g.latlng[0]) + ", " + str(g.latlng[1])
     location = geolocator.reverse(coord)
     return location.raw["address"]["city"]
 
-def find_time_information_in_query(query):
-    return td.get_formatted_time(query)
 
-def find_question_type(query, city, selected_time_type, selected_time):
+def find_question_type_and_create_answer(query, city, selected_time_type, selected_time):
     question_type = get_question_type(query)
     next_appearance_mode = bool(re.search("wann|zeitpunkt", query, re.IGNORECASE))
-    # If a time specification of type day was found in the query and the word clock was mentioned, then one can also assume that the user would
-    # like to know the time of day when something happened (e.g. rain) -> "when"-Question
-    if bool(re.search("uhr",query,re.IGNORECASE)) and selected_time_type == "day":
-        next_appearance_mode = True
-    if selected_time_type == "time_point":
-        next_appearance_mode = False
+    if selected_time_type == "time_point" and next_appearance_mode == True:
+        # a time_point will only be returned by the time detector in a "when"-question if the user did not specify a
+        # time in the query. Time points (for example "12 o'clock tomorrow") do not make sense in a "when" question.
+        # so if the time_detector returns a time_point we will automatically set the selected_time_type to a day.
+        selected_time_type = "day"
     if question_type != None:
         # The only reason for an error is the absence of weather data for the requested location.
         try:
             # We need to call the title()-method to format entered city names properly. Users often enter everything in lower case.
-            weather_api_handler.interpret_data_and_create_answer(question_type, city.title(), selected_time,selected_time_type, next_appearance_mode, query)
+            weather_api_handler.interpret_data_and_create_answer(question_type, city.title(), selected_time,
+                                                                 selected_time_type, next_appearance_mode, query)
         except Exception as e:
-            print("<!--")
-            print(str(e))
-            print("-->")
-            print("Leider haben wir für diesen Ort keine Wetterdaten verfügbar. Fragen Sie doch einfach nochmal, indem Sie die nächstgelegene größere Stadt nennen!")
+# if error handling for debugging purposes is needed, comment this in
+#            print("<!--")
+#            print(str(e))
+#            print("-->")
+            print(
+                "Leider haben wir für diesen Ort keine Wetterdaten verfügbar. Fragen Sie doch einfach nochmal, indem Sie die nächstgelegene größere Stadt nennen!")
     else:
         print("Diese Frage kann ich dir nicht beantworten, tut mir leid.")
+
 
 def query_processing(query):
     city = cd.find_location_in_query(query)
     if city is None:
-       city = get_current_location()
+        city = get_current_location()
 
     if cd.more_than_one_city() is True:
-        print("Bitte geben Sie maximal einen Ort an. Bitte fordern Sie Wetterinformationen nur für eine Stadt an!")
+        print("Bitte stellen Sie nur Anfragen für Wetterinformationen zu einer Stadt an das System!")
     else:
-        time_information = find_time_information_in_query(query)
+        time_information = td.get_formatted_time(query)
         selected_time_type = time_information[0]
         selected_time = time_information[1]
         if selected_time_type == "range":
             range_start = time_information[1][0]
             range_end = time_information[1][1]
-            find_question_type(query, city, selected_time_type, [range_start, range_end])
+            find_question_type_and_create_answer(query, city, selected_time_type, [range_start, range_end])
         if selected_time_type == "time_point":
             if td.check_if_time_point_can_be_looked_up(selected_time) is False:
-                print("Es tut uns leid, aber manchmal haben wir nur Daten für die nächsten 48 Stunden. Fragen Sie einfach nach dem ganzen Tag, hier kann ich Ihnen etwas über die nächsten 15 Tage sagen!")
+                print("Es tut uns leid, aber Wetterinformationen zu einzelnen Stunden werden nur für die nächsten 48 Stunden bereit gestellt.")
             else:
-                find_question_type(query, city, selected_time_type, [selected_time])
+                find_question_type_and_create_answer(query, city, selected_time_type, [selected_time])
         if selected_time_type == "day":
             if td.check_if_day_is_one_of_the_next_15(selected_time) is False:
-                print("Hoppla. Wir können für Sie nur Wetterinformationen für die nächsten 15 Tage bereitstellen.")
+                print("Hoppla. Wir können für Sie nur Wetterinformationen für die nächsten 14 Tage bereitstellen.")
             else:
-                find_question_type(query, city, selected_time_type, [selected_time])
+                find_question_type_and_create_answer(query, city, selected_time_type, [selected_time])
+
 
 def display_assistant_information():
     print("--------------------------------------------------------------")
@@ -127,14 +138,17 @@ def display_assistant_information():
     print(f"{Fore.YELLOW}Wetterdaten von weatherbit.io{Style.RESET_ALL}")
     print("--------------------------------------------------------------")
     print("Das System kann die folgenden Fragen beantworten: ")
-    print("Wetter, Regen, Schnee, Sonne, Luftdruck, Nebel, Temperatur,\nMinimaltemperatur, Maximaltemperatur, Durchschnittstemperatur, "+
-          " Warme Temperatur,\nKalte Temperatur, Sturm, Wind, Wolken, Windrichtung")
+    print(
+        "Wetter, Regen, Schnee, Sonne, Luftdruck, Nebel, Temperatur,\nMinimaltemperatur, Maximaltemperatur, Durchschnittstemperatur, " +
+        " Warme Temperatur,\nKalte Temperatur, Sturm, Wind, Wolken, Windrichtung")
     print("--------------------------------------------------------------")
+
 
 def start_assistant():
     while True:
         user_input = input(f"{Fore.BLUE}Bitte stellen Sie eine Frage: {Style.RESET_ALL}")
         query_processing(user_input)
+
 
 display_assistant_information()
 start_assistant()

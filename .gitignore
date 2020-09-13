@@ -7,4 +7,5 @@ venv/*
 /venv_2/
 **/.DS_Store
 /time_detector_test.py
+/eval.json
 /evaluation_grammar/
