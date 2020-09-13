@@ -190,15 +190,15 @@ class WeatherAPIHandler():
             forecasts_with_thunderstorm = [x for x in forcasts_for_hours_of_day_requested if bool(re.search("Thunderstorm", x['weather']['description']))]
             next_day = datetime.datetime(selected_time[0].year, selected_time[0].month, selected_time[0].day) + datetime.timedelta(days=1)
             if len(forecasts_with_thunderstorm) == 0:
-                print("Am " + formatted_date + " ist nicht mit einem Sturm zu rechnen in " + city + "! Auch in den restlichen Stunden, für die Wetterinformationen vorliegen ist nicht mit einem Sturm zu rechnen!")
+                print("Am " + formatted_date + " ist nicht mit einem Sturm/Gewitter zu rechnen in " + city + "! Auch in den restlichen Stunden, für die Wetterinformationen vorliegen ist nicht mit einem Sturm zu rechnen!")
             elif forecasts_with_thunderstorm[0]['datetime'] > next_day:
                 print("Am " + str(
-                    formatted_date) + " ist nicht mehr mit Sturm zu rechnen. Dafür kann jedoch am " + self.convert_date_to_formatted_text(
+                    formatted_date) + " ist nicht mehr mit Sturm/Gewitter zu rechnen. Dafür kann jedoch am " + self.convert_date_to_formatted_text(
                     forecasts_with_thunderstorm[0]['datetime']) + " um " + str(
                     forecasts_with_thunderstorm[0]['datetime'].hour) + " Uhr mit " + self.translate_weather_description(
                     forecasts_with_thunderstorm[0]["weather"]["description"]) + " gerechnet werden.")
             else:
-                print("Es ist mit Sturm zu rechnen in " + city + ". Am " + self.convert_date_to_formatted_text(
+                print("Es ist mit Sturm/Gewitter zu rechnen in " + city + ". Am " + self.convert_date_to_formatted_text(
                     forecasts_with_thunderstorm[0]['datetime']) + " um " + str(
                     forecasts_with_thunderstorm[0]['datetime'].hour) + " Uhr kann mit " + self.translate_weather_description(
                     forecasts_with_thunderstorm[0]["weather"]["description"]) + " gerechnet werden.")
@@ -207,9 +207,9 @@ class WeatherAPIHandler():
             forecasts = self.get_forecast_object_for_range(selected_time[0], selected_time[1], city)
             forecasts_with_thunderstorm = [x for x in forecasts if bool(re.search("Thunderstorm", x['weather']['description']))]
             if len(forecasts_with_thunderstorm) == 0:
-                print("In diesem Zeitraum ist nicht mit einem Sturm zu rechnen in " + city + "!")
+                print("In diesem Zeitraum ist nicht mit einem Sturm/Gewitter zu rechnen in " + city + "!")
             else:
-                print("Es ist mit Sturm zu rechnen in " + city + ". Am " + self.convert_date_to_formatted_text(
+                print("Es ist mit Sturm/Gewitter zu rechnen in " + city + ". Am " + self.convert_date_to_formatted_text(
                     forecasts_with_thunderstorm[0]['datetime']) + " kann mit " + self.translate_weather_description(
                     forecasts_with_thunderstorm[0]["weather"]["description"]) + " gerechnet werden.")
 
