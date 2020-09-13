@@ -95,9 +95,10 @@ def find_question_type_and_create_answer(query, city, selected_time_type, select
             weather_api_handler.interpret_data_and_create_answer(question_type, city.title(), selected_time,
                                                                  selected_time_type, next_appearance_mode, query)
         except Exception as e:
-            print("<!--")
-            print(str(e))
-            print("-->")
+# if error handling for debugging purposes is needed, comment this in
+#            print("<!--")
+#            print(str(e))
+#            print("-->")
             print(
                 "Leider haben wir für diesen Ort keine Wetterdaten verfügbar. Fragen Sie doch einfach nochmal, indem Sie die nächstgelegene größere Stadt nennen!")
     else:
