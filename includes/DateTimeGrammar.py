@@ -140,7 +140,7 @@ datetime_grammar = u"""
     optional_s:(term WS?) | (term optional) WS?
     term.0: word
     word.0: char+
-    char.0: LETTER | special_char
+    char.0: LETTER | special_char | DIGIT
     seq.0: char char+ //at least 2 characters
     SOS: "<--start-->"
     EOS: "<--end-->"
