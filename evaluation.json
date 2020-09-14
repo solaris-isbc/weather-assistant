@@ -2,13 +2,13 @@
   "queries": [
     {
       "text": "Wie warm ist es gerade in Regensburg?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 08:05",
       "question_type": "WARM",
       "when_question": false,
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 08:05",
           "end": ""
         }
       },
@@ -16,13 +16,13 @@
     },
     {
       "text": "Wann regnet es in Regensburg?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 08:06",
       "question_type": "RAIN",
       "when_question": true,
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 08:06",
           "end": ""
         }
       },
@@ -30,7 +30,7 @@
     },
     {
       "text": "Warum sind so viele Ausrufezeichen in den Antworten?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 08:06",
       "question_type": "None",
       "when_question": false,
       "time": {
@@ -44,7 +44,7 @@
     },
     {
       "text": "Wann geht heute die Sonne unter?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "020.09.14 08:07",
       "question_type": "None",
       "when_question": false,
       "time": {
@@ -58,7 +58,7 @@
     },
     {
       "text": "FALSCHE ANTWORT!",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 08:08",
       "question_type": "None",
       "when_question": false,
       "time": {
@@ -72,13 +72,13 @@
     },
     {
       "text": "Wie stark ist heute der Wind in München?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 08:08",
       "question_type": "WIND",
       "when_question": false,
       "time": {
         "time_type": "day",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 08:08",
           "end": ""
         }
       },
@@ -86,13 +86,13 @@
     },
     {
       "text": "Wie warm wird es heute in Regensburg?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 08:10",
       "question_type": "WARM",
       "when_question": false,
       "time": {
         "time_type": "day",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 08:10",
           "end": ""
         }
       },
@@ -100,13 +100,13 @@
     },
     {
       "text": "Ab wann wird es wieder kühler?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 08:11",
       "question_type": "COLD",
       "when_question": true,
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 08:11",
           "end": ""
         }
       },
@@ -114,27 +114,27 @@
     },
     {
       "text": "Soll es die nächsten Tage regnen?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 08:11",
       "question_type": "RAIN",
       "when_question": false,
       "time": {
         "time_type": "range",
         "time_objects": {
-          "start": "2020.09.14 09:00",
-          "end": "2020.09.19 09:00"
+          "start": "2020.09.14 08:11",
+          "end": "2020.09.17 08:11"
         }
       },
       "city": "None"
     },
     {
       "text": "Wie wird das Wetter morgen",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 08:12",
       "question_type": "WEATHER",
       "when_question": false,
       "time": {
         "time_type": "day",
         "time_objects": {
-          "start": "2020.09.15 09:00",
+          "start": "2020.09.15 08:12",
           "end": ""
         }
       },
@@ -142,7 +142,7 @@
     },
     {
       "text": "Wie warm war es gestern mittag in München?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 08:14",
       "question_type": "WARM",
       "when_question": false,
       "time": {
@@ -156,7 +156,7 @@
     },
     {
       "text": "schneit es morgen mittag in Landshut",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 08:16",
       "question_type": "SNOW",
       "when_question": false,
       "time": {
@@ -170,13 +170,13 @@
     },
     {
       "text": "brauche ich heute einen Regenschirm",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 08:19",
       "question_type": "RAIN",
       "when_question": false,
       "time": {
         "time_type": "day",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 08:19",
           "end": ""
         }
       },
@@ -184,27 +184,27 @@
     },
     {
       "text": "wird es morgen windig in Sinzing?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 08:20",
       "question_type": "WIND",
       "when_question": false,
       "time": {
         "time_type": "day",
         "time_objects": {
-          "start": "2020.09.15 09:00",
+          "start": "2020.09.15 08:20",
           "end": ""
         }
       },
       "city": "Sinzing"
     },
     {
-      "text": "in welche Richtung weht am mittwoch der wind in passau",
-      "timeinfo": "2020.09.14 09:00",
+      "text": "in welche Richtung weht am mittwoch der wind in Passau",
+      "timeinfo": "2020.09.14 08:21",
       "question_type": "WIND_DIRECTION",
       "when_question": false,
       "time": {
         "time_type": "day",
         "time_objects": {
-          "start": "2020.09.16 09:00",
+          "start": "2020.09.16 08:21",
           "end": ""
         }
       },
@@ -212,27 +212,27 @@
     },
     {
       "text": "wann wird es diese woche kalt",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 08:24",
       "question_type": "COLD",
       "when_question": true,
       "time": {
         "time_type": "range",
         "time_objects": {
-          "start": "2020.09.14 09:00",
-          "end": "2020.09.20 09:00"
+          "start": "2020.09.14 08:24",
+          "end": "2020.09.20 08:24"
         }
       },
       "city": "None"
     },
     {
       "text": "kommt heute regen?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 08:57",
       "question_type": "RAIN",
       "when_question": false,
       "time": {
         "time_type": "day",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 08:57",
           "end": ""
         }
       },
@@ -240,13 +240,13 @@
     },
     {
       "text": "kommt denn heute regen in Würzburg",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 08:58",
       "question_type": "RAIN",
       "when_question": false,
       "time": {
         "time_type": "day",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 08:58",
           "end": ""
         }
       },
@@ -254,7 +254,7 @@
     },
     {
       "text": "wie warm ist es heute um 17 Uhr?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 08:58",
       "question_type": "WARM",
       "when_question": false,
       "time": {
@@ -268,13 +268,13 @@
     },
     {
       "text": "Sonne",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 09:01",
       "question_type": "SUN",
       "when_question": false,
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "22020.09.14 09:01",
           "end": ""
         }
       },
@@ -282,13 +282,13 @@
     },
     {
       "text": "Wie ist heute das Wetter",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 09:03",
       "question_type": "WEATHER",
       "when_question": false,
       "time": {
         "time_type": "day",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 09:03",
           "end": ""
         }
       },
@@ -296,13 +296,13 @@
     },
     {
       "text": "Wie warm ist es aktuell?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 09:05",
       "question_type": "WARM",
       "when_question": false,
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 09:05",
           "end": ""
         }
       },
@@ -310,13 +310,13 @@
     },
     {
       "text": "Wie wird das Wetter heute?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 09:08",
       "question_type": "WEATHER",
       "when_question": false,
       "time": {
         "time_type": "day",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 09:08",
           "end": ""
         }
       },
@@ -324,7 +324,7 @@
     },
     {
       "text": "Wird es dieses Jahr nochmal heiß?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 09:09",
       "question_type": "WARM",
       "when_question": false,
       "time": {
@@ -338,13 +338,13 @@
     },
     {
       "text": "Hat es gerade Nebel in Regensburg",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 09:11",
       "question_type": "FOG",
       "when_question": false,
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 09:11",
           "end": ""
         }
       },
@@ -352,13 +352,13 @@
     },
     {
       "text": "wie ist heute das wetter",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 09:27",
       "question_type": "WEATHER",
       "when_question": false,
       "time": {
         "time_type": "day",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 09:27",
           "end": ""
         }
       },
@@ -366,13 +366,13 @@
     },
     {
       "text": "wie warm wird es heute?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 09:28",
       "question_type": "WARM",
       "when_question": false,
       "time": {
         "time_type": "day",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 09:28",
           "end": ""
         }
       },
@@ -380,13 +380,13 @@
     },
     {
       "text": "wird es heute regnen?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 09:29",
       "question_type": "RAIN",
       "when_question": false,
       "time": {
         "time_type": "day",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 09:29",
           "end": ""
         }
       },
@@ -394,13 +394,13 @@
     },
     {
       "text": "wie ist das wetter in münchen?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 09:31",
       "question_type": "WEATHER",
       "when_question": false,
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 09:31",
           "end": ""
         }
       },
@@ -408,13 +408,13 @@
     },
     {
       "text": "Sonne Nürnberg",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 09:42",
       "question_type": "SUN",
       "when_question": false,
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 09:42",
           "end": ""
         }
       },
@@ -422,13 +422,13 @@
     },
     {
       "text": "Temperatur",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 09:43",
       "question_type": "TEMPERATURE",
       "when_question": false,
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 09:43",
           "end": ""
         }
       },
@@ -436,83 +436,13 @@
     },
     {
       "text": "Wird morgen die Sonne scheinen?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 09:47",
       "question_type": "SUN",
       "when_question": false,
       "time": {
         "time_type": "day",
         "time_objects": {
-          "start": "2020.09.15 09:00",
-          "end": ""
-        }
-      },
-      "city": "None"
-    },
-    {
-      "text": "wird es heute regnen?",
-      "timeinfo": "2020.09.14 09:00",
-      "question_type": "RAIN",
-      "when_question": false,
-      "time": {
-        "time_type": "day",
-        "time_objects": {
-          "start": "2020.09.14 09:00",
-          "end": ""
-        }
-      },
-      "city": "None"
-    },
-    {
-      "text": "wie ist das wetter in münchen?",
-      "timeinfo": "2020.09.14 09:00",
-      "question_type": "WEATHER",
-      "when_question": false,
-      "time": {
-        "time_type": "time_point",
-        "time_objects": {
-          "start": "2020.09.14 09:00",
-          "end": ""
-        }
-      },
-      "city": "München"
-    },
-    {
-      "text": "Sonne Nürnberg",
-      "timeinfo": "2020.09.14 09:00",
-      "question_type": "SUN",
-      "when_question": false,
-      "time": {
-        "time_type": "time_point",
-        "time_objects": {
-          "start": "2020.09.14 09:00",
-          "end": ""
-        }
-      },
-      "city": "Nürnberg"
-    },
-    {
-      "text": "Temperatur",
-      "timeinfo": "2020.09.14 09:00",
-      "question_type": "TEMPERATURE",
-      "when_question": false,
-      "time": {
-        "time_type": "time_point",
-        "time_objects": {
-          "start": "2020.09.14 09:00",
-          "end": ""
-        }
-      },
-      "city": "None"
-    },
-    {
-      "text": "Wird morgen die Sonne scheinen?",
-      "timeinfo": "2020.09.14 09:00",
-      "question_type": "SUN",
-      "when_question": false,
-      "time": {
-        "time_type": "day",
-        "time_objects": {
-          "start": "2020.09.15 09:00",
+          "start": "2020.09.15 09:47",
           "end": ""
         }
       },
@@ -520,13 +450,13 @@
     },
     {
       "text": "Wie warm ist es heute?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 09:48",
       "question_type": "WARM",
       "when_question": false,
       "time": {
         "time_type": "day",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 09:48",
           "end": ""
         }
       },
@@ -534,13 +464,13 @@
     },
     {
       "text": "Wetter Regensburg",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 09:49",
       "question_type": "WEATHER",
       "when_question": false,
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 09:49",
           "end": ""
         }
       },
@@ -548,7 +478,7 @@
     },
     {
       "text": "Wie wird das Wetter heute um 17 Uhr in Regensburg?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 09:50",
       "question_type": "WEATHER",
       "when_question": false,
       "time": {
@@ -562,13 +492,13 @@
     },
     {
       "text": "Wird es morgen schneien?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 09:51",
       "question_type": "SNOW",
       "when_question": false,
       "time": {
         "time_type": "day",
         "time_objects": {
-          "start": "2020.09.15 09:00",
+          "start": "2020.09.15 09:51",
           "end": ""
         }
       },
@@ -576,7 +506,7 @@
     },
     {
       "text": "Wie warm wird es morgen um 15 Uhr in Regensburg?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 09:52",
       "question_type": "WARM",
       "when_question": false,
       "time": {
@@ -590,13 +520,13 @@
     },
     {
       "text": "Regnet es am Donnerstag",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 10:04",
       "question_type": "RAIN",
       "when_question": false,
       "time": {
         "time_type": "day",
         "time_objects": {
-          "start": "2020.09.17 09:00",
+          "start": "2020.09.17 10:04",
           "end": ""
         }
       },
@@ -604,7 +534,7 @@
     },
     {
       "text": "Wann hat es zum letzten Mal geregnet?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 10:05",
       "question_type": "RAIN",
       "when_question": true,
       "time": {
@@ -617,28 +547,14 @@
       "city": "None"
     },
     {
-      "text": "Wie ist das Wetter an Prof. Wolffs Geburtstag?",
-      "timeinfo": "2020.09.14 09:00",
-      "question_type": "WEATHER",
-      "when_question": false,
-      "time": {
-        "time_type": "False",
-        "time_objects": {
-          "start": "",
-          "end": ""
-        }
-      },
-      "city": "None"
-    },
-    {
       "text": "Wetter ",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 10:30",
       "question_type": "WEATHER",
       "when_question": false,
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 10:30",
           "end": ""
         }
       },
@@ -646,7 +562,7 @@
     },
     {
       "text": "Wetter abends ",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 10:31",
       "question_type": "WEATHER",
       "when_question": false,
       "time": {
@@ -660,13 +576,13 @@
     },
     {
       "text": "Wetter allgemein",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 10:31",
       "question_type": "WEATHER",
       "when_question": false,
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 10:31",
           "end": ""
         }
       },
@@ -674,7 +590,7 @@
     },
     {
       "text": "Wie wird das wetter heute abend in Straubing ",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 10:50",
       "question_type": "WEATHER",
       "when_question": false,
       "time": {
@@ -688,7 +604,7 @@
     },
     {
       "text": "Super",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 10:51",
       "question_type": "None",
       "when_question": false,
       "time": {
@@ -702,7 +618,7 @@
     },
     {
       "text": "Wie gehts dir",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 10:51",
       "question_type": "None",
       "when_question": false,
       "time": {
@@ -716,13 +632,13 @@
     },
     {
       "text": "Wetter in Zwiesel",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 11:00",
       "question_type": "WEATHER",
       "when_question": false,
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 11:00",
           "end": ""
         }
       },
@@ -730,13 +646,13 @@
     },
     {
       "text": "Wie wird das Wetter morgen in Regensburg?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 11:05",
       "question_type": "WEATHER",
       "when_question": false,
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "2020.09.15 09:00",
+          "start": "2020.09.15 11:05",
           "end": ""
         }
       },
@@ -744,13 +660,13 @@
     },
     {
       "text": "Wann regnet es wieder?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 11:06",
       "question_type": "RAIN",
       "when_question": true,
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "2020.09.14 09:00",
+          "start": "2020.09.14 11:06",
           "end": ""
         }
       },
@@ -758,7 +674,7 @@
     },
     {
       "text": "Wie ist die maximaltemperatur heute abend",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 11:19",
       "question_type": "MAX_TEMPERATURE",
       "when_question": false,
       "time": {
@@ -772,17 +688,591 @@
     },
     {
       "text": "Wie warm wird es morgen?",
-      "timeinfo": "2020.09.14 09:00",
+      "timeinfo": "2020.09.14 11:25",
       "question_type": "WARM",
       "when_question": false,
       "time": {
         "time_type": "day",
         "time_objects": {
-          "start": "2020.09.15 09:00",
+          "start": "2020.09.15 11:25",
           "end": ""
         }
       },
       "city": "None"
+    },
+    {
+      "text": "Wie wird das Wetter kommendes Wochenende?",
+      "timeinfo": "2020.09.14 11:26",
+      "question_type": "WEATHER",
+      "when_question": false,
+      "time": {
+        "time_type": "range",
+        "time_objects": {
+          "start": "2020.09.19 11:26",
+          "end": "2020.09.20 11:26"
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Wie warm wird es am Wochenende?",
+      "timeinfo": "2020.09.14 11:27",
+      "question_type": "WARM",
+      "when_question": false,
+      "time": {
+        "time_type": "range",
+        "time_objects": {
+          "start": "2020.09.19 11:27",
+          "end": "2020.09.20 11:27"
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Wie wird das Wetter am 20.9",
+      "timeinfo": "2020.09.14 11:28",
+      "question_type": "WEATHER",
+      "when_question": false,
+      "time": {
+        "time_type": "day",
+        "time_objects": {
+          "start": "2020.09.20 11:28",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Wie wird das Wetter am 20. September 2020?",
+      "timeinfo": "2020.09.14 11:29",
+      "question_type": "WEATHER",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.20 11:29",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Wird es morgen regnen?",
+      "timeinfo": "2020.09.14 11:29",
+      "question_type": "RAIN",
+      "when_question": false,
+      "time": {
+        "time_type": "day",
+        "time_objects": {
+          "start": "2020.09.15 11:29",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Wie ist das Wetter gerade in Reutlingen?",
+      "timeinfo": "2020.09.14 11:30",
+      "question_type": "WEATHER",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.14 11:30",
+          "end": ""
+        }
+      },
+      "city": "Reutlingen"
+    },
+    {
+      "text": "Wie ist das Wetter in Cham?",
+      "timeinfo": "2020.09.14 11:32",
+      "question_type": "WEATHER",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.14 11:32",
+          "end": ""
+        }
+      },
+      "city": "Cham"
+    },
+    {
+      "text": "Wie wird das Wetter morgen in Stuttgart?",
+      "timeinfo": "2020.09.14 11:33",
+      "question_type": "WEATHER",
+      "when_question": false,
+      "time": {
+        "time_type": "day",
+        "time_objects": {
+          "start": "2020.09.15 11:33",
+          "end": ""
+        }
+      },
+      "city": "Stuttgart"
+    },
+    {
+      "text": "Wie kalt ist es",
+      "timeinfo": "2020.09.14 12:11",
+      "question_type": "COLD",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.14 12:11",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Werde ich in Jacke schwitzen",
+      "timeinfo": "2020.09.14 12:12",
+      "question_type": "WARM",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.14 12:12",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "werde ich morgen eine jacke brauchen ?",
+      "timeinfo": "2020.09.14 12:12",
+      "question_type": "WARM",
+      "when_question": false,
+      "time": {
+        "time_type": "day",
+        "time_objects": {
+          "start": "2020.09.15 12:12",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Regnet es am 20.09.2020 in Schwandorf?",
+      "timeinfo": "2020.09.14 12:17",
+      "question_type": "RAIN",
+      "when_question": false,
+      "time": {
+        "time_type": "day",
+        "time_objects": {
+          "start": "2020.09.20 12:17",
+          "end": ""
+        }
+      },
+      "city": "Schwandorf"
+    },
+    {
+      "text": "Ist es übermorgen bewölkt?",
+      "timeinfo": "2020.09.14 12:18",
+      "question_type": "CLOUDS",
+      "when_question": false,
+      "time": {
+        "time_type": "day",
+        "time_objects": {
+          "start": "2020.09.16 12:18",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "wie ist gerade der luftdruck in Freising",
+      "timeinfo": "2020.09.14 12:40",
+      "question_type": "AIR_PRESSURE",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.14 12:40",
+          "end": ""
+        }
+      },
+      "city": "Freising"
+    },
+    {
+      "text": "und wie ist der luftdruck in New York um 15 uhr morgen",
+      "timeinfo": "2020.09.14 12:42",
+      "question_type": "AIR_PRESSURE",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.15 15:00",
+          "end": ""
+        }
+      },
+      "city": "New York"
+    },
+    {
+      "text": "ist es windig in Sydney",
+      "timeinfo": "2020.09.14 12:42",
+      "question_type": "WIND",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.14 12:42",
+          "end": ""
+        }
+      },
+      "city": "Sydney"
+    },
+    {
+      "text": "wie wird das Wetter in Ohio in den nächsten 2 Tagen",
+      "timeinfo": "2020.09.14 12:43",
+      "question_type": "WEATHER",
+      "when_question": false,
+      "time": {
+        "time_type": "range",
+        "time_objects": {
+          "start": "2020.09.15 12:43",
+          "end": "2020.09.16 12:43"
+        }
+      },
+      "city": "Ohio"
+    },
+    {
+      "text": "wann wird es wieder kälter als 20 Grad",
+      "timeinfo": "2020.09.14 12:48",
+      "question_type": "TEMPERATURE",
+      "when_question": true,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.14 2020.09.14 12:48",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Wie wird das wetter diese woche in regensburg?",
+      "timeinfo": "2020.09.14 13:16",
+      "question_type": "WEATHER",
+      "when_question": false,
+      "time": {
+        "time_type": "range",
+        "time_objects": {
+          "start": "2020.09.14 13:16",
+          "end": "2020.09.20 13:16"
+        }
+      },
+      "city": "Regensburg"
+    },
+    {
+      "text": "wie war das wetter gestern",
+      "timeinfo": "2020.09.14 13:29",
+      "question_type": "WEATHER",
+      "when_question": false,
+      "time": {
+        "time_type": "False",
+        "time_objects": {
+          "start": "",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Wie warm ist es in Regensburg?",
+      "timeinfo": "2020.09.14 13:30",
+      "question_type": "WARM",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.14 13:30",
+          "end": ""
+        }
+      },
+      "city": "Regensburg"
+    },
+    {
+      "text": "Regnet es morgen?",
+      "timeinfo": "2020.09.14 13:31",
+      "question_type": "RAIN",
+      "when_question": false,
+      "time": {
+        "time_type": "day",
+        "time_objects": {
+          "start": "2020.09.15 13:31",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Gibt es diese Woche ein Unwetter?",
+      "timeinfo": "2020.09.14 13:32",
+      "question_type": "THUNDER",
+      "when_question": false,
+      "time": {
+        "time_type": "range",
+        "time_objects": {
+          "start": "2020.09.14 13:32",
+          "end": "2020.09.20 13:32"
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Was ist die Temperatur in Regensburg?",
+      "timeinfo": "2020.09.14 14:17",
+      "question_type": "TEMPERATURE",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.14 14:17",
+          "end": ""
+        }
+      },
+      "city": "Regensburg"
+    },
+    {
+      "text": "Wann war das letzte Unwetter in Regensburg?",
+      "timeinfo": "2020.09.14 14:17",
+      "question_type": "THUNDER",
+      "when_question": false,
+      "time": {
+        "time_type": "False",
+        "time_objects": {
+          "start": "",
+          "end": ""
+        }
+      },
+      "city": "Regensburg"
+    },
+    {
+      "text": "Wie wird das Wetter am Freitag?",
+      "timeinfo": "2020.09.14 14:18",
+      "question_type": "WEATHER",
+      "when_question": false,
+      "time": {
+        "time_type": "day",
+        "time_objects": {
+          "start": "2020.09.18 14:18",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Wie wird das Wetter morgen Mittag?",
+      "timeinfo": "2020.09.14 15:15",
+      "question_type": "WEATHER",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.14 15:15",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Wie warm ist es morgen um 8 Uhr morgens",
+      "timeinfo": "2020.09.14 15:15",
+      "question_type": "WARM",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.15 08:00",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Wie wird das Wetter heute?",
+      "timeinfo": "2020.09.14 16:23",
+      "question_type": "WEATHER",
+      "when_question": false,
+      "time": {
+        "time_type": "day",
+        "time_objects": {
+          "start": "2020.09.14 16:23",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Regnete es heute?",
+      "timeinfo": "2020.09.14 16:23",
+      "question_type": "RAIN",
+      "when_question": false,
+      "time": {
+        "time_type": "False",
+        "time_objects": {
+          "start": "",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Regnet es heute in Berlin?",
+      "timeinfo": "2020.09.14 16:24",
+      "question_type": "RAIN",
+      "when_question": false,
+      "time": {
+        "time_type": "day",
+        "time_objects": {
+          "start": "2020.09.14 16:24",
+          "end": ""
+        }
+      },
+      "city": "Berlin"
+    },
+    {
+      "text": "Bin ich cool?",
+      "timeinfo": "2020.09.14 16:25",
+      "question_type": "None",
+      "when_question": false,
+      "time": {
+        "time_type": "",
+        "time_objects": {
+          "start": "",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "wie ist das wetter morgen",
+      "timeinfo": "2020.09.14 16:38",
+      "question_type": "WEATHER",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.15 16:38",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "wie warm ist es morgen abend",
+      "timeinfo": "2020.09.14 16:38",
+      "question_type": "WARM",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.15 19:00",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "wie ist das wetter in pfreimd",
+      "timeinfo": "2020.09.14 16:51",
+      "question_type": "WEATHER",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.14 16:51",
+          "end": ""
+        }
+      },
+      "city": "Pfreimd"
+    },
+    {
+      "text": "wie ist das wetter in pfreimd um 5",
+      "timeinfo": "2020.09.14 16:52",
+      "question_type": "WEATHER",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.14 17:00",
+          "end": ""
+        }
+      },
+      "city": "Pfreimd"
+    },
+    {
+      "text": "wie ist das  wetter in pfreimd um 17:00 uhr heute",
+      "timeinfo": "2020.09.14 16:52",
+      "question_type": "WEATHER",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.14 17:00",
+          "end": ""
+        }
+      },
+      "city": "Pfreimd"
+    },
+    {
+      "text": "in welche richtung weht der wind in pfreimd gerade",
+      "timeinfo": "2020.09.14 16:53",
+      "question_type": "WIND_DIRECTION",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.14 16:53",
+          "end": ""
+        }
+      },
+      "city": "Pfreimd"
+    },
+    {
+      "text": "wie viel grad ist es gerade in Regensburg",
+      "timeinfo": "2020.09.14 16:54",
+      "question_type": "TEMPERATURE",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.14 16:54",
+          "end": ""
+        }
+      },
+      "city": "Regensburg"
+    },
+    {
+      "text": "münchen 31.10.20",
+      "timeinfo": "2020.09.14 18:10",
+      "question_type": "None",
+      "when_question": false,
+      "time": {
+        "time_type": "",
+        "time_objects": {
+          "start": "",
+          "end": ""
+        }
+      },
+      "city": "München"
+    },
+    {
+      "text": "münchen 28.9.20",
+      "timeinfo": "2020.09.14 18:11",
+      "question_type": "None",
+      "when_question": false,
+      "time": {
+        "time_type": "",
+        "time_objects": {
+          "start": "",
+          "end": ""
+        }
+      },
+      "city": "München"
     }
   ]
 }
