@@ -81,12 +81,17 @@ for labeled_query in labeled_queries:
         found_time_type = found_time[0]
         found_time = found_time[1]
         found_when_question = bool(re.search("wann|zeitpunkt", query_text, re.IGNORECASE))
+        # a question is also answered correctly if it is recognized that the time inquired is too far in the future or
+        # lies in the past. The question is also answered correctly if it is recognized that more than one city was specified in the query.
+        # This is checked by the following boolean variable.
+        timeOutsideThePossibleSpectrumOrMoreThanOneCityWasFound = False
         if found_city == labeled_query["city"]:
             correct_city += 1
             found_city_bool = True
         elif labeled_query["city"] == "False" and cd.more_than_one_city():
             correct_city += 1
             found_city_bool = True
+            timeOutsideThePossibleSpectrumOrMoreThanOneCityWasFound = True
         else:
             if labeled_query["city"] == "None" and found_city is None:
                 correct_city += 1
@@ -121,6 +126,11 @@ for labeled_query in labeled_queries:
                     time_bool = True
                 else:
                     time_bool = False
+                date_string = time_result["extracted_date"] + " " + time_result["extracted_time"]
+                extracted_time = datetime.datetime.strptime(date_string, "%Y.%m.%d %H:%M")
+                if td.check_if_time_point_can_be_looked_up(extracted_time) == True:
+                    timeOutsideThePossibleSpectrumOrMoreThanOneCityWasFound = True
+
             if time_result["type"] == "day" and labeled_query["time"]["time_type"] == "day":
                 correct_time_type += 1
                 extracted_date = time_result["extracted_date_datetime"]
@@ -130,6 +140,8 @@ for labeled_query in labeled_queries:
                     time_bool = True
                 else:
                     time_bool = False
+                if td.check_if_day_is_one_of_the_next_15(time_result["extracted_date_datetime"]) == True:
+                    timeOutsideThePossibleSpectrumOrMoreThanOneCityWasFound = True
 
             if time_result["type"] == "range" and labeled_query["time"]["time_type"] == "range":
                 correct_time_type += 1
@@ -162,14 +174,14 @@ for labeled_query in labeled_queries:
         except BaseException as e:
             #print(str(e))
             time_bool = False
-        if found_question_type_bool is True and found_city_bool is True and found_question_type_bool is True and time_bool is True:
+        if found_question_type_bool is True and ((found_city_bool is True and found_question_type_bool is True and time_bool is True) or (timeOutsideThePossibleSpectrumOrMoreThanOneCityWasFound)):
             main_score += 1
             correct_interpretation_of_query = True
         else:
             correct_interpretation_of_query = False
 
 
-        print("| Query: ", query_text, "| question type: ", str(found_question_type_bool), "| city: ",str(found_city_bool), "| time type: ", str(found_time_type_bool), "| time: ", str(time_bool),"| correct interpretation of query: ", str(correct_interpretation_of_query), "|")
+        print("| Query: ", query_text, "| question type: ", str(found_question_type_bool), "| city: ",str(found_city_bool), "| time type: ", str(found_time_type_bool), "| time: ", str(time_bool),"| system will give a suitable answer: ", str(correct_interpretation_of_query), "|")
     else:
         if found_question_type is None and labeled_query["question_type"] == "None":
             print("| Query: ", query_text, "|", "Korrekterweise wurde kein Fragetyp gefunden.")
