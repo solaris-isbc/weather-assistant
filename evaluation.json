@@ -274,7 +274,7 @@
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "22020.09.14 09:01",
+          "start": "2020.09.14 09:01",
           "end": ""
         }
       },
@@ -510,7 +510,7 @@
       "question_type": "WARM",
       "when_question": false,
       "time": {
-        "time_type": "day",
+        "time_type": "time_point",
         "time_objects": {
           "start": "2020.09.15 15:00",
           "end": ""
@@ -650,7 +650,7 @@
       "question_type": "WEATHER",
       "when_question": false,
       "time": {
-        "time_type": "time_point",
+        "time_type": "day",
         "time_objects": {
           "start": "2020.09.15 11:05",
           "end": ""
@@ -748,7 +748,7 @@
       "question_type": "WEATHER",
       "when_question": false,
       "time": {
-        "time_type": "time_point",
+        "time_type": "day",
         "time_objects": {
           "start": "2020.09.20 11:29",
           "end": ""
@@ -946,14 +946,14 @@
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "2020.09.14 2020.09.14 12:48",
+          "start": "2020.09.14 12:48",
           "end": ""
         }
       },
       "city": "None"
     },
     {
-      "text": "Wie wird das wetter diese woche in regensburg?",
+      "text": "Wie wird das wetter diese woche in Regensburg?",
       "timeinfo": "2020.09.14 13:16",
       "question_type": "WEATHER",
       "when_question": false,
@@ -1072,7 +1072,7 @@
       "time": {
         "time_type": "time_point",
         "time_objects": {
-          "start": "2020.09.14 15:15",
+          "start": "2020.09.15 12:00",
           "end": ""
         }
       },
@@ -1154,7 +1154,7 @@
       "question_type": "WEATHER",
       "when_question": false,
       "time": {
-        "time_type": "time_point",
+        "time_type": "day",
         "time_objects": {
           "start": "2020.09.15 16:38",
           "end": ""
@@ -1177,7 +1177,7 @@
       "city": "None"
     },
     {
-      "text": "wie ist das wetter in pfreimd",
+      "text": "wie ist das wetter in Pfreimd",
       "timeinfo": "2020.09.14 16:51",
       "question_type": "WEATHER",
       "when_question": false,
@@ -1191,7 +1191,7 @@
       "city": "Pfreimd"
     },
     {
-      "text": "wie ist das wetter in pfreimd um 5",
+      "text": "wie ist das wetter in Pfreimd um 5",
       "timeinfo": "2020.09.14 16:52",
       "question_type": "WEATHER",
       "when_question": false,
@@ -1205,7 +1205,7 @@
       "city": "Pfreimd"
     },
     {
-      "text": "wie ist das  wetter in pfreimd um 17:00 uhr heute",
+      "text": "wie ist das  wetter in Pfreimd um 17:00 uhr heute",
       "timeinfo": "2020.09.14 16:52",
       "question_type": "WEATHER",
       "when_question": false,
@@ -1219,7 +1219,7 @@
       "city": "Pfreimd"
     },
     {
-      "text": "in welche richtung weht der wind in pfreimd gerade",
+      "text": "in welche richtung weht der wind in Pfreimd gerade",
       "timeinfo": "2020.09.14 16:53",
       "question_type": "WIND_DIRECTION",
       "when_question": false,
