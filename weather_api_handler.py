@@ -710,7 +710,7 @@ class WeatherAPIHandler():
                     selected_time[0].hour) + " Uhr am " + formatted_date + " kann mit ungefähr " + str(
                     forecast_object_time_point["temp"]) + "°C gerechnet werden in " + city + "!"
             if 22 <= forecast_object_time_point["temp"] < 30:
-                answer = "Es wird warm. Eine Jacke benötigt man nicht unbedingt." + "Um " + str(
+                answer = "Es wird warm. Eine Jacke benötigt man nicht unbedingt. " + "Um " + str(
                     selected_time[0].hour) + " Uhr am " + formatted_date + " kann mit ungefähr " + str(
                     forecast_object_time_point["temp"]) + "°C gerechnet werden in " + city + "!"
             if 30 <= forecast_object_time_point["temp"]:
