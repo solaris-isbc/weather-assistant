@@ -29,20 +29,6 @@
       "city": "Regensburg"
     },
     {
-      "text": "Warum sind so viele Ausrufezeichen in den Antworten?",
-      "timeinfo": "2020.09.14 08:06",
-      "question_type": "None",
-      "when_question": false,
-      "time": {
-        "time_type": "",
-        "time_objects": {
-          "start": "",
-          "end": ""
-        }
-      },
-      "city": ""
-    },
-    {
       "text": "Wann geht heute die Sonne unter?",
       "timeinfo": "020.09.14 08:07",
       "question_type": "None",

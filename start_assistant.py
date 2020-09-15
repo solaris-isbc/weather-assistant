@@ -61,8 +61,6 @@ def get_question_type(query):
         return "SUN"
     if bool(re.search("regenschirm", query, re.IGNORECASE)):
         return "RAIN"
-    if bool(re.search("jacke", query, re.IGNORECASE)):
-        return "RAIN"
     if bool(re.search("mantel", query, re.IGNORECASE)):
         return "COLD"
     if probability_of_predicted_label <= 0.2:

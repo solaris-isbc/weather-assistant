@@ -37,8 +37,6 @@ def get_question_type(query):
         return "SUN"
     if bool(re.search("regenschirm", query, re.IGNORECASE)):
         return "RAIN"
-    if bool(re.search("jacke", query, re.IGNORECASE)):
-        return "RAIN"
     if bool(re.search("mantel", query, re.IGNORECASE)):
         return "COLD"
     if probability_of_predicted_label <= 0.2:
@@ -128,8 +126,6 @@ for labeled_query in labeled_queries:
                     time_bool = False
                 date_string = time_result["extracted_date"] + " " + time_result["extracted_time"]
                 extracted_time = datetime.datetime.strptime(date_string, "%Y.%m.%d %H:%M")
-                if td.check_if_time_point_can_be_looked_up(extracted_time) == True:
-                    timeOutsideThePossibleSpectrumOrMoreThanOneCityWasFound = True
 
             if time_result["type"] == "day" and labeled_query["time"]["time_type"] == "day":
                 correct_time_type += 1
@@ -140,8 +136,6 @@ for labeled_query in labeled_queries:
                     time_bool = True
                 else:
                     time_bool = False
-                if td.check_if_day_is_one_of_the_next_15(time_result["extracted_date_datetime"]) == True:
-                    timeOutsideThePossibleSpectrumOrMoreThanOneCityWasFound = True
 
             if time_result["type"] == "range" and labeled_query["time"]["time_type"] == "range":
                 correct_time_type += 1
@@ -163,6 +157,8 @@ for labeled_query in labeled_queries:
                 correct_time += 1
                 found_time_type_bool = True
                 time_bool = True
+                timeOutsideThePossibleSpectrumOrMoreThanOneCityWasFound = True
+
             if time_result["type"] == "time_point":
                 date_string = time_result["extracted_date"] + " " + time_result["extracted_time"]
                 extracted_time = datetime.datetime.strptime(date_string, "%Y.%m.%d %H:%M")
@@ -170,6 +166,7 @@ for labeled_query in labeled_queries:
                     correct_time += 1
                     found_time_type_bool = True
                     time_bool = True
+                    timeOutsideThePossibleSpectrumOrMoreThanOneCityWasFound = True
 
         except BaseException as e:
             #print(str(e))
