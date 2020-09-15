@@ -1441,6 +1441,20 @@
         }
       },
       "city": "Regensburg"
+    },
+    {
+      "text": "Wie warm ist es?",
+      "timeinfo": "2020.09.15 14:45",
+      "question_type": "None",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.15 14:45",
+          "end": ""
+        }
+      },
+      "city": "None"
     }
   ]
 }
