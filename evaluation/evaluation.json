@@ -1259,6 +1259,188 @@
         }
       },
       "city": "München"
+    },
+    {
+      "text": "Wie ist das Wetter in Auckland?",
+      "timeinfo": "2020.09.14 21:09",
+      "question_type": "WEATHER",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.14 21:09",
+          "end": ""
+        }
+      },
+      "city": "Auckland"
+    },
+    {
+      "text": "Wie ist das Wetter in Paris, Texas um 20 Uhr Ortszeit, am 15. September?",
+      "timeinfo": "2020.09.14 21:10",
+      "question_type": "WEATHER",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.15 20:00",
+          "end": ""
+        }
+      },
+      "city": "False"
+    },
+    {
+      "text": "Wann regnet es das nächste Mal?",
+      "timeinfo": "2020.09.14 21:10",
+      "question_type": "RAIN",
+      "when_question": true,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.14 21:10",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Wann scheint das nächste Mal die Sonne?",
+      "timeinfo": "2020.09.14 21:11",
+      "question_type": "SUN",
+      "when_question": true,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.14 21:11",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Woher kommt der Wind?",
+      "timeinfo": "2020.09.14 21:11",
+      "question_type": "WIND",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.14 21:11",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Wie kalt ist es gerade in Regenstauf?",
+      "timeinfo": "2020.09.14 21:12",
+      "question_type": "",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.14 21:12",
+          "end": ""
+        }
+      },
+      "city": "Regenstauf"
+    },
+    {
+      "text": "wie warm wird es heute",
+      "timeinfo": "2020.09.15 10:02",
+      "question_type": "WARM",
+      "when_question": false,
+      "time": {
+        "time_type": "day",
+        "time_objects": {
+          "start": "2020.09.15 10:02",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "wann kommt das nächste unwetter?",
+      "timeinfo": "2020.09.15 10:02",
+      "question_type": "THUNDER",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.15 10:02",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Hallo",
+      "timeinfo": "2020.09.15 11:32",
+      "question_type": "None",
+      "when_question": false,
+      "time": {
+        "time_type": "",
+        "time_objects": {
+          "start": "",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Ok, und stürmt es gerade in München?",
+      "timeinfo": "2020.09.15 11:32",
+      "question_type": "THUNDER",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.15 11:32",
+          "end": ""
+        }
+      },
+      "city": "München"
+    },
+    {
+      "text": "München Sturm",
+      "timeinfo": "2020.09.15 11:33",
+      "question_type": "THUNDER",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.15 11:33",
+          "end": ""
+        }
+      },
+      "city": "München"
+    },
+    {
+      "text": "Scheint die Sonne in München?",
+      "timeinfo": "2020.09.15 11:33",
+      "question_type": "SUN",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.15 11:33",
+          "end": ""
+        }
+      },
+      "city": "München"
+    },
+    {
+      "text": "Ok, und in Regensburg?",
+      "timeinfo": "2020.09.15 11:34",
+      "question_type": "None",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.15 11:34",
+          "end": ""
+        }
+      },
+      "city": "Regensburg"
     }
   ]
 }

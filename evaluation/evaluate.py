@@ -21,7 +21,7 @@ def clean_query(text):
 
 def get_question_type(query):
     cleaned_query = clean_query(query)
-    with open('question_model.pkl', 'rb') as fid:
+    with open('../question_model.pkl', 'rb') as fid:
         question_model = pickle.load(fid)
     label_pred = question_model.predict([cleaned_query])
     probabilities = question_model.predict_proba([cleaned_query])[0]
@@ -82,6 +82,9 @@ for labeled_query in labeled_queries:
         # lies in the past. The question is also answered correctly if it is recognized that more than one city was specified in the query.
         # This is checked by the following boolean variable.
         timeOutsideThePossibleSpectrumOrMoreThanOneCityWasFound = False
+        if labeled_query["question_type"] != "None" and labeled_query["time"]["time_type"] != "False" and labeled_query["city"] != "False":
+            amount_of_actually_valid_questions +=1
+
         if found_city == labeled_query["city"]:
             correct_city += 1
             found_city_bool = True
@@ -98,7 +101,6 @@ for labeled_query in labeled_queries:
         if found_question_type == labeled_query["question_type"] and found_when_question == labeled_query["when_question"]:
             found_question_type_bool = True
             correct_question_type += 1
-            amount_of_actually_valid_questions +=1
         else:
             found_question_type_bool = False
         datetime_relative_to = datetime.datetime.strptime(labeled_query["timeinfo"], "%Y.%m.%d %H:%M")
@@ -174,7 +176,7 @@ for labeled_query in labeled_queries:
         except BaseException as e:
             #print(str(e))
             time_bool = False
-        if found_question_type_bool is True and ((found_city_bool is True and found_question_type_bool is True and time_bool is True) or (timeOutsideThePossibleSpectrumOrMoreThanOneCityWasFound)):
+        if (found_question_type_bool is True and found_city_bool is True and found_question_type_bool is True and time_bool is True) or (timeOutsideThePossibleSpectrumOrMoreThanOneCityWasFound):
             general_accuracy_score += 1
             correct_interpretation_of_query = True
             if timeOutsideThePossibleSpectrumOrMoreThanOneCityWasFound == False:
@@ -200,7 +202,10 @@ print("| Correct City: ", correct_city / data_with_valid_questions)
 print("| Correct Time Type: ", correct_time_type / data_with_valid_questions)
 print("| Correct Time: ", correct_time / data_with_valid_questions)
 print("#---------------------------------------------------------------------------#")
+precision = general_precision_score / amount_of_valid_questions_found
+recall = general_recall_score / amount_of_actually_valid_questions
 print("| General Accuracy: ", general_accuracy_score / amount_of_labeled_queries)
 print("| General Precision: ", general_precision_score / amount_of_valid_questions_found)
 print("| General Recall: ", general_recall_score / amount_of_actually_valid_questions)
-
+print("| General F1-Measure: ", (2*precision*recall)/(precision+recall))
+print("#---------------------------------------------------------------------------#")
