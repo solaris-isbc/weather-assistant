@@ -46,31 +46,36 @@ def get_time_info(query, datetime_relative):
     return r
 
 with open('evaluation.json', encoding='utf-8') as json_file:
-    data = json.load(json_file)
+    labeled_queries = json.load(json_file)
 
-labeled_queries = data["queries"]
+labeled_queries = labeled_queries["queries"]
 
-# Statistics
+# Statistic variables
 amount_of_labeled_queries = len(labeled_queries)
 data_with_valid_questions = 0
 correct_question_type = 0
 correct_city = 0
 correct_time_type = 0
 correct_time = 0
-main_score = 0
+general_accuracy_score = 0
+general_precision_score = 0
+general_recall_score = 0
+amount_of_valid_questions_found = 0
+amount_of_actually_valid_questions = 0
 
 for labeled_query in labeled_queries:
     print("-----------------------------------------------------------------------------")
     query_text = labeled_query["text"]
+    # question type recognized by the system
     found_question_type = get_question_type(query_text)
     found_city = cd.find_location_in_query(query_text)
     if labeled_query["question_type"] != "None":
-        #The indication of the time/place is only evaluated if a valid question has been identified and a valid question is actually present.
+        # The indication of the time/place is only evaluated if a valid question has been identified and a valid question is actually present.
         # This has to do with the fact that the Assistant will recognize beforehand that the question is not valid.
         # The Assistant will then also not bother to find a city/time in the query.
         data_with_valid_questions += 1
         found_time = td.get_formatted_time(query_text)
-        found_time_type = found_time[0]
+        found_time_type = found_time[0] # time_point, day or range
         found_time = found_time[1]
         found_when_question = bool(re.search("wann|zeitpunkt", query_text, re.IGNORECASE))
         # a question is also answered correctly if it is recognized that the time inquired is too far in the future or
@@ -93,12 +98,16 @@ for labeled_query in labeled_queries:
         if found_question_type == labeled_query["question_type"] and found_when_question == labeled_query["when_question"]:
             found_question_type_bool = True
             correct_question_type += 1
+            amount_of_actually_valid_questions +=1
         else:
             found_question_type_bool = False
         datetime_relative_to = datetime.datetime.strptime(labeled_query["timeinfo"], "%Y.%m.%d %H:%M")
         time_result = get_time_info(query_text, datetime_relative_to)
 
         found_time_type_bool = False
+        if found_question_type != "None":
+            amount_of_valid_questions_found += 1
+
         try:
             time_bool = False
             if time_result["type"] == labeled_query["time"]["time_type"]:
@@ -166,8 +175,11 @@ for labeled_query in labeled_queries:
             #print(str(e))
             time_bool = False
         if found_question_type_bool is True and ((found_city_bool is True and found_question_type_bool is True and time_bool is True) or (timeOutsideThePossibleSpectrumOrMoreThanOneCityWasFound)):
-            main_score += 1
+            general_accuracy_score += 1
             correct_interpretation_of_query = True
+            if timeOutsideThePossibleSpectrumOrMoreThanOneCityWasFound == False:
+                general_precision_score += 1
+                general_recall_score += 1
         else:
             correct_interpretation_of_query = False
 
@@ -176,10 +188,11 @@ for labeled_query in labeled_queries:
     else:
         if found_question_type is None and labeled_query["question_type"] == "None":
             print("| Query: ", query_text, "|", "Korrekterweise wurde kein Fragetyp gefunden.")
-            main_score += 1
+            general_accuracy_score += 1
             correct_question_type += 1
         if found_question_type != None and labeled_query["question_type"] == "None":
             print("| Query: ", query_text, "|","Es wurde ein Fragetyp gefunden, obwohl die Query sinnlos ist.")
+            amount_of_valid_questions_found += 1
 
 print("#---------------------------------------------------------------------------#")
 print("| Correct Question Types: ", correct_question_type / amount_of_labeled_queries)
@@ -187,5 +200,7 @@ print("| Correct City: ", correct_city / data_with_valid_questions)
 print("| Correct Time Type: ", correct_time_type / data_with_valid_questions)
 print("| Correct Time: ", correct_time / data_with_valid_questions)
 print("#---------------------------------------------------------------------------#")
-print("| General Accuracy: ", main_score / amount_of_labeled_queries)
+print("| General Accuracy: ", general_accuracy_score / amount_of_labeled_queries)
+print("| General Precision: ", general_precision_score / amount_of_valid_questions_found)
+print("| General Recall: ", general_recall_score / amount_of_actually_valid_questions)
 
