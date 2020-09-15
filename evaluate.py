@@ -33,12 +33,6 @@ def get_question_type(query):
     # like "when will it be 20 degrees warm?" as "WARM" but the user would like to know, however, when there will be 20°C again. Not, when it becomes warm again.
     if (label_pred == "WARM" or label_pred == "COLD") and bool(re.search("[0-9]+ *(Grad|°)", query, re.IGNORECASE)):
         return "TEMPERATURE"
-    if bool(re.search("sonnenschirm|sonnencreme", query, re.IGNORECASE)):
-        return "SUN"
-    if bool(re.search("regenschirm", query, re.IGNORECASE)):
-        return "RAIN"
-    if bool(re.search("mantel", query, re.IGNORECASE)):
-        return "COLD"
     if probability_of_predicted_label <= 0.2:
         return None
     if probability_of_predicted_label < 0.5 and id.query_has_relevant_tokens(query) is False:
