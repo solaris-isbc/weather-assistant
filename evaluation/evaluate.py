@@ -55,7 +55,6 @@ amount_of_labeled_queries = len(labeled_queries)
 data_with_valid_questions = 0
 correct_question_type = 0
 correct_city = 0
-correct_time_type = 0
 correct_time = 0
 general_accuracy_score = 0
 general_precision_score = 0
@@ -115,15 +114,11 @@ for labeled_query in labeled_queries:
             if time_result["type"] == labeled_query["time"]["time_type"]:
                 found_time_type_bool = True
             if time_result["type"] == "time_point" and labeled_query["time"]["time_type"] == "time_point":
-                correct_time_type += 1
-
                 extracted_date = time_result["extracted_date_datetime"]
                 extracted_time = time_result["extracted_time_datetime"]
-
                 ground_truth = datetime.datetime.strptime(labeled_query["time"]["time_objects"]["start"], "%Y.%m.%d %H:%M")
                 ground_truth_date = ground_truth.date()
                 ground_truth_time = ground_truth.time()
-
                 if extracted_date == ground_truth_date and extracted_time == ground_truth_time:
                     correct_time += 1
                     time_bool = True
@@ -133,7 +128,6 @@ for labeled_query in labeled_queries:
                 extracted_time = datetime.datetime.strptime(date_string, "%Y.%m.%d %H:%M")
 
             if time_result["type"] == "day" and labeled_query["time"]["time_type"] == "day":
-                correct_time_type += 1
                 extracted_date = time_result["extracted_date_datetime"]
                 ground_truth_date = datetime.datetime.strptime(labeled_query["time"]["time_objects"]["start"],"%Y.%m.%d %H:%M").date()
                 if extracted_date == ground_truth_date:
@@ -143,13 +137,11 @@ for labeled_query in labeled_queries:
                     time_bool = False
 
             if time_result["type"] == "range" and labeled_query["time"]["time_type"] == "range":
-                correct_time_type += 1
                 range_start = found_time[0]
                 range_end = found_time[1]
                 extracted_date_start = time_result["extracted_range_duration_start_datetime"].date()
                 extracted_date_end = time_result["extracted_range_duration_end_datetime"].date()
-                ground_truth_start = datetime.datetime.strptime(labeled_query["time"]["time_objects"]["start"],
-                                                                "%Y.%m.%d %H:%M")
+                ground_truth_start = datetime.datetime.strptime(labeled_query["time"]["time_objects"]["start"],"%Y.%m.%d %H:%M")
                 ground_truth_start_date = ground_truth_start.date()
                 ground_truth_end = datetime.datetime.strptime(labeled_query["time"]["time_objects"]["end"], "%Y.%m.%d %H:%M")
                 ground_truth_end_date = ground_truth_end.date()
@@ -197,15 +189,14 @@ for labeled_query in labeled_queries:
             amount_of_valid_questions_found += 1
 
 print("#---------------------------------------------------------------------------#")
-print("| Correct Question Types: ", correct_question_type / amount_of_labeled_queries)
-print("| Correct City: ", correct_city / data_with_valid_questions)
-print("| Correct Time Type: ", correct_time_type / data_with_valid_questions)
-print("| Correct Time: ", correct_time / data_with_valid_questions)
+print("| Accuracy Question Type: ", correct_question_type / amount_of_labeled_queries)
+print("| Accuracy City: ", correct_city / data_with_valid_questions)
+print("| Accuracy Time: ", correct_time / data_with_valid_questions)
 print("#---------------------------------------------------------------------------#")
 precision = general_precision_score / amount_of_valid_questions_found
 recall = general_recall_score / amount_of_actually_valid_questions
 print("| General Accuracy: ", general_accuracy_score / amount_of_labeled_queries)
-print("| General Precision: ", general_precision_score / amount_of_valid_questions_found)
-print("| General Recall: ", general_recall_score / amount_of_actually_valid_questions)
+print("| General Precision: ", precision)
+print("| General Recall: ", recall)
 print("| General F1-Measure: ", (2*precision*recall)/(precision+recall))
 print("#---------------------------------------------------------------------------#")
