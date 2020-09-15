@@ -32,7 +32,7 @@
       "text": "Wann geht heute die Sonne unter?",
       "timeinfo": "020.09.14 08:07",
       "question_type": "None",
-      "when_question": false,
+      "when_question": true,
       "time": {
         "time_type": "",
         "time_objects": {
@@ -1026,7 +1026,7 @@
       "text": "Wann war das letzte Unwetter in Regensburg?",
       "timeinfo": "2020.09.14 14:17",
       "question_type": "THUNDER",
-      "when_question": false,
+      "when_question": true,
       "time": {
         "time_type": "False",
         "time_objects": {
@@ -1333,7 +1333,7 @@
     {
       "text": "Wie kalt ist es gerade in Regenstauf?",
       "timeinfo": "2020.09.14 21:12",
-      "question_type": "",
+      "question_type": "COLD",
       "when_question": false,
       "time": {
         "time_type": "time_point",
@@ -1362,7 +1362,7 @@
       "text": "wann kommt das nächste unwetter?",
       "timeinfo": "2020.09.15 10:02",
       "question_type": "THUNDER",
-      "when_question": false,
+      "when_question": true,
       "time": {
         "time_type": "time_point",
         "time_objects": {

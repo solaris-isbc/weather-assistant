@@ -108,7 +108,6 @@ for labeled_query in labeled_queries:
         found_time_type_bool = False
         if found_question_type != "None":
             amount_of_valid_questions_found += 1
-
         try:
             time_bool = False
             if time_result["type"] == labeled_query["time"]["time_type"]:
@@ -176,7 +175,6 @@ for labeled_query in labeled_queries:
                 general_recall_score += 1
         else:
             correct_interpretation_of_query = False
-
 
         print("| Query: ", query_text, "| question type: ", str(found_question_type_bool), "| city: ",str(found_city_bool), "| time type: ", str(found_time_type_bool), "| time: ", str(time_bool),"| system will give a suitable answer: ", str(correct_interpretation_of_query), "|")
     else:
