@@ -23,7 +23,7 @@ class TimeDetector:
             return True
         return False
 
-    def check_if_day_is_one_of_the_next_15(self,selected_time,relative):
+    def check_if_day_is_one_of_the_next_14(self,selected_time,relative):
         if relative == None:
             starting_time = self.get_current_day()
         else:
