@@ -204,9 +204,11 @@ for labeled_query in labeled_queries:
             print("✓", "\033[1;32;48mZu dieser Frage wird das System eine angemessene Antwort generieren. Korrekterweise wurde keine Fragestellung erkannt (z.B. aufgrund von Spam).",'\033[0m')
             general_accuracy_score += 1
             correct_question_type += 1
+            print("| question type: True | city: no evaluation | time: no evaluation |")
         if found_question_type != None and labeled_query["question_type"] == "None":
             print("×", "\033[91mEs wurde eine Fragestellung identifiziert, obwohl es sich entweder um eine Frage handelt, die Wetterdaten abfrägt, die nicht bereitgestellt werden können oder die Query eigentlich sinnlos ist (z.B. Spam)",'\033[0m')
             false_positives +=1
+            print("| question type: False | city: no evaluation | time: no evaluation |")
 
 print("#---------------------------------------------------------------------------#")
 print("| Accuracy Question Type: ", correct_question_type / amount_of_labeled_queries)
