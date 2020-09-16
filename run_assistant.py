@@ -113,12 +113,12 @@ def query_processing(query):
             range_end = time_information[1][1]
             find_question_type_and_create_answer(query, city, selected_time_type, [range_start, range_end])
         if selected_time_type == "time_point":
-            if td.check_if_time_point_can_be_looked_up(selected_time) is False:
+            if td.check_if_time_point_can_be_looked_up(selected_time, None) is False:
                 print("Es tut uns leid, aber Wetterinformationen zu einzelnen Stunden werden nur für die nächsten 48 Stunden bereit gestellt.")
             else:
                 find_question_type_and_create_answer(query, city, selected_time_type, [selected_time])
         if selected_time_type == "day":
-            if td.check_if_day_is_one_of_the_next_15(selected_time) is False:
+            if td.check_if_day_is_one_of_the_next_15(selected_time, None) is False:
                 print("Hoppla. Wir können für Sie nur Wetterinformationen für die nächsten 14 Tage bereitstellen.")
             else:
                 find_question_type_and_create_answer(query, city, selected_time_type, [selected_time])

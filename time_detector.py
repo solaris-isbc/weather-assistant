@@ -13,15 +13,23 @@ class TimeDetector:
         self.result = self.extractor.get_formatted_time()
         return self.result
 
-    def check_if_time_point_can_be_looked_up(self,selected_time):
-        datetime_object_for_day_in_48_hours = self.get_current_day() + datetime.timedelta(hours=46)
-        if datetime_object_for_day_in_48_hours > selected_time and selected_time + datetime.timedelta(seconds=1) >= self.get_current_day():
+    def check_if_time_point_can_be_looked_up(self,selected_time, relative):
+        if relative == None:
+            starting_time = self.get_current_day()
+        else:
+            starting_time = datetime.datetime.strptime(relative, "%Y.%m.%d %H:%M")
+        datetime_object_for_day_in_48_hours = starting_time + datetime.timedelta(hours=46)
+        if datetime_object_for_day_in_48_hours > selected_time and selected_time + datetime.timedelta(seconds=1) >= starting_time:
             return True
         return False
 
-    def check_if_day_is_one_of_the_next_15(self,selected_time):
-        datetime_object_for_day_in_15_days = (self.get_current_day() + datetime.timedelta(days=15)).date()
-        if datetime_object_for_day_in_15_days > selected_time and self.get_current_day().date() <= selected_time:
+    def check_if_day_is_one_of_the_next_15(self,selected_time,relative):
+        if relative == None:
+            starting_time = self.get_current_day()
+        else:
+            starting_time = datetime.datetime.strptime(relative, "%Y.%m.%d %H:%M")
+        datetime_object_for_day_in_15_days = (starting_time + datetime.timedelta(days=15)).date()
+        if datetime_object_for_day_in_15_days > selected_time and starting_time.date() <= selected_time:
             return True
         return False
 

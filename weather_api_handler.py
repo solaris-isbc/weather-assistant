@@ -330,11 +330,11 @@ class WeatherAPIHandler():
 
         if selected_time_type == "range":
             forecasts = self.get_forecast_object_for_range(selected_time[0], selected_time[1], city)
-            forecasts_with_warm_weather = [x for x in forecasts if x['temp'] > 22]
+            forecasts_with_warm_weather = [x for x in forecasts if x['max_temp'] > 22]
             if len(forecasts_with_warm_weather) == 0:
                 print("In diesem Zeitraum ist nicht mit warmen Temperaturen zu rechnen in " + city + ".")
             else:
-                print(". Am " + self.convert_date_to_formatted_text(
+                print("Am " + self.convert_date_to_formatted_text(
                     forecasts_with_warm_weather[0]['datetime']) + " kann das nächste mal mit warmen Temperaturen gerechnet werden ("+str(forecasts_with_warm_weather[0]["temp"])+"°C).")
 
     def create_cold_answer_next_appearance(self, city, selected_time, selected_time_type):

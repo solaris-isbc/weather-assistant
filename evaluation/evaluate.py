@@ -54,12 +54,11 @@ labeled_queries = labeled_queries["queries"]
 amount_of_labeled_queries = len(labeled_queries)
 data_with_valid_questions = 0
 correct_question_type = 0
-correct_city = 0
+correct_city_detection = 0
 correct_time = 0
 general_accuracy_score = 0
-general_precision_score = 0
-general_recall_score = 0
-amount_of_valid_questions_found = 0
+true_positives = 0
+false_positives = 0
 amount_of_actually_valid_questions = 0
 
 for labeled_query in labeled_queries:
@@ -84,16 +83,16 @@ for labeled_query in labeled_queries:
         if labeled_query["question_type"] != "None" and labeled_query["time"]["time_type"] != "False" and labeled_query["city"] != "False":
             amount_of_actually_valid_questions +=1
 
-        if found_city == labeled_query["city"]:
-            correct_city += 1
+        if found_city == labeled_query["city"] and cd.more_than_one_city() == False:
+            correct_city_detection += 1
             found_city_bool = True
         elif labeled_query["city"] == "False" and cd.more_than_one_city():
-            correct_city += 1
+            correct_city_detection += 1
             found_city_bool = True
             timeOutsideThePossibleSpectrumOrMoreThanOneCityWasFound = True
         else:
             if labeled_query["city"] == "None" and found_city is None:
-                correct_city += 1
+                correct_city_detection += 1
                 found_city_bool = True
             else:
                 found_city_bool = False
@@ -106,8 +105,6 @@ for labeled_query in labeled_queries:
         time_result = get_time_info(query_text, datetime_relative_to)
 
         found_time_type_bool = False
-        if found_question_type != "None":
-            amount_of_valid_questions_found += 1
         try:
             time_bool = False
             if time_result["type"] == labeled_query["time"]["time_type"]:
@@ -149,33 +146,33 @@ for labeled_query in labeled_queries:
                     time_bool = True
                 else:
                     time_bool = False
-            if time_result["type"] == "day" and td.check_if_day_is_one_of_the_next_15(time_result["extracted_date_datetime"]) == False and labeled_query["time"]["time_type"] == "False":
-                correct_time += 1
-                found_time_type_bool = True
-                time_bool = True
-                timeOutsideThePossibleSpectrumOrMoreThanOneCityWasFound = True
+            if time_result["type"] == "day":
+                if td.check_if_day_is_one_of_the_next_15(time_result["extracted_date_datetime"], labeled_query["timeinfo"]) == False and labeled_query["time"]["time_type"] == "False":
+                  correct_time += 1
+                  found_time_type_bool = True
+                  time_bool = True
+                  timeOutsideThePossibleSpectrumOrMoreThanOneCityWasFound = True
 
             if time_result["type"] == "time_point":
                 date_string = time_result["extracted_date"] + " " + time_result["extracted_time"]
                 extracted_time = datetime.datetime.strptime(date_string, "%Y.%m.%d %H:%M")
-                if time_result["type"] == "time_point" and td.check_if_time_point_can_be_looked_up(extracted_time) == False and labeled_query["time"]["time_type"] == "False":
+                if td.check_if_time_point_can_be_looked_up(extracted_time, labeled_query["timeinfo"]) == False and labeled_query["time"]["time_type"] == "False":
                     correct_time += 1
                     found_time_type_bool = True
                     time_bool = True
                     timeOutsideThePossibleSpectrumOrMoreThanOneCityWasFound = True
+            if (labeled_query["time"]["time_type"] == "False" or labeled_query["city"] == "False") and timeOutsideThePossibleSpectrumOrMoreThanOneCityWasFound == False:
+                false_positives +=1
 
         except BaseException as e:
-            #print(str(e))
             time_bool = False
         if (found_question_type_bool is True and found_city_bool is True and found_question_type_bool is True and time_bool is True) or (timeOutsideThePossibleSpectrumOrMoreThanOneCityWasFound):
             general_accuracy_score += 1
             correct_interpretation_of_query = True
             if timeOutsideThePossibleSpectrumOrMoreThanOneCityWasFound == False:
-                general_precision_score += 1
-                general_recall_score += 1
+                true_positives += 1
         else:
             correct_interpretation_of_query = False
-
         print("| Query: ", query_text, "| question type: ", str(found_question_type_bool), "| city: ",str(found_city_bool), "| time type: ", str(found_time_type_bool), "| time: ", str(time_bool),"| system will give a suitable answer: ", str(correct_interpretation_of_query), "|")
     else:
         if found_question_type is None and labeled_query["question_type"] == "None":
@@ -184,15 +181,18 @@ for labeled_query in labeled_queries:
             correct_question_type += 1
         if found_question_type != None and labeled_query["question_type"] == "None":
             print("| Query: ", query_text, "|","Es wurde ein Fragetyp gefunden, obwohl die Query sinnlos ist.")
-            amount_of_valid_questions_found += 1
+            false_positives +=1
 
 print("#---------------------------------------------------------------------------#")
 print("| Accuracy Question Type: ", correct_question_type / amount_of_labeled_queries)
-print("| Accuracy City: ", correct_city / data_with_valid_questions)
+print("| Accuracy City: ", correct_city_detection / data_with_valid_questions)
 print("| Accuracy Time: ", correct_time / data_with_valid_questions)
 print("#---------------------------------------------------------------------------#")
-precision = general_precision_score / amount_of_valid_questions_found
-recall = general_recall_score / amount_of_actually_valid_questions
+precision = true_positives / (true_positives + false_positives)
+recall = true_positives / amount_of_actually_valid_questions
+false_negatives = amount_of_actually_valid_questions - true_positives
+true_negatives = 107-true_positives-false_positives-false_negatives
+print("True Negatives: ",true_negatives,"True Positives: ", true_positives,"False Negatives: ",false_negatives,"False Positives: ", false_positives)
 print("| General Accuracy: ", general_accuracy_score / amount_of_labeled_queries)
 print("| General Precision: ", precision)
 print("| General Recall: ", recall)
