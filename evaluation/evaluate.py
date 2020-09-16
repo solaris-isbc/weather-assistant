@@ -88,7 +88,7 @@ for labeled_query in labeled_queries:
             correct_city_detection += 1
             found_city_bool = True
         elif labeled_query["city"] == "False" and cd.more_than_one_city():
-            print("✓", "Es wurde identifiziert, dass der Nutzer fälschlicherweise mehr als eine Stadt spezifiziert hat.")
+            print("✓", "Es wurde identifiziert, dass der Nutzer fälschlicherweise mehr als eine Stadt spezifiziert hat. Daher wird das System eine angemessene Antwort geben.")
             correct_city_detection += 1
             found_city_bool = True
             time_is_outside_the_possible_spectrum_or_more_than_one_city_was_Found = True
@@ -97,13 +97,13 @@ for labeled_query in labeled_queries:
              correct_city_detection += 1
              found_city_bool = True
         else:
-             if found_city == None:
-               print("×", "Es wurde fälschlicherweise ein Stadtname gefunden.")
-             else:
+             if found_city == None and labeled_query['city'] != "False" and labeled_query['city'] != "None":
+               print("×", "Die Stadt '"+labeled_query["city"]+"' wurde nicht gefunden.")
+             elif found_city != None and labeled_query['city'] == "None":
                print("×", "Die Stadt '"+labeled_query["city"]+"' wurde nicht gefunden.")
              found_city_bool = False
         if found_question_type == labeled_query["question_type"] and found_when_question == labeled_query["when_question"]:
-            print("✓", "Es wurde die richtige Fragestellung ("+found_question_type[0]+") erkannt.")
+            print("✓", "Es wurde die richtige Fragestellung erkannt: "+found_question_type[0])
             found_question_type_bool = True
             correct_question_type += 1
         else:
@@ -162,7 +162,7 @@ for labeled_query in labeled_queries:
                     time_bool = False
             if time_result["type"] == "day":
                 if td.check_if_day_is_one_of_the_next_14(time_result["extracted_date_datetime"], labeled_query["timeinfo"]) == False and labeled_query["time"]["time_type"] == "False":
-                  print("✓", "Korrekterweise wurde erkannt, dass die Zeit nicht im möglichen Zeitspektrum liegt (Tag ist nicht einer der nächsten 14 Tagen).")
+                  print("✓", "Korrekterweise wurde erkannt, dass die Zeit nicht im möglichen Zeitspektrum liegt (Tag ist nicht einer der nächsten 14 Tagen). Daher wird das System eine angemssene Antwort geben.")
                   correct_time += 1
                   found_time_type_bool = True
                   time_bool = True
@@ -198,17 +198,17 @@ for labeled_query in labeled_queries:
             print("×", "\033[91mAuf diese Frage wird das System keine angemessene Antwort geben.",'\033[0m')
 
             correct_interpretation_of_query = False
-        print("| question type:", str(found_question_type_bool), "| city:",str(found_city_bool),"| time:", str(time_bool),"|")
+        print("| question type identification:", str(found_question_type_bool), "| city identification:",str(found_city_bool),"| time identification:", str(time_bool),"|")
     else:
         if found_question_type is None and labeled_query["question_type"] == "None":
             print("✓", "\033[1;32;48mZu dieser Frage wird das System eine angemessene Antwort generieren. Korrekterweise wurde keine Fragestellung erkannt (z.B. aufgrund von Spam).",'\033[0m')
             general_accuracy_score += 1
             correct_question_type += 1
-            print("| question type: True | city: no evaluation | time: no evaluation |")
+            print("| question type identification: True | city identification: no evaluation | time identification: no evaluation |")
         if found_question_type != None and labeled_query["question_type"] == "None":
             print("×", "\033[91mEs wurde eine Fragestellung identifiziert, obwohl es sich entweder um eine Frage handelt, die Wetterdaten abfrägt, die nicht bereitgestellt werden können oder die Query eigentlich sinnlos ist (z.B. Spam)",'\033[0m')
             false_positives +=1
-            print("| question type: False | city: no evaluation | time: no evaluation |")
+            print("| question type identification: False | city identification: no evaluation | time identification: no evaluation |")
 
 print("#---------------------------------------------------------------------------#")
 print("| Accuracy Question Type: ", correct_question_type / amount_of_labeled_queries)
@@ -218,7 +218,7 @@ print("#------------------------------------------------------------------------
 precision = true_positives / (true_positives + false_positives)
 recall = true_positives / amount_of_actually_valid_questions
 false_negatives = amount_of_actually_valid_questions - true_positives
-true_negatives = 107-true_positives-false_positives-false_negatives
+true_negatives = amount_of_labeled_queries-true_positives-false_positives-false_negatives
 print("| True Negatives:",true_negatives,"True Positives:", true_positives," False Negatives:",false_negatives," False Positives:", false_positives)
 print("| General Accuracy: ", general_accuracy_score / amount_of_labeled_queries)
 print("| General Precision: ", precision)

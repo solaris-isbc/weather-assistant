@@ -1497,6 +1497,90 @@
         }
       },
       "city": "Porto"
+    },
+    {
+      "text": "Scheint die Sonne in München?",
+      "timeinfo": "2020.09.16 10:14",
+      "question_type": "SUN",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.16 10:14",
+          "end": ""
+        }
+      },
+      "city": "München"
+    },
+    {
+      "text": "Wann regnet es in Regensburg wieder?",
+      "timeinfo": "2020.09.16 15:15",
+      "question_type": "RAIN",
+      "when_question": true,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.16 15:15",
+          "end": ""
+        }
+      },
+      "city": "Regensburg"
+    },
+    {
+      "text": "Scheint morgen die Sonne?",
+      "timeinfo": "2020.09.16 15:15",
+      "question_type": "SUN",
+      "when_question": false,
+      "time": {
+        "time_type": "day",
+        "time_objects": {
+          "start": "2020.09.17 15:15",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Luftdruck",
+      "timeinfo": "2020.09.16 15:16",
+      "question_type": "AIR_PRESSURE",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.16 15:16",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Luftdruck Bamberg",
+      "timeinfo": "2020.09.16 15:16",
+      "question_type": "AIR_PRESSURE",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.16 15:16",
+          "end": ""
+        }
+      },
+      "city": "Bamberg"
+    },
+    {
+      "text": "wie bewölkt ist es?",
+      "timeinfo": "2020.09.16 19:06",
+      "question_type": "CLOUDS",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.16 19:06",
+          "end": ""
+        }
+      },
+      "city": "None"
     }
   ]
 }
