@@ -217,7 +217,7 @@ precision = true_positives / (true_positives + false_positives)
 recall = true_positives / amount_of_actually_valid_questions
 false_negatives = amount_of_actually_valid_questions - true_positives
 true_negatives = 107-true_positives-false_positives-false_negatives
-print("| True Negatives: ",true_negatives,"True Positives: ", true_positives,"False Negatives: ",false_negatives,"False Positives: ", false_positives)
+print("| True Negatives:",true_negatives,"True Positives:", true_positives," False Negatives:",false_negatives," False Positives:", false_positives)
 print("| General Accuracy: ", general_accuracy_score / amount_of_labeled_queries)
 print("| General Precision: ", precision)
 print("| General Recall: ", recall)
