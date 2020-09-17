@@ -94,6 +94,7 @@ class DateTimeExtractor:
         self.datetime_relative_to = datetime_relative_to
         self.mode = mode
         self.date_delta = None
+        self.date_offset = None
 
     def parse(self, input_sentence):
         query_with_removals = input_sentence
@@ -111,7 +112,12 @@ class DateTimeExtractor:
             if self.date_delta is not None:
                 if self.date is None:
                     self.date = self.datetime_relative_to.date() + self.date_delta
-
+            if  self.date_offset is not None:
+                if self.date is None:
+                    self.date = self.datetime_relative_to
+                if isinstance(self.date, datetime.date):
+                    self.date = datetime.datetime.combine(self.date, self.datetime_relative_to.time())
+                self.date = self.date + self.date_offset
             # quickfix for date/datetime issues
             self.date = self.date.date() if isinstance(self.date, datetime.datetime) else self.date
 
@@ -140,14 +146,14 @@ class DateTimeExtractor:
         s = re.sub(r"\s+", " ", s)
 
         #replace lone numbers 2-9 with digits
-        s = re.sub(r"(\s*)zwei(\s+)", r"\1空2\2", s)
-        s = re.sub(r"(\s*)drei(\s+)", r"\1空3\2", s)
-        s = re.sub(r"(\s*)vier(\s+)", r"\1空4\2", s)
-        s = re.sub(r"(\s*)fünf(\s+)", r"\1空5\2", s)
-        s = re.sub(r"(\s*)sechs(\s+)", r"\1空6\2", s)
-        s = re.sub(r"(\s*)sieben(\s+)", r"\1空7\2", s)
-        s = re.sub(r"(\s*)acht(\s+)", r"\1空8\2", s)
-        s = re.sub(r"(\s*)neun(\s+)", r"\1空9\2", s)
+        s = re.sub(r"(\s+)zwei(\s+)", r"\1空2\2", s)
+        s = re.sub(r"(\s+)drei(\s+)", r"\1空3\2", s)
+        s = re.sub(r"(\s+)vier(\s+)", r"\1空4\2", s)
+        s = re.sub(r"(\s+)fünf(\s+)", r"\1空5\2", s)
+        s = re.sub(r"(\s+)sechs(\s+)", r"\1空6\2", s)
+        s = re.sub(r"(\s+)sieben(\s+)", r"\1空7\2", s)
+        s = re.sub(r"(\s+)acht(\s+)", r"\1空8\2", s)
+        s = re.sub(r"(\s+)neun(\s+)", r"\1空9\2", s)
         s = s.replace("空", "")
 
         #add whitespace in the end
@@ -189,6 +195,8 @@ class DateTimeExtractor:
     def handle_date(self, tree, predecessors):
         for c in tree.children:
             if isTree(c) and isTreeType(c, "weekday"):
+                self.handle_weekday(c, predecessors + [c])
+            if isTree(c) and isTreeType(c, "next_weekday"):
                 self.handle_weekday(c, predecessors + [c])
             elif isTree(c) and isTreeType(c, "time_of_day"):
                 self.handle_time_of_day(c, predecessors + [c])
@@ -265,7 +273,9 @@ class DateTimeExtractor:
         temp_time_of_day_value_raw = 12
         for c in tree.children:
             if isToken(c) and isTokenType(c, "TIME_OF_DAYS"):
-                temp_time_of_day_value_raw = self.time_of_day_mapping[c.strip()]
+                # remove trailing s if possible
+                time_of_day_value = c.strip().rstrip('s')
+                temp_time_of_day_value_raw = self.time_of_day_mapping[time_of_day_value]
             if isToken(c) and isTokenType(c, "TOMORROW"):
                 temp_time_of_day_value_raw = self.time_of_day_mapping[c.strip()]
             elif isToken(c) and isTokenType(c, "S_OPT"):
@@ -455,14 +465,18 @@ class DateTimeExtractor:
     def handle_date_relative(self, tree, predecessors):
         temp_next_flag = False
         #start = datetime.date.today()
-        start = self.datetime_relative_to + timedelta(days=1)
+        #start = self.datetime_relative_to + timedelta(days=1)
+        start = self.datetime_relative_to
         #end = datetime.date.today()
         end = self.datetime_relative_to + timedelta(days=1)
         for c in tree.children:
-            if isToken(c) and isTokenType(c, "NEXT"):
+            if (isToken(c) and isTokenType(c, "NEXT")) or (isToken(c) and isTokenType(c, "DAY_CHAR")):
                 temp_next_flag = True
             elif isToken(c) and isTokenType(c, "RELATIVE_DAYS"):
                 end = end + timedelta(days=(int(c)-1))
+        # no fixed amount of relative days, default to today until in 3 days
+        if end == (self.datetime_relative_to + timedelta(days=1)):
+            end = self.datetime_relative_to + timedelta(days=3)
         if not temp_next_flag:
             self.date = end.date()
         else:
@@ -510,7 +524,20 @@ class DateTimeExtractor:
     def handle_clock_time(self, tree, predecessors, return_value = False):
         for c in tree.children:
             if isTree(c) and isTreeType(c, "hour"):
-                return self.handle_hour(c, predecessors + [c])
+                time = self.handle_hour(c, predecessors + [c], True)
+                # extracted time <= 12 and actual time > 12 -> offset 12 hours
+                twelve = datetime.time(12, 0)
+                time_combined = (datetime.datetime.combine(self.datetime_relative_to, time) + timedelta(hours=12)).time()
+
+                # turns query for 5 Uhr into 17 Uhr if its already past 5 and before 17
+                if time <= twelve and self.datetime_relative_to.time() > twelve and time_combined > self.datetime_relative_to.time():
+                    time = (datetime.datetime.combine(self.datetime_relative_to, time) + timedelta(hours=12)).time()
+                # if its past 12 and the queried time is before 12, check the next day
+                elif time < twelve and self.datetime_relative_to.time() > twelve:
+                    self.date_offset = timedelta(days=1)
+
+                self.time = time
+                return
             elif isTree(c) and isTreeType(c, "hour_clock_minutes"):
                 return self.handle_hour_clock_minutes(c, predecessors + [c])
 
