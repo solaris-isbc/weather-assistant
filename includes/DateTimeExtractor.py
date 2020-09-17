@@ -112,7 +112,7 @@ class DateTimeExtractor:
             if self.date_delta is not None:
                 if self.date is None:
                     self.date = self.datetime_relative_to.date() + self.date_delta
-            if  self.date_offset is not None:
+            if  self.date_offset is not None and self.date_offset is not False:
                 if self.date is None:
                     self.date = self.datetime_relative_to
                 if isinstance(self.date, datetime.date):
@@ -210,6 +210,8 @@ class DateTimeExtractor:
     def handle_weekday(self, tree, predecessors, return_value = False):
         temp_value_weekday = -1
         temp_flag_weekday_next = False
+        # we're handling a certain day, so we'll avoid any offsets on time
+        self.date_offset = False
         for c in tree.children:
             if isTree(c) and isTreeType(c, "day"):
                 temp_value_weekday = self.handle_day(c, predecessors + [c], True)
@@ -232,7 +234,7 @@ class DateTimeExtractor:
 
         #d = datetime.date.today()
         d = self.datetime_relative_to
-        if temp_value_weekday > 0:
+        if temp_value_weekday >= 0:
             d = self.get_datetime_for_next(temp_value_weekday)
             if temp_flag_weekday_next:
                 d = d + timedelta(days=7)
@@ -466,9 +468,9 @@ class DateTimeExtractor:
         temp_next_flag = False
         #start = datetime.date.today()
         #start = self.datetime_relative_to + timedelta(days=1)
-        start = self.datetime_relative_to
+        start = datetime.datetime.combine(self.datetime_relative_to.date(), datetime.time(0,0))
         #end = datetime.date.today()
-        end = self.datetime_relative_to + timedelta(days=1)
+        end = start + timedelta(days=1)
         for c in tree.children:
             if (isToken(c) and isTokenType(c, "NEXT")) or (isToken(c) and isTokenType(c, "DAY_CHAR")):
                 temp_next_flag = True
@@ -533,9 +535,10 @@ class DateTimeExtractor:
                 if time <= twelve and self.datetime_relative_to.time() > twelve and time_combined > self.datetime_relative_to.time():
                     time = (datetime.datetime.combine(self.datetime_relative_to, time) + timedelta(hours=12)).time()
                 # if its past 12 and the queried time is before 12, check the next day
-                elif time < twelve and self.datetime_relative_to.time() > twelve:
-                    self.date_offset = timedelta(days=1)
-
+                # only if no day has actually been specified:
+                elif self.date_offset is not False:
+                    if time < twelve and self.datetime_relative_to.time() > twelve:
+                        self.date_offset = timedelta(days=1)
                 self.time = time
                 return
             elif isTree(c) and isTreeType(c, "hour_clock_minutes"):
