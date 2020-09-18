@@ -918,7 +918,7 @@
       "time": {
         "time_type": "range",
         "time_objects": {
-          "start": "2020.09.15 12:43",
+          "start": "2020.09.14 12:43",
           "end": "2020.09.16 12:43"
         }
       },
@@ -1591,6 +1591,76 @@
         "time_type": "time_point",
         "time_objects": {
           "start": "2020.09.16 21:13",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "wann kommt wieder regen in Rotterdam",
+      "timeinfo": "2020.09.17 11:15",
+      "question_type": "RAIN",
+      "when_question": true,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.17 11:15",
+          "end": ""
+        }
+      },
+      "city": "Rotterdam"
+    },
+    {
+      "text": "wie viel grad sind es gerade in rotterdam",
+      "timeinfo": "2020.09.17 11:16",
+      "question_type": "TEMPERATURE",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.17 11:16",
+          "end": ""
+        }
+      },
+      "city": "Rotterdam"
+    },
+    {
+      "text": "wird es diese woche denn irgendwann wärmer in rotterdam",
+      "timeinfo": "2020.09.17 11:17",
+      "question_type": "WARM",
+      "when_question": false,
+      "time": {
+        "time_type": "range",
+        "time_objects": {
+          "start": "2020.09.17 11:17",
+          "end": "2020.09.20 11:17"
+        }
+      },
+      "city": "Rotterdam"
+    },
+    {
+      "text": "wie kalt wird es heute nacht in rotterdam",
+      "timeinfo": "2020.09.17 11:18",
+      "question_type": "COLD",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.17 23:00",
+          "end": ""
+        }
+      },
+      "city": "Rotterdam"
+    },
+    {
+      "text": "Wie wird das wetter morgen",
+      "timeinfo": "2020.09.17 17:56",
+      "question_type": "WEATHER",
+      "when_question": false,
+      "time": {
+        "time_type": "day",
+        "time_objects": {
+          "start": "2020.09.18 17:56",
           "end": ""
         }
       },
