@@ -28,7 +28,7 @@ import pickle
 # pip install colorama
 # pip install spacy
 
-### 2. as soon as space is installed:
+### 2. as soon as spacy is installed:
 # python -m spacy download de_core_news_sm
 
 ### 3. as soon as nltk is installed
