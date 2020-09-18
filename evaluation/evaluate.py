@@ -42,8 +42,8 @@ def get_question_type(query):
 def get_time_info(query, datetime_relative):
     extractor = dte.DateTimeExtractor(dtg.datetime_grammar, datetime_relative_to=datetime_relative, mode="evaluation")
     extractor.parse(query)
-    r = extractor.get_evaluation_result()
-    return r
+    result = extractor.get_evaluation_result()
+    return result
 
 with open('evaluation.json', encoding='utf-8') as json_file:
     labeled_queries = json.load(json_file)
@@ -68,6 +68,9 @@ for labeled_query in labeled_queries:
     # question type recognized by the system
     found_question_type = get_question_type(query_text)
     found_city = cd.find_location_in_query(query_text)
+    if found_city != None:
+        found_city = found_city.title()
+
     if labeled_query["question_type"] != "None":
         # The indication of the time/place is only evaluated if the query actually can be assigned to a question type.
         # This has to do with the fact that the Assistant will recognize beforehand that the question is not valid.
@@ -96,11 +99,16 @@ for labeled_query in labeled_queries:
              print("✓", "Korrekterweise wurde keine Stadt in der Query identifiziert.")
              correct_city_detection += 1
              found_city_bool = True
+        elif labeled_query["city"] != "False" and labeled_query["city"] != "None" and cd.more_than_one_city():
+             print("×", "Fälschlicherweise wurde mehr als ein Stadtname in der Query identifiziert.")
+             found_city_bool = False
         else:
              if found_city == None and labeled_query['city'] != "False" and labeled_query['city'] != "None":
                print("×", "Die Stadt '"+labeled_query["city"]+"' wurde nicht gefunden.")
+             elif found_city != None and labeled_query['city'] != "None" and labeled_query['city'] != "False" and cd.more_than_one_city() == False and found_city != labeled_query['city']:
+                 print("×","Bei der Phrase '" + found_city + "' handelt es sich nicht um einen Stadtnamen, den das System hätte erkennen sollen.")
              elif found_city != None and labeled_query['city'] == "None":
-               print("×", "Die Stadt '"+labeled_query["city"]+"' wurde nicht gefunden.")
+               print("×", "Die Phrase '"+found_city+"' wurde gefunden, obwohl es sich dabei nicht um eine Stadt handelt.")
              found_city_bool = False
         if found_question_type == labeled_query["question_type"] and found_when_question == labeled_query["when_question"]:
             print("✓", "Es wurde die richtige Fragestellung erkannt: "+found_question_type[0])
