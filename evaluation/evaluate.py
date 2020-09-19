@@ -219,17 +219,17 @@ for labeled_query in labeled_queries:
             print("| question type identification: False | city identification: no evaluation | time identification: no evaluation |")
 
 print("#---------------------------------------------------------------------------#")
-print("| Accuracy Question Type: ", correct_question_type / amount_of_labeled_queries)
-print("| Accuracy City: ", correct_city_detection / data_with_valid_questions)
-print("| Accuracy Time: ", correct_time / data_with_valid_questions)
+print("| Accuracy Question Type: ", round(correct_question_type / amount_of_labeled_queries,3))
+print("| Accuracy City: ", round(correct_city_detection / data_with_valid_questions,3))
+print("| Accuracy Time: ", round(correct_time / data_with_valid_questions,3))
 print("#---------------------------------------------------------------------------#")
 precision = true_positives / (true_positives + false_positives)
 recall = true_positives / amount_of_actually_valid_questions
 false_negatives = amount_of_actually_valid_questions - true_positives
 true_negatives = amount_of_labeled_queries-true_positives-false_positives-false_negatives
 print("| True Negatives:",true_negatives,"True Positives:", true_positives," False Negatives:",false_negatives," False Positives:", false_positives)
-print("| General Accuracy: ", general_accuracy_score / amount_of_labeled_queries)
-print("| General Precision: ", precision)
-print("| General Recall: ", recall)
-print("| General F1-Measure: ", (2*precision*recall)/(precision+recall))
+print("| General Accuracy: ", round(general_accuracy_score / amount_of_labeled_queries,3))
+print("| General Precision: ", round(precision,3))
+print("| General Recall: ", round(recall,3))
+print("| General F1-Measure: ", round((2*precision*recall)/(precision+recall),3))
 print("#---------------------------------------------------------------------------#")
