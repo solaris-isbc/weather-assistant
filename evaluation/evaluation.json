@@ -1319,7 +1319,7 @@
     {
       "text": "Woher kommt der Wind?",
       "timeinfo": "2020.09.14 21:11",
-      "question_type": "WIND",
+      "question_type": "WIND_DIRECTION",
       "when_question": false,
       "time": {
         "time_type": "time_point",
