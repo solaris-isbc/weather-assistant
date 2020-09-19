@@ -203,7 +203,7 @@ for labeled_query in labeled_queries:
             if time_is_outside_the_possible_spectrum_or_more_than_one_city_was_Found == False:
                 true_positives += 1
         else:
-            print("×", "\033[91mAuf diese Frage wird das System keine angemessene Antwort geben.",'\033[0m')
+            print("×", "\033[91mZu dieser Frage wird das System keine angemessene Antwort generieren. ",'\033[0m')
 
             correct_interpretation_of_query = False
         print("| question type identification:", str(found_question_type_bool), "| city identification:",str(found_city_bool),"| time identification:", str(time_bool),"|")
