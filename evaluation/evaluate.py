@@ -40,7 +40,7 @@ def get_question_type(query):
     return label_pred
 
 def get_time_info(query, datetime_relative):
-    extractor = dte.DateTimeExtractor(dtg.datetime_grammar, datetime_relative_to=datetime_relative, mode="evaluation")
+    extractor = dte.DateTimeExtractor(dtg.datetime_grammar, datetime_relative_to=datetime_relative)
     extractor.parse(query)
     result = extractor.get_evaluation_result()
     return result

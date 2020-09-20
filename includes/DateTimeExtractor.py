@@ -85,7 +85,7 @@ class DateTimeExtractor:
     date = None
     time = None
 
-    def __init__(self, grammar, debug = False, datetime_relative_to=None, mode="production"):
+    def __init__(self, grammar, debug = False, datetime_relative_to=None, mode="production", no_error_handling=False):
         self.grammar = grammar
         self.debug = debug
         self.parser = Lark(grammar, parser="earley", start="root")
@@ -95,39 +95,14 @@ class DateTimeExtractor:
         self.mode = mode
         self.date_delta = None
         self.date_offset = None
+        self.no_error_handling = no_error_handling
 
     def parse(self, input_sentence):
-        query_with_removals = input_sentence
-
         input_sentence = self.prepare_input_sentence(input_sentence)
 
         if self.debug:
             print(input_sentence)
-        """
-        self.tree = self.parser.parse(input_sentence)
-
-        self.parse_root()
-
-        # add modifiers
-        if self.date_delta is not None:
-            if self.date is None:
-                self.date = self.datetime_relative_to.date() + self.date_delta
-        # only do that, if no specific date is specified, as to not extend towards the next (and wrong) day
-        if self.date is None and self.date_offset is not None and self.date_offset is not False:
-            if self.date is None:
-                self.date = self.datetime_relative_to.date()
-            if isinstance(self.date, datetime.date):
-                offset_time = self.time if self.time is not None else self.datetime_relative_to.time()
-                self.date = datetime.datetime.combine(self.date, offset_time)
-            self.date = self.date + self.date_offset
-            # extract the time from this, since it includes the offset now
-            self.time = self.date.time()
-
-        # quickfix for date/datetime issues
-        self.date = self.date.date() if isinstance(self.date, datetime.datetime) else self.date
-
-        """
-        try:
+        if self.no_error_handling:
             self.tree = self.parser.parse(input_sentence)
 
             self.parse_root()
@@ -138,27 +113,53 @@ class DateTimeExtractor:
                     self.date = self.datetime_relative_to.date() + self.date_delta
             # only do that, if no specific date is specified, as to not extend towards the next (and wrong) day
             if self.date is None and self.date_offset is not None and self.date_offset is not False:
+                if self.date is None:
+                    self.date = self.datetime_relative_to.date()
                 if isinstance(self.date, datetime.date):
-                    self.date = datetime.datetime.combine(self.date, self.datetime_relative_to.time())
+                    offset_time = self.time if self.time is not None else self.datetime_relative_to.time()
+                    self.date = datetime.datetime.combine(self.date, offset_time)
                 self.date = self.date + self.date_offset
+                # extract the time from this, since it includes the offset now
+                self.time = self.date.time()
+
             # quickfix for date/datetime issues
             self.date = self.date.date() if isinstance(self.date, datetime.datetime) else self.date
 
-        except Exception as e:
-            if self.debug:
-                debug(str(e))
-                try:
-                    print(self.tree.pretty())
-                except Exception as ex:
-                    debug(str(ex))
+        else:
+            try:
+                self.tree = self.parser.parse(input_sentence)
 
-            if self.mode == "production":
-                self.date = datetime.datetime.now().date()
-                self.time = datetime.datetime.now().time()
-            else:
-                self.date = self.datetime_relative_to.date()
-                self.time = self.datetime_relative_to.time()
-#    """
+                self.parse_root()
+
+                # add modifiers
+                if self.date_delta is not None:
+                    if self.date is None:
+                        self.date = self.datetime_relative_to.date() + self.date_delta
+                # only do that, if no specific date is specified, as to not extend towards the next (and wrong) day
+                if self.date is None and self.date_offset is not None and self.date_offset is not False:
+                    if self.date is None:
+                        self.date = self.datetime_relative_to.date()
+                    if isinstance(self.date, datetime.date):
+                        offset_time = self.time if self.time is not None else self.datetime_relative_to.time()
+                        self.date = datetime.datetime.combine(self.date, offset_time)
+                    self.date = self.date + self.date_offset
+                    # extract the time from this, since it includes the offset now
+                    self.time = self.date.time()
+
+                # quickfix for date/datetime issues
+                self.date = self.date.date() if isinstance(self.date, datetime.datetime) else self.date
+
+            except Exception as e:
+                    if self.debug:
+                        debug(str(e))
+                        try:
+                            print(self.tree.pretty())
+                        except Exception as ex:
+                            debug(str(ex))
+
+                    self.date = self.datetime_relative_to.date()
+                    self.time = self.datetime_relative_to.time()
+
 
     def prepare_input_sentence(self, s):
         #case folding
