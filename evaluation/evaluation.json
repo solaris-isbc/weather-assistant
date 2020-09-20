@@ -1628,7 +1628,7 @@
       "text": "wird es diese woche denn irgendwann wärmer in rotterdam",
       "timeinfo": "2020.09.17 11:17",
       "question_type": "WARM",
-      "when_question": false,
+      "when_question": true,
       "time": {
         "time_type": "range",
         "time_objects": {

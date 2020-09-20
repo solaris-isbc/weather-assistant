@@ -103,6 +103,30 @@ class DateTimeExtractor:
 
         if self.debug:
             print(input_sentence)
+
+        self.tree = self.parser.parse(input_sentence)
+
+        self.parse_root()
+
+        # add modifiers
+        if self.date_delta is not None:
+            if self.date is None:
+                self.date = self.datetime_relative_to.date() + self.date_delta
+        # only do that, if no specific date is specified, as to not extend towards the next (and wrong) day
+        if self.date is None and self.date_offset is not None and self.date_offset is not False:
+            if self.date is None:
+                self.date = self.datetime_relative_to.date()
+            if isinstance(self.date, datetime.date):
+                offset_time = self.time if self.time is not None else self.datetime_relative_to.time()
+                self.date = datetime.datetime.combine(self.date, offset_time)
+            self.date = self.date + self.date_offset
+            # extract the time from this, since it includes the offset now
+            self.time = self.date.time()
+
+        # quickfix for date/datetime issues
+        self.date = self.date.date() if isinstance(self.date, datetime.datetime) else self.date
+
+        """
         try:
             self.tree = self.parser.parse(input_sentence)
 
@@ -134,7 +158,7 @@ class DateTimeExtractor:
             else:
                 self.date = self.datetime_relative_to.date()
                 self.time = self.datetime_relative_to.time()
-
+    """
 
     def prepare_input_sentence(self, s):
         #case folding
@@ -343,7 +367,7 @@ class DateTimeExtractor:
         if day_temp is None:
             #either start today until weekend
             #or from upcoming monday to sunday
-            start = datetime.datetime.combine(self.datetime_relative_to, time(0,0))
+            start = datetime.datetime.combine(self.datetime_relative_to, datetime.time(0, 0))
             end = self.get_datetime_for_next(self.day_date_mapping["sonntag"])
 
             if start.date() == end.date():
@@ -380,9 +404,9 @@ class DateTimeExtractor:
         previous_token = None
         #initialize with now, overwrite if date is set
         #start = datetime.date.today()
-        start = datetime.datetime.combine(self.datetime_relative_to, time(0,0))
+        start = datetime.datetime.combine(self.datetime_relative_to, datetime.time(0,0))
         #end = datetime.date.today()
-        end = datetime.datetime.combine(self.datetime_relative_to, time(0,0))
+        end = datetime.datetime.combine(self.datetime_relative_to, datetime.time(0,0))
         for c in tree.children:
             if isTree(c) and isTreeType(c, "weekday"):
                 if previous_token is None or (isToken(previous_token) and isTokenType(previous_token, "FROM")):
@@ -403,7 +427,7 @@ class DateTimeExtractor:
     def handle_date_from(self, tree, predecessors):
         #initialize with now, overwrite if date is set
         #start = datetime.date.today()
-        start = datetime.datetime.combine(self.datetime_relative_to, time(0,0))
+        start = datetime.datetime.combine(self.datetime_relative_to, datetime.time(0,0))
 
         for c in tree.children:
             if isTree(c) and isTreeType(c, "weekday"):
@@ -423,7 +447,7 @@ class DateTimeExtractor:
 
     def handle_date_formatted(self, tree, predecessors):
         #today = datetime.date.today()
-        today = datetime.datetime.combine(self.datetime_relative_to, time(0,0))
+        today = datetime.datetime.combine(self.datetime_relative_to, datetime.time(0,0))
         self.date_month = today.month
         self.date_year = today.year
         self.date_day = today.day
@@ -445,6 +469,14 @@ class DateTimeExtractor:
         self.date = d.date()
 
     def handle_digit_date_day(self, tree, predecessors):
+        for c in tree.children:
+            if isTree(c) and isTreeType(c, "digit_date_day_wrapper_one"):
+                self.handle_digit_date_day_wrapper(c, predecessors + [c])
+            elif isTree(c) and isTreeType(c, "digit_date_day_wrapper_two"):
+                self.handle_digit_date_day_wrapper(c, predecessors + [c])
+
+
+    def handle_digit_date_day_wrapper(self, tree, predecessors):
         day_upper = 0
         day_lower = 0
         for c in tree.children:
@@ -452,11 +484,8 @@ class DateTimeExtractor:
                 day_upper = int(c) * 10
             elif isToken(c) and isTokenType(c, "DIGIT"):
                 day_lower = int(c)
-            elif isTree(c) and isTreeType(c, "digit_date_day_wrapper_one"):
-                self.handle_digit_date_day(c, predecessors + [c])
-            elif isTree(c) and isTreeType(c, "digit_date_day_wrapper_two"):
-                self.handle_digit_date_day(c, predecessors + [c])
         self.date_day = day_upper + day_lower
+
 
     def handle_year(self, tree, predecessors):
         year = 0
@@ -474,14 +503,16 @@ class DateTimeExtractor:
         start = datetime.datetime.combine(self.datetime_relative_to.date(), datetime.time(0,0))
         #end = datetime.date.today()
         end = start + timedelta(days=1)
+
         for c in tree.children:
             if (isToken(c) and isTokenType(c, "NEXT")) or (isToken(c) and isTokenType(c, "DAY_CHAR")):
                 temp_next_flag = True
             elif isToken(c) and isTokenType(c, "RELATIVE_DAYS"):
                 end = end + timedelta(days=(int(c)-1))
+
         # no fixed amount of relative days, default to today until in 3 days
-        if end == (self.datetime_relative_to + timedelta(days=1)):
-            end = self.datetime_relative_to + timedelta(days=3)
+        if end == (start + timedelta(days=1)):
+            end = start + timedelta(days=3)
         if not temp_next_flag:
             self.date = end.date()
         else:
@@ -536,7 +567,6 @@ class DateTimeExtractor:
 
                 # turns query for 5 Uhr into 17 Uhr if its already past 5 and before 17
                 if time <= twelve and self.datetime_relative_to.time() > twelve and time_combined > self.datetime_relative_to.time():
-                    print(time, twelve, self.datetime_relative_to.time(), time_combined)
                     # we can only do this, if there's no date
                     self.date_offset = timedelta(hours=12)
                 # if its past 12 and the queried time is before 12, check the next day
@@ -788,7 +818,7 @@ class DateTimeExtractor:
         return False
 
     def get_datetime_for_next(self, day):
-        d = datetime.datetime.combine(self.datetime_relative_to, time(0,0))
+        d = datetime.datetime.combine(self.datetime_relative_to, datetime.time(0,0))
         # create datetime and iterate until day matches
         while d.weekday() != day:
             d = d + timedelta(days=1)
