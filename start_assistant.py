@@ -28,12 +28,14 @@ import pickle
 # pip install colorama
 # pip install spacy
 
-### 2. as soon as space is installed:
+### 2. as soon as spacy is installed:
 # python -m spacy download de_core_news_sm
 
 ### 3. as soon as nltk is installed
 ### execute the following somehow
 # nltk.download('stopwords')
+
+# The code starts calling the methods display_assistant_information() / start_assistant()
 
 def clean_query(text):
     stopword_list = set(stopwords.words('german'))
@@ -87,12 +89,7 @@ def find_question_type_and_create_answer(query, city, selected_time_type, select
             weather_api_handler.interpret_data_and_create_answer(question_type, city.title(), selected_time,
                                                                  selected_time_type, next_appearance_mode, query)
         except Exception as e:
-# if error handling for debugging purposes is needed, comment this in
-#            print("<!--")
-#            print(str(e))
-#            print("-->")
-            print(
-                "Leider haben wir für diesen Ort keine Wetterdaten verfügbar. Fragen Sie doch einfach nochmal, indem Sie die nächstgelegene größere Stadt nennen!")
+            print("Leider haben wir für diesen Ort keine Wetterdaten verfügbar. Fragen Sie doch einfach nochmal, indem Sie die nächstgelegene größere Stadt nennen!")
     else:
         print("Diese Frage kann ich dir nicht beantworten, tut mir leid.")
 
@@ -101,7 +98,6 @@ def query_processing(query):
     city = cd.find_location_in_query(query)
     if city is None:
         city = get_current_location()
-
     if cd.more_than_one_city() is True:
         print("Bitte stellen Sie nur Anfragen für Wetterinformationen zu einer Stadt an das System!")
     else:
@@ -123,16 +119,13 @@ def query_processing(query):
             else:
                 find_question_type_and_create_answer(query, city, selected_time_type, [selected_time])
 
-
 def display_assistant_information():
     print("--------------------------------------------------------------")
     print(f"{Fore.RED}Weather-Assistant{Style.RESET_ALL}")
     print(f"{Fore.YELLOW}Wetterdaten von weatherbit.io{Style.RESET_ALL}")
     print("--------------------------------------------------------------")
     print("Das System kann die folgenden Fragen beantworten: ")
-    print(
-        "Wetter, Regen, Schnee, Sonne, Luftdruck, Nebel, Temperatur,\nMinimaltemperatur, Maximaltemperatur, Durchschnittstemperatur, " +
-        " Warme Temperatur,\nKalte Temperatur, Sturm, Wind, Wolken, Windrichtung")
+    print("Wetter, Regen, Schnee, Sonne, Luftdruck, Nebel, Temperatur,\nMinimaltemperatur, Maximaltemperatur, Durchschnittstemperatur, " +" Warme Temperatur,\nKalte Temperatur, Sturm, Wind, Wolken, Windrichtung")
     print("--------------------------------------------------------------")
 
 

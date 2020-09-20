@@ -918,7 +918,7 @@
       "time": {
         "time_type": "range",
         "time_objects": {
-          "start": "2020.09.15 12:43",
+          "start": "2020.09.14 12:43",
           "end": "2020.09.16 12:43"
         }
       },
@@ -1319,7 +1319,7 @@
     {
       "text": "Woher kommt der Wind?",
       "timeinfo": "2020.09.14 21:11",
-      "question_type": "WIND",
+      "question_type": "WIND_DIRECTION",
       "when_question": false,
       "time": {
         "time_type": "time_point",
@@ -1595,6 +1595,216 @@
         }
       },
       "city": "None"
+    },
+    {
+      "text": "wann kommt wieder regen in Rotterdam",
+      "timeinfo": "2020.09.17 11:15",
+      "question_type": "RAIN",
+      "when_question": true,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.17 11:15",
+          "end": ""
+        }
+      },
+      "city": "Rotterdam"
+    },
+    {
+      "text": "wie viel grad sind es gerade in rotterdam",
+      "timeinfo": "2020.09.17 11:16",
+      "question_type": "TEMPERATURE",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.17 11:16",
+          "end": ""
+        }
+      },
+      "city": "Rotterdam"
+    },
+    {
+      "text": "wird es diese woche denn irgendwann wärmer in rotterdam",
+      "timeinfo": "2020.09.17 11:17",
+      "question_type": "WARM",
+      "when_question": false,
+      "time": {
+        "time_type": "range",
+        "time_objects": {
+          "start": "2020.09.17 11:17",
+          "end": "2020.09.20 11:17"
+        }
+      },
+      "city": "Rotterdam"
+    },
+    {
+      "text": "wie kalt wird es heute nacht in rotterdam",
+      "timeinfo": "2020.09.17 11:18",
+      "question_type": "COLD",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.17 23:00",
+          "end": ""
+        }
+      },
+      "city": "Rotterdam"
+    },
+    {
+      "text": "Wie wird das wetter morgen",
+      "timeinfo": "2020.09.17 17:56",
+      "question_type": "WEATHER",
+      "when_question": false,
+      "time": {
+        "time_type": "day",
+        "time_objects": {
+          "start": "2020.09.18 17:56",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Sollte ich morgen einen Schirm mitnehmen?",
+      "timeinfo": "2020.09.18 12:24",
+      "question_type": "RAIN",
+      "when_question": false,
+      "time": {
+        "time_type": "day",
+        "time_objects": {
+          "start": "2020.09.19 12:24",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "Aus welcher richtung kommt der Wind?",
+      "timeinfo": "2020.09.18 12:25",
+      "question_type": "WIND_DIRECTION",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.18 12:25",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "in welche Richtung weht der Wind in castrop-rauxel?",
+      "timeinfo": "2020.09.18 12:26",
+      "question_type": "WIND_DIRECTION",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.18 12:26",
+          "end": ""
+        }
+      },
+      "city": "Castrop-Rauxel"
+    },
+    {
+      "text": "Wo weht der Wind nicht in Richtung Osten?",
+      "timeinfo": "2020.09.18 12:26",
+      "question_type": "None",
+      "when_question": false,
+      "time": {
+        "time_type": "",
+        "time_objects": {
+          "start": "",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "wird es morgen früh regnen in Berlin",
+      "timeinfo": "2020.09.18 20:23",
+      "question_type": "RAIN",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.19 07:00",
+          "end": ""
+        }
+      },
+      "city": "Berlin"
+    },
+    {
+      "text": "ist es gerade bewölkt in Berlin",
+      "timeinfo": "2020.09.18 20:25",
+      "question_type": "CLOUDS",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.18 20:25",
+          "end": ""
+        }
+      },
+      "city": "Berlin"
+    },
+    {
+      "text": "und wird es morgen früh nebel geben in chemnitz",
+      "timeinfo": "2020.09.18 20:26",
+      "question_type": "FOG",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.19 07:00",
+          "end": ""
+        }
+      },
+      "city": "Chemnitz"
+    },
+    {
+      "text": "wann wird es wieder warm",
+      "timeinfo": "2020.09.18 20:27",
+      "question_type": "WARM",
+      "when_question": true,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.18 20:27",
+          "end": ""
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "kommt nächste woche regen?",
+      "timeinfo": "2020.09.18 20:28",
+      "question_type": "RAIN",
+      "when_question": false,
+      "time": {
+        "time_type": "range",
+        "time_objects": {
+          "start": "2020.09.21 20:28",
+          "end": "2020.09.27 20:28"
+        }
+      },
+      "city": "None"
+    },
+    {
+      "text": "wie ist das Wetter in Brüssel?",
+      "timeinfo": "2020.09.18 20:28",
+      "question_type": "WEATHER",
+      "when_question": false,
+      "time": {
+        "time_type": "time_point",
+        "time_objects": {
+          "start": "2020.09.18 20:28",
+          "end": ""
+        }
+      },
+      "city": "Brüssel"
     }
   ]
 }
