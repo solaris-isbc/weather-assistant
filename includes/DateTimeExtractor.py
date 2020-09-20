@@ -112,7 +112,7 @@ class DateTimeExtractor:
             if self.date_delta is not None:
                 if self.date is None:
                     self.date = self.datetime_relative_to.date() + self.date_delta
-            if  self.date_offset is not None and self.date_offset is not False:
+            if self.date_offset is not None and self.date_offset is not False:
                 if self.date is None:
                     self.date = self.datetime_relative_to
                 if isinstance(self.date, datetime.date):
@@ -537,7 +537,9 @@ class DateTimeExtractor:
 
                 # turns query for 5 Uhr into 17 Uhr if its already past 5 and before 17
                 if time <= twelve and self.datetime_relative_to.time() > twelve and time_combined > self.datetime_relative_to.time():
-                    time = (datetime.datetime.combine(self.datetime_relative_to, time) + timedelta(hours=12)).time()
+                    print(time, twelve, self.datetime_relative_to.time(), time_combined)
+                    # we can only do this, if there's no date
+                    self.date_offset = timedelta(hours=12)
                 # if its past 12 and the queried time is before 12, check the next day
                 # only if no day has actually been specified:
                 elif self.date_offset is not False:
