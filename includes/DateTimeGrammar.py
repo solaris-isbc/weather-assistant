@@ -37,7 +37,10 @@ datetime_grammar = u"""
     //date_formatted.2: digit_date_day DATE_SEPARATOR (MONTH | MONTH_ABBR | DIGIT_MONTH | DIGIT_MONTH_SPOKEN) year?
     //digit_date_day.1: (DIGIT_LIMITED_DAY? DIGIT) | DIGIT_DAY_SPOKEN  
     date_formatted.2: digit_date_day DATE_SEPARATOR (MONTH | MONTH_ABBR | DIGIT_MONTH) year?
-    digit_date_day.1: (DIGIT_LIMITED_DAY? DIGIT) 
+    digit_date_day.1: digit_date_day_wrapper_one | digit_date_day_wrapper_two 
+    //wrap this to give double digit days higher priority
+    digit_date_day_wrapper_one.2: (DIGIT_LIMITED_DAY DIGIT) 
+    digit_date_day_wrapper_two.1: (DIGIT) 
     year: (DATE_SEPARATOR YEAR) | YEAR
     
     //relative date, e.g. in 5 tagen

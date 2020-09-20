@@ -453,6 +453,10 @@ class DateTimeExtractor:
                 day_upper = int(c) * 10
             elif isToken(c) and isTokenType(c, "DIGIT"):
                 day_lower = int(c)
+            elif isTree(c) and isTreeType(c, "digit_date_day_wrapper_one"):
+                self.handle_digit_date_day(c, predecessors + [c])
+            elif isTree(c) and isTreeType(c, "digit_date_day_wrapper_two"):
+                self.handle_digit_date_day(c, predecessors + [c])
         self.date_day = day_upper + day_lower
 
     def handle_year(self, tree, predecessors):
