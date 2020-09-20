@@ -103,7 +103,7 @@ class DateTimeExtractor:
 
         if self.debug:
             print(input_sentence)
-
+        """
         self.tree = self.parser.parse(input_sentence)
 
         self.parse_root()
@@ -158,7 +158,7 @@ class DateTimeExtractor:
             else:
                 self.date = self.datetime_relative_to.date()
                 self.time = self.datetime_relative_to.time()
-    """
+#    """
 
     def prepare_input_sentence(self, s):
         #case folding
