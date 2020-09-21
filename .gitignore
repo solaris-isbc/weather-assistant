@@ -9,3 +9,8 @@ venv/*
 /time_detector_test.py
 /eval.json
 /evaluation_grammar/
+run_assistant.py
+pythontest.php
+alternative_implementations/*
+evaluation_grammar/*
+*.save
