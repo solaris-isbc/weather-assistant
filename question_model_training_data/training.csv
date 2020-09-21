@@ -998,3 +998,7 @@
 "wie windig ists gerade","WIND"
 "ist es denn morgen windig","WIND"
 "kommt morgen gutes Wetter","SUN"
+"wird es morgen windig","WIND"
+"wie hoch ist der luftdruck","AIR_PRESSURE"
+"ist es morgen warm?","WARM"
+"Schneit es morgen","SNOW"
