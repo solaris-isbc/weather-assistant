@@ -249,9 +249,11 @@ class DateTimeExtractor:
                 if not return_value:
                     self.handle_day(c, predecessors + [c], return_value)
             if is_token(c) and is_token_type(c, "NEXT"):
-                temp_flag_weekday_next = True
-                if not return_value:
-                    self.flag_weekday_next = temp_flag_weekday_next
+                # skip for now, because per definitionem we equal "diesen" and "nächsten" DAY
+                continue
+            #     temp_flag_weekday_next = True
+            #     if not return_value:
+            #         self.flag_weekday_next = temp_flag_weekday_next
             if is_token(c) and is_token_type(c, "DAY_ABBR"):
                 temp_value_weekday = self.day_date_mapping[self.day_abbreviations[str(c).strip()]]
                 if not return_value:
@@ -333,6 +335,8 @@ class DateTimeExtractor:
             if is_token(c) and is_token_type(c, "THIS"):
                 continue
             if is_token(c) and is_token_type(c, "NEXT"):
+                # skip for now, because per definitionem we equal "diesen" and "nächsten" WEEKEND
+                continue
                 self.modifier_weekend = 1
             if is_token(c) and is_token_type(c, "WEEK_END"):
                 # no need to do anything here
