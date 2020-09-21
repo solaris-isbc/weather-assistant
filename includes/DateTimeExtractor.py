@@ -250,8 +250,8 @@ class DateTimeExtractor:
                     self.handle_day(c, predecessors + [c], return_value)
             if is_token(c) and is_token_type(c, "NEXT"):
                 # skip for now, because per definitionem we equal "diesen" and "nächsten" DAY
+                temp_flag_weekday_next = True
                 continue
-            #     temp_flag_weekday_next = True
             #     if not return_value:
             #         self.flag_weekday_next = temp_flag_weekday_next
             if is_token(c) and is_token_type(c, "DAY_ABBR"):
@@ -268,7 +268,7 @@ class DateTimeExtractor:
         d = datetime.datetime.combine(self.datetime_relative_to, datetime.time(0, 0))
         if temp_value_weekday >= 0:
             d = self.get_datetime_for_next(temp_value_weekday)
-            if temp_flag_weekday_next:
+            if temp_flag_weekday_next and d.date() == self.datetime_relative_to.date():
                 d = d + timedelta(days=7)
         elif temp_value_weekday == -1:
             # noop, its today
