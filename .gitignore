@@ -11,6 +11,6 @@ venv/*
 /evaluation_grammar/
 run_assistant.py
 pythontest.php
-alternative_implementations/*
+alternative_implementations/time_detector_regex_implementation.py
 evaluation_grammar/*
 *.save
