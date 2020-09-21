@@ -57,14 +57,6 @@ def get_question_type(query):
     # like "when will it be 20 degrees warm?" as "WARM" but the user would like to know, however, when there will be 20°C again. Not, when it becomes warm again.
     if (label_pred == "WARM" or label_pred == "COLD") and bool(re.search("[0-9]+ *(Grad|°)", query, re.IGNORECASE)):
         return "TEMPERATURE"
-    if bool(re.search("sonnenschirm|sonnencreme", query, re.IGNORECASE)):
-        return "SUN"
-    if bool(re.search("regenschirm", query, re.IGNORECASE)):
-        return "RAIN"
-    if bool(re.search("jacke", query, re.IGNORECASE)):
-        return "RAIN"
-    if bool(re.search("mantel", query, re.IGNORECASE)):
-        return "COLD"
     if probability_of_predicted_label <= 0.2:
         return None
     if probability_of_predicted_label < 0.5 and id.query_has_relevant_tokens(query) is False:
@@ -121,12 +113,12 @@ def query_processing(query):
             range_end = time_information[1][1]
             find_question_type_and_create_answer(query, city, selected_time_type, [range_start, range_end])
         if selected_time_type == "time_point":
-            if td.check_if_time_point_can_be_looked_up(selected_time) is False:
+            if td.check_if_time_point_can_be_looked_up(selected_time, None) is False:
                 print("Es tut uns leid, aber Wetterinformationen zu einzelnen Stunden werden nur für die nächsten 48 Stunden bereit gestellt.")
             else:
                 find_question_type_and_create_answer(query, city, selected_time_type, [selected_time])
         if selected_time_type == "day":
-            if td.check_if_day_is_one_of_the_next_15(selected_time) is False:
+            if td.check_if_day_is_one_of_the_next_14(selected_time, None) is False:
                 print("Hoppla. Wir können für Sie nur Wetterinformationen für die nächsten 14 Tage bereitstellen.")
             else:
                 find_question_type_and_create_answer(query, city, selected_time_type, [selected_time])

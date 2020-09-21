@@ -28,12 +28,14 @@ import pickle
 # pip install colorama
 # pip install spacy
 
-### 2. as soon as space is installed:
+### 2. as soon as spacy is installed:
 # python -m spacy download de_core_news_sm
 
 ### 3. as soon as nltk is installed
 ### execute the following somehow
 # nltk.download('stopwords')
+
+# The code starts calling the methods display_assistant_information() / start_assistant()
 
 def clean_query(text):
     stopword_list = set(stopwords.words('german'))
@@ -57,14 +59,6 @@ def get_question_type(query):
     # like "when will it be 20 degrees warm?" as "WARM" but the user would like to know, however, when there will be 20°C again. Not, when it becomes warm again.
     if (label_pred == "WARM" or label_pred == "COLD") and bool(re.search("[0-9]+ *(Grad|°)", query, re.IGNORECASE)):
         return "TEMPERATURE"
-    if bool(re.search("sonnenschirm|sonnencreme", query, re.IGNORECASE)):
-        return "SUN"
-    if bool(re.search("regenschirm", query, re.IGNORECASE)):
-        return "RAIN"
-    if bool(re.search("jacke", query, re.IGNORECASE)):
-        return "RAIN"
-    if bool(re.search("mantel", query, re.IGNORECASE)):
-        return "COLD"
     if probability_of_predicted_label <= 0.2:
         return None
     if probability_of_predicted_label < 0.5 and id.query_has_relevant_tokens(query) is False:
@@ -95,12 +89,7 @@ def find_question_type_and_create_answer(query, city, selected_time_type, select
             weather_api_handler.interpret_data_and_create_answer(question_type, city.title(), selected_time,
                                                                  selected_time_type, next_appearance_mode, query)
         except Exception as e:
-# if error handling for debugging purposes is needed, comment this in
-#            print("<!--")
-#            print(str(e))
-#            print("-->")
-            print(
-                "Leider haben wir für diesen Ort keine Wetterdaten verfügbar. Fragen Sie doch einfach nochmal, indem Sie die nächstgelegene größere Stadt nennen!")
+            print("Leider haben wir für diesen Ort keine Wetterdaten verfügbar. Fragen Sie doch einfach nochmal, indem Sie die nächstgelegene größere Stadt nennen!")
     else:
         print("Diese Frage kann ich dir nicht beantworten, tut mir leid.")
 
@@ -109,7 +98,6 @@ def query_processing(query):
     city = cd.find_location_in_query(query)
     if city is None:
         city = get_current_location()
-
     if cd.more_than_one_city() is True:
         print("Bitte stellen Sie nur Anfragen für Wetterinformationen zu einer Stadt an das System!")
     else:
@@ -121,16 +109,15 @@ def query_processing(query):
             range_end = time_information[1][1]
             find_question_type_and_create_answer(query, city, selected_time_type, [range_start, range_end])
         if selected_time_type == "time_point":
-            if td.check_if_time_point_can_be_looked_up(selected_time) is False:
+            if td.check_if_time_point_can_be_looked_up(selected_time, None) is False:
                 print("Es tut uns leid, aber Wetterinformationen zu einzelnen Stunden werden nur für die nächsten 48 Stunden bereit gestellt.")
             else:
                 find_question_type_and_create_answer(query, city, selected_time_type, [selected_time])
         if selected_time_type == "day":
-            if td.check_if_day_is_one_of_the_next_15(selected_time) is False:
+            if td.check_if_day_is_one_of_the_next_14(selected_time, None) is False:
                 print("Hoppla. Wir können für Sie nur Wetterinformationen für die nächsten 14 Tage bereitstellen.")
             else:
                 find_question_type_and_create_answer(query, city, selected_time_type, [selected_time])
-
 
 def display_assistant_information():
     print("--------------------------------------------------------------")
@@ -138,9 +125,7 @@ def display_assistant_information():
     print(f"{Fore.YELLOW}Wetterdaten von weatherbit.io{Style.RESET_ALL}")
     print("--------------------------------------------------------------")
     print("Das System kann die folgenden Fragen beantworten: ")
-    print(
-        "Wetter, Regen, Schnee, Sonne, Luftdruck, Nebel, Temperatur,\nMinimaltemperatur, Maximaltemperatur, Durchschnittstemperatur, " +
-        " Warme Temperatur,\nKalte Temperatur, Sturm, Wind, Wolken, Windrichtung")
+    print("Wetter, Regen, Schnee, Sonne, Luftdruck, Nebel, Temperatur,\nMinimaltemperatur, Maximaltemperatur, Durchschnittstemperatur, " +" Warme Temperatur,\nKalte Temperatur, Sturm, Wind, Wolken, Windrichtung")
     print("--------------------------------------------------------------")
 
 

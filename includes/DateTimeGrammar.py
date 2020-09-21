@@ -37,17 +37,20 @@ datetime_grammar = u"""
     //date_formatted.2: digit_date_day DATE_SEPARATOR (MONTH | MONTH_ABBR | DIGIT_MONTH | DIGIT_MONTH_SPOKEN) year?
     //digit_date_day.1: (DIGIT_LIMITED_DAY? DIGIT) | DIGIT_DAY_SPOKEN  
     date_formatted.2: digit_date_day DATE_SEPARATOR (MONTH | MONTH_ABBR | DIGIT_MONTH) year?
-    digit_date_day.1: (DIGIT_LIMITED_DAY? DIGIT) 
+    digit_date_day.1: digit_date_day_wrapper_one | digit_date_day_wrapper_two 
+    //wrap this to give double digit days higher priority
+    digit_date_day_wrapper_one.2: (DIGIT_LIMITED_DAY DIGIT) 
+    digit_date_day_wrapper_two.1: (DIGIT) 
     year: (DATE_SEPARATOR YEAR) | YEAR
     
     //relative date, e.g. in 5 tagen
-    date_relative.1: IN (THE? NEXT)? RELATIVE_DAYS DAYS_CHAR
+    date_relative.1: (THE NEXT DAY_CHAR) | (IN (THE? NEXT)? RELATIVE_DAYS? DAYS_CHAR)
     
     
     //date with time of day, including weekend
-    date.1:  week | (weekday time_of_day) | weekend | weekday |date_interval
-    
-    weekday.1: (NEXT day) | day | DAY_ABBR | (NEXT DAY_ABBR) | TODAY
+    date.1:  next_weekday | week | (weekday time_of_day) | weekend | weekday |date_interval
+    next_weekday.2: (NEXT day) | (NEXT DAY_ABBR)
+    weekday.1:  day | DAY_ABBR | TODAY
     day.1: DAY_AFTER_TOMORROW | TOMORROW | DAYS
 
     time_of_day.1: (TIME_OF_DAYS S_OPT?) | ON NEXT? TOMORROW | TOMORROW S_OPT
@@ -101,9 +104,10 @@ datetime_grammar = u"""
     //spoken numbers
     //DIGIT_DAY_SPOKEN: ("erste"("r"|"n")?)  |( "zweite"("r"|"n")?)  |( "dritte"("r"|"n")?)  |( "vierte"("r"|"n")?)  |( "fünfte"("r"|"n")?)  |( "sechste"("r"|"n")?)  |( "siebte"("r"|"n")?)  |( "achte"("r"|"n")?)  |( "neunte"("r"|"n")?)  |( "zehnte"("r"|"n")?)  |( "elfte"("r"|"n")?)  |( "zwölfte"("r"|"n")?)  |( "dreizehnte"("r"|"n")?)  |( "vierzehnte"("r"|"n")?)  |( "fünfzehnte"("r"|"n")?)  |( "sechzehnte"("r"|"n")?)  |( "siebzehnte"("r"|"n")?)  |( "achtzehnte"("r"|"n")?)  |( "neunzehnte"("r"|"n")?)  |( "zwanzigste"("r"|"n")?)  |( "einundzwanzigste"("r"|"n")?)  |( "zweiundzwanzigste"("r"|"n")?)  |( "dreiundzwanzigste"("r"|"n")?)  |( "vierundzwanzigste"("r"|"n")?)  |( "fünfundzwanzigste"("r"|"n")?)  |( "sechsundzwanzigste"("r"|"n")?)  |( "siebenundzwanzigste"("r"|"n")?)  |( "achtundzwanzigste"("r"|"n")?)  |( "neunundzwanzigste"("r"|"n")?)  |( "dreißigste"("r"|"n")?)  |( "einundreißigste"("r"|"n")?) WS+
     //DIGIT_MONTH_SPOKEN: ("erste"("r"|"n")?)  |( "zweite"("r"|"n")?)  |( "dritte"("r"|"n")?)  |( "vierte"("r"|"n")?)  |( "fünfte"("r"|"n")?)  |( "sechste"("r"|"n")?)  |( "siebte"("r"|"n")?)  |( "achte"("r"|"n")?)  |( "neunte"("r"|"n")?)  |( "zehnte"("r"|"n")?)  |( "elfte"("r"|"n")?)  |( "zwölfte"("r"|"n")?) WS+
-    THE: ("den")WS+
+    THE: ("den"|"die")WS+
     IN: ("in")WS+
     DAYS_CHAR: ("tagen")WS+
+    DAY_CHAR: ("tage")WS+
     RELATIVE_DAYS: ("2".."9" | "1"("0".."9") | "2"("0".."9") | "3"("0".."9") | "4"("0".."9") | "5"("0".."9") | "6"("0".."9") | "7"("0".."9") | "8"("0".."9") | "9"("0".."9"))WS+
     NEXT: ("nächster" | "nächsten" | "nächste" | "nächster" | "nächsten" | "nächste" | "nächstes" | "kommendes" | "kommenden" | "kommender" | "kommende" | "kommenden")WS+
     TOMORROW: ("morgen")WS+
@@ -111,7 +115,7 @@ datetime_grammar = u"""
     DAYS: ("montag" | "dienstag" | "mittwoch" | "donnerstag" | "freitag" | "samstag" | "sonntag" | "heute")WS+
     DAY_ABBR: ("mo" | "di" | "mi" | "do" | "fr" | "sa" | "so")WS+
     TODAY: ("heute")WS+
-    TIME_OF_DAYS: ("vormittag" | "nachmittag" | "mittag" | "abend" | "nacht" | ("in" "der")? "früh")WS+
+    TIME_OF_DAYS: ("vormittag"("s")? | "nachmittag"("s")? | "mittag"("s")? | "abend"("s")? | "nacht"("s")? | ("in" "der")? "früh")WS+
     S_OPT: ("s")WS+
     ON: ("am" | "an")WS+
     WEEK_END: ("wochenende")WS+
