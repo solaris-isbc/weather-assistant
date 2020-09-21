@@ -111,11 +111,11 @@ for labeled_query in labeled_queries:
                print("×", "Die Phrase '"+found_city+"' wurde gefunden, obwohl es sich dabei nicht um eine Stadt handelt.")
              found_city_bool = False
         if found_question_type == labeled_query["question_type"] and found_when_question == labeled_query["when_question"]:
-            print("✓", "Es wurde die richtige Fragestellung erkannt: "+found_question_type[0])
+            print("✓", "Es wurde die richtige Fragestellung erkannt: "+found_question_type[0]+" / when: "+str(found_when_question) + ".")
             found_question_type_bool = True
             correct_question_type += 1
         else:
-            print("×", "Es wurde nicht erkannt, dass der Nutzer sich für die folgende Fragestellung interessiert:",labeled_query["question_type"]+".")
+            print("×", "Es wurde nicht erkannt, dass der Nutzer sich für die folgende Fragestellung interessiert:",labeled_query["question_type"]+" / when: "+str(labeled_query["when_question"]) + ".")
             found_question_type_bool = False
         datetime_relative_to = datetime.datetime.strptime(labeled_query["timeinfo"], "%Y.%m.%d %H:%M")
         time_result = get_time_info(query_text, datetime_relative_to)
