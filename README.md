@@ -7,7 +7,7 @@ Weather Assistant is a ChatBot that allows users to request weather data. The qu
 
 <br>
 <p align="center">
-  <img src="/docs/weather_assistant1.png.jpeg" width="66%">
+  <img src="docs/weather_assistant1.png" width="66%">
 </p>
 <br>
 
