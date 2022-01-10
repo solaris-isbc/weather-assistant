@@ -1,0 +1,13 @@
+Betreff: Assistenzsystem 
+
+Hallo,
+
+im Rahmen unseres NLP-Kurses haben wir dieses Semester einen Assistenten entwickelt, 
+der es Usern ermöglicht, Fragen zum Wetter zu beantworten. Um das System zu verbessern bzw. 
+zu evaluieren würde es uns sehr freuen, wenn Ihr den Assistenten ausprobieren könntet!
+
+Link zum Assistenten: https://homepages.ur.de/~hen58277/weather_assistant/
+
+Wir wünschen viel Spaß beim Verwenden,
+
+Leonhard Kunz und Nils Hellwig

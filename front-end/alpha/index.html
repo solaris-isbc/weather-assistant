@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Nils Constantin Hellwig">
+  <meta name="description" content="Weather Assistant Copus Extender">
+  <meta name="keywords" content="Weather, Assistant, Korpus, Data Science, Computerlinguistik">
+  <meta name='viewport' content="width=device-width, initial-scale=1">
+  <title>Weather | Assistant</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <h1>Weather Assistant (DEMO)</h1>
+    <h4>Wetterdaten von weatherbit.io</h4>
+    <div class="system">
+      <h3>Geben Sie einfach eine Frage zum Wetter ein (auf Deutsch):</h3>
+      <br>
+      <input id="input" type="text" name="" value="">
+      <button id="send_query" type="button" name="button">Senden</button>
+      <img id="loadingBar" src="" alt="">
+      <h4 id="answer"></h4>
+    </div>
+    <h2>Das System kann folgende Fragen beantworten: </h2>
+    <ul>
+      <li>Wetter allgemein</li>
+      <li>Regen</li>
+      <li>Schnee</li>
+      <li>Sonne</li>
+      <li>Luftdruck</li>
+      <li>Nebel</li>
+      <li>Temperatur</li>
+      <li>Mindesttemperatur</li>
+      <li>Maximaltemperatur</li>
+      <li>Durchschnittstemperatur</li>
+      <li>Warme Temperaturen</li>
+      <li>Kalte Temperaturen</li>
+      <li>Sturm/Unwetter</li>
+      <li>Wind</li>
+      <li>Wolken</li>
+      <li>Windrichtung</li>
+    </ul>
+    <h2>... natürlich kann zusätzlich auch eine Zeit (für Uhrzeiten in den nächsten 47 Stunden und für die nächsten 15 Tage) angegeben werden, ebenso wie der Name einer Stadt.</h2>
+  </main>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

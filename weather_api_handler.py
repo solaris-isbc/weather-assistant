@@ -4,6 +4,11 @@ import datetime
 import requests
 import xmltodict
 import operator
+from dotenv import load_dotenv
+load_dotenv()
+import os
+
+load_dotenv()
 
 
 class WeatherAPIHandler():
@@ -1120,10 +1125,7 @@ class WeatherAPIHandler():
                     print(answer)
 
     def get_api_key(self):
-        url = "https://homepages.ur.de/~hen58277/weather_assistant/api_key.xml"
-        response = requests.get(url)
-        data = xmltodict.parse(response.content)
-        return data["key"]
+        return os.getenv("API_KEY")
 
     # Methods that can be used for every request:
     # get_forecast_object_for_day returns the forecast for a specific day

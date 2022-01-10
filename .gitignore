@@ -14,3 +14,4 @@ pythontest.php
 alternative_implementations/time_detector_regex_implementation.py
 evaluation_grammar/*
 *.save
+.env

@@ -1,0 +1,74 @@
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="L.K / N.H">
+  <meta name="description" content="NLP 2 Project: Information Science Regensburg">
+  <meta name="keywords" content="Weather, Assistant, Korpus, Data Science, Computerlinguistik">
+  <meta name='viewport' content="width=device-width, initial-scale=1">
+  <title>Weather-Assistant</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="loading.css">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="white">
+  <meta name="apple-mobile-web-app-status-bar-style" content="white-translucent"/>
+</head>
+
+<body>
+    <main>
+        <footer class="top-footer">
+            <h1>Weather-Assistant</h1>
+            <h2>(BETA)</h2>
+        </footer>
+        <div class="information">
+            <h4>Was kann das System?</h4>
+            <img class="close-img"src="cancel.png">
+            <h5>
+                Der Weather-Assistant ist in der Lage, Fragen zum Wettergeschehen in den kommenden Tagen zu beantworten. Die Daten, die der Assistent zur Beantwortung von Queries verwendet, werden von der <a href="http://www.weatherbit.io" target="_blank">Weatherbit-API</a> bereitgestellt.
+                Diese bietet Wetterdaten für die nächsten 14 Tage, wobei es nur für die nächsten 48 Stunden Wetterdaten zu den einzelnen Stunden gibt.
+                Sobald Sie eine Frage an das System gestellt haben, wird diese zusammen mit der Antwort des Systems anonymisiert in einer Datenbank gespeichert. Wir würden uns darüber freuen, wenn Ihr uns helfen könntet, das System zu verbessern!
+                <br>
+            </h5>
+            <h6>Das System kann folgende Fragen beantworten: </h6>
+            <ul>
+                <li>Wetter allgemein</li>
+                <li>Regen</li>
+                <li>Schnee</li>
+                <li>Sonne</li>
+                <li>Luftdruck</li>
+                <li>Nebel</li>
+                <li>Temperatur</li>
+                <li>Mindesttemperatur</li>
+                <li>Maximaltemperatur</li>
+                <li>Durchschnittstemperatur</li>
+                <li>Warme Temperaturen</li>
+                <li>Kalte Temperaturen</li>
+                <li>Sturm/Unwetter</li>
+                <li>Wind</li>
+                <li>Wolken</li>
+                <li>Windrichtung</li>
+              </ul>
+              <h5 style="margin-top: 0px;">Des Weiteren kann das System Städtenamen und Uhrzeiten erkennen. Wird kein Stadtname genannt in der Query, dann geht das System von Regensburg aus, da dort der Server stationiert ist, an den die Anfragen gesendet werden.</h5>
+        </div>
+        <div class="chat">
+        </div>
+        <footer class="bottom-footer">
+            <button id="send_query" type="button" name="button" style="float: right">Senden</button>
+            <div style="overflow: hidden; padding-right: .5em;">
+                <input id="input" type="text" name="" value="" placeholder="Stellen Sie hier eine Frage an den Assistenten..." onkeypress="handleKeyEnter(event)" style="width: 100%;">
+            </div>
+        </footer>
+    </main>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
